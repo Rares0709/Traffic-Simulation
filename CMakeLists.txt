@@ -3,4 +3,12 @@ project(untitled1)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Traffic-Simulation main.cpp)
+add_executable(Traffic-Simulation
+        main.cpp
+        tinystr.cpp
+        tinyxmlerror.cpp
+        tinystr.h
+        tinyxml.h
+        tinyxml.cpp
+        tinyxmlparser.cpp
+)
