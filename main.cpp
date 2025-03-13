@@ -3,7 +3,7 @@
 //
 
 #include "main.h"
-
+#include <cmath>
 #include <vector>
 
 
@@ -20,8 +20,24 @@ struct Verkeerslicht {
 
 struct Voertuig {
     std::string baan;
+    int fmin = 4;
+    int lengte = 4;
     int positie = 0;
+    double Maxsnelheid = 16.6;
+    double maxversnelling = 1.44;
+    double snelheid = 0;
+    double versnelling = 0;
+    static int volgendeNummer;
+    double vertraagfactor = 0.4;
+    int vertraagafstand = 50;
+    int stopafstand = 15;
+    int voertuigNummer = 1;
+    double maxremfactor = 4.61;
+    double maxsnelheid = 16.6;
+    Voertuig() : voertuigNummer(volgendeNummer++) {
+    }
 };
+int Voertuig::volgendeNummer = 1;
 
 struct VoertuigGen {
     //vermoedelijk voor later
@@ -38,6 +54,40 @@ public:
           voertuigen(voertuigen),
           voertuigengen(voertuigengen) {
     }
+    void berekenVersnelling(Voertuig voertuig) {
+        int indexLijst = voertuig.voertuigNummer - 1;
+        if (indexLijst > 0) {
+            int indexVoertuig2 = indexLijst - 1;
+            Voertuig voertuig2 = voertuigen[indexVoertuig2];
+            double volgafstand = voertuig2.positie - voertuig.positie - voertuig2.lengte;
+            double snelheidsverschil = voertuig.snelheid - voertuig2.snelheid;
+            double delta = voertuig.fmin + std::max(0.0, voertuig.snelheid + ( (voertuig.snelheid * snelheidsverschil) / (2 * std::sqrt(voertuig.maxversnelling * voertuig.maxremfactor)))) / volgafstand;
+            double versnelling = voertuig.maxversnelling*(1-pow(voertuig.snelheid/voertuig.maxsnelheid,4) - pow(delta,2));
+            voertuig.versnelling = versnelling;
+        }
+        else {
+            int indexVoertuig2 = indexLijst - 1;
+            Voertuig voertuig2 = voertuigen[indexVoertuig2];
+            double delta = 0;
+            double versnelling = voertuig.maxversnelling*(1-pow(voertuig.snelheid/voertuig.maxsnelheid,4) - pow(delta,2));
+            voertuig.versnelling = versnelling;
+        }
+    }
+    void berekenSnelheid(Voertuig voertuig) {
+        double snelheid = voertuig.snelheid;
+        double versnelling = voertuig.versnelling;
+        double formule = snelheid + (versnelling*time);
+        int positie = voertuig.positie;
+        if (formule < 0) {
+            positie = positie - ((pow(snelheid, 2))/(2*versnelling));
+            snelheid = 0;
+        }
+        else {
+            snelheid = snelheid + (versnelling*time);
+            positie = positie + (snelheid*time) + (versnelling)*((pow(time,2))/(2));
+        }
+        voertuig.snelheid = snelheid;
+    }
 
     //Dit gaat verplaatst worden naar zijn eigen cpp bestand
 
@@ -50,9 +100,17 @@ public:
         this->banen = banen;
     }
 
+
     void voegbaantoe(Baan baan) {
         this->banen.push_back(baan);
     }
+    int getPositie(Voertuig voertuig) {
+       return voertuig.positie;
+    }
+    int getSnelheid(Voertuig voertuig) {
+        return voertuig.snelheid;
+    }
+
 
     std::vector<Verkeerslicht> get_verkeerslichten() const {
         return verkeerslichten;
@@ -69,6 +127,10 @@ public:
     std::vector<Voertuig> get_voertuigen() const {
         return voertuigen;
     }
+    void verhoogTijd() {
+        time += 0.0166;
+;
+    }
 
     void set_voertuigen(const std::vector<Voertuig> &voertuigen) {
         this->voertuigen = voertuigen;
@@ -81,12 +143,11 @@ public:
     void print() const {
         std::cout << "Tijd: " << time << std::endl;
 
-        int voertuigNummer = 1;
         for (const auto& voertuig : voertuigen) {
-            std::cout << "Voertuig " << voertuigNummer++ << std::endl;
+            std::cout << "Voertuig " << voertuig.voertuigNummer << std::endl;
             std::cout << "-> baan: " << voertuig.baan << std::endl;
             std::cout << "-> positie: " << voertuig.positie << std::endl;
-            std::cout << "-> snelheid: " << "tbm" << std::endl;  // Snelheid is placeholder
+            std::cout << "-> snelheid: " << voertuig.snelheid << std::endl;  // Snelheid is placeholder
         }
     }
 
@@ -95,7 +156,7 @@ private:
     std::vector<Verkeerslicht> verkeerslichten;
     std::vector<Voertuig> voertuigen;
     std::vector<VoertuigGen> voertuigengen;
-    int time = 0;
+    int time = 0.0166;
 };
 
 TrafficSim readFile(const std::string inputfile) {
@@ -164,6 +225,10 @@ TrafficSim readFile(const std::string inputfile) {
 }
 int main() {
     TrafficSim traffic = readFile("test1.xml");
+    traffic.berekenVersnelling(traffic.get_voertuigen()[0]);
+    traffic.berekenSnelheid(traffic.get_voertuigen()[0]);
+    traffic.berekenVersnelling(traffic.get_voertuigen()[1]);
+    traffic.berekenSnelheid(traffic.get_voertuigen()[1]);
     traffic.print();
     return 0;
 }
