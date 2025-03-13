@@ -88,6 +88,24 @@ public:
         }
         voertuig.snelheid = snelheid;
     }
+    // void vertragenEnVersnellen(Voertuig& voertuig){
+    //     double s=voertuig.vertraagfactor;
+    //     int indexLijst = voertuig.voertuigNummer - 1;
+    //
+    //     if (indexLijst==0) {
+    //         voertuig.maxsnelheid=s*voertuig.Maxsnelheid;
+    //     }
+    //     else {
+    //         int indexVoertuig2 = indexLijst - 1;
+    //         if (indexVoertuig2 >= 0 && indexVoertuig2 < voertuigen.size()) {
+    //             Voertuig& voertuig2 = voertuigen[indexVoertuig2];  // Gebruik referentie!
+    //             voertuig.maxsnelheid = voertuig2.maxsnelheid;
+    //         }
+    //     }
+    //     }
+    //
+    //
+    // }
 
     //Dit gaat verplaatst worden naar zijn eigen cpp bestand
 
@@ -156,7 +174,7 @@ private:
     std::vector<Verkeerslicht> verkeerslichten;
     std::vector<Voertuig> voertuigen;
     std::vector<VoertuigGen> voertuigengen;
-    int time = 0.0166;
+    double time = 0.0166;
 };
 
 TrafficSim readFile(const std::string inputfile) {
