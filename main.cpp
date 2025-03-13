@@ -22,7 +22,7 @@ struct Voertuig {
     std::string baan;
     int fmin = 4;
     int lengte = 4;
-    int positie = 0;
+    double positie = 0;
     double Maxsnelheid = 16.6;
     double maxversnelling = 1.44;
     double snelheid = 0;
@@ -75,7 +75,7 @@ public:
         double snelheid = voertuig.snelheid;
         double versnelling = voertuig.versnelling;
         double formule = snelheid + (versnelling*time);
-        int positie = voertuig.positie;
+        double positie = voertuig.positie;
         if (formule < 0) {
             positie = positie - ((pow(snelheid, 2))/(2*versnelling));
             snelheid = 0;
@@ -109,7 +109,23 @@ public:
 
     //Dit gaat verplaatst worden naar zijn eigen cpp bestand
 
-
+    void geldig(const Voertuig voertuig, std::vector<Baan>& banen) {
+        int indexLijst = voertuig.voertuigNummer - 1;
+        std::string baannaam = voertuig.baan;
+        int lengte = getBaanLengte(baannaam, banen);
+        std::vector<Voertuig>& voertuigenvector = get_voertuigen();
+        if (lengte < 0) {
+            std::cout << "Bestaat niet." << std::endl;
+        }
+        else if (voertuig.positie > lengte) {
+            voertuigenvector.erase(voertuigenvector.begin()+indexLijst);
+            std::cout << "Voertuig weg van de baan" << std::endl;
+            set_voertuigen(voertuigenvector);
+        }
+        else {
+            std::cout << "er gebeurt niks" << std::endl;
+        }
+    }
     std::vector<Baan> get_banen() const {
         return banen;
     }
@@ -127,6 +143,14 @@ public:
     }
     int getSnelheid(Voertuig voertuig) {
         return voertuig.snelheid;
+    }
+    int getBaanLengte(std::string & baannaam, std:: vector<Baan>&banen) {
+        for (Baan& b : banen) {
+            if (b.naam == baannaam) {
+                return b.lengte;
+            }
+        }
+        return 0;
     }
 
 
@@ -157,7 +181,6 @@ public:
     void voegvoertuigtoe(Voertuig voertuig) {
         this->voertuigen.push_back(voertuig);
     }
-
     void print() const {
         std::cout << "Tijd: " << time << std::endl;
 
@@ -243,10 +266,11 @@ TrafficSim readFile(const std::string inputfile) {
 }
 int main() {
     TrafficSim traffic = readFile("test1.xml");
-    traffic.berekenVersnelling(traffic.get_voertuigen()[0]);
-    traffic.berekenSnelheid(traffic.get_voertuigen()[0]);
-    traffic.berekenVersnelling(traffic.get_voertuigen()[1]);
-    traffic.berekenSnelheid(traffic.get_voertuigen()[1]);
-    traffic.print();
+    traffic.geldig(traffic.get_voertuigen()[0],traffic.get_banen());
+    // traffic.berekenVersnelling(traffic.get_voertuigen()[0]);
+    // traffic.berekenSnelheid(traffic.get_voertuigen()[0]);
+    // traffic.berekenVersnelling(traffic.get_voertuigen()[1]);
+    // traffic.berekenSnelheid(traffic.get_voertuigen()[1]);
+    // traffic.print();
     return 0;
 }
