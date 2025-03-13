@@ -88,26 +88,34 @@ public:
         }
         voertuig.snelheid = snelheid;
     }
-    // void vertragenEnVersnellen(Voertuig& voertuig){
-    //     double s=voertuig.vertraagfactor;
-    //     int indexLijst = voertuig.voertuigNummer - 1;
-    //
-    //     if (indexLijst==0) {
-    //         voertuig.maxsnelheid=s*voertuig.Maxsnelheid;
-    //     }
-    //     else {
-    //         int indexVoertuig2 = indexLijst - 1;
-    //         if (indexVoertuig2 >= 0 && indexVoertuig2 < voertuigen.size()) {
-    //             Voertuig& voertuig2 = voertuigen[indexVoertuig2];  // Gebruik referentie!
-    //             voertuig.maxsnelheid = voertuig2.maxsnelheid;
-    //         }
-    //     }
-    //     }
-    //
-    //
-    // }
 
-    //Dit gaat verplaatst worden naar zijn eigen cpp bestand
+    void vertragenEnVersnellen(Voertuig& voertuig){
+        double s=voertuig.vertraagfactor;
+        int indexLijst = voertuig.voertuigNummer - 1;
+        if (indexLijst==0) {
+            voertuig.maxsnelheid=s*voertuig.Maxsnelheid;
+        }
+        else {
+            int indexVoertuig2 = indexLijst - 1;
+            if (indexVoertuig2 >= 0 && indexVoertuig2 < voertuigen.size()) {
+                Voertuig& voertuig2 = voertuigen[indexVoertuig2];
+                voertuig.maxsnelheid = voertuig2.Maxsnelheid;
+            }
+        }
+    }
+    void stoppen(Voertuig& voertuig) {
+        int indexLijst = voertuig.voertuigNummer - 1;
+
+        if (indexLijst == 0) {
+            voertuig.versnelling = - (voertuig.maxremfactor*voertuig.snelheid) / voertuig.maxsnelheid;
+        } else {
+            int indexVoertuig2 = indexLijst - 1;
+            if (indexVoertuig2 >= 0 && indexVoertuig2 < voertuigen.size()) {
+                Voertuig& voertuig2 = voertuigen[indexVoertuig2];
+                voertuig.versnelling = voertuig2.versnelling;
+            }
+        }
+    }
 
     void geldig(const Voertuig voertuig, std::vector<Baan>& banen) {
         int indexLijst = voertuig.voertuigNummer - 1;
