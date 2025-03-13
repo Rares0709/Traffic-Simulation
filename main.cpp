@@ -117,18 +117,16 @@ public:
         }
     }
 
-    void geldig(const Voertuig voertuig, std::vector<Baan>& banen) {
+    void geldig(Voertuig& voertuig) {
         int indexLijst = voertuig.voertuigNummer - 1;
         std::string baannaam = voertuig.baan;
         int lengte = getBaanLengte(baannaam, banen);
-        std::vector<Voertuig>& voertuigenvector = get_voertuigen();
         if (lengte < 0) {
             std::cout << "Bestaat niet." << std::endl;
         }
         else if (voertuig.positie > lengte) {
-            voertuigenvector.erase(voertuigenvector.begin()+indexLijst);
-            std::cout << "Voertuig weg van de baan" << std::endl;
-            set_voertuigen(voertuigenvector);
+            voertuigen.erase(voertuigen.begin()+indexLijst);
+            //std::cout << "Voertuig weg van de baan" << std::endl;
         }
         else {
             std::cout << "er gebeurt niks" << std::endl;
@@ -274,7 +272,7 @@ TrafficSim readFile(const std::string inputfile) {
 }
 int main() {
     TrafficSim traffic = readFile("test1.xml");
-    traffic.geldig(traffic.get_voertuigen()[0],traffic.get_banen());
+    traffic.geldig(traffic.get_voertuigen()[0]);
     // traffic.berekenVersnelling(traffic.get_voertuigen()[0]);
     // traffic.berekenSnelheid(traffic.get_voertuigen()[0]);
     // traffic.berekenVersnelling(traffic.get_voertuigen()[1]);
