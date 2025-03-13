@@ -54,7 +54,7 @@ public:
           voertuigen(voertuigen),
           voertuigengen(voertuigengen) {
     }
-    void berekenVersnelling(Voertuig voertuig) {
+    void berekenVersnelling(Voertuig& voertuig) {
         int indexLijst = voertuig.voertuigNummer - 1;
         if (indexLijst > 0) {
             int indexVoertuig2 = indexLijst - 1;
@@ -66,14 +66,12 @@ public:
             voertuig.versnelling = versnelling;
         }
         else {
-            int indexVoertuig2 = indexLijst - 1;
-            Voertuig voertuig2 = voertuigen[indexVoertuig2];
             double delta = 0;
             double versnelling = voertuig.maxversnelling*(1-pow(voertuig.snelheid/voertuig.maxsnelheid,4) - pow(delta,2));
             voertuig.versnelling = versnelling;
         }
     }
-    void berekenSnelheid(Voertuig voertuig) {
+    void berekenSnelheid(Voertuig& voertuig) {
         double snelheid = voertuig.snelheid;
         double versnelling = voertuig.versnelling;
         double formule = snelheid + (versnelling*time);
@@ -81,10 +79,12 @@ public:
         if (formule < 0) {
             positie = positie - ((pow(snelheid, 2))/(2*versnelling));
             snelheid = 0;
+            voertuig.positie = positie;
         }
         else {
             snelheid = snelheid + (versnelling*time);
-            positie = positie + (snelheid*time) + (versnelling)*((pow(time,2))/(2));
+            positie = positie + (snelheid*time) + (versnelling)*((pow(time,2))/2);
+            voertuig.positie = positie;
         }
         voertuig.snelheid = snelheid;
     }
@@ -124,7 +124,7 @@ public:
         this->verkeerslichten.push_back(licht);
     }
 
-    std::vector<Voertuig> get_voertuigen() const {
+    std::vector<Voertuig>& get_voertuigen() {
         return voertuigen;
     }
     void verhoogTijd() {
