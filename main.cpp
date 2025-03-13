@@ -74,10 +74,23 @@ public:
         this->voertuigen.push_back(voertuig);
     }
 
+    void print() const {
+        std::cout << "Tijd: " << time << std::endl;
+
+        int voertuigNummer = 1;
+        for (const auto& voertuig : voertuigen) {
+            std::cout << "Voertuig " << voertuigNummer++ << std::endl;
+            std::cout << "-> baan: " << voertuig.baan << std::endl;
+            std::cout << "-> positie: " << voertuig.positie << std::endl;
+            std::cout << "-> snelheid: " << "tbm" << std::endl;  // Snelheid is placeholder
+        }
+    }
+
 private:
     std::vector<Baan> banen;
     std::vector<Verkeerslicht> verkeerslichten;
     std::vector<Voertuig> voertuigen;
+    int time = 0;
 };
 
 TrafficSim readFile(const std::string inputfile) {
@@ -102,7 +115,7 @@ TrafficSim readFile(const std::string inputfile) {
                 if (childName == "baan") voertuig.baan = text->Value();
                 if (childName == "positie") voertuig.positie = std::stoi(text->Value());
             }
-            std::cout << voertuig.baan << " " << voertuig.positie << std::endl;
+            //std::cout << voertuig.baan << " " << voertuig.positie << std::endl;
             voertuigen.push_back(voertuig);
         }
         else if (elemName == "BAAN") {
@@ -113,7 +126,7 @@ TrafficSim readFile(const std::string inputfile) {
                 if (childName == "naam") baan.naam = text->Value();
                 if (childName == "lengte") baan.lengte = std::stoi(text->Value());
             }
-            std::cout << baan.naam << " " << baan.lengte << std::endl;
+            //std::cout << baan.naam << " " << baan.lengte << std::endl;
             banen.push_back(baan);
         }
         else if (elemName == "VERKEERSLICHT") {
@@ -125,7 +138,7 @@ TrafficSim readFile(const std::string inputfile) {
                 if (childName == "positie") verkeerslicht.positie = std::stoi(text->Value());
                 if (childName == "cyclus") verkeerslicht.cyclus = std::stoi(text->Value());
             }
-            std::cout << verkeerslicht.baan << " " << verkeerslicht.positie << " " << verkeerslicht.cyclus << std::endl;
+            //std::cout << verkeerslicht.baan << " " << verkeerslicht.positie << " " << verkeerslicht.cyclus << std::endl;
             verkeerslichten.push_back(verkeerslicht);
         }
     }
@@ -134,5 +147,6 @@ TrafficSim readFile(const std::string inputfile) {
 }
 int main() {
     TrafficSim traffic = readFile("test1.xml");
+    traffic.print();
     return 0;
 }
