@@ -25,19 +25,22 @@ struct Voertuig {
 
 struct VoertuigGen {
     //vermoedelijk voor later
-    Baan baan;
+    std::string baan;
     int freq = 0;
 };
 
 class TrafficSim {
-//Dit gaat verplaatst worden naar zijn eigen cpp bestand
 public:
     TrafficSim(const std::vector<Baan> &banen, const std::vector<Verkeerslicht> &verkeerslichten,
-               const std::vector<Voertuig> &voertuigen)
+        const std::vector<Voertuig> &voertuigen, const std::vector<VoertuigGen> &voertuigengen)
         : banen(banen),
           verkeerslichten(verkeerslichten),
-          voertuigen(voertuigen) {
+          voertuigen(voertuigen),
+          voertuigengen(voertuigengen) {
     }
+
+    //Dit gaat verplaatst worden naar zijn eigen cpp bestand
+
 
     std::vector<Baan> get_banen() const {
         return banen;
@@ -91,6 +94,7 @@ private:
     std::vector<Baan> banen;
     std::vector<Verkeerslicht> verkeerslichten;
     std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
     int time = 0;
 };
 
@@ -100,6 +104,7 @@ TrafficSim readFile(const std::string inputfile) {
     std::vector<Baan> banen;
     std::vector<Verkeerslicht> verkeerslichten;
     std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
 
     if (!doc.LoadFile(inputfile.c_str())) {
         std::cerr << "Fout bij laden van XML: " << doc.ErrorDesc() << std::endl;
@@ -142,9 +147,20 @@ TrafficSim readFile(const std::string inputfile) {
             //std::cout << verkeerslicht.baan << " " << verkeerslicht.positie << " " << verkeerslicht.cyclus << std::endl;
             verkeerslichten.push_back(verkeerslicht);
         }
+        if (elemName == "VOERTUIGGENERATOR") {
+            VoertuigGen voertuiggen;
+            for (TiXmlElement* child = elem->FirstChildElement(); child != NULL; child = child->NextSiblingElement()) {
+                TiXmlText* text = child->FirstChild()->ToText();
+                std::string childName = child->Value();
+                if (childName == "baan") voertuiggen.baan = text->Value();
+                if (childName == "frequentie") voertuiggen.freq = std::stoi(text->Value());
+            }
+            //std::cout << voertuiggen.baan << " " << voertuiggen.freq << std::endl;
+            voertuigengen.push_back(voertuiggen);
+        }
     }
     doc.Clear();
-    return TrafficSim(banen, verkeerslichten, voertuigen);
+    return TrafficSim(banen, verkeerslichten, voertuigen, voertuigengen);
 }
 int main() {
     TrafficSim traffic = readFile("test1.xml");

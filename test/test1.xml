@@ -15,3 +15,7 @@
   <baan>Middelheimlaan</baan>
   <positie>0</positie>
 </VOERTUIG>
+<VOERTUIGGENERATOR>
+  <baan>Middelheimlaan</baan>
+  <frequentie>5</frequentie>
+</VOERTUIGGENERATOR>
