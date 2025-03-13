@@ -6,9 +6,7 @@
 
 #include <vector>
 
-class weg {
 
-};
 struct Baan {
     std::string naam;
     int lengte;
