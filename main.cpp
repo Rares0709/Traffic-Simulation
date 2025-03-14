@@ -150,7 +150,6 @@ public:
                     for (auto& voertuig : voertuigen) {
                         versnellen( voertuig);
                     }
-
                 }
             }
             if (verkeerslicht.kleur==verkeerslicht.groen) {
@@ -164,11 +163,7 @@ public:
                     }
                 }
             }
-
-
         }
-
-
     }
 
     std::vector<Baan> get_banen() const {
@@ -197,7 +192,16 @@ public:
         }
         return 0;
     }
+    void verhoogTijd() {
+        double oldTime = this->time;
+        double add = 0.0166;
+        set_Time(this->time+add);
+        std::cout << "tijd verhoogd: " << oldTime << "->" << this->time << std::endl;
+    }
 
+    void set_Time(double time) {
+        this->time = time;
+    }
 
     std::vector<Verkeerslicht> get_verkeerslichten() const {
         return verkeerslichten;
@@ -214,10 +218,6 @@ public:
     std::vector<Voertuig>& get_voertuigen() {
         return voertuigen;
     }
-    void verhoogTijd() {
-        time += 0.0166;
-;
-    }
 
     void set_voertuigen(const std::vector<Voertuig> &voertuigen) {
         this->voertuigen = voertuigen;
@@ -228,7 +228,6 @@ public:
     }
     void print() const {
         std::cout << "Tijd: " << time << std::endl;
-
         for (const auto& voertuig : voertuigen) {
             std::cout << "Voertuig " << voertuig.voertuigNummer << std::endl;
             std::cout << "-> baan: " << voertuig.baan << std::endl;
@@ -242,7 +241,7 @@ private:
     std::vector<Verkeerslicht> verkeerslichten;
     std::vector<Voertuig> voertuigen;
     std::vector<VoertuigGen> voertuigengen;
-    double time = 0.0166;
+    double time = 0.0;
 };
 
 TrafficSim readFile(const std::string inputfile) {
@@ -311,11 +310,14 @@ TrafficSim readFile(const std::string inputfile) {
 }
 int main() {
     TrafficSim traffic = readFile("test1.xml");
-    traffic.geldig(traffic.get_voertuigen()[0]);
-    // traffic.berekenVersnelling(traffic.get_voertuigen()[0]);
-    // traffic.berekenSnelheid(traffic.get_voertuigen()[0]);
-    // traffic.berekenVersnelling(traffic.get_voertuigen()[1]);
-    // traffic.berekenSnelheid(traffic.get_voertuigen()[1]);
-    // traffic.print();
+    for (auto& voertuig : traffic.get_voertuigen()) {
+        traffic.berekenVersnelling(voertuig);
+        traffic.berekenSnelheid(voertuig);
+        traffic.geldig(voertuig);
+    }
+    traffic.verhoogTijd();
+    for (auto& verkeerslicht : traffic.get_verkeerslichten())
+        traffic.verkeerslichtSim(verkeerslicht);
+    traffic.print();
     return 0;
 }
