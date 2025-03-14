@@ -16,6 +16,9 @@ struct Verkeerslicht {
     std::string baan;
     int positie = 0;
     int cyclus = 0;
+    std::string rood="rood";
+    std::string groen="groen";
+    std::string kleur;
 };
 
 struct Voertuig {
@@ -89,13 +92,9 @@ public:
         voertuig.snelheid = snelheid;
     }
 
-    void vertragenEnVersnellen(Voertuig& voertuig){
-        double s=voertuig.vertraagfactor;
+    void versnellen(Voertuig& voertuig){
         int indexLijst = voertuig.voertuigNummer - 1;
         if (indexLijst==0) {
-            voertuig.maxsnelheid=s*voertuig.Maxsnelheid;
-        }
-        else {
             int indexVoertuig2 = indexLijst - 1;
             if (indexVoertuig2 >= 0 && indexVoertuig2 < voertuigen.size()) {
                 Voertuig& voertuig2 = voertuigen[indexVoertuig2];
@@ -103,6 +102,16 @@ public:
             }
         }
     }
+
+    void vertragen(Voertuig& voertuig){
+        double s=voertuig.vertraagfactor;
+        int indexLijst = voertuig.voertuigNummer - 1;
+        if (indexLijst==0) {
+            voertuig.maxsnelheid=s*voertuig.Maxsnelheid;
+        }
+    }
+
+
     void stoppen(Voertuig& voertuig) {
         int indexLijst = voertuig.voertuigNummer - 1;
 
@@ -132,6 +141,36 @@ public:
             std::cout << "er gebeurt niks" << std::endl;
         }
     }
+
+    void verkeerslichtSim(Verkeerslicht verkeerslicht) {
+        if (time>verkeerslicht.cyclus) {
+            if (verkeerslicht.kleur==verkeerslicht.rood) {
+                verkeerslicht.kleur=verkeerslicht.groen;
+                if (verkeerslicht.kleur==verkeerslicht.groen) {
+                    for (auto& voertuig : voertuigen) {
+                        versnellen( voertuig);
+                    }
+
+                }
+            }
+            if (verkeerslicht.kleur==verkeerslicht.groen) {
+                verkeerslicht.kleur=verkeerslicht.rood;
+                if (verkeerslicht.kleur==verkeerslicht.rood) {
+                    if (voertuigen[0].positie<=voertuigen[0].vertraagafstand ) {
+                        vertragen(voertuigen[0]);
+                    } else if (voertuigen[0].positie<=voertuigen[0].vertraagafstand/2) {
+                        stoppen(voertuigen[0]);
+
+                    }
+                }
+            }
+
+
+        }
+
+
+    }
+
     std::vector<Baan> get_banen() const {
         return banen;
     }
