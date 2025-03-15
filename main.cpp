@@ -319,5 +319,6 @@ int main() {
     for (auto& verkeerslicht : traffic.get_verkeerslichten())
         traffic.verkeerslichtSim(verkeerslicht);
     traffic.print();
+    std::cout << "nieuw woord" << std::endl;
     return 0;
 }
