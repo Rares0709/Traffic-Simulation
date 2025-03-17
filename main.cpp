@@ -11,7 +11,6 @@
 struct Baan {
     std::string naam;
     int lengte;
-    std::vector<double> autopos;
 };
 
 struct Verkeerslicht {
@@ -90,10 +89,6 @@ public:
             double versnelling = voertuig.maxversnelling*(1-pow(voertuig.snelheid/voertuig.maxsnelheid,4) - pow(delta,2));
             voertuig.versnelling = versnelling;
         }
-        std::cout << "positie: " << voertuig.positie << std::endl;
-        std::cout << "nummer: " << voertuig.voertuigNummer << std::endl;
-        std::cout << "snelheid: " << voertuig.snelheid << std::endl;
-        std::cout << "versnelling: " << voertuig.versnelling << std::endl;
     }
     void berekenSnelheid(Voertuig& voertuig) {
         double snelheid = voertuig.snelheid;
@@ -146,44 +141,25 @@ public:
             }
         }
     }
+
     void geldig(Voertuig& voertuig) {
-        if (voertuig.voertuigNummer == 1) {
-            int indexLijst = 0;
-            std::string baannaam = voertuig.baan;
-            int lengte = getBaanLengte(baannaam, banen);
-            if (lengte < 0) {
-                std::cout << "Bestaat niet." << std::endl;
+        int indexLijst = voertuig.voertuigNummer - 1;
+
+        std::string baannaam = voertuig.baan;
+        int lengte = getBaanLengte(baannaam, banen);
+        if (lengte < 0) {
+            std::cout << "Bestaat niet." << std::endl;
+        }
+        else if (voertuig.positie > lengte) {
+            if (voertuigen.size() > 1){
+                Voertuig& voertuig2 = voertuigen[indexLijst + 1];
+                voertuig2.voertuigNummer = voertuig.voertuigNummer;
             }
-            if (voertuig.positie > lengte) {
-                if (voertuigen.size() > 1){
-                    Voertuig& voertuig2 = voertuigen[indexLijst + 1];
-                    voertuig2.voertuigNummer = voertuig.voertuigNummer;
-                }
-                voertuigen.erase(voertuigen.begin()+indexLijst);
-                std::cout << "Voertuig weg van de baan" << std::endl;
-            }
-            else {
-                std::cout << "er gebeurt niks" << std::endl;
-            }
+            voertuigen.erase(voertuigen.begin()+indexLijst);
+            std::cout << "Voertuig weg van de baan" << std::endl;
         }
         else {
-            int indexLijst = voertuig.voertuigNummer - 1;
-            std::string baannaam = voertuig.baan;
-            int lengte = getBaanLengte(baannaam, banen);
-            if (lengte < 0) {
-                std::cout << "Bestaat niet." << std::endl;
-            }
-            if (voertuig.positie > lengte) {
-                if (voertuigen.size() > 1){
-                    Voertuig& voertuig2 = voertuigen[indexLijst + 1];
-                    voertuig2.voertuigNummer = voertuig.voertuigNummer;
-                }
-                voertuigen.erase(voertuigen.begin()+indexLijst);
-                std::cout << "Voertuig weg van de baan" << std::endl;
-            }
-            else {
-                std::cout << "er gebeurt niks" << std::endl;
-            }
+            std::cout << "er gebeurt niks" << std::endl;
         }
     }
 
