@@ -109,9 +109,9 @@ public:
     }
 
     void versnellen(Voertuig& voertuig){
-        int indexLijst = voertuig.voertuigNummer - 1;
-        if (indexLijst==0) {
-            int indexVoertuig2 = indexLijst - 1;
+        size_t indexLijst = voertuig.voertuigNummer - 1;
+        if (indexLijst == 0) {
+            size_t indexVoertuig2 = indexLijst - 1;
             if (indexVoertuig2 >= 0 && indexVoertuig2 < voertuigen.size()) {
                 Voertuig& voertuig2 = voertuigen[indexVoertuig2];
                 voertuig.maxsnelheid = voertuig2.Maxsnelheid;
@@ -129,12 +129,12 @@ public:
 
 
     void stoppen(Voertuig& voertuig) {
-        int indexLijst = voertuig.voertuigNummer - 1;
+        size_t indexLijst = voertuig.voertuigNummer - 1;
 
         if (indexLijst == 0) {
             voertuig.versnelling = - (voertuig.maxremfactor*voertuig.snelheid) / voertuig.maxsnelheid;
         } else {
-            int indexVoertuig2 = indexLijst - 1;
+            size_t indexVoertuig2 = indexLijst - 1;
             if (indexVoertuig2 >= 0 && indexVoertuig2 < voertuigen.size()) {
                 Voertuig& voertuig2 = voertuigen[indexVoertuig2];
                 voertuig.versnelling = voertuig2.versnelling;
