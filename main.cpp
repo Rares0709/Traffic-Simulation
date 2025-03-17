@@ -23,6 +23,25 @@ struct Verkeerslicht {
 };
 
 struct Voertuig {
+    Voertuig(const std::string &baan, int fmin, int lengte, double positie, double maxsnelheid, double maxversnelling,
+        double snelheid, double versnelling, double vertraagfactor, int vertraagafstand, int stopafstand,
+        int voertuig_nummer, double maxremfactor, double maxsnelheid1)
+        : baan(baan),
+          fmin(fmin),
+          lengte(lengte),
+          positie(positie),
+          Maxsnelheid(maxsnelheid),
+          maxversnelling(maxversnelling),
+          snelheid(snelheid),
+          versnelling(versnelling),
+          vertraagfactor(vertraagfactor),
+          vertraagafstand(vertraagafstand),
+          stopafstand(stopafstand),
+          voertuigNummer(voertuig_nummer),
+          maxremfactor(maxremfactor),
+          maxsnelheid(maxsnelheid1) {
+    }
+
     std::string baan;
     int fmin = 4;
     int lengte = 4;
