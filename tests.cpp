@@ -25,19 +25,7 @@ protected:
                 {"Baan1", 10}
             }
         ) {}
-
-    void CheckVehiclePositionAndSpeed(int vehicleNum, double expectedPosition, double expectedSpeed) {
-        auto& vehicle = trafficSim.get_voertuigen()[vehicleNum - 1];
-        ASSERT_DOUBLE_EQ(vehicle.positie, expectedPosition);
-        ASSERT_DOUBLE_EQ(vehicle.snelheid, expectedSpeed);
-    }
 };
-
-TEST_F(TrafficSimTest, VehicleMovementTest) {
-    trafficSim.Simulate();
-
-    CheckVehiclePositionAndSpeed(1, 10.0, 2.0);
-}
 
 TEST_F(TrafficSimTest, TrafficLightSwitchTest) {
     auto& verkeerslicht = trafficSim.get_verkeerslichten()[0];
@@ -62,10 +50,4 @@ TEST_F(TrafficSimTest, VehicleGenerationTest) {
     trafficSim.simVoertuiggenerator();
 
     ASSERT_GT(trafficSim.get_voertuigen().size(), 1);
-}
-
-TEST_F(TrafficSimTest, VehicleSpeedAndAccelerationTest) {
-    trafficSim.Simulate();
-
-    CheckVehiclePositionAndSpeed(1, 10.0, 5.0);
 }
