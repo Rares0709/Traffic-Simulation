@@ -50,6 +50,19 @@ struct VoertuigGen {
 
 class TrafficSim {
 public:
+    void Simulate() {
+        print();
+        while (!voertuigen.empty()) {
+            for (auto& voertuig : voertuigen) {
+                berekenSnelheid(voertuig);
+                berekenVersnelling(voertuig);
+                geldig(voertuig);
+            }
+            verhoogTijd();
+            for (auto& verkeerslicht : verkeerslichten)
+                verkeerslichtSim(verkeerslicht);
+        }
+    }
     TrafficSim(const std::vector<Baan> &banen, const std::vector<Verkeerslicht> &verkeerslichten,
         const std::vector<Voertuig> &voertuigen, const std::vector<VoertuigGen> &voertuigengen)
         : banen(banen),
@@ -64,7 +77,7 @@ public:
             Voertuig voertuig2 = voertuigen[indexVoertuig2];
             double volgafstand = voertuig2.positie - voertuig.positie - voertuig2.lengte;
             double snelheidsverschil = voertuig.snelheid - voertuig2.snelheid;
-            double delta = voertuig.fmin + std::max(0.0, voertuig.snelheid + ( (voertuig.snelheid * snelheidsverschil) / (2 * std::sqrt(voertuig.maxversnelling * voertuig.maxremfactor)))) / volgafstand;
+            double delta = (voertuig.fmin + std::max(0.0, voertuig.snelheid + ( (voertuig.snelheid * snelheidsverschil) / (2 * std::sqrt(voertuig.maxversnelling * voertuig.maxremfactor)))))/ volgafstand;
             double versnelling = voertuig.maxversnelling*(1-pow(voertuig.snelheid/voertuig.maxsnelheid,4) - pow(delta,2));
             voertuig.versnelling = versnelling;
         }
@@ -128,14 +141,19 @@ public:
 
     void geldig(Voertuig& voertuig) {
         int indexLijst = voertuig.voertuigNummer - 1;
+
         std::string baannaam = voertuig.baan;
         int lengte = getBaanLengte(baannaam, banen);
         if (lengte < 0) {
             std::cout << "Bestaat niet." << std::endl;
         }
         else if (voertuig.positie > lengte) {
+            if (voertuigen.size() > 1){
+                Voertuig& voertuig2 = voertuigen[indexLijst + 1];
+                voertuig2.voertuigNummer = voertuig.voertuigNummer;
+            }
             voertuigen.erase(voertuigen.begin()+indexLijst);
-            //std::cout << "Voertuig weg van de baan" << std::endl;
+            std::cout << "Voertuig weg van de baan" << std::endl;
         }
         else {
             std::cout << "er gebeurt niks" << std::endl;
@@ -310,15 +328,6 @@ TrafficSim readFile(const std::string inputfile) {
 }
 int main() {
     TrafficSim traffic = readFile("test1.xml");
-    for (auto& voertuig : traffic.get_voertuigen()) {
-        traffic.berekenVersnelling(voertuig);
-        traffic.berekenSnelheid(voertuig);
-        traffic.geldig(voertuig);
-    }
-    traffic.verhoogTijd();
-    for (auto& verkeerslicht : traffic.get_verkeerslichten())
-        traffic.verkeerslichtSim(verkeerslicht);
-    traffic.print();
-    std::cout << "nieuw woord" << std::endl;
+    traffic.Simulate();
     return 0;
 }
