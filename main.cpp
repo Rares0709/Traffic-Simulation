@@ -5,6 +5,7 @@
 #include "main.h"
 #include <cmath>
 #include <vector>
+#include <map>
 
 
 struct Baan {
@@ -62,6 +63,8 @@ public:
             for (auto& verkeerslicht : verkeerslichten)
                 verkeerslichtSim(verkeerslicht);
         }
+        void simVoertuiggenerator();
+
     }
     TrafficSim(const std::vector<Baan> &banen, const std::vector<Verkeerslicht> &verkeerslichten,
         const std::vector<Voertuig> &voertuigen, const std::vector<VoertuigGen> &voertuigengen)
@@ -183,6 +186,29 @@ public:
             }
         }
     }
+    void simVoertuiggenerator(){
+        for (auto& generator : voertuigengen) {
+            if (time  > generator.freq) {
+                // bool vrij = true;
+                for (const auto& voertuig : voertuigen) {
+                    if (voertuig.baan == generator.baan && voertuig.positie <= 2 * voertuig.lengte) {
+                        // vrij = false;
+                        break;
+                    }
+                    Voertuig nieuwVoertuig;
+                    nieuwVoertuig.baan = generator.baan;
+                    nieuwVoertuig.positie = 0;
+                    voertuigen.push_back(nieuwVoertuig);
+                    std::cout << "Nieuw voertuig toegevoegd op baan " << generator.baan << std::endl;
+
+                }
+            }
+    }
+}
+
+
+
+
 
     std::vector<Baan> get_banen() const {
         return banen;
