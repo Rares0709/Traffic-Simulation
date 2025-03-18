@@ -6,7 +6,6 @@ set(CMAKE_CXX_FLAGS "-Wall -Werror -O2")
 set(CMAKE_EXE_LINKER_FLAGS -pthread)
 
 include_directories(../gtest/include)
-
 link_directories(../gtest/lib)
 
 set(RELEASE_SOURCE_FILES main.cpp
@@ -27,7 +26,12 @@ set(DEBUG_SOURCE_FILES main.cpp
         tests.cpp)
 
 add_executable(Traffic-Simulation ${RELEASE_SOURCE_FILES})
-
 add_executable(TS ${DEBUG_SOURCE_FILES})
 
 target_link_libraries(TS gtest)
+
+add_custom_target(clean-all
+        COMMAND ${CMAKE_MAKE_PROGRAM} clean
+        COMMAND ${CMAKE_COMMAND} -E rm -rf doc/html
+        COMMENT "Cleaning project and removing Doxygen documentation"
+)

@@ -7,7 +7,6 @@
 #include <vector>
 #include <map>
 
-
 struct Baan {
     std::string naam;
     int lengte;
@@ -30,7 +29,7 @@ struct Voertuig {
           fmin(fmin),
           lengte(lengte),
           positie(positie),
-          Maxsnelheid(maxsnelheid),
+          mMaxsnelheid(maxsnelheid),
           maxversnelling(maxversnelling),
           snelheid(snelheid),
           versnelling(versnelling),
@@ -46,7 +45,7 @@ struct Voertuig {
     int fmin = 4;
     int lengte = 4;
     double positie = 0;
-    double Maxsnelheid = 16.6;
+    double mMaxsnelheid = 16.6;
     double maxversnelling = 1.44;
     double snelheid = 0;
     double versnelling = 0;
@@ -70,6 +69,9 @@ struct VoertuigGen {
 
 class TrafficSim {
 public:
+    /*
+     * Simuleert de verkeerssituatie door alle voertuigen te verwerken en de tijd te verhogen.
+     */
     void Simulate() {
         print();
         while (!voertuigen.empty()) {
@@ -128,12 +130,12 @@ public:
     }
 
     void versnellen(Voertuig& voertuig){
-        size_t indexLijst = voertuig.voertuigNummer - 1;
+        int indexLijst = voertuig.voertuigNummer - 1;
         if (indexLijst == 0) {
             size_t indexVoertuig2 = indexLijst - 1;
             if (indexVoertuig2 >= 0 && indexVoertuig2 < voertuigen.size()) {
                 Voertuig& voertuig2 = voertuigen[indexVoertuig2];
-                voertuig.maxsnelheid = voertuig2.Maxsnelheid;
+                voertuig.maxsnelheid = voertuig2.mMaxsnelheid;
             }
         }
     }
@@ -142,13 +144,13 @@ public:
         double s=voertuig.vertraagfactor;
         int indexLijst = voertuig.voertuigNummer - 1;
         if (indexLijst==0) {
-            voertuig.maxsnelheid=s*voertuig.Maxsnelheid;
+            voertuig.maxsnelheid=s*voertuig.mMaxsnelheid;
         }
     }
 
 
     void stoppen(Voertuig& voertuig) {
-        size_t indexLijst = voertuig.voertuigNummer - 1;
+        int indexLijst = voertuig.voertuigNummer - 1;
 
         if (indexLijst == 0) {
             voertuig.versnelling = - (voertuig.maxremfactor*voertuig.snelheid) / voertuig.maxsnelheid;
@@ -224,19 +226,13 @@ public:
             }
     }
 }
-
-
-
-
-
     std::vector<Baan> get_banen() const {
         return banen;
     }
 
-    void set_banen(const std::vector<Baan> &banen) {
+    void setBanen(const std::vector<Baan> &banen) {
         this->banen = banen;
     }
-
 
     void voegbaantoe(Baan baan) {
         this->banen.push_back(baan);
@@ -258,19 +254,19 @@ public:
     void verhoogTijd() {
         double oldTime = this->time;
         double add = 0.0166;
-        set_Time(this->time+add);
+        setTime(this->time+add);
         std::cout << "tijd verhoogd: " << oldTime << "->" << this->time << std::endl;
     }
 
-    void set_Time(double time) {
+    void setTime(double time) {
         this->time = time;
     }
 
-    std::vector<Verkeerslicht> get_verkeerslichten() const {
+    std::vector<Verkeerslicht> getVerkeerslichten() const {
         return verkeerslichten;
     }
 
-    void set_verkeerslichten(const std::vector<Verkeerslicht> &verkeerslichten) {
+    void setVerkeerslichten(const std::vector<Verkeerslicht> &verkeerslichten) {
         this->verkeerslichten = verkeerslichten;
     }
 
@@ -278,11 +274,11 @@ public:
         this->verkeerslichten.push_back(licht);
     }
 
-    std::vector<Voertuig>& get_voertuigen() {
+    std::vector<Voertuig>& getVoertuigen() {
         return voertuigen;
     }
 
-    void set_voertuigen(const std::vector<Voertuig> &voertuigen) {
+    void setVoertuigen(const std::vector<Voertuig> &voertuigen) {
         this->voertuigen = voertuigen;
     }
 
