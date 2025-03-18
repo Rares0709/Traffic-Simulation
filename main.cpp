@@ -5,7 +5,7 @@
 #include "main.h"
 #include <cmath>
 #include <vector>
-#include <map>
+
 
 struct Baan {
     std::string naam;
@@ -69,8 +69,13 @@ struct VoertuigGen {
 
 class TrafficSim {
 public:
-    /*
+    /**
      * Deze functuie simuleert de verkeerssituatie door alle voertuigen te verwerken en de tijd te verhogen.
+     */
+    /**
+     *@author Jonas Saelens
+     *@date /
+     *@version
      */
     void Simulate() {
         print();
@@ -94,9 +99,15 @@ public:
           voertuigen(voertuigen),
           voertuigengen(voertuigengen) {
     }
-    /*
+    /**
      * Deze functie berekent de versnelling van het voertuig.
      * @param voertuig is het voertuig.
+     */
+    /**
+     *@author Ilyas Sefiani
+     *@author Rares Grama
+     *@date /
+     *@version
      */
     void berekenVersnelling(Voertuig& voertuig) {
         int indexLijst = voertuig.voertuigNummer - 1;
@@ -115,9 +126,15 @@ public:
             voertuig.versnelling = versnelling;
         }
     }
-    /*
+    /**
      * Deze functie berekent de snelheid van het voertuig.
      * @param voertuig is het voertuig.
+     */
+    /**
+     *@author Ilyas Sefiani
+     *@author Rares Grama
+     *@date /
+     *@version
      */
     void berekenSnelheid(Voertuig& voertuig) {
         double snelheid = voertuig.snelheid;
@@ -136,9 +153,14 @@ public:
         }
         voertuig.snelheid = snelheid;
     }
-    /*
+    /**
      * Deze functie berekent hoe het voertuig kan versnellen.
      * @param voertuig is het voertuig.
+     */
+    /**
+     *@author Rares Grama
+     *@date /
+     *@version
      */
     void versnellen(Voertuig& voertuig){
         int indexLijst = voertuig.voertuigNummer - 1;
@@ -150,9 +172,14 @@ public:
             }
         }
     }
-    /*
+    /**
      * Deze functie berekent hoe het voertuig kan vertragen.
      * @param voertuig is het voertuig.
+     */
+    /**
+     *@author Rares Grama
+     *@date /
+     *@version
      */
     void vertragen(Voertuig& voertuig){
         double s=voertuig.vertraagfactor;
@@ -161,9 +188,15 @@ public:
             voertuig.maxsnelheid=s*voertuig.mMaxsnelheid;
         }
     }
-    /*
+    /**
      * Deze functie berekent hoe het voertuig kan stoppen.
      * @param voertuig is het voertuig.
+     */
+    /**
+     *@author Rares Grama
+     *@author
+     *@date /
+     *@version
      */
     void stoppen(Voertuig& voertuig) {
         int indexLijst = voertuig.voertuigNummer - 1;
@@ -178,9 +211,15 @@ public:
             }
         }
     }
-    /*
+    /**
      * Deze functie bekijkt of het voertuig in zijn baan mag blijven..
      * @param voertuig is het voertuig.
+     */
+    /**
+     *@author Ilyas Sefiani
+     *@author Jonas Saelens
+     *@date /
+     *@version
      */
     void geldig(Voertuig& voertuig) {
         int indexLijst = voertuig.voertuigNummer - 1;
@@ -202,9 +241,15 @@ public:
             std::cout << "er gebeurt niks" << std::endl;
         }
     }
-    /*
-     * Deze functie berekent hoe het voertuig kan vertragen.
-     * @param voertuig is het voertuig.
+    /**
+     * Deze functie zorgt ervoor wat de auto's doen op basis van de cyclus van het verkeerslicht..
+     * @param verkeerslicht is het voertuig.
+     */
+    /**
+     *@author Rares Grama
+     *@author Ilyas Sefiani
+     *@date /
+     *@version
      */
     void verkeerslichtSim(Verkeerslicht verkeerslicht) {
         if (time>verkeerslicht.cyclus) {
@@ -229,8 +274,13 @@ public:
             }
         }
     }
-    /*
+    /**
      * Deze functie genereert voertuigen.
+     */
+    /**
+     *@author Rares Grama
+     *@date /
+     *@version
      */
     void simVoertuiggenerator(){
         for (auto& generator : voertuigengen) {
@@ -268,11 +318,16 @@ public:
     int getSnelheid(Voertuig voertuig) {
         return voertuig.snelheid;
     }
-    /*
+    /**
      * Deze functie geeft de lengte van de baan weer waarop het voertuig rijdt.
      * @param baannaam is de naam van de baan.
      * @param banen is de verzameling van alle banen.
      */
+    /**
+    *@author Ilyas Sefiani
+    *@date /
+    *@version
+    */
     int getBaanLengte(std::string & baannaam, std:: vector<Baan>&banen) {
         for (Baan& b : banen) {
             if (b.naam == baannaam) {
@@ -281,9 +336,14 @@ public:
         }
         return 0;
     }
-    /*
+    /**
      * Deze functie verhoogt de tijd.
      */
+    /**
+    *@author Ilyas Sefiani
+    *@date /
+    *@version
+    */
     void verhoogTijd() {
         double oldTime = this->time;
         double add = 0.0166;
@@ -318,6 +378,14 @@ public:
     void voegvoertuigtoe(Voertuig voertuig) {
         this->voertuigen.push_back(voertuig);
     }
+    /**
+     * Deze functie print uit wat er moet gedaan worden in 2.1
+     */
+    /**
+    *@author Jonas Saelens
+    *@date /
+    *@version /
+    */
     void print() const {
         std::cout << "Tijd: " << time << std::endl;
         for (const auto& voertuig : voertuigen) {
@@ -335,7 +403,16 @@ private:
     std::vector<VoertuigGen> voertuigengen;
     double time = 0.0;
 };
-
+    /**
+     * Deze functie print uit wat er moet gedaan worden in 2.1
+     * @param inputfile is de XML die wordt ingelezen om alle variabelen te verkrijgen
+     * waarmee we gaan werken.
+     */
+   /**
+    *@author Jonas Saelens
+    *@date /
+    *@version
+    */
 TrafficSim readFile(const std::string inputfile) {
     TiXmlDocument doc;
 
@@ -400,6 +477,14 @@ TrafficSim readFile(const std::string inputfile) {
     doc.Clear();
     return TrafficSim(banen, verkeerslichten, voertuigen, voertuigengen);
 }
+    /**
+     * Dit is de main. Hier roepen we de functie aan die alles op gang zet.
+     */
+    /**
+     *@author allemaal
+     *@date /
+     *@version /
+     */
 int main() {
     TrafficSim traffic = readFile("test1.xml");
     traffic.Simulate();
