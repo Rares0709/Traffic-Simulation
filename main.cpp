@@ -70,7 +70,7 @@ struct VoertuigGen {
 class TrafficSim {
 public:
     /*
-     * Simuleert de verkeerssituatie door alle voertuigen te verwerken en de tijd te verhogen.
+     * Deze functuie simuleert de verkeerssituatie door alle voertuigen te verwerken en de tijd te verhogen.
      */
     void Simulate() {
         print();
@@ -94,6 +94,10 @@ public:
           voertuigen(voertuigen),
           voertuigengen(voertuigengen) {
     }
+    /*
+     * Deze functie berekent de versnelling van het voertuig.
+     * @param voertuig is het voertuig.
+     */
     void berekenVersnelling(Voertuig& voertuig) {
         int indexLijst = voertuig.voertuigNummer - 1;
         if (indexLijst > 0) {
@@ -111,6 +115,10 @@ public:
             voertuig.versnelling = versnelling;
         }
     }
+    /*
+     * Deze functie berekent de snelheid van het voertuig.
+     * @param voertuig is het voertuig.
+     */
     void berekenSnelheid(Voertuig& voertuig) {
         double snelheid = voertuig.snelheid;
         double versnelling = voertuig.versnelling;
@@ -128,7 +136,10 @@ public:
         }
         voertuig.snelheid = snelheid;
     }
-
+    /*
+     * Deze functie berekent hoe het voertuig kan versnellen.
+     * @param voertuig is het voertuig.
+     */
     void versnellen(Voertuig& voertuig){
         int indexLijst = voertuig.voertuigNummer - 1;
         if (indexLijst == 0) {
@@ -139,7 +150,10 @@ public:
             }
         }
     }
-
+    /*
+     * Deze functie berekent hoe het voertuig kan vertragen.
+     * @param voertuig is het voertuig.
+     */
     void vertragen(Voertuig& voertuig){
         double s=voertuig.vertraagfactor;
         int indexLijst = voertuig.voertuigNummer - 1;
@@ -147,8 +161,10 @@ public:
             voertuig.maxsnelheid=s*voertuig.mMaxsnelheid;
         }
     }
-
-
+    /*
+     * Deze functie berekent hoe het voertuig kan stoppen.
+     * @param voertuig is het voertuig.
+     */
     void stoppen(Voertuig& voertuig) {
         int indexLijst = voertuig.voertuigNummer - 1;
 
@@ -162,7 +178,10 @@ public:
             }
         }
     }
-
+    /*
+     * Deze functie bekijkt of het voertuig in zijn baan mag blijven..
+     * @param voertuig is het voertuig.
+     */
     void geldig(Voertuig& voertuig) {
         int indexLijst = voertuig.voertuigNummer - 1;
 
@@ -183,7 +202,10 @@ public:
             std::cout << "er gebeurt niks" << std::endl;
         }
     }
-
+    /*
+     * Deze functie berekent hoe het voertuig kan vertragen.
+     * @param voertuig is het voertuig.
+     */
     void verkeerslichtSim(Verkeerslicht verkeerslicht) {
         if (time>verkeerslicht.cyclus) {
             if (verkeerslicht.kleur==verkeerslicht.rood) {
@@ -207,6 +229,9 @@ public:
             }
         }
     }
+    /*
+     * Deze functie genereert voertuigen.
+     */
     void simVoertuiggenerator(){
         for (auto& generator : voertuigengen) {
             if (time  > generator.freq) {
@@ -243,6 +268,11 @@ public:
     int getSnelheid(Voertuig voertuig) {
         return voertuig.snelheid;
     }
+    /*
+     * Deze functie geeft de lengte van de baan weer waarop het voertuig rijdt.
+     * @param baannaam is de naam van de baan.
+     * @param banen is de verzameling van alle banen.
+     */
     int getBaanLengte(std::string & baannaam, std:: vector<Baan>&banen) {
         for (Baan& b : banen) {
             if (b.naam == baannaam) {
@@ -251,6 +281,9 @@ public:
         }
         return 0;
     }
+    /*
+     * Deze functie verhoogt de tijd.
+     */
     void verhoogTijd() {
         double oldTime = this->time;
         double add = 0.0166;
