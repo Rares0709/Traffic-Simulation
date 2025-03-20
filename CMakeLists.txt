@@ -23,10 +23,10 @@ set(RELEASE_SOURCE_FILES src/main.cpp
         src/tinyxml.h
         src/tinyxml.cpp
         src/tinyxmlparser.cpp
-        src/TrafficSimulator.cpp
-        src/TrafficSimulator.h
         src/ParseFile.cpp
-        src/ParseFile.h)
+        src/ParseFile.h
+        src/TrafficSimulation.cpp
+        src/TrafficSimulation.h)
 
 set(DEBUG_SOURCE_FILES src/main.cpp
         src/tinystr.cpp
@@ -36,10 +36,10 @@ set(DEBUG_SOURCE_FILES src/main.cpp
         src/tinyxml.cpp
         src/tinyxmlparser.cpp
         src/tests.cpp
-        src/TrafficSimulator.cpp
-        src/TrafficSimulator.h
         src/ParseFile.cpp
-        src/ParseFile.h)
+        src/ParseFile.h
+        src/TrafficSimulation.cpp
+        src/TrafficSimulation.h)
 
 add_executable(Traffic-Simulation ${RELEASE_SOURCE_FILES})
 add_executable(TS ${DEBUG_SOURCE_FILES})
