@@ -28,7 +28,7 @@ protected:
 };
 
 TEST_F(TrafficSimTest, TrafficLightSwitchTest) {
-    auto& verkeerslicht = trafficSim.get_verkeerslichten()[0];
+    auto& verkeerslicht = trafficSim.getVerkeerslichten()[0];
 
     ASSERT_EQ(verkeerslicht.kleur, "rood");
 
@@ -43,11 +43,11 @@ TEST_F(TrafficSimTest, TrafficLightSwitchTest) {
 TEST_F(TrafficSimTest, VehicleRemovalTest) {
     trafficSim.Simulate();
 
-    ASSERT_TRUE(trafficSim.get_voertuigen().empty());
+    ASSERT_TRUE(trafficSim.getVoertuigen().empty());
 }
 
 TEST_F(TrafficSimTest, VehicleGenerationTest) {
     trafficSim.simVoertuiggenerator();
 
-    ASSERT_GT(trafficSim.get_voertuigen().size(), 1);
+    ASSERT_GT(trafficSim.getVoertuigen().size(), 1);
 }
