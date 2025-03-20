@@ -6,11 +6,9 @@ set(CMAKE_CXX_FLAGS "-Wall -Werror -O2")
 set(CMAKE_EXE_LINKER_FLAGS -pthread)
 
 if(WIN32)
-    # For Windows, use single './' in the path
     set(GTEST_INCLUDE_DIRS ./gtest/include)
     set(GTEST_LIB_DIRS ./gtest/lib)
 else()
-    # For Linux (or other Unix-like systems), use '../'
     set(GTEST_INCLUDE_DIRS ../gtest/include)
     set(GTEST_LIB_DIRS ../gtest/lib)
 endif()
