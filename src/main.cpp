@@ -486,7 +486,7 @@ TrafficSim parseFile(const std::string inputfile) {
      *@version /
      */
 int main() {
-    TrafficSim traffic = parseFile("test1.xml");
+    TrafficSim traffic = parseFile("test/test1.xml");
     traffic.Simulate();
     return 0;
 }

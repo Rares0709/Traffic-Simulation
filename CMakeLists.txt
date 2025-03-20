@@ -16,22 +16,22 @@ endif()
 include_directories(${GTEST_INCLUDE_DIRS})
 link_directories(${GTEST_LIB_DIRS})
 
-set(RELEASE_SOURCE_FILES main.cpp
-        tinystr.cpp
-        tinyxmlerror.cpp
-        tinystr.h
-        tinyxml.h
-        tinyxml.cpp
-        tinyxmlparser.cpp)
+set(RELEASE_SOURCE_FILES src/main.cpp
+        src/tinystr.cpp
+        src/tinyxmlerror.cpp
+        src/tinystr.h
+        src/tinyxml.h
+        src/tinyxml.cpp
+        src/tinyxmlparser.cpp)
 
-set(DEBUG_SOURCE_FILES main.cpp
-        tinystr.cpp
-        tinyxmlerror.cpp
-        tinystr.h
-        tinyxml.h
-        tinyxml.cpp
-        tinyxmlparser.cpp
-        tests.cpp)
+set(DEBUG_SOURCE_FILES src/main.cpp
+        src/tinystr.cpp
+        src/tinyxmlerror.cpp
+        src/tinystr.h
+        src/tinyxml.h
+        src/tinyxml.cpp
+        src/tinyxmlparser.cpp
+        src/tests.cpp)
 
 add_executable(Traffic-Simulation ${RELEASE_SOURCE_FILES})
 add_executable(TS ${DEBUG_SOURCE_FILES})

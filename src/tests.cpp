@@ -51,3 +51,8 @@ TEST_F(TrafficSimTest, VehicleRemovalTest) {
 
     ASSERT_GT(trafficSim.getVoertuigen().size(), 1);
 }*/
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+}
