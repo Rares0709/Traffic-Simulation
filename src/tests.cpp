@@ -3,7 +3,7 @@
 //
 
 #include <gtest/gtest.h>
-#include "main.cpp"
+#include "TrafficSimulation.h"
 
 class TrafficSimTest : public ::testing::Test {
 protected:

@@ -28,14 +28,13 @@ set(RELEASE_SOURCE_FILES src/main.cpp
         src/TrafficSimulation.cpp
         src/TrafficSimulation.h)
 
-set(DEBUG_SOURCE_FILES src/main.cpp
+set(DEBUG_SOURCE_FILES src/tests.cpp
         src/tinystr.cpp
         src/tinyxmlerror.cpp
         src/tinystr.h
         src/tinyxml.h
         src/tinyxml.cpp
         src/tinyxmlparser.cpp
-        src/tests.cpp
         src/ParseFile.cpp
         src/ParseFile.h
         src/TrafficSimulation.cpp
