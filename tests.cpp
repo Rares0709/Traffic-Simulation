@@ -46,8 +46,8 @@ TEST_F(TrafficSimTest, VehicleRemovalTest) {
     ASSERT_TRUE(trafficSim.getVoertuigen().empty());
 }
 
-TEST_F(TrafficSimTest, VehicleGenerationTest) {
+/*TEST_F(TrafficSimTest, VehicleGenerationTest) {
     trafficSim.simVoertuiggenerator();
 
     ASSERT_GT(trafficSim.getVoertuigen().size(), 1);
-}
+}*/

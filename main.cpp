@@ -413,7 +413,7 @@ private:
     *@date /
     *@version
     */
-TrafficSim readFile(const std::string inputfile) {
+TrafficSim parseFile(const std::string inputfile) {
     TiXmlDocument doc;
 
     std::vector<Baan> banen;
@@ -486,7 +486,7 @@ TrafficSim readFile(const std::string inputfile) {
      *@version /
      */
 int main() {
-    TrafficSim traffic = readFile("test1.xml");
+    TrafficSim traffic = parseFile("test1.xml");
     traffic.Simulate();
     return 0;
 }
