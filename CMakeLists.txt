@@ -26,7 +26,9 @@ set(RELEASE_SOURCE_FILES src/main.cpp
         src/ParseFile.cpp
         src/ParseFile.h
         src/TrafficSimulation.cpp
-        src/TrafficSimulation.h)
+        src/TrafficSimulation.h
+        src/structs.cpp
+        src/structs.h)
 
 set(DEBUG_SOURCE_FILES src/tests.cpp
         src/tinystr.cpp
@@ -38,7 +40,9 @@ set(DEBUG_SOURCE_FILES src/tests.cpp
         src/ParseFile.cpp
         src/ParseFile.h
         src/TrafficSimulation.cpp
-        src/TrafficSimulation.h)
+        src/TrafficSimulation.h
+        src/structs.cpp
+        src/structs.h)
 
 add_executable(Traffic-Simulation ${RELEASE_SOURCE_FILES})
 add_executable(TS ${DEBUG_SOURCE_FILES})
