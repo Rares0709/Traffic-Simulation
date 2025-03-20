@@ -5,6 +5,8 @@
 #include <gtest/gtest.h>
 #include "TrafficSimulation.h"
 
+int Voertuig::volgendeNummer = 1;
+
 class TrafficSimTest : public ::testing::Test {
 protected:
     TrafficSim trafficSim;
