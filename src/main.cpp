@@ -3,9 +3,6 @@
 //
 
 #include "main.h"
-#include <cmath>
-#include <vector>
-#include "TrafficSimulation.h"
 #include "ParseFile.h"
 
 int main() {

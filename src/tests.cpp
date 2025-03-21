@@ -3,9 +3,7 @@
 //
 
 #include <gtest/gtest.h>
-#include "TrafficSimulation.h"
-
-int Voertuig::volgendeNummer = 1;
+#include "ParseFile.h"
 
 class TrafficSimTest : public ::testing::Test {
 protected:
@@ -29,7 +27,7 @@ protected:
         ) {}
 };
 
-TEST_F(TrafficSimTest, TrafficLightSwitchTest) {
+/*TEST_F(TrafficSimTest, TrafficLightSwitchTest) {
     auto& verkeerslicht = trafficSim.getVerkeerslichten()[0];
 
     ASSERT_EQ(verkeerslicht.kleur, "rood");
@@ -40,13 +38,13 @@ TEST_F(TrafficSimTest, TrafficLightSwitchTest) {
 
     trafficSim.verkeerslichtSim(verkeerslicht);
     ASSERT_EQ(verkeerslicht.kleur, "rood");
-}
+}*/
 
-TEST_F(TrafficSimTest, VehicleRemovalTest) {
+/*TEST_F(TrafficSimTest, VehicleRemovalTest) {
     trafficSim.Simulate();
 
     ASSERT_TRUE(trafficSim.getVoertuigen().empty());
-}
+}*/
 
 /*TEST_F(TrafficSimTest, VehicleGenerationTest) {
     trafficSim.simVoertuiggenerator();

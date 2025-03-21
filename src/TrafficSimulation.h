@@ -7,7 +7,6 @@
 
 #include <iostream>
 #include <fstream>
-#include "tinyxml.h"
 #include "structs.h"
 #include <vector>
 #include <cmath>

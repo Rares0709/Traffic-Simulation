@@ -4,8 +4,8 @@
 
 #include "TrafficSimulation.h"
 void TrafficSim::Simulate() {
-    print();
     while (!voertuigen.empty()) {
+        print();
         for (auto& voertuig : voertuigen) {
             berekenSnelheid(voertuig);
             berekenVersnelling(voertuig);
