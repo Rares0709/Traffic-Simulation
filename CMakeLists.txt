@@ -7,7 +7,7 @@ set(CMAKE_EXE_LINKER_FLAGS -pthread)
 
 if(WIN32)
     set(GTEST_INCLUDE_DIRS ./gtest/include)
-    set(GTEST_LIB_DIRS ./gtest/lib)
+    set(GTEST_LIB_DIRS ./gtest/libwin)
 else()
     set(GTEST_INCLUDE_DIRS ../gtest/include)
     set(GTEST_LIB_DIRS ../gtest/lib)
