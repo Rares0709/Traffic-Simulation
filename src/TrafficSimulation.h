@@ -104,7 +104,7 @@ public:
      *@date /
      *@version
      */
-    void verkeerslichtSim(Verkeerslicht verkeerslicht);
+    void verkeerslichtSim(Verkeerslicht &verkeerslicht);
     /**
      * Deze functie genereert voertuigen.
      */

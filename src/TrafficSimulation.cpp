@@ -101,10 +101,10 @@ void TrafficSim::geldig(Voertuig &voertuig) {
         std::cout << "er gebeurt niks" << std::endl;
     }
 }
-void TrafficSim::verkeerslichtSim(Verkeerslicht verkeerslicht) {
+void TrafficSim::verkeerslichtSim(Verkeerslicht &verkeerslicht) {
     if (time>verkeerslicht.cyclus) {
         if (verkeerslicht.kleur==verkeerslicht.rood) {
-            verkeerslicht.kleur=verkeerslicht.groen;
+            verkeerslicht.kleur="groen";
             if (verkeerslicht.kleur==verkeerslicht.groen) {
                 for (auto& voertuig : voertuigen) {
                     versnellen( voertuig);
@@ -112,7 +112,7 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht verkeerslicht) {
             }
         }
         if (verkeerslicht.kleur==verkeerslicht.groen) {
-            verkeerslicht.kleur=verkeerslicht.rood;
+            verkeerslicht.kleur="rood";
             if (verkeerslicht.kleur==verkeerslicht.rood) {
                 if (voertuigen[0].positie<=voertuigen[0].vertraagafstand ) {
                     vertragen(voertuigen[0]);

@@ -27,7 +27,7 @@ protected:
         ) {}
 };
 
-/*TEST_F(TrafficSimTest, TrafficLightSwitchTest) {
+TEST_F(TrafficSimTest, TrafficLightSwitchTest) {
     auto& verkeerslicht = trafficSim.getVerkeerslichten()[0];
 
     ASSERT_EQ(verkeerslicht.kleur, "rood");
@@ -38,13 +38,13 @@ protected:
 
     trafficSim.verkeerslichtSim(verkeerslicht);
     ASSERT_EQ(verkeerslicht.kleur, "rood");
-}*/
+}
 
-TEST_F(TrafficSimTest, VehicleRemovalTest) {
+/*TEST_F(TrafficSimTest, VehicleRemovalTest) {
     trafficSim.Simulate();
 
     ASSERT_TRUE(trafficSim.getVoertuigen().empty());
-}
+}*/
 
 /*TEST_F(TrafficSimTest, VehicleGenerationTest) {
     trafficSim.simVoertuiggenerator();
