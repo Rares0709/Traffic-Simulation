@@ -40,11 +40,11 @@ protected:
     ASSERT_EQ(verkeerslicht.kleur, "rood");
 }*/
 
-/*TEST_F(TrafficSimTest, VehicleRemovalTest) {
+TEST_F(TrafficSimTest, VehicleRemovalTest) {
     trafficSim.Simulate();
 
     ASSERT_TRUE(trafficSim.getVoertuigen().empty());
-}*/
+}
 
 /*TEST_F(TrafficSimTest, VehicleGenerationTest) {
     trafficSim.simVoertuiggenerator();
