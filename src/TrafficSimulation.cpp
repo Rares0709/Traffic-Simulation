@@ -119,7 +119,7 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht&verkeerslicht) {
                 }
             }
         }
-        if (verkeerslicht.kleur==verkeerslicht.groen) {
+        else if (verkeerslicht.kleur==verkeerslicht.groen) {
             verkeerslicht.kleur="rood";
             if (verkeerslicht.kleur==verkeerslicht.rood) {
                 if (voertuigen[0].positie<=voertuigen[0].vertraagafstand ) {
@@ -130,7 +130,7 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht&verkeerslicht) {
             }
         }
     }
-    std::cout << "kleur: --> " << verkeerslicht.kleur << std::endl;
+    // std::cout << "kleur: --> " << verkeerslicht.kleur << std::endl;
 }
 void TrafficSim::simVoertuiggenerator() {
     for (auto& generator : voertuigengen) {

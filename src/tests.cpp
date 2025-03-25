@@ -16,7 +16,7 @@ protected:
                 {"Baan2", 150}
             },
             {
-                {"Baan1", 50, 30, "rood", "groen", "rood"}
+                {"Baan1", 50, 25, "rood", "groen", "rood"}
             },
             {
                 {"Baan1", 4, 4, 0, 16.6, 1.44, 0, 0, 0.4, 50, 15, 1, 4.61, 16.6}
@@ -25,6 +25,9 @@ protected:
                 {"Baan1", 10}
             }
         ) {}
+    virtual void SetUp() {
+        trafficSim.setTime(30.0);
+    }
 };
 
 TEST_F(TrafficSimTest, TrafficLightSwitchTest) {
@@ -40,11 +43,11 @@ TEST_F(TrafficSimTest, TrafficLightSwitchTest) {
     ASSERT_EQ(verkeerslicht.kleur, "rood");
 }
 
-/*TEST_F(TrafficSimTest, VehicleRemovalTest) {
+TEST_F(TrafficSimTest, VehicleRemovalTest) {
     trafficSim.Simulate();
 
     ASSERT_TRUE(trafficSim.getVoertuigen().empty());
-}*/
+}
 
 /*TEST_F(TrafficSimTest, VehicleGenerationTest) {
     trafficSim.simVoertuiggenerator();

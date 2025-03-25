@@ -18,7 +18,7 @@ struct Verkeerslicht {
     int cyclus = 0;
     std::string rood="rood";
     std::string groen="groen";
-    std::string kleur="groen";
+    std::string kleur="rood";
 };
 
 struct Voertuig {
