@@ -12,8 +12,13 @@ void TrafficSim::Simulate() {
             geldig(voertuig);
         }
         verhoogTijd();
-        for (auto& verkeerslicht : verkeerslichten)
-            verkeerslichtSim(verkeerslicht);
+        if (!verkeerslichten.empty()) {
+            std::cout << verkeerslichten.size() << std::endl;
+            for (auto& verkeerslicht : verkeerslichten)
+                verkeerslichtSim(verkeerslicht);
+        } else {
+            std::cout << "Geen verkeerslichten beschikbaar!" << std::endl;
+        }
     }
     void simVoertuiggenerator();
 }
@@ -87,7 +92,7 @@ void TrafficSim::geldig(Voertuig &voertuig) {
     std::string baannaam = voertuig.baan;
     int lengte = getBaanLengte(baannaam, banen);
     if (lengte < 0) {
-        std::cout << "Bestaat niet." << std::endl;
+        /*std::cout << "Bestaat niet." << std::endl;*/
     }
     else if (voertuig.positie > lengte) {
         if (voertuigen.size() > 1){
@@ -95,14 +100,17 @@ void TrafficSim::geldig(Voertuig &voertuig) {
             voertuig2.voertuigNummer = voertuig.voertuigNummer;
         }
         voertuigen.erase(voertuigen.begin()+indexLijst);
-        std::cout << "Voertuig weg van de baan" << std::endl;
+        /*std::cout << "Voertuig weg van de baan" << std::endl;*/
     }
     else {
-        std::cout << "er gebeurt niks" << std::endl;
+        /*std::cout << "er gebeurt niks" << std::endl;*/
     }
 }
-void TrafficSim::verkeerslichtSim(Verkeerslicht &verkeerslicht) {
-    if (time>verkeerslicht.cyclus) {
+void TrafficSim::verkeerslichtSim(Verkeerslicht&verkeerslicht) {
+    std::cout << "Verkeerslicht op " << verkeerslicht.positie << " heeft kleur: " << verkeerslicht.kleur << std::endl;
+    int tijd = this->time;
+    std::cout << tijd << std::endl;
+    if (tijd>verkeerslicht.cyclus) {
         if (verkeerslicht.kleur==verkeerslicht.rood) {
             verkeerslicht.kleur="groen";
             if (verkeerslicht.kleur==verkeerslicht.groen) {
@@ -118,11 +126,11 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht &verkeerslicht) {
                     vertragen(voertuigen[0]);
                 } else if (voertuigen[0].positie<=voertuigen[0].vertraagafstand/2) {
                     stoppen(voertuigen[0]);
-
                 }
             }
         }
     }
+    std::cout << "kleur: --> " << verkeerslicht.kleur << std::endl;
 }
 void TrafficSim::simVoertuiggenerator() {
     for (auto& generator : voertuigengen) {
@@ -137,7 +145,7 @@ void TrafficSim::simVoertuiggenerator() {
                 nieuwVoertuig.baan = generator.baan;
                 nieuwVoertuig.positie = 0;
                 voertuigen.push_back(nieuwVoertuig);
-                std::cout << "Nieuw voertuig toegevoegd op baan " << generator.baan << std::endl;
+                /*std::cout << "Nieuw voertuig toegevoegd op baan " << generator.baan << std::endl;*/
 
             }
         }
@@ -153,7 +161,7 @@ int TrafficSim::getBaanLengte(std::string &baannaam, std::vector<Baan> &banen) {
 }
 void TrafficSim::verhoogTijd() {
     double oldTime = this->time;
-    double add = 0.0166;
+    double add = 25;
     setTime(this->time+add);
     std::cout << "tijd verhoogd: " << oldTime << "->" << this->time << std::endl;
 }

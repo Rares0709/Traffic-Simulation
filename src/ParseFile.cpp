@@ -50,7 +50,7 @@ TrafficSim parseFile(const std::string inputfile) {
                 if (childName == "positie") verkeerslicht.positie = std::stoi(text->Value());
                 if (childName == "cyclus") verkeerslicht.cyclus = std::stoi(text->Value());
             }
-            //std::cout << verkeerslicht.baan << " " << verkeerslicht.positie << " " << verkeerslicht.cyclus << std::endl;
+            std::cout << verkeerslicht.baan << " " << verkeerslicht.positie << " " << verkeerslicht.cyclus << " verkeerslicht toegevoegd!" << std::endl;
             verkeerslichten.push_back(verkeerslicht);
         }
         if (elemName == "VOERTUIGGENERATOR") {
