@@ -2,11 +2,12 @@
 // Created by jonas on 3/20/2025.
 //
 #include "ParseFile.h"
+#include "DesignByContract.h"
 #include "tinyxml.h"
 int Voertuig::volgendeNummer = 1;
 TrafficSim parseFile(const std::string inputfile) {
+    REQUIRE(!inputfile.empty(), "Inputbestand mag niet leeg zijn.");
     TiXmlDocument doc;
-
     std::vector<Baan> banen;
     std::vector<Verkeerslicht> verkeerslichten;
     std::vector<Voertuig> voertuigen;
@@ -66,5 +67,8 @@ TrafficSim parseFile(const std::string inputfile) {
         }
     }
     doc.Clear();
-    return TrafficSim(banen, verkeerslichten, voertuigen, voertuigengen);
+    TrafficSim sim(banen, verkeerslichten, voertuigen, voertuigengen);
+    ENSURE(!banen.empty() || !voertuigen.empty() || !verkeerslichten.empty() || !voertuigengen.empty(),
+           "De ingelezen verkeerssituatie moet minstens één element bevatten");
+    return sim;;
 }

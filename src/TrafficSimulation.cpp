@@ -11,7 +11,6 @@ void TrafficSim::Simulate() {
             berekenVersnelling(voertuig);
             geldig(voertuig);
         }
-        verhoogTijd();
         if (!verkeerslichten.empty()) {
             std::cout << verkeerslichten.size() << std::endl;
             for (auto& verkeerslicht : verkeerslichten)
@@ -19,8 +18,9 @@ void TrafficSim::Simulate() {
         } else {
             std::cout << "Geen verkeerslichten beschikbaar!" << std::endl;
         }
+        verhoogTijd();
+        simVoertuiggenerator();
     }
-    void simVoertuiggenerator();
 }
 void TrafficSim::berekenVersnelling(Voertuig &voertuig) {
     int indexLijst = voertuig.voertuigNummer - 1;
@@ -134,19 +134,21 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht&verkeerslicht) {
 }
 void TrafficSim::simVoertuiggenerator() {
     for (auto& generator : voertuigengen) {
-        if (time  > generator.freq) {
-            // bool vrij = true;
+        int laatsteTijd = time - generator.laatsteTijd;
+        if (laatsteTijd > generator.freq) {
+            bool vrij = true;
             for (const auto& voertuig : voertuigen) {
-                if (voertuig.baan == generator.baan && voertuig.positie <= 2 * voertuig.lengte) {
-                    // vrij = false;
+                if (voertuig.baan == generator.baan && 0 <= voertuig.positie  && voertuig.positie <= 2 * voertuig.lengte) {
+                    vrij = false;
                     break;
                 }
+            }
+            if (vrij){
                 Voertuig nieuwVoertuig;
                 nieuwVoertuig.baan = generator.baan;
                 nieuwVoertuig.positie = 0;
                 voertuigen.push_back(nieuwVoertuig);
-                /*std::cout << "Nieuw voertuig toegevoegd op baan " << generator.baan << std::endl;*/
-
+                generator.laatsteTijd = time;
             }
         }
     }
@@ -161,7 +163,7 @@ int TrafficSim::getBaanLengte(std::string &baannaam, std::vector<Baan> &banen) {
 }
 void TrafficSim::verhoogTijd() {
     double oldTime = this->time;
-    double add = 25;
+    double add = 1;
     setTime(this->time+add);
     std::cout << "tijd verhoogd: " << oldTime << "->" << this->time << std::endl;
 }

@@ -65,6 +65,7 @@ struct VoertuigGen {
     //vermoedelijk voor later
     std::string baan;
     int freq = 0;
+    int laatsteTijd=0;
 };
 
 
