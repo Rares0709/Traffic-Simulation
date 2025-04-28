@@ -20,6 +20,11 @@ void TrafficSim::Simulate() {
                     voertuig1.voertuigNummer -= 1;
                 }
             }
+            for (auto& voertuig1 : toDelete) {
+                if (voertuig1.voertuigNummer > voertuignummer) {
+                    voertuig1.voertuigNummer -= 1;
+                }
+            }
         }
         // for (auto& voertuig : voertuigen) {
         //     voertuig.voertuigNummer -= size;
