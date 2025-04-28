@@ -19,8 +19,3 @@
   <baan>Middelheimlaan</baan>
   <frequentie>5</frequentie>
 </VOERTUIGGENERATOR>
-<VERKEERSLICHT>
-<baan>Middelheimlaan</baan>
-<positie>1000</positie>
-<cyclus>15</cyclus>
-</VERKEERSLICHT>
