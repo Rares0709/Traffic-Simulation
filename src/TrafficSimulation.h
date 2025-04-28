@@ -123,6 +123,8 @@ public:
         this->banen = banen;
     }
 
+    void wagenToDelete(Voertuig &voertuig);
+
     void voegbaantoe(Baan baan) {
         this->banen.push_back(baan);
     }
@@ -196,6 +198,7 @@ private:
     std::vector<Voertuig> voertuigen;
     std::vector<VoertuigGen> voertuigengen;
     double time = 0.0;
+    std::vector<Voertuig> toDelete;
 };
 
 

@@ -11,6 +11,10 @@ void TrafficSim::Simulate() {
             berekenVersnelling(voertuig);
             geldig(voertuig);
         }
+        for (Voertuig voertuig: toDelete) {
+            voertuigen.erase(voertuigen.begin()+voertuig.voertuigNummer-1);
+        }
+        toDelete.clear();
         if (!verkeerslichten.empty()) {
             std::cout << verkeerslichten.size() << std::endl;
             for (auto& verkeerslicht : verkeerslichten)
@@ -22,8 +26,8 @@ void TrafficSim::Simulate() {
         simVoertuiggenerator();
     }
 }
-void verwijderWagen(Voertuig &voertuig) {
-
+void TrafficSim::wagenToDelete(Voertuig &voertuig) {
+    toDelete.push_back(voertuig);
 }
 void TrafficSim::berekenVersnelling(Voertuig &voertuig) {
     int indexLijst = voertuig.voertuigNummer - 1;
@@ -102,9 +106,9 @@ void TrafficSim::geldig(Voertuig &voertuig) {
             Voertuig& voertuig2 = voertuigen[indexLijst + 1];
             voertuig2.voertuigNummer = voertuig.voertuigNummer;
         }
-        Voertuig &voertuigtodelete = voertuigen[voertuigen.begin()+indexLijst];
+        Voertuig &voertuigtodelete = voertuigen[indexLijst];
         //voertuigen.erase(voertuigen.begin()+indexLijst);
-        verwijderWagen(voertuigen.begin()+indexLijst);
+        wagenToDelete(voertuigtodelete);
         /*std::cout << "Voertuig weg van de baan" << std::endl;*/
     }
     else {
