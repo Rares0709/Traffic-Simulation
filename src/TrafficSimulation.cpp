@@ -11,8 +11,12 @@ void TrafficSim::Simulate() {
             berekenVersnelling(voertuig);
             geldig(voertuig);
         }
+        int size = toDelete.size();
         for (Voertuig voertuig: toDelete) {
             voertuigen.erase(voertuigen.begin()+voertuig.voertuigNummer-1);
+        }
+        for (auto& voertuig : voertuigen) {
+            voertuig.voertuigNummer -= size;
         }
         toDelete.clear();
         if (!verkeerslichten.empty()) {
@@ -102,10 +106,10 @@ void TrafficSim::geldig(Voertuig &voertuig) {
         /*std::cout << "Bestaat niet." << std::endl;*/
     }
     else if (voertuig.positie > lengte) {
-        if (voertuigen.size() > 1){
-            Voertuig& voertuig2 = voertuigen[indexLijst + 1];
-            voertuig2.voertuigNummer = voertuig.voertuigNummer;
-        }
+        // if (voertuigen.size() > 1){
+        //     Voertuig& voertuig2 = voertuigen[indexLijst + 1];
+        //     voertuig2.voertuigNummer = voertuig.voertuigNummer;
+        // }
         Voertuig &voertuigtodelete = voertuigen[indexLijst];
         //voertuigen.erase(voertuigen.begin()+indexLijst);
         wagenToDelete(voertuigtodelete);
