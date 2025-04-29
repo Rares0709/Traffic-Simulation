@@ -24,11 +24,13 @@ public:
     void Simulate();
 
     TrafficSim(const std::vector<Baan> &banen, const std::vector<Verkeerslicht> &verkeerslichten,
-        const std::vector<Voertuig> &voertuigen, const std::vector<VoertuigGen> &voertuigengen)
+        const std::vector<Voertuig> &voertuigen, const std::vector<VoertuigGen> &voertuigengen, const std::vector<Bushalte> &bushaltes, const std::vector<Kruispunt> &kruispunten)
         : banen(banen),
           verkeerslichten(verkeerslichten),
           voertuigen(voertuigen),
-          voertuigengen(voertuigengen) {
+          voertuigengen(voertuigengen),
+          bushaltes(bushaltes),
+          kruispunten(kruispunten){
     }
     /**
      * Deze functie berekent de versnelling van het voertuig.
@@ -199,6 +201,8 @@ private:
     std::vector<VoertuigGen> voertuigengen;
     double time = 0.0;
     std::vector<Voertuig> toDelete;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
 };
 
 

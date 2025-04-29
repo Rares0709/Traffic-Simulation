@@ -114,6 +114,13 @@ struct Bushalte {
     int wachttijd =0;
 };
 
+struct Kruispunt {
+    std::string fromBaan;
+    int fromPositie;
+    std::string toBaan;
+    int toPositie;
+};
+
 
 
 #endif //STRUCTS_H
