@@ -26,9 +26,6 @@ void TrafficSim::Simulate() {
                 }
             }
         }
-        // for (auto& voertuig : voertuigen) {
-        //     voertuig.voertuigNummer -= size;
-        // }
         toDelete.clear();
         if (!verkeerslichten.empty()) {
             std::cout << verkeerslichten.size() << std::endl;

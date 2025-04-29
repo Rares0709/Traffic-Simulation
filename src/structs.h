@@ -22,23 +22,64 @@ struct Verkeerslicht {
 };
 
 struct Voertuig {
-    Voertuig(const std::string &baan, int fmin, int lengte, double positie, double maxsnelheid, double maxversnelling,
-        double snelheid, double versnelling, double vertraagfactor, int vertraagafstand, int stopafstand,
-        int voertuig_nummer, double maxremfactor, double maxsnelheid1)
+    Voertuig(const std::string &baan, int fmin, int lengte, double positie, double mMaxsnelheid, double maxversnelling,
+             double snelheid, double versnelling, double vertraagfactor, int vertraagafstand, int stopafstand,
+             int voertuigNummer, double maxremfactor, double maxsnelheid1, const std::string& type)
         : baan(baan),
           fmin(fmin),
           lengte(lengte),
           positie(positie),
-          mMaxsnelheid(maxsnelheid),
+          mMaxsnelheid(mMaxsnelheid),
           maxversnelling(maxversnelling),
           snelheid(snelheid),
           versnelling(versnelling),
           vertraagfactor(vertraagfactor),
           vertraagafstand(vertraagafstand),
           stopafstand(stopafstand),
-          voertuigNummer(voertuig_nummer),
+          voertuigNummer(voertuigNummer),
           maxremfactor(maxremfactor),
-          maxsnelheid(maxsnelheid1) {
+          maxsnelheid(maxsnelheid1),
+          type(type) {
+        // type wordt ingesteld bij constructie
+    }
+
+    Voertuig() : voertuigNummer(volgendeNummer++) {}
+
+    void setType(const std::string& nieuwType) {
+        type = nieuwType;
+        if (type == "auto") {
+            lengte = 4;
+            mMaxsnelheid = maxsnelheid = 16.6;
+            maxversnelling = 1.44;
+            maxremfactor = 4.61;
+            fmin = 4;
+        } else if (type == "bus") {
+            lengte = 12;
+            mMaxsnelheid = maxsnelheid = 11.4;
+            maxversnelling = 1.22;
+            maxremfactor = 4.29;
+            fmin = 12;
+        } else if (type == "brandweerwagen") {
+            lengte = 10;
+            mMaxsnelheid = maxsnelheid = 14.6;
+            maxversnelling = 1.33;
+            maxremfactor = 4.56;
+            fmin = 10;
+        } else if (type == "ziekenwagen") {
+            lengte = 8;
+            mMaxsnelheid = maxsnelheid = 15.5;
+            maxversnelling = 1.44;
+            maxremfactor = 4.47;
+            fmin = 8;
+        } else if (type == "politiecombi") {
+            lengte = 6;
+            mMaxsnelheid = maxsnelheid = 17.2;
+            maxversnelling = 1.55;
+            maxremfactor = 4.92;
+            fmin = 6;
+        } else {
+            exit(1);
+        }
     }
 
     std::string baan;
@@ -56,8 +97,7 @@ struct Voertuig {
     int voertuigNummer = 1;
     double maxremfactor = 4.61;
     double maxsnelheid = 16.6;
-    Voertuig() : voertuigNummer(volgendeNummer++) {
-    }
+    std::string type = "auto"; // default is auto
 };
 
 
@@ -66,6 +106,12 @@ struct VoertuigGen {
     std::string baan;
     int freq = 0;
     int laatsteTijd=0;
+};
+
+struct Bushalte {
+    std::string baan;
+    int positie = 0;
+    int wachttijd =0;
 };
 
 

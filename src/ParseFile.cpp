@@ -27,6 +27,7 @@ TrafficSim parseFile(const std::string inputfile) {
                 std::string childName = child->Value();
                 if (childName == "baan") voertuig.baan = text->Value();
                 if (childName == "positie") voertuig.positie = std::stoi(text->Value());
+                if (childName == "type") voertuig.setType(text->Value());
             }
             //std::cout << voertuig.baan << " " << voertuig.positie << std::endl;
             voertuigen.push_back(voertuig);
