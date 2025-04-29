@@ -65,18 +65,21 @@ struct Voertuig {
             maxversnelling = 1.33;
             maxremfactor = 4.56;
             fmin = 10;
+            prioriteit = true;
         } else if (type == "ziekenwagen") {
             lengte = 8;
             mMaxsnelheid = maxsnelheid = 15.5;
             maxversnelling = 1.44;
             maxremfactor = 4.47;
             fmin = 8;
+            prioriteit = true;
         } else if (type == "politiecombi") {
             lengte = 6;
             mMaxsnelheid = maxsnelheid = 17.2;
             maxversnelling = 1.55;
             maxremfactor = 4.92;
             fmin = 6;
+            prioriteit = true;
         } else {
             exit(1);
         }
@@ -97,6 +100,7 @@ struct Voertuig {
     int voertuigNummer = 1;
     double maxremfactor = 4.61;
     double maxsnelheid = 16.6;
+    bool prioriteit = false;
     std::string type = "auto"; // default is auto
 };
 

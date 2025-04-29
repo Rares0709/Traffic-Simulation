@@ -134,15 +134,13 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht&verkeerslicht) {
     if (tijd>verkeerslicht.cyclus) {
         if (verkeerslicht.kleur==verkeerslicht.rood) {
             verkeerslicht.kleur="groen";
-            if (verkeerslicht.kleur==verkeerslicht.groen) {
-                for (auto& voertuig : voertuigen) {
-                    versnellen( voertuig);
-                }
+            for (auto& voertuig : voertuigen) {
+                versnellen( voertuig);
             }
         }
         else if (verkeerslicht.kleur==verkeerslicht.groen) {
             verkeerslicht.kleur="rood";
-            if (verkeerslicht.kleur==verkeerslicht.rood) {
+            if (!voertuigen[0].prioriteit) {
                 if (voertuigen[0].positie<=voertuigen[0].vertraagafstand ) {
                     vertragen(voertuigen[0]);
                 } else if (voertuigen[0].positie<=voertuigen[0].vertraagafstand/2) {
