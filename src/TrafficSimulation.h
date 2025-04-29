@@ -200,6 +200,7 @@ private:
     std::vector<Voertuig> voertuigen;
     std::vector<VoertuigGen> voertuigengen;
     double time = 0.0;
+    double DeltaTime = 0.0166;
     std::vector<Voertuig> toDelete;
     std::vector<Bushalte> bushaltes;
     std::vector<Kruispunt> kruispunten;

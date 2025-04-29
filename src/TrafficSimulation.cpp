@@ -69,8 +69,8 @@ void TrafficSim::berekenSnelheid(Voertuig &voertuig) {
         voertuig.positie = positie;
     }
     else {
-        snelheid = snelheid + (versnelling*time);
-        positie = positie + (snelheid*time) + (versnelling)*((pow(time,2))/2);
+        snelheid = snelheid + (versnelling*DeltaTime);
+        positie = positie + (snelheid*DeltaTime) + (versnelling)*((pow(DeltaTime,2))/2);
         voertuig.positie = positie;
     }
     voertuig.snelheid = snelheid;
