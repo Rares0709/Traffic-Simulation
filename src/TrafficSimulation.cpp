@@ -105,6 +105,52 @@ void TrafficSim::stoppen(Voertuig &voertuig) {
         }
     }
 }
+void TrafficSim::kruispuntSim(std::vector<Kruispunt> kruispunten, Voertuig voertuig) {
+    std::srand(std::time(0));
+    int keuze = std::rand() % 2;
+    int voertuigPositie = voertuig.positie;
+    std::string voertuigBaan = voertuig.baan;
+    for (Kruispunt kruispunt: kruispunten) {
+        if (kruispunt.fromBaan == voertuigBaan) {
+            Baan gevondenFromBaan;
+            for (const Baan& b : banen) {
+                if (b.naam ==kruispunt.fromBaan) {
+                    gevondenFromBaan = b;
+                    break;
+                }
+            }
+            if (voertuig.positie >= kruispunt.fromPositie && voertuig.positie <= kruispunt.fromPositie + gevondenFromBaan.breedte) {
+                if (keuze == 0) {
+                    voertuig.baan == kruispunt.fromBaan;
+                    voertuig.positie == kruispunt.fromPositie;
+                }
+                else {
+                    voertuig.baan == kruispunt.toBaan;
+                    voertuig.positie == kruispunt.toPositie;
+                }
+            }
+        }
+        else if (kruispunt.toBaan == voertuigBaan) {
+            Baan gevondenToBaan;
+            for (const Baan& b : banen) {
+                if (b.naam == kruispunt.toBaan) {
+                    gevondenToBaan = b;
+                    break;
+                }
+            }
+            if (voertuig.positie >= kruispunt.toPositie && voertuig.positie <= kruispunt.fromPositie + gevondenToBaan.breedte) {
+                if (keuze == 0) {
+                    voertuig.baan == kruispunt.fromBaan;
+                    voertuig.positie == kruispunt.fromPositie;
+                }
+                else {
+                    voertuig.baan == kruispunt.toBaan;
+                    voertuig.positie == kruispunt.toPositie;
+                }
+            }
+        }
+    }
+}
 void TrafficSim::geldig(Voertuig &voertuig) {
     int indexLijst = voertuig.voertuigNummer - 1;
 

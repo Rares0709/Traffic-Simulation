@@ -9,6 +9,8 @@
 #include <fstream>
 #include "structs.h"
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 #include <cmath>
 
 class TrafficSim {
@@ -193,6 +195,8 @@ public:
     *@version /
     */
     void print() const;
+
+    void kruispuntSim(std::vector<Kruispunt> kruispunten, Voertuig voertuig);
 
 private:
     std::vector<Baan> banen;

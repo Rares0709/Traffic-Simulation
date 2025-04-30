@@ -10,6 +10,7 @@
 struct Baan {
     std::string naam;
     int lengte;
+    int breedte = 180;
 };
 
 struct Verkeerslicht {
