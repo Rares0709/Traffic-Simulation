@@ -3,6 +3,7 @@
 //
 
 #include "TrafficSimulation.h"
+#include "DesignByContract.h"
 void TrafficSim::Simulate() {
     while (!voertuigen.empty()) {
         print();
@@ -42,11 +43,13 @@ void TrafficSim::wagenToDelete(Voertuig &voertuig) {
     toDelete.push_back(voertuig);
 }
 void TrafficSim::berekenVersnelling(Voertuig &voertuig) {
+
     int indexLijst = voertuig.voertuigNummer - 1;
     if (indexLijst > 0) {
         int indexVoertuig2 = indexLijst - 1;
         Voertuig voertuig2 = voertuigen[indexVoertuig2];
         double volgafstand = voertuig2.positie - voertuig.positie - voertuig2.lengte;
+        REQUIRE(volgafstand > 0, "Volgafstand moet groter zijn dan nul om deling door nul te vermijden.");
         double snelheidsverschil = voertuig.snelheid - voertuig2.snelheid;
         double delta = (voertuig.fmin + std::max(0.0, voertuig.snelheid + ( (voertuig.snelheid * snelheidsverschil) / (2 * std::sqrt(voertuig.maxversnelling * voertuig.maxremfactor)))))/ volgafstand;
         double versnelling = voertuig.maxversnelling*(1-pow(voertuig.snelheid/voertuig.maxsnelheid,4) - pow(delta,2));
@@ -57,6 +60,7 @@ void TrafficSim::berekenVersnelling(Voertuig &voertuig) {
         double versnelling = voertuig.maxversnelling*(1-pow(voertuig.snelheid/voertuig.maxsnelheid,4) - pow(delta,2));
         voertuig.versnelling = versnelling;
     }
+
 }
 void TrafficSim::berekenSnelheid(Voertuig &voertuig) {
     double snelheid = voertuig.snelheid;
@@ -200,6 +204,21 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht&verkeerslicht) {
         }
     }
     // std::cout << "kleur: --> " << verkeerslicht.kleur << std::endl;
+}
+
+void TrafficSim::simBushaltes(Voertuig &bus) {
+    int tijd = this->time;
+    for (Bushalte bushalte : bushaltes) {
+        if (bus.positie == bushalte.positie+bus.vertraagafstand) {
+            vertragen(bus);
+        } else if(bus.positie == bushalte.positie+bus.stopafstand) {
+            stoppen(bus);
+        } if (bus.timestop > bushalte.wachttijd) {
+            versnellen(bus);
+        } if (bus.snelheid == 0) {
+            bus.timestop+=1;
+        }
+    }
 }
 void TrafficSim::simVoertuiggenerator() {
     for (auto& generator : voertuigengen) {
