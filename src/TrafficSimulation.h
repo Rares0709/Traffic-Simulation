@@ -162,6 +162,7 @@ public:
     void setTime(double time) {
         this->time = time;
     }
+    void simBushaltes(Voertuig &bus);
 
     std::vector<Verkeerslicht> getVerkeerslichten() const {
         return verkeerslichten;
