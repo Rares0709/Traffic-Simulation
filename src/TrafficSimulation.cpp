@@ -184,7 +184,9 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht&verkeerslicht) {
     std::cout << "Verkeerslicht op " << verkeerslicht.positie << " heeft kleur: " << verkeerslicht.kleur << std::endl;
     int tijd = this->time;
     std::cout << tijd << std::endl;
-    if (tijd>verkeerslicht.cyclus) {
+    int TimeForSwitch = time - verkeerslicht.laatsteTijd;
+    int verkeerslichtCyclus = verkeerslicht.cyclus;
+    if (TimeForSwitch>verkeerslichtCyclus) {
         if (verkeerslicht.kleur==verkeerslicht.rood) {
             verkeerslicht.kleur="groen";
             for (auto& voertuig : voertuigen) {
@@ -201,6 +203,7 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht&verkeerslicht) {
                 }
             }
         }
+        verkeerslicht.laatsteTijd=time;
     }
     // std::cout << "kleur: --> " << verkeerslicht.kleur << std::endl;
 }

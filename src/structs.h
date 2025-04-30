@@ -20,6 +20,7 @@ struct Verkeerslicht {
     std::string rood="rood";
     std::string groen="groen";
     std::string kleur="rood";
+    int laatsteTijd = 0;
 };
 
 struct Voertuig {
