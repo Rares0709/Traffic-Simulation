@@ -79,14 +79,19 @@ void TrafficSim::berekenSnelheid(Voertuig &voertuig) {
     voertuig.snelheid = snelheid;
 }
 void TrafficSim::versnellen(Voertuig &voertuig) {
-    int indexLijst = voertuig.voertuigNummer - 1;
+    for (auto v: voertuigen) {
+        if (v.baan == voertuig.baan && v.positie <= voertuig.positie) {
+            v.maxsnelheid = v.mMaxsnelheid;
+        }
+    }
+    /*int indexLijst = voertuig.voertuigNummer - 1;
     if (indexLijst == 0) {
         size_t indexVoertuig2 = indexLijst - 1;
         if (indexVoertuig2 >= 0 && indexVoertuig2 < voertuigen.size()) {
             Voertuig& voertuig2 = voertuigen[indexVoertuig2];
             voertuig.maxsnelheid = voertuig2.mMaxsnelheid;
         }
-    }
+    }*/
 }
 void TrafficSim::vertragen(Voertuig &voertuig) {
     double s=voertuig.vertraagfactor;
@@ -190,11 +195,17 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht&verkeerslicht) {
         if (verkeerslicht.kleur==verkeerslicht.rood) {
             verkeerslicht.kleur="groen";
             std::cout << "Aantal voertuigen: " << voertuigen.size() << std::endl;
+            bool eersteGevonden = false;
+            Voertuig eersteVoertuig;
             for (auto& voertuig : voertuigen) {
-                if (voertuig.baan == verkeerslicht.baan) {
-                    versnellen( voertuig);
+                if (voertuig.baan == verkeerslicht.baan && voertuig.positie <= verkeerslicht.positie) {
+                    if (eersteGevonden != true || voertuig.positie >= eersteVoertuig.positie ) {
+                        eersteVoertuig = voertuig;
+                        eersteGevonden = true;
+                    }
                 }
             }
+            versnellen(eersteVoertuig);
         }
         else if (verkeerslicht.kleur==verkeerslicht.groen) {
             verkeerslicht.kleur="rood";
