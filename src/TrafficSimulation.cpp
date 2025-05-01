@@ -189,8 +189,11 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht&verkeerslicht) {
     if (TimeForSwitch>verkeerslichtCyclus) {
         if (verkeerslicht.kleur==verkeerslicht.rood) {
             verkeerslicht.kleur="groen";
+            std::cout << "Aantal voertuigen: " << voertuigen.size() << std::endl;
             for (auto& voertuig : voertuigen) {
-                versnellen( voertuig);
+                if (voertuig.baan == verkeerslicht.baan) {
+                    versnellen( voertuig);
+                }
             }
         }
         else if (verkeerslicht.kleur==verkeerslicht.groen) {
