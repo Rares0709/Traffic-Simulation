@@ -98,6 +98,7 @@ struct Voertuig {
     double maxremfactor = 4.61;
     double maxsnelheid = 16.6;
     bool prioriteit = false;
+    bool gestopt = false;
     int timestop = 0;
     std::string type = "auto"; // default is auto
 };
