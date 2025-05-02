@@ -145,48 +145,68 @@ void TrafficSim::stoppen(Voertuig &voertuig) {
 void TrafficSim::kruispuntSim(/*std::vector<Kruispunt> kruispunten, */Voertuig& voertuig/*, std::vector<Baan>& banen*/) {
     for (Kruispunt kruispunt: kruispunten) {
         int breedte = 0;
-        if (kruispunt.fromBaan == voertuig.baan) {
-            //int breedte;
-            for (const Baan& b : banen) {
-                if (b.naam == kruispunt.fromBaan) {
-                    breedte = b.breedte;
-                    break;
+        if (!voertuig.gedraait) {
+            if (kruispunt.fromBaan == voertuig.baan) {
+                //int breedte;
+                for (const Baan& b : banen) {
+                    if (b.naam == kruispunt.fromBaan) {
+                        breedte = b.breedte;
+                        break;
+                    }
+                }
+                /*std::vector<std::string> baantje;
+                baantje.push_back(kruispunt.fromBaan);
+                baantje.push_back(kruispunt.toBaan);*/
+                if (voertuig.positie >= kruispunt.fromPositie && voertuig.positie <= kruispunt.fromPositie + breedte) {
+                    std::srand(std::time(0));
+                    bool keuze = std::rand() % 2;
+                    // voertuig.baan = baantje[keuze];
+                    // voertuig.positie = baantje[]
+                    if (keuze) {
+                        voertuig.baan = kruispunt.toBaan;
+                        voertuig.positie = kruispunt.toPositie;
+                        voertuig.gedraait = true;
+                    }
                 }
             }
-            /*std::vector<std::string> baantje;
-            baantje.push_back(kruispunt.fromBaan);
-            baantje.push_back(kruispunt.toBaan);*/
-            if (voertuig.positie >= kruispunt.fromPositie && voertuig.positie <= kruispunt.fromPositie + breedte) {
-
-                std::srand(std::time(0));
-                bool keuze = std::rand() % 2;
-                // voertuig.baan = baantje[keuze];
-                // voertuig.positie = baantje[]
-                if (keuze) {
-                    voertuig.baan = kruispunt.toBaan;
-                    voertuig.positie = kruispunt.toPositie;
+            else if (kruispunt.toBaan == voertuig.baan) {
+                for (const Baan& b : banen) {
+                    if (b.naam == kruispunt.toBaan) {
+                        breedte = b.breedte;
+                        break;
+                    }
+                }
+                /*std::vector<std::string> baantje;
+                baantje.push_back(kruispunt.fromBaan);
+                baantje.push_back(kruispunt.toBaan);*/
+                if (voertuig.positie >= kruispunt.toPositie && voertuig.positie <= kruispunt.toPositie + breedte) {
+                    std::srand(std::time(0));
+                    bool keuze = std::rand() % 2;
+                    // voertuig.baan = baantje[keuze];
+                    // voertuig.positie = baantje[]
+                    if (keuze) {
+                        voertuig.baan = kruispunt.fromBaan;
+                        voertuig.positie = kruispunt.fromPositie;
+                        voertuig.gedraait = true;
+                    }
                 }
             }
         }
-        else if (kruispunt.toBaan == voertuig.baan) {
-            for (const Baan& b : banen) {
-                if (b.naam == kruispunt.toBaan) {
-                    breedte = b.breedte;
-                    break;
+        else if (voertuig.baan == kruispunt.fromBaan) {
+            for (auto& baan : banen) {
+                if (kruispunt.fromBaan == baan.naam) {
+                    if (voertuig.positie > kruispunt.fromPositie + baan.breedte) {
+                        voertuig.gedraait = false;
+                    }
                 }
             }
-            /*std::vector<std::string> baantje;
-            baantje.push_back(kruispunt.fromBaan);
-            baantje.push_back(kruispunt.toBaan);*/
-            if (voertuig.positie >= kruispunt.toPositie && voertuig.positie <= kruispunt.toPositie + breedte) {
-
-                std::srand(std::time(0));
-                bool keuze = std::rand() % 2;
-                // voertuig.baan = baantje[keuze];
-                // voertuig.positie = baantje[]
-                if (keuze) {
-                    voertuig.baan = kruispunt.fromBaan;
-                    voertuig.positie = kruispunt.fromPositie;
+        }
+        else if (voertuig.baan == kruispunt.toBaan) {
+            for (auto& baan : banen) {
+                if (kruispunt.toBaan == baan.naam) {
+                    if (voertuig.positie > kruispunt.toPositie + baan.breedte) {
+                        voertuig.gedraait = false;
+                    }
                 }
             }
         }

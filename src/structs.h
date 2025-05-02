@@ -99,6 +99,7 @@ struct Voertuig {
     double maxsnelheid = 16.6;
     bool prioriteit = false;
     bool gestopt = false;
+    bool gedraait = false;
     int timestop = 0;
     std::string type = "auto"; // default is auto
 };
