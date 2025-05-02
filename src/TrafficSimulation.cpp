@@ -54,7 +54,7 @@ void TrafficSim::Simulate(int duration) {
             verhoogTijd();
             simVoertuiggenerator();
             for (Verkeerslicht &verkeerslicht: verkeerslichten) {
-                 verkeerslicht.voertuigenVoorLicht.clear;
+                 verkeerslicht.voertuigenVoorLicht.clear();
             }
         }
         else {
