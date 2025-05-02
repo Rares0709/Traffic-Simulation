@@ -206,7 +206,7 @@ public:
     */
     void print() const;
 
-    void kruispuntSim(std::vector<Kruispunt> kruispunten, Voertuig voertuig, std::vector<Baan>& banen);
+    void kruispuntSim(/*std::vector<Kruispunt> kruispunten, */Voertuig& voertuig/*, std::vector<Baan>& banen*/);
 
 private:
     std::vector<Baan> banen;

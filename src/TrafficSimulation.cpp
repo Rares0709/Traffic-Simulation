@@ -22,6 +22,7 @@ void TrafficSim::Simulate(int duration) {
                 berekenSnelheid(voertuig);
                 berekenVersnelling(voertuig);
                 geldig(voertuig);
+                kruispuntSim(voertuig);
             }
             // int size = toDelete.size();
             for (Voertuig& voertuig: toDelete) {
@@ -141,7 +142,7 @@ void TrafficSim::stoppen(Voertuig &voertuig) {
     //     }
     // }
 }
-void TrafficSim::kruispuntSim(std::vector<Kruispunt> kruispunten, Voertuig voertuig, std::vector<Baan>& banen) {
+void TrafficSim::kruispuntSim(/*std::vector<Kruispunt> kruispunten, */Voertuig& voertuig/*, std::vector<Baan>& banen*/) {
     for (Kruispunt kruispunt: kruispunten) {
         int breedte = 0;
         if (kruispunt.fromBaan == voertuig.baan) {
