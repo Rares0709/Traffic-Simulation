@@ -11,7 +11,8 @@ protected:
     TrafficSimTest()
         :trafficSim(parseFile("test/test1.xml")){}
     virtual void SetUp() {
-        trafficSim.setTime(0.0);
+        //trafficSim.setTime(4.9);
+        trafficSim.TestingModeOn();
     }
 };
 
@@ -25,7 +26,8 @@ protected:
     }
 };*/
 // Test that verifies if a vehicle is generated when the time exceeds the vehicle generator's frequency
-/*TEST_F(TrafficSimTest, GeenNieuwVoertuigBijBezetting) {
+TEST(VoertuigGenSimTest, GeenNieuwVoertuigBijBezetting) {
+    TrafficSim trafficSim = parseFile("test/test1.xml");
     // Controleer begin: er zijn initieel 2 voertuigen
     ASSERT_EQ(trafficSim.getVoertuigen().size(), 2u);
 
@@ -34,7 +36,9 @@ protected:
 
     // Na oproep mag er geen nieuw voertuig zijn toegevoegd, want positie 0 is al bezet
     EXPECT_EQ(trafficSim.getVoertuigen().size(), 2u);
-}*/
+    Voertuig voertuig;
+    voertuig.volgendeNummer = 0;
+}
 //test if lightcolor switches
 TEST_F(TrafficSimTest, TrafficLightSwitchTest) {
     Verkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
@@ -52,6 +56,7 @@ TEST_F(TrafficSimTest, TrafficLightSwitchTest) {
     ASSERT_TRUE(trafficSim.getVoertuigen().empty());
 }*/
 
+//defective test
 /*TEST_F(TrafficSimTest, VehicleGenerationTest) {
     trafficSim.simVoertuiggenerator();
 

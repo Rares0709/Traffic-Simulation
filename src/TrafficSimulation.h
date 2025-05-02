@@ -161,6 +161,10 @@ public:
     */
     void verhoogTijd();
 
+    void TestingModeOn() {
+        testingMode = true;
+    }
+
     void setTime(double time) {
         this->time = time;
     }
@@ -214,6 +218,7 @@ private:
     std::vector<Voertuig> toDelete;
     std::vector<Bushalte> bushaltes;
     std::vector<Kruispunt> kruispunten;
+    bool testingMode = false;
 };
 
 

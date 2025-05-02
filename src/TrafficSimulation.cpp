@@ -15,7 +15,9 @@ void TrafficSim::Simulate(int duration) {
     double& currentTime = this->getTime();
     while (duration == -1 ? !voertuigen.empty() : currentTime <= duration) {
         if (!voertuigen.empty() || (duration != -1 && currentTime >= duration)) {
-            print();
+            if (!testingMode) {
+                print();
+            }
             for (auto& voertuig : voertuigen) {
                 berekenSnelheid(voertuig);
                 berekenVersnelling(voertuig);
@@ -46,11 +48,15 @@ void TrafficSim::Simulate(int duration) {
             }
             toDelete.clear();
             if (!verkeerslichten.empty()) {
-                std::cout << verkeerslichten.size() << std::endl;
+                if (!testingMode) {
+                    std::cout << verkeerslichten.size() << std::endl;
+                }
                 for (auto& verkeerslicht : verkeerslichten)
                     verkeerslichtSim(verkeerslicht);
             } else {
-                std::cout << "Geen verkeerslichten beschikbaar!" << std::endl;
+                if (!testingMode) {
+                    std::cout << "Geen verkeerslichten beschikbaar!" << std::endl;
+                }
             }
             verhoogTijd();
             simVoertuiggenerator();
@@ -218,15 +224,21 @@ void TrafficSim::checkverkeerslicht(Voertuig& voertuig) {
     }
 }
 void TrafficSim::verkeerslichtSim(Verkeerslicht& verkeerslicht) {
-    std::cout << "Verkeerslicht op " << verkeerslicht.positie << " heeft kleur: " << verkeerslicht.kleur << std::endl;
+    if (!testingMode) {
+        std::cout << "Verkeerslicht op " << verkeerslicht.positie << " heeft kleur: " << verkeerslicht.kleur << std::endl;
+    }
     int tijd = this->time;
-    std::cout << tijd << std::endl;
+    if (!testingMode) {
+        std::cout << tijd << std::endl;
+    }
     int TimeForSwitch = ceil(time - verkeerslicht.laatsteTijd);
     int verkeerslichtCyclus = verkeerslicht.cyclus;
     if (TimeForSwitch>verkeerslichtCyclus) {
         if (verkeerslicht.kleur==verkeerslicht.rood) {
             verkeerslicht.kleur="groen";
-            std::cout << "Aantal voertuigen: " << voertuigen.size() << std::endl;
+            if (!testingMode) {
+                std::cout << "Aantal voertuigen: " << voertuigen.size() << std::endl;
+            }
             bool eersteGevonden = false;
             Voertuig eersteVoertuig;
             for (auto& voertuig : voertuigen) {
@@ -269,11 +281,11 @@ void TrafficSim::simBushaltes(Voertuig &bus) {
 }
 void TrafficSim::simVoertuiggenerator() {
     for (auto& generator : voertuigengen) {
-        int laatsteTijd = time - generator.laatsteTijd;
+        int laatsteTijd = ceil(time - generator.laatsteTijd);
         if (laatsteTijd > generator.freq) {
             bool vrij = true;
             for (const auto& voertuig : voertuigen) {
-                if (voertuig.baan == generator.baan && 0 <= voertuig.positie  && voertuig.positie <= 2 * voertuig.lengte) {
+                if (voertuig.baan == generator.baan && 0 <= voertuig.positie && voertuig.positie <= 2 * voertuig.lengte) {
                     vrij = false;
                     break;
                 }
@@ -300,7 +312,9 @@ void TrafficSim::verhoogTijd() {
     double oldTime = this->time;
     double add = this->DeltaTime;
     setTime(this->time+add);
-    std::cout << "tijd verhoogd: " << oldTime << "->" << this->time << std::endl;
+    if (!testingMode) {
+        std::cout << "tijd verhoogd: " << oldTime << "->" << this->time << std::endl;
+    }
 }
 void TrafficSim::print() const {
     std::cout << "Tijd: " << time << std::endl;
