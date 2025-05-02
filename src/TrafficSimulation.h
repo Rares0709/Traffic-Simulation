@@ -117,6 +117,7 @@ public:
      *@date /
      *@version
      */
+    void checkverkeerslicht(Voertuig& voertuig);
     void simVoertuiggenerator();
 
     std::vector<Baan> get_banen() const {

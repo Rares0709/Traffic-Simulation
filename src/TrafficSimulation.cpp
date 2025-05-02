@@ -5,6 +5,13 @@
 #include "TrafficSimulation.h"
 #include "DesignByContract.h"
 void TrafficSim::Simulate(int duration) {
+    for (Verkeerslicht& verkeerslicht : verkeerslichten) {
+        for (Voertuig& voertuig : voertuigen) {
+            if (voertuig.positie < verkeerslicht.positie) {
+                verkeerslicht.voertuigenVoorLicht.push_back(voertuig);
+            }
+        }
+    }
     double& currentTime = this->getTime();
     while (duration == -1 ? !voertuigen.empty() : currentTime <= duration) {
         if (!voertuigen.empty() || (duration != -1 && currentTime >= duration)) {
@@ -13,6 +20,13 @@ void TrafficSim::Simulate(int duration) {
                 berekenSnelheid(voertuig);
                 berekenVersnelling(voertuig);
                 geldig(voertuig);
+            }
+            for (Verkeerslicht& verkeerslicht : verkeerslichten) {
+                for (Voertuig& voertuig : voertuigen) {
+                    if (voertuig.positie < verkeerslicht.positie) {
+                        verkeerslicht.voertuigenVoorLicht.push_back(voertuig);
+                    }
+                }
             }
             // int size = toDelete.size();
             for (Voertuig& voertuig: toDelete) {
@@ -192,7 +206,18 @@ void TrafficSim::geldig(Voertuig &voertuig) {
         /*std::cout << "er gebeurt niks" << std::endl;*/
     }
 }
-void TrafficSim::verkeerslichtSim(Verkeerslicht&verkeerslicht) {
+void TrafficSim::checkverkeerslicht(Voertuig& voertuig) {
+    for (Verkeerslicht& verkeerslicht : verkeerslichten) {
+        if (verkeerslicht.kleur == verkeerslicht.rood) {
+            if (voertuig.positie<= verkeerslicht.positie - voertuig.vertraagafstand) {
+                vertragen(voertuigen[0]);
+            } else if (voertuig.positie <= (verkeerslicht.positie - voertuig.vertraagafstand) /2) {
+                stoppen(voertuigen[0]);
+            }
+        }
+    }
+}
+void TrafficSim::verkeerslichtSim(Verkeerslicht& verkeerslicht) {
     std::cout << "Verkeerslicht op " << verkeerslicht.positie << " heeft kleur: " << verkeerslicht.kleur << std::endl;
     int tijd = this->time;
     std::cout << tijd << std::endl;

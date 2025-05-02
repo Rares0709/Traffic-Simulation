@@ -5,22 +5,13 @@
 #ifndef STRUCTS_H
 #define STRUCTS_H
 #include <iostream>
+#include <vector>
 
 
 struct Baan {
     std::string naam;
     int lengte;
     int breedte = 180;
-};
-
-struct Verkeerslicht {
-    std::string baan;
-    int positie = 0;
-    int cyclus = 0;
-    std::string rood="rood";
-    std::string groen="groen";
-    std::string kleur="rood";
-    int laatsteTijd = 0;
 };
 
 struct Voertuig {
@@ -111,6 +102,16 @@ struct Voertuig {
     std::string type = "auto"; // default is auto
 };
 
+struct Verkeerslicht {
+    std::string baan;
+    int positie = 0;
+    int cyclus = 0;
+    std::string rood="rood";
+    std::string groen="groen";
+    std::string kleur="rood";
+    int laatsteTijd = 0;
+    std::vector<Voertuig> voertuigenVoorLicht;
+};
 
 struct VoertuigGen {
     //vermoedelijk voor later
