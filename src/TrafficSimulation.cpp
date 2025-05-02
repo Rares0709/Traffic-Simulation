@@ -93,17 +93,24 @@ void TrafficSim::berekenSnelheid(Voertuig &voertuig) {
     double versnelling = voertuig.versnelling;
     double formule = snelheid + (versnelling*DeltaTime);
     double positie = voertuig.positie;
-    if (formule < 0) {
-        positie = positie - ((pow(snelheid, 2))/(2*versnelling));
-        snelheid = 0;
-        voertuig.positie = positie;
-    }
-    else {
-        snelheid = snelheid + (versnelling*DeltaTime);
+    if (snelheid>voertuig.mMaxsnelheid) {
+        snelheid=voertuig.mMaxsnelheid;
         positie = positie + (snelheid*DeltaTime) + (versnelling)*((pow(DeltaTime,2))/2);
         voertuig.positie = positie;
+    } else {
+        if (formule < 0) {
+            positie = positie - ((pow(snelheid, 2))/(2*versnelling));
+            snelheid = 0;
+            voertuig.positie = positie;
+        }
+        else {
+            snelheid = snelheid + (versnelling*DeltaTime);
+            positie = positie + (snelheid*DeltaTime) + (versnelling)*((pow(DeltaTime,2))/2);
+            voertuig.positie = positie;
+        }
     }
     voertuig.snelheid = snelheid;
+
 }
 void TrafficSim::versnellen(Voertuig &voertuig) {
     voertuig.maxsnelheid = voertuig.mMaxsnelheid;
