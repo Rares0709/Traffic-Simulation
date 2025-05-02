@@ -5,23 +5,11 @@
 #include "TrafficSimulation.h"
 #include "DesignByContract.h"
 void TrafficSim::Simulate(int duration) {
-    for (Verkeerslicht& verkeerslicht : verkeerslichten) {
-        for (Voertuig& voertuig : voertuigen) {
-            if (voertuig.positie < verkeerslicht.positie) {
-                verkeerslicht.voertuigenVoorLicht.push_back(voertuig);
-            }
-        }
-    }
     double& currentTime = this->getTime();
     while (duration == -1 ? !voertuigen.empty() : currentTime <= duration) {
         if (!voertuigen.empty() || (duration != -1 && currentTime >= duration)) {
             if (!testingMode) {
                 print();
-            }
-            for (auto& voertuig : voertuigen) {
-                berekenSnelheid(voertuig);
-                berekenVersnelling(voertuig);
-                geldig(voertuig);
             }
             for (Verkeerslicht& verkeerslicht : verkeerslichten) {
                 for (Voertuig& voertuig : voertuigen) {
@@ -29,6 +17,11 @@ void TrafficSim::Simulate(int duration) {
                         verkeerslicht.voertuigenVoorLicht.push_back(voertuig);
                     }
                 }
+            }
+            for (auto& voertuig : voertuigen) {
+                berekenSnelheid(voertuig);
+                berekenVersnelling(voertuig);
+                geldig(voertuig);
             }
             // int size = toDelete.size();
             for (Voertuig& voertuig: toDelete) {
@@ -60,6 +53,9 @@ void TrafficSim::Simulate(int duration) {
             }
             verhoogTijd();
             simVoertuiggenerator();
+            for (Verkeerslicht &verkeerslicht: verkeerslichten) {
+                 verkeerslicht.voertuigenVoorLicht.clear;
+            }
         }
         else {
             break;
@@ -91,7 +87,7 @@ void TrafficSim::berekenVersnelling(Voertuig &voertuig) {
 void TrafficSim::berekenSnelheid(Voertuig &voertuig) {
     double snelheid = voertuig.snelheid;
     double versnelling = voertuig.versnelling;
-    double formule = snelheid + (versnelling*time);
+    double formule = snelheid + (versnelling*DeltaTime);
     double positie = voertuig.positie;
     if (formule < 0) {
         positie = positie - ((pow(snelheid, 2))/(2*versnelling));
@@ -106,11 +102,7 @@ void TrafficSim::berekenSnelheid(Voertuig &voertuig) {
     voertuig.snelheid = snelheid;
 }
 void TrafficSim::versnellen(Voertuig &voertuig) {
-    for (auto v: voertuigen) {
-        if (v.baan == voertuig.baan && v.positie <= voertuig.positie) {
-            v.maxsnelheid = v.mMaxsnelheid;
-        }
-    }
+    voertuig.maxsnelheid = voertuig.mMaxsnelheid;
     /*int indexLijst = voertuig.voertuigNummer - 1;
     if (indexLijst == 0) {
         size_t indexVoertuig2 = indexLijst - 1;
@@ -122,10 +114,7 @@ void TrafficSim::versnellen(Voertuig &voertuig) {
 }
 void TrafficSim::vertragen(Voertuig &voertuig) {
     double s=voertuig.vertraagfactor;
-    int indexLijst = voertuig.voertuigNummer - 1;
-    if (indexLijst==0) {
-        voertuig.maxsnelheid=s*voertuig.mMaxsnelheid;
-    }
+    voertuig.maxsnelheid=s*voertuig.mMaxsnelheid;
 }
 void TrafficSim::stoppen(Voertuig &voertuig) {
     int indexLijst = voertuig.voertuigNummer - 1;
@@ -241,21 +230,31 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht& verkeerslicht) {
             }
             bool eersteGevonden = false;
             Voertuig eersteVoertuig;
-            for (auto& voertuig : voertuigen) {
-                if (voertuig.baan == verkeerslicht.baan && voertuig.positie <= verkeerslicht.positie) {
-                    if (eersteGevonden != true || voertuig.positie >= eersteVoertuig.positie ) {
-                        eersteVoertuig = voertuig;
-                        eersteGevonden = true;
-                    }
+            for (auto& voertuig : verkeerslicht.voertuigenVoorLicht) {
+                if (voertuig.positie < verkeerslicht.positie && (eersteGevonden != true || voertuig.positie >= eersteVoertuig.positie )) {
+                    eersteVoertuig = voertuig;
+                    eersteGevonden = true;
                 }
             }
             versnellen(eersteVoertuig);
         }
         else if (verkeerslicht.kleur==verkeerslicht.groen) {
             verkeerslicht.kleur="rood";
-            if (!voertuigen[0].prioriteit) {
-                if (voertuigen[0].positie<=voertuigen[0].vertraagafstand ) {
-                    vertragen(voertuigen[0]);
+            if (!testingMode) {
+                std::cout << "Aantal voertuigen: " << voertuigen.size() << std::endl;
+            }
+            bool eersteGevonden = false;
+            Voertuig eersteVoertuig;
+            for (auto& voertuig : verkeerslicht.voertuigenVoorLicht) {
+                if (voertuig.positie < verkeerslicht.positie && (eersteGevonden != true || voertuig.positie >= eersteVoertuig.positie )) {
+                    eersteVoertuig = voertuig;
+                    eersteGevonden = true;
+                }
+            }
+            if (!eersteVoertuig.prioriteit) {
+                double Vertraag = verkeerslicht.positie - eersteVoertuig.positie;
+                if (eersteVoertuig.positie < verkeerslicht.positie && eersteVoertuig.positie >= Vertraag) {
+                    vertragen(eersteVoertuig);
                 } else if (voertuigen[0].positie<=voertuigen[0].vertraagafstand/2) {
                     stoppen(voertuigen[0]);
                 }
