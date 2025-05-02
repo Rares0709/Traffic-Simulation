@@ -23,7 +23,7 @@ public:
      *@date /
      *@version
      */
-    void Simulate();
+    void Simulate(int duration = -1);
 
     TrafficSim(const std::vector<Baan> &banen, const std::vector<Verkeerslicht> &verkeerslichten,
         const std::vector<Voertuig> &voertuigen, const std::vector<VoertuigGen> &voertuigengen, const std::vector<Bushalte> &bushaltes, const std::vector<Kruispunt> &kruispunten)
@@ -132,6 +132,7 @@ public:
     void voegbaantoe(Baan baan) {
         this->banen.push_back(baan);
     }
+
     int getPositie(Voertuig voertuig) {
        return voertuig.positie;
     }
@@ -161,6 +162,9 @@ public:
 
     void setTime(double time) {
         this->time = time;
+    }
+    double& getTime() {
+        return time;
     }
     void simBushaltes(Voertuig &bus);
 

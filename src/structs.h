@@ -47,6 +47,10 @@ struct Voertuig {
 
     Voertuig() : voertuigNummer(volgendeNummer++) {}
 
+    void lowerVolgendeNummer(){
+        volgendeNummer--;
+    }
+
     void setType(const std::string& nieuwType) {
         type = nieuwType;
         if (type == "auto") {

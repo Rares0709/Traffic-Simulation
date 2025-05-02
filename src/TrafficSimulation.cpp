@@ -4,39 +4,46 @@
 
 #include "TrafficSimulation.h"
 #include "DesignByContract.h"
-void TrafficSim::Simulate() {
-    while (!voertuigen.empty()) {
-        print();
-        for (auto& voertuig : voertuigen) {
-            berekenSnelheid(voertuig);
-            berekenVersnelling(voertuig);
-            geldig(voertuig);
-        }
-        // int size = toDelete.size();
-        for (Voertuig& voertuig: toDelete) {
-            int voertuignummer = voertuig.voertuigNummer;
-            voertuigen.erase(voertuigen.begin()+voertuig.voertuigNummer-1);
-            for (auto& voertuig1 : voertuigen) {
-                if (voertuig1.voertuigNummer > voertuignummer) {
-                    voertuig1.voertuigNummer -= 1;
+void TrafficSim::Simulate(int duration) {
+    double& currentTime = this->getTime();
+    while (duration == -1 ? !voertuigen.empty() : currentTime <= duration) {
+        if (!voertuigen.empty() || (duration != -1 && currentTime >= duration)) {
+            print();
+            for (auto& voertuig : voertuigen) {
+                berekenSnelheid(voertuig);
+                berekenVersnelling(voertuig);
+                geldig(voertuig);
+            }
+            // int size = toDelete.size();
+            for (Voertuig& voertuig: toDelete) {
+                int voertuignummer = voertuig.voertuigNummer;
+                voertuigen.erase(voertuigen.begin()+voertuig.voertuigNummer-1);
+                for (auto& voertuig1 : voertuigen) {
+                    if (voertuig1.voertuigNummer > voertuignummer) {
+                        voertuig1.voertuigNummer -= 1;
+                        voertuig1.lowerVolgendeNummer();
+                    }
+                }
+                for (auto& voertuig1 : toDelete) {
+                    if (voertuig1.voertuigNummer > voertuignummer) {
+                        voertuig1.voertuigNummer -= 1;
+                    }
                 }
             }
-            for (auto& voertuig1 : toDelete) {
-                if (voertuig1.voertuigNummer > voertuignummer) {
-                    voertuig1.voertuigNummer -= 1;
-                }
+            toDelete.clear();
+            if (!verkeerslichten.empty()) {
+                std::cout << verkeerslichten.size() << std::endl;
+                for (auto& verkeerslicht : verkeerslichten)
+                    verkeerslichtSim(verkeerslicht);
+            } else {
+                std::cout << "Geen verkeerslichten beschikbaar!" << std::endl;
             }
+            verhoogTijd();
+            simVoertuiggenerator();
         }
-        toDelete.clear();
-        if (!verkeerslichten.empty()) {
-            std::cout << verkeerslichten.size() << std::endl;
-            for (auto& verkeerslicht : verkeerslichten)
-                verkeerslichtSim(verkeerslicht);
-        } else {
-            std::cout << "Geen verkeerslichten beschikbaar!" << std::endl;
+        else {
+            break;
         }
-        verhoogTijd();
-        simVoertuiggenerator();
     }
 }
 void TrafficSim::wagenToDelete(Voertuig &voertuig) {
@@ -189,7 +196,7 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht&verkeerslicht) {
     std::cout << "Verkeerslicht op " << verkeerslicht.positie << " heeft kleur: " << verkeerslicht.kleur << std::endl;
     int tijd = this->time;
     std::cout << tijd << std::endl;
-    int TimeForSwitch = time - verkeerslicht.laatsteTijd;
+    int TimeForSwitch = ceil(time - verkeerslicht.laatsteTijd);
     int verkeerslichtCyclus = verkeerslicht.cyclus;
     if (TimeForSwitch>verkeerslichtCyclus) {
         if (verkeerslicht.kleur==verkeerslicht.rood) {
@@ -266,7 +273,7 @@ int TrafficSim::getBaanLengte(std::string &baannaam, std::vector<Baan> &banen) {
 }
 void TrafficSim::verhoogTijd() {
     double oldTime = this->time;
-    double add = 1;
+    double add = this->DeltaTime;
     setTime(this->time+add);
     std::cout << "tijd verhoogd: " << oldTime << "->" << this->time << std::endl;
 }
