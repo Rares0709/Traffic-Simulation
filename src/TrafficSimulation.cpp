@@ -69,13 +69,17 @@ void TrafficSim::berekenVersnelling(Voertuig &voertuig) {
 
     int indexLijst = voertuig.voertuigNummer - 1;
     if (indexLijst > 0) {
-        int indexVoertuig2 = indexLijst - 1;
-        Voertuig voertuig2 = voertuigen[indexVoertuig2];
-        double volgafstand = voertuig2.positie - voertuig.positie - voertuig2.lengte;
-        double snelheidsverschil = voertuig.snelheid - voertuig2.snelheid;
-        double delta = (voertuig.fmin + std::max(0.0, voertuig.snelheid + ( (voertuig.snelheid * snelheidsverschil) / (2 * std::sqrt(voertuig.maxversnelling * voertuig.maxremfactor)))))/ volgafstand;
-        double versnelling = voertuig.maxversnelling*(1-pow(voertuig.snelheid/voertuig.maxsnelheid,4) - pow(delta,2));
-        voertuig.versnelling = versnelling;
+        if (voertuig.gestopt) {
+            voertuig.versnelling=-(voertuig.maxremfactor*voertuig.snelheid/voertuig.maxversnelling);
+        } else {
+            int indexVoertuig2 = indexLijst - 1;
+            Voertuig voertuig2 = voertuigen[indexVoertuig2];
+            double volgafstand = voertuig2.positie - voertuig.positie - voertuig2.lengte;
+            double snelheidsverschil = voertuig.snelheid - voertuig2.snelheid;
+            double delta = (voertuig.fmin + std::max(0.0, voertuig.snelheid + ( (voertuig.snelheid * snelheidsverschil) / (2 * std::sqrt(voertuig.maxversnelling * voertuig.maxremfactor)))))/ volgafstand;
+            double versnelling = voertuig.maxversnelling*(1-pow(voertuig.snelheid/voertuig.maxsnelheid,4) - pow(delta,2));
+            voertuig.versnelling = versnelling;
+        }
     }
     else {
         double delta = 0;
@@ -117,17 +121,18 @@ void TrafficSim::vertragen(Voertuig &voertuig) {
     voertuig.maxsnelheid=s*voertuig.mMaxsnelheid;
 }
 void TrafficSim::stoppen(Voertuig &voertuig) {
-    int indexLijst = voertuig.voertuigNummer - 1;
 
-    if (indexLijst == 0) {
-        voertuig.versnelling = - (voertuig.maxremfactor*voertuig.snelheid) / voertuig.maxsnelheid;
-    } else {
-        size_t indexVoertuig2 = indexLijst - 1;
-        if (indexVoertuig2 >= 0 && indexVoertuig2 < voertuigen.size()) {
-            Voertuig& voertuig2 = voertuigen[indexVoertuig2];
-            voertuig.versnelling = voertuig2.versnelling;
-        }
-    }
+
+    // int indexLijst = voertuig.voertuigNummer - 1;
+    // if (indexLijst == 0) {
+    //     voertuig.versnelling = - (voertuig.maxremfactor*voertuig.snelheid) / voertuig.maxsnelheid;
+    // } else {
+    //     size_t indexVoertuig2 = indexLijst - 1;
+    //     if (indexVoertuig2 >= 0 && indexVoertuig2 < voertuigen.size()) {
+    //         Voertuig& voertuig2 = voertuigen[indexVoertuig2];
+    //         voertuig.versnelling = voertuig2.versnelling;
+    //     }
+    // }
 }
 void TrafficSim::kruispuntSim(std::vector<Kruispunt> kruispunten, Voertuig voertuig, std::vector<Baan>& banen) {
     for (Kruispunt kruispunt: kruispunten) {
@@ -237,6 +242,9 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht& verkeerslicht) {
                 }
             }
             versnellen(eersteVoertuig);
+            for (auto &voertuig: verkeerslicht.voertuigenVoorLicht) {
+                voertuig.gestopt=false;
+            }
         }
         else if (verkeerslicht.kleur==verkeerslicht.groen) {
             verkeerslicht.kleur="rood";
@@ -252,11 +260,15 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht& verkeerslicht) {
                 }
             }
             if (!eersteVoertuig.prioriteit) {
-                double Vertraag = verkeerslicht.positie - eersteVoertuig.positie;
+                double Vertraag = verkeerslicht.positie - eersteVoertuig.vertraagafstand;
+                double Stop = verkeerslicht.positie - eersteVoertuig.stopafstand;
                 if (eersteVoertuig.positie < verkeerslicht.positie && eersteVoertuig.positie >= Vertraag) {
                     vertragen(eersteVoertuig);
-                } else if (voertuigen[0].positie<=voertuigen[0].vertraagafstand/2) {
-                    stoppen(voertuigen[0]);
+                } else if (eersteVoertuig.positie < verkeerslicht.positie && eersteVoertuig.positie >= Stop) {
+                    stoppen(eersteVoertuig);
+                    for (auto &voertuig: verkeerslicht.voertuigenVoorLicht) {
+                        voertuig.gestopt=true;
+                    }
                 }
             }
         }
