@@ -75,7 +75,7 @@ public:
      *@date /
      *@version
      */
-    void vertragen(Voertuig& voertuig);
+    Voertuig vertragen(Voertuig& voertuig);
     /**
      * Deze functie berekent hoe het voertuig kan stoppen.
      * @param voertuig is het voertuig.
@@ -117,7 +117,7 @@ public:
      *@date /
      *@version
      */
-    void checkverkeerslicht(Voertuig& voertuig);
+    void checkverkeerslicht();
     void simVoertuiggenerator();
 
     std::vector<Baan> get_banen() const {

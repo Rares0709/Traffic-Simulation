@@ -25,6 +25,21 @@ protected:
         sim.setTime(0);
     }
 };*/
+TEST(VerkeerslichtTest, VoertuigStoptBijRood) {
+    TrafficSim trafficSim = parseFile("test/test2.xml");
+    // Controleer begin: er zijn initieel 2 voertuigen
+    trafficSim.TestingModeOn();
+    Voertuig voertuig;
+    voertuig.baan = "Middelheimlaan";
+    voertuig.snelheid = 16.6;
+    voertuig.versnelling = 1.44;
+    voertuig.positie = 215;
+    trafficSim.voegvoertuigtoe(voertuig);
+    trafficSim.Simulate();
+
+    Voertuig voertuig1;
+    voertuig1.volgendeNummer = 0;
+}
 // Test that verifies if a vehicle is generated when the time exceeds the vehicle generator's frequency
 TEST(VoertuigGenSimTest, GeenNieuwVoertuigBijBezetting) {
     TrafficSim trafficSim = parseFile("test/test1.xml");

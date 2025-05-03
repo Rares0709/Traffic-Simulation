@@ -58,6 +58,7 @@ void TrafficSim::Simulate(int duration) {
                     }
                 }
             }
+            checkverkeerslicht();
             for (auto& voertuig : voertuigen) {
                 berekenSnelheid(voertuig);
                 berekenVersnelling(voertuig);
@@ -122,9 +123,13 @@ void TrafficSim::berekenVersnelling(Voertuig &voertuig) {
         }
     }
     else {
-        double delta = 0;
-        double versnelling = voertuig.maxversnelling*(1-pow(voertuig.snelheid/voertuig.maxsnelheid,4) - pow(delta,2));
-        voertuig.versnelling = versnelling;
+        if (voertuig.gestopt) {
+            voertuig.versnelling = -(voertuig.maxremfactor*voertuig.snelheid/voertuig.maxversnelling);
+        } else {
+            double delta = 0;
+            double versnelling = voertuig.maxversnelling*(1-pow(voertuig.snelheid/voertuig.maxsnelheid,4) - pow(delta,2));
+            voertuig.versnelling = versnelling;
+        }
     }
 
 }
@@ -133,22 +138,22 @@ void TrafficSim::berekenSnelheid(Voertuig &voertuig) {
     double versnelling = voertuig.versnelling;
     double formule = snelheid + (versnelling*DeltaTime);
     double positie = voertuig.positie;
-    if (snelheid>voertuig.mMaxsnelheid) {
+    /*if (snelheid>voertuig.mMaxsnelheid) {
         snelheid=voertuig.mMaxsnelheid;
         positie = positie + (snelheid*DeltaTime) + (versnelling)*((pow(DeltaTime,2))/2);
         voertuig.positie = positie;
-    } else {
-        if (formule < 0) {
-            positie = positie - ((pow(snelheid, 2))/(2*versnelling));
-            snelheid = 0;
-            voertuig.positie = positie;
-        }
-        else {
-            snelheid = snelheid + (versnelling*DeltaTime);
-            positie = positie + (snelheid*DeltaTime) + (versnelling)*((pow(DeltaTime,2))/2);
-            voertuig.positie = positie;
-        }
+    } else {*/
+    if (formule < 0) {
+        positie = positie - ((pow(snelheid, 2))/(2*versnelling));
+        snelheid = 0;
+        voertuig.positie = positie;
     }
+    else {
+        snelheid = snelheid + (versnelling*DeltaTime);
+        positie = positie + (snelheid*DeltaTime) + (versnelling)*((pow(DeltaTime,2))/2);
+        voertuig.positie = positie;
+    }
+    /*}*/
     voertuig.snelheid = snelheid;
 
 }
@@ -163,9 +168,11 @@ void TrafficSim::versnellen(Voertuig &voertuig) {
         }
     }*/
 }
-void TrafficSim::vertragen(Voertuig &voertuig) {
+Voertuig TrafficSim::vertragen(Voertuig &voertuig) {
     double s=voertuig.vertraagfactor;
     voertuig.maxsnelheid=s*voertuig.mMaxsnelheid;
+    std::cout << "test" << std::endl;
+    return voertuig;
 }
 void TrafficSim::stoppen(Voertuig &voertuig) {
 
@@ -273,13 +280,49 @@ void TrafficSim::geldig(Voertuig &voertuig) {
         /*std::cout << "er gebeurt niks" << std::endl;*/
     }
 }
-void TrafficSim::checkverkeerslicht(Voertuig& voertuig) {
+void TrafficSim::checkverkeerslicht() {
     for (Verkeerslicht& verkeerslicht : verkeerslichten) {
-        if (verkeerslicht.kleur == verkeerslicht.rood) {
-            if (voertuig.positie<= verkeerslicht.positie - voertuig.vertraagafstand) {
-                vertragen(voertuigen[0]);
-            } else if (voertuig.positie <= (verkeerslicht.positie - voertuig.vertraagafstand) /2) {
-                stoppen(voertuigen[0]);
+        if (verkeerslicht.kleur==verkeerslicht.rood) {
+            if (!testingMode) {
+                std::cout << "Aantal voertuigen: " << voertuigen.size() << std::endl;
+            }
+            bool eersteGevonden = false;
+            Voertuig eersteVoertuig;
+            for (auto& voertuig : verkeerslicht.voertuigenVoorLicht) {
+                if (voertuig.positie < verkeerslicht.positie && (eersteGevonden != true || voertuig.positie >= eersteVoertuig.positie )) {
+                    eersteVoertuig = voertuig;
+                    eersteGevonden = true;
+                }
+            }
+            if (!eersteVoertuig.prioriteit) {
+                double Vertraag = verkeerslicht.positie - eersteVoertuig.vertraagafstand;
+                double Stop = verkeerslicht.positie - eersteVoertuig.stopafstand;
+                if (eersteVoertuig.positie < Stop && eersteVoertuig.positie >= Vertraag) {
+                    eersteVoertuig = vertragen(eersteVoertuig);
+                    for (auto& voertuig : verkeerslicht.voertuigenVoorLicht) {
+                        if (voertuig.voertuigNummer == eersteVoertuig.voertuigNummer) {
+                            voertuig = eersteVoertuig;
+                        }
+                    }
+                    for (auto& voertuig : voertuigen) {
+                        if (voertuig.voertuigNummer == eersteVoertuig.voertuigNummer) {
+                            voertuig = eersteVoertuig;
+                        }
+                    }
+                } else if (eersteVoertuig.positie < verkeerslicht.positie && eersteVoertuig.positie >= Stop) {
+                    //stoppen(eersteVoertuig);
+                    eersteVoertuig.gestopt=true;
+                    for (auto& voertuig : verkeerslicht.voertuigenVoorLicht) {
+                        if (voertuig.voertuigNummer == eersteVoertuig.voertuigNummer) {
+                            voertuig = eersteVoertuig;
+                        }
+                    }
+                    for (auto& voertuig : voertuigen) {
+                        if (voertuig.voertuigNummer == eersteVoertuig.voertuigNummer) {
+                            voertuig = eersteVoertuig;
+                        }
+                    }
+                }
             }
         }
     }
@@ -308,10 +351,8 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht& verkeerslicht) {
                     eersteGevonden = true;
                 }
             }
+            eersteVoertuig.gestopt = false;
             versnellen(eersteVoertuig);
-            for (auto &voertuig: verkeerslicht.voertuigenVoorLicht) {
-                voertuig.gestopt=false;
-            }
         }
         else if (verkeerslicht.kleur==verkeerslicht.groen) {
             verkeerslicht.kleur="rood";
@@ -329,12 +370,30 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht& verkeerslicht) {
             if (!eersteVoertuig.prioriteit) {
                 double Vertraag = verkeerslicht.positie - eersteVoertuig.vertraagafstand;
                 double Stop = verkeerslicht.positie - eersteVoertuig.stopafstand;
-                if (eersteVoertuig.positie < verkeerslicht.positie && eersteVoertuig.positie >= Vertraag) {
-                    vertragen(eersteVoertuig);
+                if (eersteVoertuig.positie < Stop && eersteVoertuig.positie >= Vertraag) {
+                    eersteVoertuig = vertragen(eersteVoertuig);
+                    for (auto& voertuig : verkeerslicht.voertuigenVoorLicht) {
+                        if (voertuig.voertuigNummer == eersteVoertuig.voertuigNummer) {
+                            voertuig = eersteVoertuig;
+                        }
+                    }
+                    for (auto& voertuig : voertuigen) {
+                        if (voertuig.voertuigNummer == eersteVoertuig.voertuigNummer) {
+                            voertuig = eersteVoertuig;
+                        }
+                    }
                 } else if (eersteVoertuig.positie < verkeerslicht.positie && eersteVoertuig.positie >= Stop) {
-                    stoppen(eersteVoertuig);
-                    for (auto &voertuig: verkeerslicht.voertuigenVoorLicht) {
-                        voertuig.gestopt=true;
+                    //stoppen(eersteVoertuig);
+                    eersteVoertuig.gestopt=true;
+                    for (auto& voertuig : verkeerslicht.voertuigenVoorLicht) {
+                        if (voertuig.voertuigNummer == eersteVoertuig.voertuigNummer) {
+                            voertuig = eersteVoertuig;
+                        }
+                    }
+                    for (auto& voertuig : voertuigen) {
+                        if (voertuig.voertuigNummer == eersteVoertuig.voertuigNummer) {
+                            voertuig = eersteVoertuig;
+                        }
                     }
                 }
             }
