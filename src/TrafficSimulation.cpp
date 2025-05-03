@@ -1,7 +1,7 @@
 //
 // Created by jonas on 3/20/2025.
 //
-
+#include <algorithm>
 #include "TrafficSimulation.h"
 #include "DesignByContract.h"
 void TrafficSim::Simulate(int duration) {
@@ -40,10 +40,20 @@ void TrafficSim::Simulate(int duration) {
             if (!testingMode) {
                 print();
             }
+            std::vector<Voertuig> usedVoertuigen;
             for (Verkeerslicht& verkeerslicht : verkeerslichten) {
                 for (Voertuig& voertuig : voertuigen) {
                     if (voertuig.positie < verkeerslicht.positie) {
-                        verkeerslicht.voertuigenVoorLicht.push_back(voertuig);
+                        if (!usedVoertuigen.empty()) {
+                            if (std::find(usedVoertuigen.begin(),usedVoertuigen.end(), voertuig) != usedVoertuigen.end()) {
+                                verkeerslicht.voertuigenVoorLicht.push_back(voertuig);
+                                usedVoertuigen.push_back(voertuig);
+                            }
+                        }
+                        else {
+                            verkeerslicht.voertuigenVoorLicht.push_back(voertuig);
+                            usedVoertuigen.push_back(voertuig);
+                        }
                     }
                 }
             }
