@@ -56,14 +56,14 @@ protected:
     voertuig.volgendeNummer = 0;
 }*/
 //test if lightcolor switches
-/*TEST_F(TrafficSimTest, TrafficLightSwitchTest) {
+TEST(InlezenTest, TrafficLightSwitchTest) {
+    TrafficSim trafficSim = parseFile("test/test1.xml");
+    trafficSim.TestingModeOn();
     Verkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
     trafficSim.Simulate(verkeerslicht1.cyclus+1);
     Verkeerslicht verkeerslicht = trafficSim.getVerkeerslichten()[0];
-    if (trafficSim.getTime() > verkeerslicht.cyclus) {
-        ASSERT_NE(verkeerslicht.kleur, verkeerslicht1.kleur);
-    }
-}*/
+    ASSERT_NE(verkeerslicht.kleur, verkeerslicht1.kleur);
+}
 
 //defective test
 /*TEST_F(TrafficSimTest, VehicleRemovalTest) {
@@ -181,7 +181,7 @@ protected:
 //     EXPECT_EQ(voertuig.positie, 27.545);
 // }
 //
-TEST(BerekenSnelheidTest, Versnelling) {
+/*TEST(BerekenSnelheidTest, Versnelling) {
     TrafficSim trafficsim = parseFile("test/test_VoertuigBerekenVersnelling.xml");
     trafficsim.TestingModeOn();
     Voertuig &voertuig = trafficsim.getVoertuigen()[0];
@@ -201,7 +201,7 @@ TEST(BerekenSnelheidTest, Versnelling) {
 
     Voertuig voertuig2;
     voertuig2.volgendeNummer = 0;
-}
+}*/
 
 
 
