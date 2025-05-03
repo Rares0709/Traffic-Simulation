@@ -5,9 +5,10 @@
 #include "TrafficSimulation.h"
 #include "DesignByContract.h"
 void TrafficSim::Simulate(int duration) {
-    std::vector<Verkeerslicht> volgordeVerkeerslicht;
+    std::vector<std::vector<Verkeerslicht>> baanVerkeerslicht;
     Verkeerslicht vorigeVerkeerslicht;
     for (Baan baan : banen) {
+        std::vector<Verkeerslicht> volgordeVerkeerslicht;
         for (const Verkeerslicht& verkeerslicht : verkeerslichten) {
             if (baan.naam == verkeerslicht.baan) {
                 if (volgordeVerkeerslicht.empty()) {
@@ -22,7 +23,17 @@ void TrafficSim::Simulate(int duration) {
                 }
             }
         }
+        if (!volgordeVerkeerslicht.empty()) {
+            baanVerkeerslicht.push_back(volgordeVerkeerslicht);
+        }
     }
+    std::vector<Verkeerslicht> fixedVerkeerslicht;
+    for (auto& temp : baanVerkeerslicht) {
+        for (const Verkeerslicht& verkeerslicht : temp) {
+            fixedVerkeerslicht.push_back(verkeerslicht);
+        }
+    }
+    verkeerslichten = fixedVerkeerslicht;
     double& currentTime = this->getTime();
     while (duration == -1 ? !voertuigen.empty() : currentTime <= duration) {
         if (!voertuigen.empty() || (duration != -1 && currentTime >= duration)) {
