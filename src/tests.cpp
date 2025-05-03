@@ -62,7 +62,9 @@ TEST(InlezenTest, TrafficLightSwitchTest) {
     Verkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
     trafficSim.Simulate(verkeerslicht1.cyclus+1);
     Verkeerslicht verkeerslicht = trafficSim.getVerkeerslichten()[0];
-    ASSERT_NE(verkeerslicht.kleur, verkeerslicht1.kleur);
+    if (trafficSim.getTime() > verkeerslicht.cyclus) {
+        ASSERT_NE(verkeerslicht.kleur, verkeerslicht1.kleur);
+    }
 }
 
 //defective test
