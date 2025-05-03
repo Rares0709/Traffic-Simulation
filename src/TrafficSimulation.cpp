@@ -5,6 +5,24 @@
 #include "TrafficSimulation.h"
 #include "DesignByContract.h"
 void TrafficSim::Simulate(int duration) {
+    std::vector<Verkeerslicht> volgordeVerkeerslicht;
+    Verkeerslicht vorigeVerkeerslicht;
+    for (Baan baan : banen) {
+        for (const Verkeerslicht& verkeerslicht : verkeerslichten) {
+            if (baan.naam == verkeerslicht.baan) {
+                if (volgordeVerkeerslicht.empty()) {
+                    volgordeVerkeerslicht.push_back(verkeerslicht);
+                    vorigeVerkeerslicht = verkeerslicht;
+                }
+                else if (vorigeVerkeerslicht.positie > verkeerslicht.positie) {
+                    volgordeVerkeerslicht.insert(volgordeVerkeerslicht.begin() , verkeerslicht);
+                }
+                else if (vorigeVerkeerslicht.positie < verkeerslicht.positie) {
+                    volgordeVerkeerslicht.push_back(verkeerslicht);
+                }
+            }
+        }
+    }
     double& currentTime = this->getTime();
     while (duration == -1 ? !voertuigen.empty() : currentTime <= duration) {
         if (!voertuigen.empty() || (duration != -1 && currentTime >= duration)) {
@@ -67,11 +85,10 @@ void TrafficSim::wagenToDelete(Voertuig &voertuig) {
     toDelete.push_back(voertuig);
 }
 void TrafficSim::berekenVersnelling(Voertuig &voertuig) {
-
     int indexLijst = voertuig.voertuigNummer - 1;
     if (indexLijst > 0) {
         if (voertuig.gestopt) {
-            voertuig.versnelling=-(voertuig.maxremfactor*voertuig.snelheid/voertuig.maxversnelling);
+            voertuig.versnelling = -(voertuig.maxremfactor*voertuig.snelheid/voertuig.maxversnelling);
         } else {
             int indexVoertuig2 = indexLijst - 1;
             Voertuig voertuig2 = voertuigen[indexVoertuig2];
