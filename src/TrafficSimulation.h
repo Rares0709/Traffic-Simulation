@@ -189,8 +189,32 @@ public:
         return voertuigen;
     }
 
+    std::vector<VoertuigGen> get_VoertuigGen() const {
+        return voertuigengen;
+    }
+
+    void set_voertuigengen(const std::vector<VoertuigGen> &voertuigengen) {
+        this->voertuigengen = voertuigengen;
+    }
+
     void setVoertuigen(const std::vector<Voertuig> &voertuigen) {
         this->voertuigen = voertuigen;
+    }
+
+    std::vector<Bushalte> get_bushaltes() const {
+        return bushaltes;
+    }
+
+    void set_bushaltes(const std::vector<Bushalte> &bushaltes) {
+        this->bushaltes = bushaltes;
+    }
+
+    std::vector<Kruispunt> get_kruispunten() const {
+        return kruispunten;
+    }
+
+    void set_kruispunten(const std::vector<Kruispunt> &kruispunten) {
+        this->kruispunten = kruispunten;
     }
 
     void voegvoertuigtoe(Voertuig voertuig) {
