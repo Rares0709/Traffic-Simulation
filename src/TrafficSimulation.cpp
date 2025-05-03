@@ -44,15 +44,16 @@ void TrafficSim::Simulate(int duration) {
             for (Verkeerslicht& verkeerslicht : verkeerslichten) {
                 for (Voertuig& voertuig : voertuigen) {
                     if (voertuig.positie < verkeerslicht.positie) {
-                        if (!usedVoertuigen.empty()) {
-                            if (std::find(usedVoertuigen.begin(),usedVoertuigen.end(), voertuig) != usedVoertuigen.end()) {
+                        // Only add if not already in usedVoertuigen
+                        auto it = std::find_if(usedVoertuigen.begin(), usedVoertuigen.end(), [&](const Voertuig& v) {
+                            return v.voertuigNummer == voertuig.voertuigNummer;
+                        });
+
+                        if (it == usedVoertuigen.end()) {
+                            if (voertuig.baan == verkeerslicht.baan) {
                                 verkeerslicht.voertuigenVoorLicht.push_back(voertuig);
                                 usedVoertuigen.push_back(voertuig);
                             }
-                        }
-                        else {
-                            verkeerslicht.voertuigenVoorLicht.push_back(voertuig);
-                            usedVoertuigen.push_back(voertuig);
                         }
                     }
                 }
