@@ -171,7 +171,6 @@ void TrafficSim::versnellen(Voertuig &voertuig) {
 Voertuig TrafficSim::vertragen(Voertuig &voertuig) {
     double s=voertuig.vertraagfactor;
     voertuig.maxsnelheid=s*voertuig.mMaxsnelheid;
-    std::cout << "test" << std::endl;
     return voertuig;
 }
 void TrafficSim::stoppen(Voertuig &voertuig) {
@@ -290,8 +289,10 @@ void TrafficSim::checkverkeerslicht() {
             Voertuig eersteVoertuig;
             for (auto& voertuig : verkeerslicht.voertuigenVoorLicht) {
                 if (voertuig.positie < verkeerslicht.positie && (eersteGevonden != true || voertuig.positie >= eersteVoertuig.positie )) {
-                    eersteVoertuig = voertuig;
-                    eersteGevonden = true;
+                    if (!voertuig.prioriteit) {
+                        eersteVoertuig = voertuig;
+                        eersteGevonden = true;
+                    }
                 }
             }
             if (!eersteVoertuig.prioriteit) {

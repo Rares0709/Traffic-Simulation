@@ -31,12 +31,13 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood) {
     trafficSim.TestingModeOn();
     Voertuig voertuig;
     voertuig.baan = "Middelheimlaan";
-    voertuig.snelheid = 16.6;
+    double speed = voertuig.snelheid = 16.6;
     voertuig.versnelling = 1.44;
-    voertuig.positie = 215;
+    voertuig.positie = 200;
     trafficSim.voegvoertuigtoe(voertuig);
-    trafficSim.Simulate();
+    trafficSim.Simulate(1);
 
+    ASSERT_LT(trafficSim.getVoertuigen()[0].snelheid, speed);
     Voertuig voertuig1;
     voertuig1.volgendeNummer = 0;
 }
