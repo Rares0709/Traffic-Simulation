@@ -140,6 +140,7 @@ public:
     int getSnelheid(Voertuig voertuig) {
         return voertuig.snelheid;
     }
+    void setDeltaTime(double dt) { DeltaTime = dt; }
     /**
      * Deze functie geeft de lengte van de baan weer waarop het voertuig rijdt.
      * @param baannaam is de naam van de baan.
