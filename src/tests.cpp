@@ -209,7 +209,7 @@ TEST(VerkeerslichtTest, LichtSwitch) {
     trafficsim.Simulate(verkeerslicht1.cyclus+1);
     Verkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
     EXPECT_EQ(verkeerslicht.kleur, "groen");
-    trafficsim.Simulate(verkeerslicht.cyclus+ verkeerslicht1.cyclus+2);
+    trafficsim.Simulate(verkeerslicht.cyclus*2+1);
     Verkeerslicht verkeerslicht2 = trafficsim.getVerkeerslichten()[0];
     EXPECT_EQ(verkeerslicht2.kleur, "rood");
     Voertuig::volgendeNummer = 1;

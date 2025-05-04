@@ -35,91 +35,86 @@ void TrafficSim::Simulate(int duration) {
     }
     verkeerslichten = fixedVerkeerslicht;
     double& currentTime = this->getTime();
-    while (duration == -1 ? !voertuigen.empty() : currentTime <= duration) {
-        if (!voertuigen.empty() || (duration != -1 && currentTime >= duration)) {
-            if (!testingMode) {
-                print();
-            }
-            std::vector<Voertuig> usedVoertuigen;
-            for (Verkeerslicht& verkeerslicht : verkeerslichten) {
-                for (Voertuig& voertuig : voertuigen) {
-                    if (voertuig.positie < verkeerslicht.positie) {
-                        // Only add if not already in usedVoertuigen
-                        auto it = std::find_if(usedVoertuigen.begin(), usedVoertuigen.end(), [&](const Voertuig& v) {
-                            return v.voertuigNummer == voertuig.voertuigNummer;
-                        });
+    while (duration == -1 || currentTime <= duration) {
+        if (!testingMode) {
+            print();
+        }
+        std::vector<Voertuig> usedVoertuigen;
+        for (Verkeerslicht& verkeerslicht : verkeerslichten) {
+            for (Voertuig& voertuig : voertuigen) {
+                if (voertuig.positie < verkeerslicht.positie) {
+                    // Only add if not already in usedVoertuigen
+                    auto it = std::find_if(usedVoertuigen.begin(), usedVoertuigen.end(), [&](const Voertuig& v) {
+                        return v.voertuigNummer == voertuig.voertuigNummer;
+                    });
 
-                        if (it == usedVoertuigen.end()) {
-                            if (voertuig.baan == verkeerslicht.baan) {
-                                verkeerslicht.voertuigenVoorLicht.push_back(voertuig);
-                                usedVoertuigen.push_back(voertuig);
-                            }
+                    if (it == usedVoertuigen.end()) {
+                        if (voertuig.baan == verkeerslicht.baan) {
+                            verkeerslicht.voertuigenVoorLicht.push_back(voertuig);
+                            usedVoertuigen.push_back(voertuig);
                         }
                     }
                 }
             }
-            checkverkeerslicht();
-            for (auto& voertuig : voertuigen) {
-                berekenSnelheid(voertuig);
-                berekenVersnelling(voertuig);
-                geldig(voertuig);
-                kruispuntSim(voertuig);
-                if (voertuig.type == "bus")
-                    simBushaltes(voertuig);
-            }
-            // int size = toDelete.size();
-            // for (Voertuig& voertuig: toDelete) {
-            //     int voertuignummer = voertuig.voertuigNummer;
-            //     voertuigen.erase(voertuigen.begin()+voertuig.voertuigNummer-1);
-            //     for (auto& voertuig1 : voertuigen) {
-            //         if (voertuig1.voertuigNummer > voertuignummer) {
-            //             voertuig1.voertuigNummer -= 1;
-            //             voertuig1.lowerVolgendeNummer();
-            //         }
-            //     }
-            //     for (auto& voertuig1 : toDelete) {
-            //         if (voertuig1.voertuigNummer > voertuignummer) {
-            //             voertuig1.voertuigNummer -= 1;
-            //         }
-            //     }
-            // }
-            std::vector<int> indexen;
-            for (Voertuig& voertuig : toDelete) {
-                size_t idx = static_cast<size_t>(voertuig.voertuigNummer - 1);
-                if (idx < voertuigen.size()) {
-                    indexen.push_back(static_cast<int>(idx));  // of sla ze als size_t op, dan moet je alles aanpassen
-                }
-            }
-            std::sort(indexen.rbegin(), indexen.rend());  // sorteer van hoog naar laag
-            for (int idx : indexen) {
-                voertuigen.erase(voertuigen.begin() + idx);
-            }
-
-            // (Optioneel) hernummer voertuigen opnieuw na verwijderen
-            for (size_t i = 0; i < voertuigen.size(); ++i) {
-                voertuigen[i].voertuigNummer = i + 1;
-                voertuigen[i].lowerVolgendeNummer();
-            }
-            toDelete.clear();
-            if (!verkeerslichten.empty()) {
-                if (!testingMode) {
-                    std::cout << verkeerslichten.size() << std::endl;
-                }
-                for (auto& verkeerslicht : verkeerslichten)
-                    verkeerslichtSim(verkeerslicht);
-            } else {
-                if (!testingMode) {
-                    std::cout << "Geen verkeerslichten beschikbaar!" << std::endl;
-                }
-            }
-            verhoogTijd();
-            simVoertuiggenerator();
-            for (Verkeerslicht &verkeerslicht: verkeerslichten) {
-                 verkeerslicht.voertuigenVoorLicht.clear();
+        }
+        checkverkeerslicht();
+        for (auto& voertuig : voertuigen) {
+            berekenSnelheid(voertuig);
+            berekenVersnelling(voertuig);
+            geldig(voertuig);
+            kruispuntSim(voertuig);
+            if (voertuig.type == "bus")
+                simBushaltes(voertuig);
+        }
+        // int size = toDelete.size();
+        // for (Voertuig& voertuig: toDelete) {
+        //     int voertuignummer = voertuig.voertuigNummer;
+        //     voertuigen.erase(voertuigen.begin()+voertuig.voertuigNummer-1);
+        //     for (auto& voertuig1 : voertuigen) {
+        //         if (voertuig1.voertuigNummer > voertuignummer) {
+        //             voertuig1.voertuigNummer -= 1;
+        //             voertuig1.lowerVolgendeNummer();
+        //         }
+        //     }
+        //     for (auto& voertuig1 : toDelete) {
+        //         if (voertuig1.voertuigNummer > voertuignummer) {
+        //             voertuig1.voertuigNummer -= 1;
+        //         }
+        //     }
+        // }
+        std::vector<int> indexen;
+        for (Voertuig& voertuig : toDelete) {
+            size_t idx = static_cast<size_t>(voertuig.voertuigNummer - 1);
+            if (idx < voertuigen.size()) {
+                indexen.push_back(static_cast<int>(idx));  // of sla ze als size_t op, dan moet je alles aanpassen
             }
         }
-        else {
-            break;
+        std::sort(indexen.rbegin(), indexen.rend());  // sorteer van hoog naar laag
+        for (int idx : indexen) {
+            voertuigen.erase(voertuigen.begin() + idx);
+        }
+
+        // (Optioneel) hernummer voertuigen opnieuw na verwijderen
+        for (size_t i = 0; i < voertuigen.size(); ++i) {
+            voertuigen[i].voertuigNummer = i + 1;
+            voertuigen[i].lowerVolgendeNummer();
+        }
+        toDelete.clear();
+        if (!verkeerslichten.empty()) {
+            if (!testingMode) {
+                std::cout << verkeerslichten.size() << std::endl;
+            }
+            for (auto& verkeerslicht : verkeerslichten)
+                verkeerslichtSim(verkeerslicht);
+        } else {
+            if (!testingMode) {
+                std::cout << "Geen verkeerslichten beschikbaar!" << std::endl;
+            }
+        }
+        verhoogTijd();
+        simVoertuiggenerator();
+        for (Verkeerslicht &verkeerslicht: verkeerslichten) {
+             verkeerslicht.voertuigenVoorLicht.clear();
         }
     }
 }
