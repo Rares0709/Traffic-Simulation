@@ -189,7 +189,6 @@ Voertuig TrafficSim::vertragen(Voertuig &voertuig) {
 }
 void TrafficSim::stoppen(Voertuig &voertuig) {
 
-
     // int indexLijst = voertuig.voertuigNummer - 1;
     // if (indexLijst == 0) {
     //     voertuig.versnelling = - (voertuig.maxremfactor*voertuig.snelheid) / voertuig.maxsnelheid;
@@ -326,7 +325,6 @@ void TrafficSim::checkverkeerslicht() {
                     }
                 } else if (eersteVoertuig.positie < verkeerslicht.positie && eersteVoertuig.positie >= Stop) {
                     //stoppen(eersteVoertuig);
-                    eersteVoertuig.gestopt=true;
                     for (auto& voertuig : verkeerslicht.voertuigenVoorLicht) {
                         if (voertuig.voertuigNummer == eersteVoertuig.voertuigNummer) {
                             voertuig = eersteVoertuig;
@@ -427,9 +425,12 @@ void TrafficSim::simBushaltes(Voertuig &bus) {
         }
         if (bus.positie >= Vertraag && bus.positie <= Stop) {
             vertragen(bus);
-        } else if(bus.positie >= Stop && bus.positie <= bushalte.positie) {
+        } else if(!bus.recentGestopt && bus.positie >= Stop && bus.positie <= bushalte.positie) {
             bus.gestopt = true;
-        } if (bus.timestop > bushalte.wachttijd) {
+        } else if (bus.recentGestopt && bus.positie > bushalte.positie){
+            bus.recentGestopt=false;
+        }
+        if (bus.timestop > bushalte.wachttijd) {
             versnellen(bus);
             bus.gestopt = false;
             bus.timestop = 0;
