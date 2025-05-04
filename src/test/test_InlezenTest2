@@ -1,0 +1,19 @@
+<BAAN>
+  <naam>Beukenlaan</naam>
+  <lengte>1000</lengte>
+</BAAN>
+<VERKEERSLICHT>
+<baan>Beukenlaan</baan>
+<positie>700</positie>
+<cyclus>25</cyclus>
+</VERKEERSLICHT>
+<VOERTUIG>
+<baan>Beukenlaan</baan>
+<positie>100</positie>
+<type>bus</type>
+</VOERTUIG>
+<BUSHALTE>
+<baan>Beukenlaan</baan>
+<positie>600</positie>
+<wachttijd>15</wachttijd>
+</BUSHALTE>
