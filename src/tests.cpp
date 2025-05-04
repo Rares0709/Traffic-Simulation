@@ -290,6 +290,7 @@ TEST(TypeVoertuig,VoertuigLatenDoorrijden) {
     EXPECT_GT(voertuig.positie,verkeerslicht.positie);
     Voertuig::volgendeNummer = 1;
 }
+//Alle testen!
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
