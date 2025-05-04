@@ -9,7 +9,7 @@
 protected:
     TrafficSim trafficSim;
     TrafficSimTest()
-        :trafficSim(parseFile("test/test1.xml")){}
+        :trafficSim(parseFile("test/test_InlezenTest.xml")){}
     virtual void SetUp() {
         //trafficSim.setTime(4.9);
         trafficSim.TestingModeOn();
@@ -20,13 +20,14 @@ protected:
 protected:
     TrafficSim sim;
     VoertuigGenSimTest()
-        :sim(parseFile("test/test1.xml")){}
+        :sim(parseFile("test/test_InlezenTest.xml")){}
     virtual void SetUp() {
         sim.setTime(0);
     }
 };*/
 TEST(VerkeerslichtTest, VoertuigStoptBijRood) {
-    TrafficSim trafficSim = parseFile("test/test2.xml");
+    TrafficSim trafficSim = parseFile("test/test_VerkeerslichtTest.xml");
+
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
     Voertuig voertuig;
@@ -40,9 +41,79 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood) {
     ASSERT_LT(trafficSim.getVoertuigen()[0].snelheid, speed);
     Voertuig::volgendeNummer = 1;
 }
+TEST(VerkeerslichtTest1, VoertuigStoptBijRood) {
+    TrafficSim trafficSim = parseFile("test/test_VerkeerslichtTest1.xml");
+    // Controleer begin: er zijn initieel 2 voertuigen
+    trafficSim.TestingModeOn();
+    Voertuig voertuig;
+    voertuig.baan = "Middelheimlaan";
+    double speed = voertuig.snelheid = 16.6;
+    voertuig.versnelling = 1.44;
+    voertuig.positie = 200;
+    trafficSim.voegvoertuigtoe(voertuig);
+    trafficSim.Simulate(1);
+
+    ASSERT_LT(trafficSim.getVoertuigen()[0].snelheid, speed);
+    Voertuig::volgendeNummer = 1;
+}
+TEST(VerkeerslichtTest2, VoertuigStoptBijRood) {
+    TrafficSim trafficSim = parseFile("test/test_VerkeerslichtTest2.xml");
+    // Controleer begin: er zijn initieel 2 voertuigen
+    trafficSim.TestingModeOn();
+    Voertuig voertuig;
+    voertuig.baan = "Middelheimlaan";
+    double speed = voertuig.snelheid = 16.6;
+    voertuig.versnelling = 1.44;
+    voertuig.positie = 200;
+    trafficSim.voegvoertuigtoe(voertuig);
+    trafficSim.Simulate(1);
+
+    ASSERT_LT(trafficSim.getVoertuigen()[0].snelheid, speed);
+    Voertuig::volgendeNummer = 1;
+}
+TEST(VerkeerslichtTest3, VoertuigStoptBijRood) {
+    TrafficSim trafficSim = parseFile("test/test_VerkeerslichtTest3.xml");
+    // Controleer begin: er zijn initieel 2 voertuigen
+    trafficSim.TestingModeOn();
+    Voertuig voertuig;
+    voertuig.baan = "Beukenlaan";
+    double speed = voertuig.snelheid = 16.6;
+    voertuig.versnelling = 1.44;
+    voertuig.positie = 200;
+    trafficSim.voegvoertuigtoe(voertuig);
+    trafficSim.Simulate(1);
+
+    ASSERT_LT(trafficSim.getVoertuigen()[0].snelheid, speed);
+    Voertuig::volgendeNummer = 1;
+}
+
+TEST(VerkeerslichtTest4, VoertuigStoptBijRood) {
+    TrafficSim trafficSim = parseFile("test/test_VerkeerslichtTest4.xml");
+    // Controleer begin: er zijn initieel 2 voertuigen
+    trafficSim.TestingModeOn();
+    Voertuig voertuig;
+    voertuig.baan = "Floralienlaan";
+    double speed = voertuig.snelheid = 8.02;
+    voertuig.versnelling = 1.01;
+    voertuig.positie = 200;
+
+    Voertuig voertuig1;
+    voertuig1.baan = "Middelheimlaan";
+    double speed1 = voertuig1.snelheid = 4.12;
+    voertuig1.versnelling = 1.12;
+    voertuig1.positie = 200;
+    trafficSim.voegvoertuigtoe(voertuig);
+    trafficSim.voegvoertuigtoe(voertuig1);
+    trafficSim.Simulate(1);
+
+    ASSERT_LT(trafficSim.getVoertuigen()[0].snelheid, speed);
+    ASSERT_LT(trafficSim.getVoertuigen()[1].snelheid, speed1);
+    Voertuig::volgendeNummer = 1;
+}
+
 // Test that verifies if a vehicle is generated when the time exceeds the vehicle generator's frequency
 /*TEST(VoertuigGenSimTest, GeenNieuwVoertuigBijBezetting) {
-    TrafficSim trafficSim = parseFile("test/test1.xml");
+    TrafficSim trafficSim = parseFile("test/test_InlezenTest.xml");
     // Controleer begin: er zijn initieel 2 voertuigen
     ASSERT_EQ(trafficSim.getVoertuigen().size(), 2u);
 
@@ -55,7 +126,43 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood) {
 }*/
 //test if lightcolor switches
 TEST(InlezenTest, TrafficLightSwitchTest) {
-    TrafficSim trafficSim = parseFile("test/test1.xml");
+    TrafficSim trafficSim = parseFile("test/test_InlezenTest.xml");
+    trafficSim.TestingModeOn();
+    Verkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
+    trafficSim.Simulate(verkeerslicht1.cyclus+1);
+    Verkeerslicht verkeerslicht = trafficSim.getVerkeerslichten()[0];
+    ASSERT_NE(verkeerslicht.kleur, verkeerslicht1.kleur);
+    Voertuig::volgendeNummer = 1;
+}
+TEST(InlezenTest1, TrafficLightSwitchTest) {
+    TrafficSim trafficSim = parseFile("test/test_InlezenTest1.xml");
+    trafficSim.TestingModeOn();
+    Verkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
+    trafficSim.Simulate(verkeerslicht1.cyclus+1);
+    Verkeerslicht verkeerslicht = trafficSim.getVerkeerslichten()[0];
+    ASSERT_NE(verkeerslicht.kleur, verkeerslicht1.kleur);
+    Voertuig::volgendeNummer = 1;
+}
+TEST(InlezenTest2, TrafficLightSwitchTest) {
+    TrafficSim trafficSim = parseFile("test/test_InlezenTest2.xml");
+    trafficSim.TestingModeOn();
+    Verkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
+    trafficSim.Simulate(verkeerslicht1.cyclus+1);
+    Verkeerslicht verkeerslicht = trafficSim.getVerkeerslichten()[0];
+    ASSERT_NE(verkeerslicht.kleur, verkeerslicht1.kleur);
+    Voertuig::volgendeNummer = 1;
+}
+TEST(InlezenTest3, TrafficLightSwitchTest) {
+    TrafficSim trafficSim = parseFile("test/test_InlezenTest3.xml");
+    trafficSim.TestingModeOn();
+    Verkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
+    trafficSim.Simulate(verkeerslicht1.cyclus+1);
+    Verkeerslicht verkeerslicht = trafficSim.getVerkeerslichten()[0];
+    ASSERT_NE(verkeerslicht.kleur, verkeerslicht1.kleur);
+    Voertuig::volgendeNummer = 1;
+}
+TEST(InlezenTest4, TrafficLightSwitchTest) {
+    TrafficSim trafficSim = parseFile("test/test_InlezenTest4.xml");
     trafficSim.TestingModeOn();
     Verkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
     trafficSim.Simulate(verkeerslicht1.cyclus+1);
@@ -78,7 +185,7 @@ TEST(InlezenTest, TrafficLightSwitchTest) {
     ASSERT_GT(trafficSim.getVoertuigen().size(), 1);
 }*/
 TEST(ParseFileTest, ValidInputFile) {
-    TrafficSim sim = parseFile("test/test1.xml");
+    TrafficSim sim = parseFile("test/test_InlezenTest.xml");
 
     ASSERT_FALSE(sim.getVoertuigen().empty());
     ASSERT_FALSE(sim.get_banen().empty());
