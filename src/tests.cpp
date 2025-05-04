@@ -228,6 +228,36 @@ TEST(VerkeerslichtTest, BussenStoppenBijBushaltes) {
     ASSERT_LT(trafficSim.getVoertuigen()[0].snelheid, speed);
     Voertuig::volgendeNummer = 1;
 }
+TEST(RijdenTest, VersnellenEnVertragen) {
+    TrafficSim trafficsim = parseFile("test/test_autoRijden.xml");
+    trafficsim.TestingModeOn();
+    Voertuig voertuig = trafficsim.getVoertuigen()[0];
+    voertuig.snelheid = 12;
+    voertuig.versnelling = 0.5;
+    Voertuig voertuig1 = voertuig;
+    trafficsim.vertragen(voertuig1);
+    for (int i = 0; i < 6; ++i) {
+        trafficsim.berekenSnelheid(voertuig1);
+        trafficsim.berekenVersnelling(voertuig1);
+    }
+    EXPECT_GT(voertuig.snelheid,voertuig1.snelheid);
+    Voertuig voertuig2 = voertuig1;
+    trafficsim.versnellen(voertuig2);
+    for (int i = 0; i < 10; ++i) {
+        trafficsim.berekenSnelheid(voertuig2);
+        trafficsim.berekenVersnelling(voertuig2);
+    }
+    EXPECT_GT(voertuig2.snelheid, voertuig1.snelheid);
+}
+TEST(Toevoegen, VoertuigGenSim) {
+    TrafficSim trafficsim = parseFile("test/test_autoRijden.xml");
+    trafficsim.TestingModeOn();
+    std::vector<Voertuig> voertuigen = trafficsim.getVoertuigen();
+    EXPECT_EQ(voertuigen.size(),size_t(2));
+    trafficsim.Simulate(trafficsim.get_VoertuigGen()[0].freq+1);
+    std::vector<Voertuig> voertuigenTest = trafficsim.getVoertuigen();
+    EXPECT_GT(voertuigenTest.size(), voertuigen.size());
+}
 
 
 
