@@ -1,0 +1,18 @@
+<BAAN>
+  <naam>Floralienlaan</naam>
+  <lengte>1000</lengte>
+</BAAN>
+<VOERTUIG>
+<baan>Floralienlaan</baan>
+<positie>200</positie>
+<type>auto</type>
+</VOERTUIG>
+<VOERTUIG>
+<baan>Floralienlaan</baan>
+<positie>100</positie>
+<type>auto</type>
+</VOERTUIG>
+<VOERTUIGGENERATOR>
+<baan>Floralienlaan</baan>
+<frequentie>5</frequentie>
+</VOERTUIGGENERATOR>

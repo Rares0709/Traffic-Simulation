@@ -1,0 +1,9 @@
+<BAAN>
+  <naam>Middelheimlaan</naam>
+  <lengte>300</lengte>
+</BAAN>
+<VOERTUIG>
+<baan>Middelheimlaan</baan>
+<positie>0</positie>
+<type>auto</type>
+</VOERTUIG>

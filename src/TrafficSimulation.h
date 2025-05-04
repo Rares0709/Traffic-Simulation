@@ -189,7 +189,7 @@ public:
         return time;
     }
     /**
-    * Deze functie simuleert bushaltes.
+    * Deze functie checkt of een bus moet stoppen aan een bushalte.
     * @param bus is het voertuig.
     */
     /**

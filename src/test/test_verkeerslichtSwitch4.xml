@@ -1,0 +1,9 @@
+<BAAN>
+  <naam>Beukenlaan</naam>
+  <lengte>600</lengte>
+</BAAN>
+<VERKEERSLICHT>
+<baan>Beukenlaan</baan>
+<positie>100</positie>
+<cyclus>10</cyclus>
+</VERKEERSLICHT>

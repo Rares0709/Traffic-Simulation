@@ -1,0 +1,14 @@
+<BAAN>
+  <naam>Floralienlaan</naam>
+  <lengte>500</lengte>
+</BAAN>
+<VERKEERSLICHT>
+<baan>Floralienlaan</baan>
+<positie>300</positie>
+<cyclus>30</cyclus>
+</VERKEERSLICHT>
+<VOERTUIG>
+<baan>Floralienlaan</baan>
+<positie>250</positie>
+<type>politiecombi</type>
+</VOERTUIG>

@@ -1,0 +1,14 @@
+<BAAN>
+  <naam>Beukenlaan</naam>
+  <lengte>800</lengte>
+</BAAN>
+<VERKEERSLICHT>
+<baan>Beukenlaan</baan>
+<positie>500</positie>
+<cyclus>20</cyclus>
+</VERKEERSLICHT>
+<VOERTUIG>
+<baan>Beukenlaan</baan>
+<positie>470</positie>
+<type>politiecombi</type>
+</VOERTUIG>

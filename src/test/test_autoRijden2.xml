@@ -1,0 +1,13 @@
+<BAAN>
+  <naam>Beukenlaan</naam>
+  <lengte>600</lengte>
+</BAAN>
+<VOERTUIG>
+<baan>Beukenlaan</baan>
+<positie>100</positie>
+<type>auto</type>
+</VOERTUIG>
+<VOERTUIGGENERATOR>
+<baan>Beukenlaan</baan>
+<frequentie>3</frequentie>
+</VOERTUIGGENERATOR>

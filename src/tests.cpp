@@ -41,7 +41,7 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood) {
     ASSERT_LT(trafficSim.getVoertuigen()[0].snelheid, speed);
     Voertuig::volgendeNummer = 1;
 }
-TEST(VerkeerslichtTest1, VoertuigStoptBijRood) {
+TEST(VerkeerslichtTest, VoertuigStoptBijRood1) {
     TrafficSim trafficSim = parseFile("test/test_VerkeerslichtTest1.xml");
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
@@ -56,7 +56,7 @@ TEST(VerkeerslichtTest1, VoertuigStoptBijRood) {
     ASSERT_LT(trafficSim.getVoertuigen()[0].snelheid, speed);
     Voertuig::volgendeNummer = 1;
 }
-TEST(VerkeerslichtTest2, VoertuigStoptBijRood) {
+TEST(VerkeerslichtTest, VoertuigStoptBijRood2) {
     TrafficSim trafficSim = parseFile("test/test_VerkeerslichtTest2.xml");
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
@@ -71,7 +71,7 @@ TEST(VerkeerslichtTest2, VoertuigStoptBijRood) {
     ASSERT_LT(trafficSim.getVoertuigen()[0].snelheid, speed);
     Voertuig::volgendeNummer = 1;
 }
-TEST(VerkeerslichtTest3, VoertuigStoptBijRood) {
+TEST(VerkeerslichtTest, VoertuigStoptBijRood3) {
     TrafficSim trafficSim = parseFile("test/test_VerkeerslichtTest3.xml");
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
@@ -87,7 +87,7 @@ TEST(VerkeerslichtTest3, VoertuigStoptBijRood) {
     Voertuig::volgendeNummer = 1;
 }
 
-TEST(VerkeerslichtTest4, VoertuigStoptBijRood) {
+TEST(VerkeerslichtTest, VoertuigStoptBijRood4) {
     TrafficSim trafficSim = parseFile("test/test_VerkeerslichtTest4.xml");
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
@@ -134,7 +134,7 @@ TEST(InlezenTest, TrafficLightSwitchTest) {
     ASSERT_NE(verkeerslicht.kleur, verkeerslicht1.kleur);
     Voertuig::volgendeNummer = 1;
 }
-TEST(InlezenTest1, TrafficLightSwitchTest) {
+TEST(InlezenTest, TrafficLightSwitchTest1) {
     TrafficSim trafficSim = parseFile("test/test_InlezenTest1.xml");
     trafficSim.TestingModeOn();
     Verkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
@@ -143,7 +143,7 @@ TEST(InlezenTest1, TrafficLightSwitchTest) {
     ASSERT_NE(verkeerslicht.kleur, verkeerslicht1.kleur);
     Voertuig::volgendeNummer = 1;
 }
-TEST(InlezenTest2, TrafficLightSwitchTest) {
+TEST(InlezenTest, TrafficLightSwitchTest2) {
     TrafficSim trafficSim = parseFile("test/test_InlezenTest2.xml");
     trafficSim.TestingModeOn();
     Verkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
@@ -152,7 +152,7 @@ TEST(InlezenTest2, TrafficLightSwitchTest) {
     ASSERT_NE(verkeerslicht.kleur, verkeerslicht1.kleur);
     Voertuig::volgendeNummer = 1;
 }
-TEST(InlezenTest3, TrafficLightSwitchTest) {
+TEST(InlezenTest, TrafficLightSwitchTest3) {
     TrafficSim trafficSim = parseFile("test/test_InlezenTest3.xml");
     trafficSim.TestingModeOn();
     Verkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
@@ -161,7 +161,7 @@ TEST(InlezenTest3, TrafficLightSwitchTest) {
     ASSERT_NE(verkeerslicht.kleur, verkeerslicht1.kleur);
     Voertuig::volgendeNummer = 1;
 }
-TEST(InlezenTest4, TrafficLightSwitchTest) {
+TEST(InlezenTest, TrafficLightSwitchTest4) {
     TrafficSim trafficSim = parseFile("test/test_InlezenTest4.xml");
     trafficSim.TestingModeOn();
     Verkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
@@ -185,15 +185,43 @@ TEST(InlezenTest4, TrafficLightSwitchTest) {
     ASSERT_GT(trafficSim.getVoertuigen().size(), 1);
 }*/
 TEST(ParseFileTest, ValidInputFile) {
-    TrafficSim sim = parseFile("test/test_InlezenTest.xml");
+    TrafficSim sim = parseFile("test/test_InlezenBaan.xml");
 
-    ASSERT_FALSE(sim.getVoertuigen().empty());
     ASSERT_FALSE(sim.get_banen().empty());
     //ASSERT_FALSE(sim.getVerkeerslichten().empty());
     Voertuig::volgendeNummer = 1;
 }
+TEST(ParseFileTest, ValidInputFile1) {
+    TrafficSim sim = parseFile("test/test_InlezenBaan1.xml");
+
+    ASSERT_FALSE(sim.get_banen().empty());
+    //ASSERT_FALSE(sim.getVerkeerslichten().empty());
+    Voertuig::volgendeNummer = 1;
+}
+TEST(ParseFileTest, ValidInputFile2) {
+    TrafficSim sim = parseFile("test/test_InlezenBaan2.xml");
+
+    ASSERT_FALSE(sim.get_banen().empty());
+    //ASSERT_FALSE(sim.getVerkeerslichten().empty());
+    Voertuig::volgendeNummer = 1;
+}
+TEST(ParseFileTest, ValidInputFile3) {
+    TrafficSim sim = parseFile("test/test_InlezenBaan3.xml");
+
+    ASSERT_FALSE(sim.get_banen().empty());
+    //ASSERT_FALSE(sim.getVerkeerslichten().empty());
+    Voertuig::volgendeNummer = 1;
+}
+TEST(ParseFileTest, ValidInputFile4) {
+    TrafficSim sim = parseFile("test/test_InlezenBaan4.xml");
+
+    ASSERT_FALSE(sim.get_banen().empty());
+    //ASSERT_FALSE(sim.getVerkeerslichten().empty());
+    Voertuig::volgendeNummer = 1;
+}
+
 //voor Verkeessituatie in te lezen!
- TEST(InlezenTest, VerkeersSituatieWordtCorrectIngelezen) {
+TEST(InlezenTest, VerkeersSituatieWordtCorrectIngelezen) {
     TrafficSim trafficsim = parseFile("test/test_verkeersinlezing.xml");
     trafficsim.TestingModeOn();
 
@@ -216,9 +244,9 @@ TEST(ParseFileTest, ValidInputFile) {
     EXPECT_EQ(voertuigen[0].positie, 20);
     EXPECT_EQ(voertuigen[1].positie, 0);
     Voertuig::volgendeNummer = 1;
- }
- //VoertuigGen wordt ingelezen!
- TEST(InlezenTest, VoertuiggeneratorWordtCorrectIngelezen) {
+}
+//VoertuigGen wordt ingelezen!
+TEST(InlezenTest, VoertuiggeneratorWordtCorrectIngelezen) {
     TrafficSim trafficsim = parseFile("test/test_voertuigGenInlezen.xml");
     trafficsim.TestingModeOn();
 
@@ -227,9 +255,9 @@ TEST(ParseFileTest, ValidInputFile) {
     EXPECT_EQ(generators[0].baan, "Middelheimlaan");
     EXPECT_EQ(generators[0].freq, 5);
     Voertuig::volgendeNummer = 1;
- }
- //Type auto inlezen!
- TEST(InlezenTest, VoertuigenMetTypeWordenCorrectIngelezen) {
+}
+//Type auto inlezen!
+TEST(InlezenTest, VoertuigenMetTypeWordenCorrectIngelezen) {
     TrafficSim trafficsim = parseFile("test/test_voertuigTypeInlezen.xml");
     trafficsim.TestingModeOn();
 
@@ -240,9 +268,9 @@ TEST(ParseFileTest, ValidInputFile) {
     EXPECT_EQ(voertuigen[2].type, "ziekenwagen");
     EXPECT_EQ(voertuigen[3].type, "politiecombi");
     Voertuig::volgendeNummer = 1;
- }
- //Bushalte inlezen!
- TEST(InlezenTest, BushaltesWordenCorrectIngelezen) {
+}
+//Bushalte inlezen!
+TEST(InlezenTest, BushaltesWordenCorrectIngelezen) {
     TrafficSim trafficsim = parseFile("test/test_bushalteInlezen.xml");
     trafficsim.TestingModeOn();
 
@@ -252,9 +280,9 @@ TEST(ParseFileTest, ValidInputFile) {
     EXPECT_EQ(haltes[0].positie, 250);
     EXPECT_EQ(haltes[0].wachttijd, 20);
     Voertuig::volgendeNummer = 1;
- }
- //Kruispunt inlezen!
- TEST(InlezenTest, KruispuntenWordenCorrectIngelezen) {
+}
+//Kruispunt inlezen!
+TEST(InlezenTest, KruispuntenWordenCorrectIngelezen) {
     TrafficSim trafficsim = parseFile("test/test_kruispuntInlezen.xml");
     trafficsim.TestingModeOn();
 
@@ -271,17 +299,51 @@ TEST(ParseFileTest, ValidInputFile) {
     EXPECT_EQ(kruispunten[1].toBaan, "Beukenlaan");
     EXPECT_EQ(kruispunten[1].toPositie, 500);
     Voertuig::volgendeNummer = 1;
- }
- TEST(InlezenTest, VoertuigVerwijderen) {
+}
+TEST(InlezenTest, VoertuigVerwijderen) {
     TrafficSim trafficsim = parseFile("test/test_VoertuigVerwijderen.xml");
     trafficsim.TestingModeOn();
     ASSERT_EQ(trafficsim.getVoertuigen().size(), size_t(2));
     trafficsim.Simulate(1);
     EXPECT_EQ(trafficsim.getVoertuigen().size(),size_t(1));
     Voertuig::volgendeNummer = 1;
- }
+}
+TEST(InlezenTest, VoertuigVerwijderen1) {
+    TrafficSim trafficsim = parseFile("test/test_VoertuigVerwijderen1.xml");
+    trafficsim.TestingModeOn();
+    ASSERT_EQ(trafficsim.getVoertuigen().size(), size_t(2));
+    trafficsim.Simulate(1);
+    EXPECT_EQ(trafficsim.getVoertuigen().size(),size_t(1));
+    Voertuig::volgendeNummer = 1;
+}
+TEST(InlezenTest, VoertuigVerwijderen2) {
+    TrafficSim trafficsim = parseFile("test/test_VoertuigVerwijderen2.xml");
+    trafficsim.TestingModeOn();
+    ASSERT_EQ(trafficsim.getVoertuigen().size(), size_t(2));
+    trafficsim.Simulate(1);
+    EXPECT_EQ(trafficsim.getVoertuigen().size(),size_t(1));
+    Voertuig::volgendeNummer = 1;
+}
+TEST(InlezenTest, VoertuigVerwijderen3) {
+    TrafficSim trafficsim = parseFile("test/test_VoertuigVerwijderen3.xml");
+    trafficsim.TestingModeOn();
+    ASSERT_EQ(trafficsim.getVoertuigen().size(), size_t(2));
+    trafficsim.Simulate(1);
+    EXPECT_EQ(trafficsim.getVoertuigen().size(),size_t(2));
+    Voertuig::volgendeNummer = 1;
+}
+TEST(InlezenTest, VoertuigVerwijderen4) {
+    TrafficSim trafficsim = parseFile("test/test_VoertuigVerwijderen4.xml");
+    trafficsim.TestingModeOn();
+    ASSERT_EQ(trafficsim.getVoertuigen().size(), size_t(2));
+    trafficsim.Simulate(1);
+    EXPECT_EQ(trafficsim.getVoertuigen().size(),size_t(1));
+    Voertuig::volgendeNummer = 1;
+}
 
- TEST(BerekenSnelheidTest, SnelheidEnPositie) {
+
+
+TEST(BerekenSnelheidTest, SnelheidEnPositie) {
     TrafficSim trafficsim = parseFile("test/test_VoertuigBerekenSnelheidEnPositie.xml");
     trafficsim.TestingModeOn();
     Voertuig &voertuig= trafficsim.getVoertuigen()[0];
@@ -292,7 +354,7 @@ TEST(ParseFileTest, ValidInputFile) {
     EXPECT_EQ(voertuig.snelheid, 7.03);
     EXPECT_EQ(voertuig.positie, 27.545);
     Voertuig::volgendeNummer = 1;
- }
+}
 
 TEST(BerekenSnelheidTest, Versnelling) {
     TrafficSim trafficsim = parseFile("test/test_VoertuigBerekenVersnelling.xml");
@@ -310,6 +372,58 @@ TEST(BerekenSnelheidTest, Versnelling) {
 }
 TEST(VerkeerslichtTest, LichtSwitch) {
     TrafficSim trafficsim = parseFile("test/test_verkeerslichtSwitch.xml");
+    trafficsim.TestingModeOn();
+    Verkeerslicht verkeerslicht1 = trafficsim.getVerkeerslichten()[0];
+    EXPECT_EQ(verkeerslicht1.kleur, "rood");
+    trafficsim.Simulate(verkeerslicht1.cyclus+1);
+    Verkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
+    EXPECT_EQ(verkeerslicht.kleur, "groen");
+    trafficsim.Simulate(verkeerslicht.cyclus*2+1);
+    Verkeerslicht verkeerslicht2 = trafficsim.getVerkeerslichten()[0];
+    EXPECT_EQ(verkeerslicht2.kleur, "rood");
+    Voertuig::volgendeNummer = 1;
+}
+TEST(VerkeerslichtTest, LichtSwitch1) {
+    TrafficSim trafficsim = parseFile("test/test_verkeerslichtSwitch1.xml");
+    trafficsim.TestingModeOn();
+    Verkeerslicht verkeerslicht1 = trafficsim.getVerkeerslichten()[0];
+    EXPECT_EQ(verkeerslicht1.kleur, "rood");
+    trafficsim.Simulate(verkeerslicht1.cyclus+1);
+    Verkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
+    EXPECT_EQ(verkeerslicht.kleur, "groen");
+    trafficsim.Simulate(verkeerslicht.cyclus*2+1);
+    Verkeerslicht verkeerslicht2 = trafficsim.getVerkeerslichten()[0];
+    EXPECT_EQ(verkeerslicht2.kleur, "rood");
+    Voertuig::volgendeNummer = 1;
+}
+TEST(VerkeerslichtTest, LichtSwitch2) {
+    TrafficSim trafficsim = parseFile("test/test_verkeerslichtSwitch2.xml");
+    trafficsim.TestingModeOn();
+    Verkeerslicht verkeerslicht1 = trafficsim.getVerkeerslichten()[0];
+    EXPECT_EQ(verkeerslicht1.kleur, "rood");
+    trafficsim.Simulate(verkeerslicht1.cyclus+1);
+    Verkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
+    EXPECT_EQ(verkeerslicht.kleur, "groen");
+    trafficsim.Simulate(verkeerslicht.cyclus*2+1);
+    Verkeerslicht verkeerslicht2 = trafficsim.getVerkeerslichten()[0];
+    EXPECT_EQ(verkeerslicht2.kleur, "rood");
+    Voertuig::volgendeNummer = 1;
+}
+TEST(VerkeerslichtTest, LichtSwitch3) {
+    TrafficSim trafficsim = parseFile("test/test_verkeerslichtSwitch3.xml");
+    trafficsim.TestingModeOn();
+    Verkeerslicht verkeerslicht1 = trafficsim.getVerkeerslichten()[0];
+    EXPECT_EQ(verkeerslicht1.kleur, "rood");
+    trafficsim.Simulate(verkeerslicht1.cyclus+1);
+    Verkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
+    EXPECT_EQ(verkeerslicht.kleur, "groen");
+    trafficsim.Simulate(verkeerslicht.cyclus*2+1);
+    Verkeerslicht verkeerslicht2 = trafficsim.getVerkeerslichten()[0];
+    EXPECT_EQ(verkeerslicht2.kleur, "rood");
+    Voertuig::volgendeNummer = 1;
+}
+TEST(VerkeerslichtTest, LichtSwitch4) {
+    TrafficSim trafficsim = parseFile("test/test_verkeerslichtSwitch4.xml");
     trafficsim.TestingModeOn();
     Verkeerslicht verkeerslicht1 = trafficsim.getVerkeerslichten()[0];
     EXPECT_EQ(verkeerslicht1.kleur, "rood");
@@ -369,8 +483,112 @@ TEST(ToevoegenVoertuigen, VoertuigGenSim) {
     EXPECT_GT(voertuigenTest.size(), voertuigen.size());
     Voertuig::volgendeNummer = 1;
 }
+TEST(ToevoegenVoertuigen, VoertuigGenSim1) {
+    TrafficSim trafficsim = parseFile("test/test_autoRijden1.xml");
+    trafficsim.TestingModeOn();
+    std::vector<Voertuig> voertuigen = trafficsim.getVoertuigen();
+    EXPECT_EQ(voertuigen.size(),size_t(1));
+    int freq = trafficsim.get_VoertuigGen()[0].freq+1;
+    trafficsim.Simulate(freq);
+    std::vector<Voertuig> voertuigenTest = trafficsim.getVoertuigen();
+    EXPECT_GT(voertuigenTest.size(), voertuigen.size());
+    Voertuig::volgendeNummer = 1;
+}
+TEST(ToevoegenVoertuigen, VoertuigGenSim2) {
+    TrafficSim trafficsim = parseFile("test/test_autoRijden2.xml");
+    trafficsim.TestingModeOn();
+    std::vector<Voertuig> voertuigen = trafficsim.getVoertuigen();
+    EXPECT_EQ(voertuigen.size(),size_t(1));
+    int freq = trafficsim.get_VoertuigGen()[0].freq+1;
+    trafficsim.Simulate(freq);
+    std::vector<Voertuig> voertuigenTest = trafficsim.getVoertuigen();
+    EXPECT_GT(voertuigenTest.size(), voertuigen.size());
+    Voertuig::volgendeNummer = 1;
+}
+TEST(ToevoegenVoertuigen, VoertuigGenSim3) {
+    TrafficSim trafficsim = parseFile("test/test_autoRijden3.xml");
+    trafficsim.TestingModeOn();
+    std::vector<Voertuig> voertuigen = trafficsim.getVoertuigen();
+    EXPECT_EQ(voertuigen.size(),size_t(2));
+    int freq = trafficsim.get_VoertuigGen()[0].freq+1;
+    trafficsim.Simulate(freq);
+    std::vector<Voertuig> voertuigenTest = trafficsim.getVoertuigen();
+    EXPECT_GT(voertuigenTest.size(), voertuigen.size());
+    Voertuig::volgendeNummer = 1;
+}
+TEST(ToevoegenVoertuigen, VoertuigGenSim4) {
+    TrafficSim trafficsim = parseFile("test/test_autoRijden4.xml");
+    trafficsim.TestingModeOn();
+    std::vector<Voertuig> voertuigen = trafficsim.getVoertuigen();
+    EXPECT_EQ(voertuigen.size(),size_t(0));
+    int freq = trafficsim.get_VoertuigGen()[0].freq+1;
+    trafficsim.Simulate(freq);
+    std::vector<Voertuig> voertuigenTest = trafficsim.getVoertuigen();
+    EXPECT_GT(voertuigenTest.size(), voertuigen.size());
+    Voertuig::volgendeNummer = 1;
+}
 TEST(KruispuntWegen, WegenKiezen) {
-    TrafficSim trafficsim = parseFile("test/test_veWegkiezen.xml");
+    TrafficSim trafficsim = parseFile("test/test_Wegkiezen.xml");
+    trafficsim.TestingModeOn();
+    Voertuig voertuig = trafficsim.getVoertuigen()[0];
+    std::string voertuigBaanFirst = voertuig.baan;
+    trafficsim.kruispuntSim(voertuig);
+    std::string voertuigBaanLast = voertuig.baan;
+    if (voertuigBaanFirst == voertuigBaanLast) {
+        EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
+    }
+    else {
+        EXPECT_NE(voertuigBaanFirst,voertuigBaanLast);
+    }
+    Voertuig::volgendeNummer = 1;
+}
+TEST(KruispuntWegen, WegenKiezen1) {
+    TrafficSim trafficsim = parseFile("test/test_Wegkiezen1.xml");
+    trafficsim.TestingModeOn();
+    Voertuig voertuig = trafficsim.getVoertuigen()[0];
+    std::string voertuigBaanFirst = voertuig.baan;
+    trafficsim.kruispuntSim(voertuig);
+    std::string voertuigBaanLast = voertuig.baan;
+    if (voertuigBaanFirst == voertuigBaanLast) {
+        EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
+    }
+    else {
+        EXPECT_NE(voertuigBaanFirst,voertuigBaanLast);
+    }
+    Voertuig::volgendeNummer = 1;
+}
+TEST(KruispuntWegen, WegenKiezen2) {
+    TrafficSim trafficsim = parseFile("test/test_Wegkiezen2.xml");
+    trafficsim.TestingModeOn();
+    Voertuig voertuig = trafficsim.getVoertuigen()[0];
+    std::string voertuigBaanFirst = voertuig.baan;
+    trafficsim.kruispuntSim(voertuig);
+    std::string voertuigBaanLast = voertuig.baan;
+    if (voertuigBaanFirst == voertuigBaanLast) {
+        EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
+    }
+    else {
+        EXPECT_NE(voertuigBaanFirst,voertuigBaanLast);
+    }
+    Voertuig::volgendeNummer = 1;
+}
+TEST(KruispuntWegen, WegenKiezen3) {
+    TrafficSim trafficsim = parseFile("test/test_Wegkiezen3.xml");
+    trafficsim.TestingModeOn();
+    Voertuig voertuig = trafficsim.getVoertuigen()[0];
+    std::string voertuigBaanFirst = voertuig.baan;
+    trafficsim.kruispuntSim(voertuig);
+    std::string voertuigBaanLast = voertuig.baan;
+    if (voertuigBaanFirst == voertuigBaanLast) {
+        EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
+    }
+    else {
+        EXPECT_NE(voertuigBaanFirst,voertuigBaanLast);
+    }
+    Voertuig::volgendeNummer = 1;
+}
+TEST(KruispuntWegen, WegenKiezen4) {
+    TrafficSim trafficsim = parseFile("test/test_Wegkiezen4.xml");
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
     std::string voertuigBaanFirst = voertuig.baan;
@@ -386,6 +604,58 @@ TEST(KruispuntWegen, WegenKiezen) {
 }
 TEST(TypeVoertuig,VoertuigLatenDoorrijden) {
     TrafficSim trafficsim = parseFile("test/test_DoorrijdenType.xml");
+    trafficsim.TestingModeOn();
+    Voertuig voertuig = trafficsim.getVoertuigen()[0];
+    Verkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
+    while (voertuig.positie <= verkeerslicht.positie) {
+        trafficsim.checkverkeerslicht();
+        trafficsim.berekenSnelheid(voertuig);
+        trafficsim.berekenVersnelling(voertuig);
+    }
+    EXPECT_GT(voertuig.positie,verkeerslicht.positie);
+    Voertuig::volgendeNummer = 1;
+}
+TEST(TypeVoertuig,VoertuigLatenDoorrijden1) {
+    TrafficSim trafficsim = parseFile("test/test_DoorrijdenType1.xml");
+    trafficsim.TestingModeOn();
+    Voertuig voertuig = trafficsim.getVoertuigen()[0];
+    Verkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
+    while (voertuig.positie <= verkeerslicht.positie) {
+        trafficsim.checkverkeerslicht();
+        trafficsim.berekenSnelheid(voertuig);
+        trafficsim.berekenVersnelling(voertuig);
+    }
+    EXPECT_GT(voertuig.positie,verkeerslicht.positie);
+    Voertuig::volgendeNummer = 1;
+}
+TEST(TypeVoertuig,VoertuigLatenDoorrijden2) {
+    TrafficSim trafficsim = parseFile("test/test_DoorrijdenType2.xml");
+    trafficsim.TestingModeOn();
+    Voertuig voertuig = trafficsim.getVoertuigen()[0];
+    Verkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
+    while (voertuig.positie <= verkeerslicht.positie) {
+        trafficsim.checkverkeerslicht();
+        trafficsim.berekenSnelheid(voertuig);
+        trafficsim.berekenVersnelling(voertuig);
+    }
+    EXPECT_GT(voertuig.positie,verkeerslicht.positie);
+    Voertuig::volgendeNummer = 1;
+}
+TEST(TypeVoertuig,VoertuigLatenDoorrijden3) {
+    TrafficSim trafficsim = parseFile("test/test_DoorrijdenType3.xml");
+    trafficsim.TestingModeOn();
+    Voertuig voertuig = trafficsim.getVoertuigen()[0];
+    Verkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
+    while (voertuig.positie <= verkeerslicht.positie) {
+        trafficsim.checkverkeerslicht();
+        trafficsim.berekenSnelheid(voertuig);
+        trafficsim.berekenVersnelling(voertuig);
+    }
+    EXPECT_GT(voertuig.positie,verkeerslicht.positie);
+    Voertuig::volgendeNummer = 1;
+}
+TEST(TypeVoertuig,VoertuigLatenDoorrijden4) {
+    TrafficSim trafficsim = parseFile("test/test_DoorrijdenType4.xml");
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
     Verkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];

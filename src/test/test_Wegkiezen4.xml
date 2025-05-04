@@ -1,0 +1,17 @@
+<BAAN>
+  <naam>Beukenlaan</naam>
+  <lengte>800</lengte>
+</BAAN>
+<BAAN>
+<naam>Middelheimlaan</naam>
+<lengte>500</lengte>
+</BAAN>
+<VOERTUIG>
+<baan>Beukenlaan</baan>
+<positie>588</positie>
+<type>auto</type>
+</VOERTUIG>
+<KRUISPUNT>
+<baan positie="300">Middelheimlaan</baan>
+<baan positie="500">Beukenlaan</baan>
+</KRUISPUNT>
