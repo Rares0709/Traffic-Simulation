@@ -1,0 +1,19 @@
+<BAAN>
+  <naam>Floralienlaan</naam>
+  <lengte>750</lengte>
+</BAAN>
+<VERKEERSLICHT>
+<baan>Floralienlaan</baan>
+<positie>200</positie>
+<cyclus>15</cyclus>
+</VERKEERSLICHT>
+<VERKEERSLICHT>
+<baan>Floralienlaan</baan>
+<positie>600</positie>
+<cyclus>30</cyclus>
+</VERKEERSLICHT>
+<VOERTUIG>
+<baan>Floralienlaan</baan>
+<positie>10</positie>
+<type>auto</type>
+</VOERTUIG>
