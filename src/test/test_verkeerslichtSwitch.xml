@@ -7,3 +7,7 @@
 <positie>400</positie>
 <cyclus>20</cyclus>
 </VERKEERSLICHT>
+<VOERTUIG>
+<baan>Middelheimlaan</baan>
+<positie>20</positie>
+</VOERTUIG>
