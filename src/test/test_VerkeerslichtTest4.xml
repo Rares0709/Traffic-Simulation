@@ -1,0 +1,18 @@
+<BAAN>
+    <naam>Floralienlaan</naam>
+    <lengte>750</lengte>
+</BAAN>
+<BAAN>
+    <naam>Middelheimlaan</naam>
+    <lengte>750</lengte>
+</BAAN>
+<VERKEERSLICHT>
+    <baan>Floralienlaan</baan>
+    <positie>240</positie>
+    <cyclus>20</cyclus>
+</VERKEERSLICHT>
+<VERKEERSLICHT>
+    <baan>Middelheimlaan</baan>
+    <positie>240</positie>
+    <cyclus>20</cyclus>
+</VERKEERSLICHT>
