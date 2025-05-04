@@ -66,20 +66,37 @@ void TrafficSim::Simulate(int duration) {
                 kruispuntSim(voertuig);
             }
             // int size = toDelete.size();
-            for (Voertuig& voertuig: toDelete) {
-                int voertuignummer = voertuig.voertuigNummer;
-                voertuigen.erase(voertuigen.begin()+voertuig.voertuigNummer-1);
-                for (auto& voertuig1 : voertuigen) {
-                    if (voertuig1.voertuigNummer > voertuignummer) {
-                        voertuig1.voertuigNummer -= 1;
-                        voertuig1.lowerVolgendeNummer();
-                    }
+            // for (Voertuig& voertuig: toDelete) {
+            //     int voertuignummer = voertuig.voertuigNummer;
+            //     voertuigen.erase(voertuigen.begin()+voertuig.voertuigNummer-1);
+            //     for (auto& voertuig1 : voertuigen) {
+            //         if (voertuig1.voertuigNummer > voertuignummer) {
+            //             voertuig1.voertuigNummer -= 1;
+            //             voertuig1.lowerVolgendeNummer();
+            //         }
+            //     }
+            //     for (auto& voertuig1 : toDelete) {
+            //         if (voertuig1.voertuigNummer > voertuignummer) {
+            //             voertuig1.voertuigNummer -= 1;
+            //         }
+            //     }
+            // }
+            std::vector<int> indexen;
+            for (Voertuig& voertuig : toDelete) {
+                size_t idx = static_cast<size_t>(voertuig.voertuigNummer - 1);
+                if (idx < voertuigen.size()) {
+                    indexen.push_back(static_cast<int>(idx));  // of sla ze als size_t op, dan moet je alles aanpassen
                 }
-                for (auto& voertuig1 : toDelete) {
-                    if (voertuig1.voertuigNummer > voertuignummer) {
-                        voertuig1.voertuigNummer -= 1;
-                    }
-                }
+            }
+            std::sort(indexen.rbegin(), indexen.rend());  // sorteer van hoog naar laag
+            for (int idx : indexen) {
+                voertuigen.erase(voertuigen.begin() + idx);
+            }
+
+            // (Optioneel) hernummer voertuigen opnieuw na verwijderen
+            for (size_t i = 0; i < voertuigen.size(); ++i) {
+                voertuigen[i].voertuigNummer = i + 1;
+                voertuigen[i].lowerVolgendeNummer();
             }
             toDelete.clear();
             if (!verkeerslichten.empty()) {
