@@ -64,6 +64,8 @@ void TrafficSim::Simulate(int duration) {
                 berekenVersnelling(voertuig);
                 geldig(voertuig);
                 kruispuntSim(voertuig);
+                if (voertuig.type == "bus")
+                    simBushaltes(voertuig);
             }
             // int size = toDelete.size();
             // for (Voertuig& voertuig: toDelete) {
@@ -423,14 +425,19 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht& verkeerslicht) {
 
 void TrafficSim::simBushaltes(Voertuig &bus) {
     for (Bushalte bushalte : bushaltes) {
-        if (bus.positie == bushalte.positie+bus.vertraagafstand) {
+        double Vertraag = bushalte.positie - bus.vertraagafstand;
+        double Stop = bushalte.positie - bus.stopafstand;
+        if (bus.gestopt) {
+            bus.timestop+=1;
+        }
+        if (bus.positie >= Vertraag && bus.positie <= Stop) {
             vertragen(bus);
-        } else if(bus.positie == bushalte.positie+bus.stopafstand) {
-            stoppen(bus);
+        } else if(bus.positie >= Stop && bus.positie <= bushalte.positie) {
+            bus.gestopt = true;
         } if (bus.timestop > bushalte.wachttijd) {
             versnellen(bus);
-        } if (bus.snelheid == 0) {
-            bus.timestop+=1;
+            bus.gestopt = false;
+            bus.timestop = 0;
         }
     }
 }

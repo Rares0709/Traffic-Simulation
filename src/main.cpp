@@ -6,7 +6,7 @@
 #include "ParseFile.h"
 
 int main() {
-    TrafficSim traffic = parseFile("test/test_verwijderenDEMO.xml");
+    TrafficSim traffic = parseFile("test/test1.xml");
     traffic.Simulate();
     return 0;
 }

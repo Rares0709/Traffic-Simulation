@@ -37,3 +37,8 @@
   <baan positie="500">Middelheimlaan</baan>
   <baan positie="500">Beukenlaan</baan>
 </KRUISPUNT>
+<BUSHALTE>
+<baan>Middelheimlaan</baan>
+<positie>250</positie>
+<wachttijd>20</wachttijd>
+</BUSHALTE>
