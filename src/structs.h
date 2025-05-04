@@ -101,6 +101,7 @@ struct Voertuig {
     bool gestopt = false;
     bool gedraait = false;
     int timestop = 0;
+    bool recentGestopt= false;
     std::string type = "auto"; // default is auto
 };
 
