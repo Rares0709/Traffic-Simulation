@@ -59,13 +59,15 @@ void TrafficSim::Simulate(int duration) {
                 }
             }
         }
-        checkverkeerslicht();
+        if (!verkeerslichten.empty())
+            checkverkeerslicht();
         for (auto& voertuig : voertuigen) {
             berekenSnelheid(voertuig);
             berekenVersnelling(voertuig);
             geldig(voertuig);
-            kruispuntSim(voertuig);
-            if (voertuig.type == "bus")
+            if (!kruispunten.empty())
+                kruispuntSim(voertuig);
+            if (voertuig.type == "bus" && !bushaltes.empty())
                 simBushaltes(voertuig);
         }
         // int size = toDelete.size();
@@ -114,12 +116,13 @@ void TrafficSim::Simulate(int duration) {
             }
         }
         verhoogTijd();
-        simVoertuiggenerator();
+        if (!voertuigengen.empty())
+            simVoertuiggenerator();
         for (Verkeerslicht &verkeerslicht: verkeerslichten) {
              verkeerslicht.voertuigenVoorLicht.clear();
         }
     }
-    ENSURE(!verkeerslichten.empty(), "Na simulatie mogen de verkeerslichten niet leeg zijn.");
+    //ENSURE(!verkeerslichten.empty(), "Na simulatie mogen de verkeerslichten niet leeg zijn.");
     ENSURE(time >= 0, "De tijd moet positief zijn na simulatie.");
 }
 void TrafficSim::wagenToDelete(Voertuig &voertuig) {
@@ -323,7 +326,7 @@ void TrafficSim::checkverkeerslicht() {
                     }
                 }
             }
-            if (!eersteVoertuig.prioriteit) {
+            if (!eersteVoertuig.prioriteit && eersteGevonden) {
                 double Vertraag = verkeerslicht.positie - eersteVoertuig.vertraagafstand;
                 double Stop = verkeerslicht.positie - eersteVoertuig.stopafstand;
                 if (eersteVoertuig.positie < Stop && eersteVoertuig.positie >= Vertraag) {
@@ -383,7 +386,8 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht& verkeerslicht) {
                 }
             }
             eersteVoertuig.gestopt = false;
-            versnellen(eersteVoertuig);
+            if (eersteGevonden)
+                versnellen(eersteVoertuig);
         }
         else if (verkeerslicht.kleur==verkeerslicht.groen) {
             verkeerslicht.kleur="rood";
@@ -398,7 +402,7 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht& verkeerslicht) {
                     eersteGevonden = true;
                 }
             }
-            if (!eersteVoertuig.prioriteit) {
+            if (!eersteVoertuig.prioriteit && eersteGevonden) {
                 double Vertraag = verkeerslicht.positie - eersteVoertuig.vertraagafstand;
                 double Stop = verkeerslicht.positie - eersteVoertuig.stopafstand;
                 if (eersteVoertuig.positie < Stop && eersteVoertuig.positie >= Vertraag) {
