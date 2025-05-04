@@ -61,7 +61,7 @@ public:
      * @param voertuig is het voertuig.
      */
     /**
-     *@author Rares Grama
+     *@author Ilyas Sefiani
      *@date /
      *@version
      */
@@ -77,18 +77,7 @@ public:
      */
     Voertuig vertragen(Voertuig& voertuig);
     /**
-     * Deze functie berekent hoe het voertuig kan stoppen.
-     * @param voertuig is het voertuig.
-     */
-    /**
-     *@author Rares Grama
-     *@author
-     *@date /
-     *@version
-     */
-    void stoppen(Voertuig& voertuig);
-    /**
-     * Deze functie bekijkt of het voertuig in zijn baan mag blijven..
+     * Deze functie bekijkt of het voertuig in zijn baan mag blijven.
      * @param voertuig is het voertuig.
      */
     /**
@@ -99,8 +88,28 @@ public:
      */
     void geldig(Voertuig& voertuig);
     /**
-     * Deze functie zorgt ervoor wat de auto's doen op basis van de cyclus van het verkeerslicht..
-     * @param verkeerslicht is het voertuig.
+     * Deze functie zorgt ervoor wat de auto's doen op basis van de cyclus van het verkeerslicht en deze functie checkt of het voertuig een prioriteitsvoertuig is.
+     * @param verkeerslicht is het verkeerslicht.
+     */
+    /**
+     *@author Rares Grama
+     *@author Ilyas Sefiani
+     *@author Jonas Saelens
+     *@date /
+     *@version
+     */
+    void verkeerslichtSim(Verkeerslicht& verkeerslicht);
+    /**
+     *Deze functie zorgt ervoor wat de auto's doen op basis van de cyclus van het verkeerslicht en deze functie checkt of het voertuig een prioriteitsvoertuig is.
+     */
+    /**
+     *@author Jonas Saelens
+     *@date /
+     *@version
+     */
+    void checkverkeerslicht();
+    /**
+     *Deze functie genereert voertuigen.
      */
     /**
      *@author Rares Grama
@@ -108,16 +117,6 @@ public:
      *@date /
      *@version
      */
-    void verkeerslichtSim(Verkeerslicht& verkeerslicht);
-    /**
-     * Deze functie genereert voertuigen.
-     */
-    /**
-     *@author Rares Grama
-     *@date /
-     *@version
-     */
-    void checkverkeerslicht();
     void simVoertuiggenerator();
 
     std::vector<Baan> get_banen() const {
@@ -127,20 +126,30 @@ public:
     void setBanen(const std::vector<Baan> &banen) {
         this->banen = banen;
     }
-
+    /**
+   * Deze functie verwijdert voertuigen.
+   * @param voertuig is het voertuig.
+   */
+    /**
+     *@author Jonas Saelens
+     *@author Ilyas Sefiani
+     *@date /
+     *@version
+     */
     void wagenToDelete(Voertuig &voertuig);
 
     void voegbaantoe(Baan baan) {
         this->banen.push_back(baan);
     }
-
     int getPositie(Voertuig voertuig) {
        return voertuig.positie;
     }
     int getSnelheid(Voertuig voertuig) {
         return voertuig.snelheid;
     }
-    void setDeltaTime(double dt) { DeltaTime = dt; }
+    void setDeltaTime(double dt) {
+        DeltaTime = dt;
+    }
     /**
      * Deze functie geeft de lengte van de baan weer waarop het voertuig rijdt.
      * @param baannaam is de naam van de baan.
@@ -161,7 +170,14 @@ public:
     *@version
     */
     void verhoogTijd();
-
+    /**
+    * Deze functie kijkt of er getest wordt met Gtest.
+    */
+    /**
+     *@author Jonas Saelens
+     *@date /
+     *@version
+     */
     void TestingModeOn() {
         testingMode = true;
     }
@@ -172,6 +188,15 @@ public:
     double& getTime() {
         return time;
     }
+    /**
+    * Deze functie simuleert bushaltes.
+    * @param bus is het voertuig.
+    */
+    /**
+     *@author Rares Grama
+     *@date /
+     *@version
+     */
     void simBushaltes(Voertuig &bus);
 
     std::vector<Verkeerslicht> getVerkeerslichten() const {
@@ -230,7 +255,16 @@ public:
     *@version /
     */
     void print() const;
-
+    /**
+    * Deze functie simuleert kruispunten.
+    * @param voertuig is het voertuig.
+    */
+    /**
+     *@author Jonas Saelens
+     *@author Ilyas Sefiani
+     *@date /
+     *@version
+     */
     void kruispuntSim(/*std::vector<Kruispunt> kruispunten, */Voertuig& voertuig/*, std::vector<Baan>& banen*/);
 
 private:
