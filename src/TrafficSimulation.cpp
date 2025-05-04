@@ -5,6 +5,8 @@
 #include "TrafficSimulation.h"
 #include "DesignByContract.h"
 void TrafficSim::Simulate(int duration) {
+    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    REQUIRE(!this->get_banen().empty(), "Banen empty is niet goed geïnitialiseerd.");
     std::vector<std::vector<Verkeerslicht>> baanVerkeerslicht;
     Verkeerslicht vorigeVerkeerslicht;
     for (Baan baan : banen) {
@@ -117,11 +119,18 @@ void TrafficSim::Simulate(int duration) {
              verkeerslicht.voertuigenVoorLicht.clear();
         }
     }
+    ENSURE(!verkeerslichten.empty(), "Na simulatie mogen de verkeerslichten niet leeg zijn.");
+    ENSURE(time >= 0, "De tijd moet positief zijn na simulatie.");
 }
 void TrafficSim::wagenToDelete(Voertuig &voertuig) {
     toDelete.push_back(voertuig);
+    ENSURE(!toDelete.empty(), "Voertuig werd niet aan de deletelijst toegevoegd.");
+    ENSURE(toDelete.back().voertuigNummer == voertuig.voertuigNummer, "Laatste voertuig in deletelijst is niet het toegevoegde voertuig.");
+
 }
 void TrafficSim::berekenVersnelling(Voertuig &voertuig) {
+    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    REQUIRE(!voertuigen.empty(), "Er bevindt zich geen voertuig op de baan.");
     int indexLijst = voertuig.voertuigNummer - 1;
     if (indexLijst > 0) {
         if (voertuig.gestopt) {
@@ -145,9 +154,11 @@ void TrafficSim::berekenVersnelling(Voertuig &voertuig) {
             voertuig.versnelling = versnelling;
         }
     }
-
+    ENSURE(std::isfinite(voertuig.versnelling), "Versnelling moet een geldig getal zijn.");
 }
 void TrafficSim::berekenSnelheid(Voertuig &voertuig) {
+    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    REQUIRE(!voertuigen.empty(), "Er bevindt zich geen voertuig op de baan.");
     double snelheid = voertuig.snelheid;
     double versnelling = voertuig.versnelling;
     double formule = snelheid + (versnelling*DeltaTime);
@@ -169,9 +180,13 @@ void TrafficSim::berekenSnelheid(Voertuig &voertuig) {
     }
     /*}*/
     voertuig.snelheid = snelheid;
+    ENSURE(voertuig.snelheid >= 0, "Snelheid mag niet negatief zijn.");
+    ENSURE(std::isfinite(voertuig.positie), "Positie moet een geldig getal zijn.");
 
 }
 void TrafficSim::versnellen(Voertuig &voertuig) {
+    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    REQUIRE(!voertuigen.empty(), "Er bevindt zich geen voertuig op de baan.");
     voertuig.maxsnelheid = voertuig.mMaxsnelheid;
     /*int indexLijst = voertuig.voertuigNummer - 1;
     if (indexLijst == 0) {
@@ -181,26 +196,20 @@ void TrafficSim::versnellen(Voertuig &voertuig) {
             voertuig.maxsnelheid = voertuig2.mMaxsnelheid;
         }
     }*/
+    ENSURE(voertuig.maxsnelheid == voertuig.mMaxsnelheid, "Voertuig moet zijn maximumsnelheid terug hebben.");
 }
 Voertuig TrafficSim::vertragen(Voertuig &voertuig) {
+    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    REQUIRE(!voertuigen.empty(), "Er bevindt zich geen voertuig op de baan.");
     double s=voertuig.vertraagfactor;
     voertuig.maxsnelheid=s*voertuig.mMaxsnelheid;
     return voertuig;
-}
-void TrafficSim::stoppen(Voertuig &voertuig) {
-
-    // int indexLijst = voertuig.voertuigNummer - 1;
-    // if (indexLijst == 0) {
-    //     voertuig.versnelling = - (voertuig.maxremfactor*voertuig.snelheid) / voertuig.maxsnelheid;
-    // } else {
-    //     size_t indexVoertuig2 = indexLijst - 1;
-    //     if (indexVoertuig2 >= 0 && indexVoertuig2 < voertuigen.size()) {
-    //         Voertuig& voertuig2 = voertuigen[indexVoertuig2];
-    //         voertuig.versnelling = voertuig2.versnelling;
-    //     }
-    // }
+    ENSURE(voertuig.maxsnelheid < voertuig.mMaxsnelheid, "Na vertraging moet maxsnelheid lager zijn.");
 }
 void TrafficSim::kruispuntSim(/*std::vector<Kruispunt> kruispunten, */Voertuig& voertuig/*, std::vector<Baan>& banen*/) {
+    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    REQUIRE(!kruispunten.empty(), "Er bevindt zich geen kruispunt op de baan.");
+    REQUIRE(banen.size()>=2, "Er moeten minstens 2 banen aanwezig zijn.");
     for (Kruispunt kruispunt: kruispunten) {
         int breedte = 0;
         if (!voertuig.gedraait) {
@@ -269,8 +278,11 @@ void TrafficSim::kruispuntSim(/*std::vector<Kruispunt> kruispunten, */Voertuig& 
             }
         }
     }
+    ENSURE(std::find_if(banen.begin(), banen.end(), [&](const Baan& b) { return b.naam == voertuig.baan; }) != banen.end(), "Voertuig moet op een bestaande baan blijven.");
 }
 void TrafficSim::geldig(Voertuig &voertuig) {
+    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    REQUIRE(!voertuigen.empty(), "Er bevindt zich geen voertuig op de baan.");
     int indexLijst = voertuig.voertuigNummer - 1;
 
     std::string baannaam = voertuig.baan;
@@ -291,8 +303,11 @@ void TrafficSim::geldig(Voertuig &voertuig) {
     else {
         /*std::cout << "er gebeurt niks" << std::endl;*/
     }
+    ENSURE(std::find_if(toDelete.begin(), toDelete.end(), [&](const Voertuig& v) { return v.voertuigNummer == voertuig.voertuigNummer; }) != toDelete.end() || voertuig.positie <= getBaanLengte(voertuig.baan, banen), "Voertuig is ongeldig verwijderd of buiten baan.");
 }
 void TrafficSim::checkverkeerslicht() {
+    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    REQUIRE(!verkeerslichten.empty(), "Er bevinden zich geen verkeerslichten op de baan.");
     for (Verkeerslicht& verkeerslicht : verkeerslichten) {
         if (verkeerslicht.kleur==verkeerslicht.rood) {
             if (!testingMode) {
@@ -339,8 +354,11 @@ void TrafficSim::checkverkeerslicht() {
             }
         }
     }
+    ENSURE(!verkeerslichten.empty(), "Verkeerslichten mogen niet leeg zijn na controle.");
 }
 void TrafficSim::verkeerslichtSim(Verkeerslicht& verkeerslicht) {
+    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    REQUIRE(!verkeerslichten.empty(), "Er bevinden zich geen verkeerslichten op de baan.");
     if (!testingMode) {
         std::cout << "Verkeerslicht op " << verkeerslicht.positie << " heeft kleur: " << verkeerslicht.kleur << std::endl;
     }
@@ -413,10 +431,17 @@ void TrafficSim::verkeerslichtSim(Verkeerslicht& verkeerslicht) {
         }
         verkeerslicht.laatsteTijd=time;
     }
+    ENSURE(verkeerslicht.kleur == verkeerslicht.rood || verkeerslicht.kleur == verkeerslicht.groen, "Kleur van verkeerslicht moet geldig zijn.");
+    ENSURE(verkeerslicht.laatsteTijd <= time, "Laatste tijd van verkeerslicht mag niet in de toekomst liggen.");
     // std::cout << "kleur: --> " << verkeerslicht.kleur << std::endl;
 }
 
 void TrafficSim::simBushaltes(Voertuig &bus) {
+    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    REQUIRE(!bushaltes.empty(), "Er bevinden zich geen bushaltes op de baan.");
+    REQUIRE(std::any_of(voertuigen.begin(), voertuigen.end(), [](const Voertuig& v) { return v.type == "bus"; }),
+        "Er is geen bus aanwezig op de baan.");
+
     for (Bushalte bushalte : bushaltes) {
         double Vertraag = bushalte.positie - bus.vertraagafstand;
         double Stop = bushalte.positie - bus.stopafstand;
@@ -438,6 +463,8 @@ void TrafficSim::simBushaltes(Voertuig &bus) {
     }
 }
 void TrafficSim::simVoertuiggenerator() {
+    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    REQUIRE(!voertuigengen.empty(), "Er is geen voertuiggenerator aanwezig.");
     for (auto& generator : voertuigengen) {
         int laatsteTijd = ceil(time - generator.laatsteTijd);
         if (laatsteTijd > generator.freq) {
@@ -459,6 +486,7 @@ void TrafficSim::simVoertuiggenerator() {
     }
 }
 int TrafficSim::getBaanLengte(std::string &baannaam, std::vector<Baan> &banen) {
+    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
     for (Baan& b : banen) {
         if (b.naam == baannaam) {
             return b.lengte;
