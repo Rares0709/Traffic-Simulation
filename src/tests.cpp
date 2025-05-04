@@ -251,7 +251,7 @@ TEST(RijdenTest, VersnellenEnVertragen) {
     EXPECT_GT(voertuig2.snelheid, voertuig1.snelheid);
     Voertuig::volgendeNummer = 1;
 }
-TEST(Toevoegen, VoertuigGenSim) {
+TEST(ToevoegenVoertuigen, VoertuigGenSim) {
     TrafficSim trafficsim = parseFile("test/test_autoRijden.xml");
     trafficsim.TestingModeOn();
     std::vector<Voertuig> voertuigen = trafficsim.getVoertuigen();
@@ -262,10 +262,34 @@ TEST(Toevoegen, VoertuigGenSim) {
     EXPECT_GT(voertuigenTest.size(), voertuigen.size());
     Voertuig::volgendeNummer = 1;
 }
-
-
-
-
+TEST(KruispuntWegen, WegenKiezen) {
+    TrafficSim trafficsim = parseFile("test/test_veWegkiezen.xml");
+    trafficsim.TestingModeOn();
+    Voertuig voertuig = trafficsim.getVoertuigen()[0];
+    std::string voertuigBaanFirst = voertuig.baan;
+    trafficsim.kruispuntSim(voertuig);
+    std::string voertuigBaanLast = voertuig.baan;
+    if (voertuigBaanFirst == voertuigBaanLast) {
+        EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
+    }
+    else {
+        EXPECT_NE(voertuigBaanFirst,voertuigBaanLast);
+    }
+    Voertuig::volgendeNummer = 1;
+}
+TEST(TypeVoertuig,VoertuigLatenDoorrijden) {
+    TrafficSim trafficsim = parseFile("test/test_DoorrijdenType.xml");
+    trafficsim.TestingModeOn();
+    Voertuig voertuig = trafficsim.getVoertuigen()[0];
+    Verkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
+    while (voertuig.positie <= verkeerslicht.positie) {
+        trafficsim.checkverkeerslicht();
+        trafficsim.berekenSnelheid(voertuig);
+        trafficsim.berekenVersnelling(voertuig);
+    }
+    EXPECT_GT(voertuig.positie,verkeerslicht.positie);
+    Voertuig::volgendeNummer = 1;
+}
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
