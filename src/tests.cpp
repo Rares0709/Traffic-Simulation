@@ -214,6 +214,20 @@ TEST(VerkeerslichtTest, LichtSwitch) {
     EXPECT_EQ(verkeerslicht2.kleur, "rood");
     Voertuig::volgendeNummer = 1;
 }
+TEST(VerkeerslichtTest, BussenStoppenBijBushaltes) {
+    TrafficSim trafficSim = parseFile("test/test_BusStoptBijBushalte.xml");
+    trafficSim.TestingModeOn();
+    Voertuig bus;
+    bus.baan = trafficSim.get_bushaltes()[0].baan;
+    double speed = bus.snelheid = 10.0;
+    bus.versnelling = 0.88;
+    bus.positie = 249;
+    trafficSim.voegvoertuigtoe(bus);
+    trafficSim.Simulate(1);
+
+    ASSERT_LT(trafficSim.getVoertuigen()[0].snelheid, speed);
+    Voertuig::volgendeNummer = 1;
+}
 
 
 
