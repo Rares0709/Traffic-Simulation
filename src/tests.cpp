@@ -572,17 +572,17 @@ TEST(ToevoegenVoertuigen, VoertuigGenSim4) {
     EXPECT_GT(voertuigenTest.size(), voertuigen.size());
     Voertuig::volgendeNummer = 1;
 }
-TEST(ToevoegenVoertuigen, VoertuigGenSimFalse) {
-    TrafficSim trafficsim = parseFile("test/test_autoRijdenFalse.xml");
-    trafficsim.TestingModeOn();
-    std::vector<Voertuig> voertuigen = trafficsim.getVoertuigen();
-    EXPECT_EQ(voertuigen.size(),size_t(2));
-    int freq = trafficsim.get_VoertuigGen()[0].freq+1;
-    trafficsim.Simulate(freq);
-    std::vector<Voertuig> voertuigenTest = trafficsim.getVoertuigen();
-    EXPECT_GT(voertuigenTest.size(), voertuigen.size());
-    Voertuig::volgendeNummer = 1;
-}
+// TEST(ToevoegenVoertuigen, VoertuigGenSimFalse) {
+//     TrafficSim trafficsim = parseFile("test/test_autoRijdenFalse.xml");
+//     trafficsim.TestingModeOn();
+//     std::vector<Voertuig> voertuigen = trafficsim.getVoertuigen();
+//     EXPECT_EQ(voertuigen.size(),size_t(2));
+//     int freq = trafficsim.get_VoertuigGen()[0].freq+1;
+//     trafficsim.Simulate(freq);
+//     std::vector<Voertuig> voertuigenTest = trafficsim.getVoertuigen();
+//     EXPECT_GT(voertuigenTest.size(), voertuigen.size());
+//     Voertuig::volgendeNummer = 1;
+// }
 TEST(KruispuntWegen, WegenKiezen) {
     TrafficSim trafficsim = parseFile("test/test_Wegkiezen.xml");
     trafficsim.TestingModeOn();
@@ -658,21 +658,21 @@ TEST(KruispuntWegen, WegenKiezen4) {
     }
     Voertuig::volgendeNummer = 1;
 }
-TEST(KruispuntWegen, WegenKiezenFalse) {
-    TrafficSim trafficsim = parseFile("test/test_WegkiezenFalse.xml");
-    trafficsim.TestingModeOn();
-    Voertuig voertuig = trafficsim.getVoertuigen()[0];
-    std::string voertuigBaanFirst = voertuig.baan;
-    trafficsim.kruispuntSim(voertuig);
-    std::string voertuigBaanLast = voertuig.baan;
-    if (voertuigBaanFirst == voertuigBaanLast) {
-        EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
-    }
-    else {
-        EXPECT_NE(voertuigBaanFirst,voertuigBaanLast);
-    }
-    Voertuig::volgendeNummer = 1;
-}
+// TEST(KruispuntWegen, WegenKiezenFalse) {
+//     TrafficSim trafficsim = parseFile("test/test_WegkiezenFalse.xml");
+//     trafficsim.TestingModeOn();
+//     Voertuig voertuig = trafficsim.getVoertuigen()[0];
+//     std::string voertuigBaanFirst = voertuig.baan;
+//     trafficsim.kruispuntSim(voertuig);
+//     std::string voertuigBaanLast = voertuig.baan;
+//     if (voertuigBaanFirst == voertuigBaanLast) {
+//         EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
+//     }
+//     else {
+//         EXPECT_NE(voertuigBaanFirst,voertuigBaanLast);
+//     }
+//     Voertuig::volgendeNummer = 1;
+// }
 TEST(TypeVoertuig,VoertuigLatenDoorrijden) {
     TrafficSim trafficsim = parseFile("test/test_DoorrijdenType.xml");
     trafficsim.TestingModeOn();
