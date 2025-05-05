@@ -1,0 +1,15 @@
+<BAAN>
+  <naam>EnkelBaan</naam>
+  <lengte>500</lengte>
+</BAAN>
+
+<VOERTUIG>
+<baan>EnkelBaan</baan>
+<positie>500</positie>
+<type>auto</type>
+</VOERTUIG>
+
+<KRUISPUNT>
+<baan positie="500">NietDezelfdeBaan</baan>
+<baan positie="500">AndereBaan</baan>
+</KRUISPUNT>
