@@ -7,13 +7,29 @@
 
 #include <iostream>
 #include <fstream>
-#include "structs.h"
+// #include "structs.h"
 #include <vector>
 #include <cstdlib>
 #include <ctime>
 #include <cmath>
+#include "Classes/Baan.h"
+#include "Classes/Bushalte.h"
+#include "Classes/Kruispunt.h"
+#include "Classes/Verkeersverkeerslicht.h"
+#include "Classes/Voertuig.h"
+#include "Classes/VoertuigGen.h"
 
 class TrafficSim {
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    double time = 0.0;
+    double DeltaTime = 0.0166;
+    std::vector<Voertuig> toDelete;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    bool testingMode = false;
 public:
     /**
      * Deze functuie simuleert de verkeerssituatie door alle voertuigen te verwerken en de tijd te verhogen.
@@ -25,7 +41,7 @@ public:
      */
     void Simulate(int duration = -1);
 
-    TrafficSim(const std::vector<Baan> &banen, const std::vector<Verkeerslicht> &verkeerslichten,
+    TrafficSim(const std::vector<Baan> &banen, const std::vector<Verkeersverkeerslicht> &verkeerslichten,
         const std::vector<Voertuig> &voertuigen, const std::vector<VoertuigGen> &voertuigengen, const std::vector<Bushalte> &bushaltes, const std::vector<Kruispunt> &kruispunten)
         : banen(banen),
           verkeerslichten(verkeerslichten),
@@ -98,7 +114,7 @@ public:
      *@date /
      *@version
      */
-    void verkeerslichtSim(Verkeerslicht& verkeerslicht);
+    void verkeerslichtSim(Verkeersverkeerslicht& verkeerslicht);
     /**
      *Deze functie zorgt ervoor wat de auto's doen op basis van de cyclus van het verkeerslicht en deze functie checkt of het voertuig een prioriteitsvoertuig is.
      */
@@ -142,10 +158,10 @@ public:
         this->banen.push_back(baan);
     }
     int getPositie(Voertuig voertuig) {
-       return voertuig.positie;
+       return voertuig.positie1();
     }
     int getSnelheid(Voertuig voertuig) {
-        return voertuig.snelheid;
+        return voertuig.snelheid1();
     }
     void setDeltaTime(double dt) {
         DeltaTime = dt;
@@ -199,15 +215,15 @@ public:
      */
     void simBushaltes(Voertuig &bus);
 
-    std::vector<Verkeerslicht> getVerkeerslichten() const {
+    std::vector<Verkeersverkeerslicht> getVerkeerslichten() const {
         return verkeerslichten;
     }
 
-    void setVerkeerslichten(const std::vector<Verkeerslicht> &verkeerslichten) {
+    void setVerkeerslichten(const std::vector<Verkeersverkeerslicht> &verkeerslichten) {
         this->verkeerslichten = verkeerslichten;
     }
 
-    void voegverkeerslichttoe(Verkeerslicht licht) {
+    void voegverkeerslichttoe(Verkeersverkeerslicht licht) {
         this->verkeerslichten.push_back(licht);
     }
 
@@ -267,17 +283,7 @@ public:
      */
     void kruispuntSim(/*std::vector<Kruispunt> kruispunten, */Voertuig& voertuig/*, std::vector<Baan>& banen*/);
 
-private:
-    std::vector<Baan> banen;
-    std::vector<Verkeerslicht> verkeerslichten;
-    std::vector<Voertuig> voertuigen;
-    std::vector<VoertuigGen> voertuigengen;
-    double time = 0.0;
-    double DeltaTime = 0.0166;
-    std::vector<Voertuig> toDelete;
-    std::vector<Bushalte> bushaltes;
-    std::vector<Kruispunt> kruispunten;
-    bool testingMode = false;
+
 };
 
 
