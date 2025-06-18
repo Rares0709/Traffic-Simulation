@@ -55,6 +55,9 @@ public:
     Voertuig() : voertuigNummer(volgendeNummer++) {}
 
     static void lowerVolgendeNummer();
+    static void resetVolgendeNummer() {
+        volgendeNummer = 1;
+    }
 
     void setType(const std::string& nieuwType);
 

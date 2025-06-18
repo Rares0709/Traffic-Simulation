@@ -31,15 +31,16 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood) {
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
     Voertuig voertuig;
-    voertuig.baan = "Middelheimlaan";
-    double speed = voertuig.snelheid = 16.6;
-    voertuig.versnelling = 1.44;
-    voertuig.positie = 200;
+    voertuig.set_baan("Middelheimlaan");
+    double speed =16.6;
+    voertuig.set_snelheid(speed);
+    voertuig.set_versnelling(1.44);
+    voertuig.set_positie(200);
     trafficSim.voegvoertuigtoe(voertuig);
     trafficSim.Simulate(1);
 
-    ASSERT_LT(trafficSim.getVoertuigen()[0].snelheid, speed);
-    Voertuig::volgendeNummer = 1;
+    ASSERT_LT(trafficSim.getVoertuigen()[0].snelheid1, speed);
+    Voertuig::resetVolgendeNummer();
 }
 TEST(VerkeerslichtTest, VoertuigStoptBijRood1) {
     TrafficSim trafficSim = parseFile("test/test_VerkeerslichtTest1.xml");
