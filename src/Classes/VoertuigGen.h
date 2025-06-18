@@ -4,7 +4,7 @@
 
 #ifndef VOERTUIGGEN_H
 #define VOERTUIGGEN_H
-
+#include <string>
 
 
 class VoertuigGen {

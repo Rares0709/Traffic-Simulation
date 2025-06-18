@@ -4,7 +4,7 @@
 
 #ifndef KRUISPUNT_H
 #define KRUISPUNT_H
-
+#include <string>
 
 
 class Kruispunt {

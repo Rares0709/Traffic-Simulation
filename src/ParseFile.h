@@ -9,6 +9,7 @@
 #include <cmath>
 #include <vector>
 #include "TrafficSimulation.h"
+
     /**
      * Deze functie print uit wat er moet gedaan worden in 2.1
      * @param inputfile is de XML die wordt ingelezen om alle variabelen te verkrijgen

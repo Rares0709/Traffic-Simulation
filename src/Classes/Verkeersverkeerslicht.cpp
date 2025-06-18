@@ -2,4 +2,4 @@
 // Created by grama on 5/13/2025.
 //
 
-#include "../Verkeersverkeerslicht.h"
+#include "Verkeersverkeerslicht.h"

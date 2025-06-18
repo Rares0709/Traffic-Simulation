@@ -4,7 +4,7 @@
 
 #ifndef BUSHALTE_H
 #define BUSHALTE_H
-
+#include <string>
 
 
 class Bushalte {

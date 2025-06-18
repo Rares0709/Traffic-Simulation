@@ -2,13 +2,13 @@
 // Created by grama on 5/13/2025.
 //
 
-#include "../Voertuig.h"
+#include "Voertuig.h"
 
-Voertuig::lowerVolgendeNummer(){
+void Voertuig::lowerVolgendeNummer(){
     volgendeNummer--;
 }
 
-Voertuig::setType(const std::string& nieuwType) {
+void Voertuig::setType(const std::string& nieuwType) {
     type = nieuwType;
     if (type == "auto") {
         lengte = 4;

@@ -4,6 +4,7 @@
 
 #ifndef BAAN_H
 #define BAAN_H
+#include <string>
 
 
 

@@ -5,9 +5,14 @@
 #ifndef VERKEERSVERKEERSLICHT_H
 #define VERKEERSVERKEERSLICHT_H
 
-#include "Classes/Voertuig.h"
+//#include "Classes/Voertuig.h"
+#include <vector>
+
+#include "Voertuig.h"
+
 
 class Verkeersverkeerslicht {
+private:
     std::string baan;
     int positie = 0;
     int cyclus = 0;
@@ -17,6 +22,16 @@ class Verkeersverkeerslicht {
     int laatsteTijd = 0;
     std::vector<Voertuig> voertuigenVoorLicht;
 public:
+    void set_positie(int positie) {
+        this->positie = positie;
+    }
+
+    void set_cyclus(int cyclus) {
+        this->cyclus = cyclus;
+    }
+    void set_baan(const std::string &baan) {
+        this->baan = baan;
+    }
     std::string baan1() const {
         return baan;
     }

@@ -9,7 +9,7 @@ TrafficSim parseFile(const std::string inputfile) {
     REQUIRE(!inputfile.empty(), "Inputbestand mag niet leeg zijn.");
     TiXmlDocument doc;
     std::vector<Baan> banen;
-    std::vector<Verkeerslicht> verkeerslichten;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
     std::vector<Voertuig> voertuigen;
     std::vector<VoertuigGen> voertuigengen;
     std::vector<Bushalte> bushaltes;
@@ -27,8 +27,8 @@ TrafficSim parseFile(const std::string inputfile) {
             for (TiXmlElement* child = elem->FirstChildElement(); child != NULL; child = child->NextSiblingElement()) {
                 TiXmlText* text = child->FirstChild()->ToText();
                 std::string childName = child->Value();
-                if (childName == "baan") voertuig.baan = text->Value();
-                if (childName == "positie") voertuig.positie = std::stoi(text->Value());
+                if (childName == "baan") voertuig.set_baan(text->Value());
+                if (childName == "positie") voertuig.set_positie(std::stoi(text->Value()));
                 if (childName == "type") voertuig.setType(text->Value());
             }
             //std::cout << voertuig.baan << " " << voertuig.positie << std::endl;
@@ -39,20 +39,20 @@ TrafficSim parseFile(const std::string inputfile) {
             for (TiXmlElement* child = elem->FirstChildElement(); child != NULL; child = child->NextSiblingElement()) {
                 TiXmlText* text = child->FirstChild()->ToText();
                 std::string childName = child->Value();
-                if (childName == "naam") baan.naam = text->Value();
-                if (childName == "lengte") baan.lengte = std::stoi(text->Value());
+                if (childName == "naam") baan.set_naam(text->Value());
+                if (childName == "lengte") baan.set_lengte(std::stoi(text->Value()));
             }
             //std::cout << baan.naam << " " << baan.lengte << std::endl;
             banen.push_back(baan);
         }
         else if (elemName == "VERKEERSLICHT") {
-            Verkeerslicht verkeerslicht;
+            Verkeersverkeerslicht verkeerslicht;
             for (TiXmlElement* child = elem->FirstChildElement(); child != NULL; child = child->NextSiblingElement()) {
                 TiXmlText* text = child->FirstChild()->ToText();
                 std::string childName = child->Value();
-                if (childName == "baan") verkeerslicht.baan = text->Value();
-                if (childName == "positie") verkeerslicht.positie = std::stoi(text->Value());
-                if (childName == "cyclus") verkeerslicht.cyclus = std::stoi(text->Value());
+                if (childName == "baan") verkeerslicht.set_baan(text->Value());
+                if (childName == "positie") verkeerslicht.set_positie(std::stoi(text->Value()));
+                if (childName == "cyclus") verkeerslicht.set_cyclus(std::stoi(text->Value()));
             }
             //std::cout << verkeerslicht.baan << " " << verkeerslicht.positie << " " << verkeerslicht.cyclus << " verkeerslicht toegevoegd!" << std::endl;
             verkeerslichten.push_back(verkeerslicht);
@@ -62,8 +62,8 @@ TrafficSim parseFile(const std::string inputfile) {
             for (TiXmlElement* child = elem->FirstChildElement(); child != NULL; child = child->NextSiblingElement()) {
                 TiXmlText* text = child->FirstChild()->ToText();
                 std::string childName = child->Value();
-                if (childName == "baan") voertuiggen.baan = text->Value();
-                if (childName == "frequentie") voertuiggen.freq = std::stoi(text->Value());
+                if (childName == "baan") voertuiggen.set_baan(text->Value());
+                if (childName == "frequentie") voertuiggen.set_freq(std::stoi(text->Value()));
             }
             //std::cout << voertuiggen.baan << " " << voertuiggen.freq << std::endl;
             voertuigengen.push_back(voertuiggen);
@@ -73,9 +73,9 @@ TrafficSim parseFile(const std::string inputfile) {
             for (TiXmlElement* child = elem->FirstChildElement(); child != NULL; child = child->NextSiblingElement()) {
                 TiXmlText* text = child->FirstChild()->ToText();
                 std::string childName = child->Value();
-                if (childName == "baan") bushalte.baan = text->Value();
-                if (childName == "positie") bushalte.positie = std::stoi(text->Value());
-                if (childName == "wachttijd") bushalte.wachttijd = std::stoi(text->Value());
+                if (childName == "baan") bushalte.set_baan(text->Value());
+                if (childName == "positie") bushalte.set_positie(std::stoi(text->Value()));
+                if (childName == "wachttijd") bushalte.set_wachttijd(std::stoi(text->Value()));
             }
             bushaltes.push_back(bushalte);
         }
@@ -96,10 +96,10 @@ TrafficSim parseFile(const std::string inputfile) {
             // Controle: moet precies 2 banen zijn
             if (temp.size() == 2) {
                 Kruispunt kruispunt;
-                kruispunt.fromBaan = temp[0].first;
-                kruispunt.fromPositie = temp[0].second;
-                kruispunt.toBaan = temp[1].first;
-                kruispunt.toPositie = temp[1].second;
+                kruispunt.set_from_baan(temp[0].first);
+                kruispunt.set_from_positie(temp[0].second);
+                kruispunt.set_to_baan(temp[1].first);
+                kruispunt.set_to_positie(temp[1].second);
                 kruispunten.push_back(kruispunt);
             }
             else {
@@ -109,7 +109,6 @@ TrafficSim parseFile(const std::string inputfile) {
     }
     doc.Clear();
     TrafficSim sim(banen, verkeerslichten, voertuigen, voertuigengen, bushaltes, kruispunten);
-    ENSURE(!banen.empty() || !voertuigen.empty() || !verkeerslichten.empty() || !voertuigengen.empty(),
-           "De ingelezen verkeerssituatie moet minstens één element bevatten");
+    ENSURE(!banen.empty(), "De ingelezen verkeerssituatie moet minstens één element bevatten");
     return sim;;
 }

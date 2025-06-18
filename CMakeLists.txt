@@ -37,6 +37,18 @@ set(SHARED_SOURCE_FILES
         src/structs.cpp
         src/structs.h
         src/DesignByContract.h
+        src/Classes/Baan.h
+        src/Classes/Bushalte.h
+        src/Classes/Kruispunt.h
+        src/Classes/Verkeersverkeerslicht.h
+        src/Classes/Voertuig.h
+        src/Classes/VoertuigGen.h
+        src/Classes/Baan.cpp
+        src/Classes/Bushalte.cpp
+        src/Classes/Kruispunt.cpp
+        src/Classes/Verkeersverkeerslicht.cpp
+        src/Classes/Voertuig.cpp
+        src/Classes/VoertuigGen.cpp
 )
 
 set(RELEASE_SOURCE_FILES src/main.cpp ${SHARED_SOURCE_FILES})

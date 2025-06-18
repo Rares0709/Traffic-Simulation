@@ -4,7 +4,7 @@
 
 #ifndef VOERTUIG_H
 #define VOERTUIG_H
-
+#include <string>
 
 
 class Voertuig {
@@ -54,7 +54,7 @@ public:
 
     Voertuig() : voertuigNummer(volgendeNummer++) {}
 
-    void lowerVolgendeNummer();
+    static void lowerVolgendeNummer();
 
     void setType(const std::string& nieuwType);
 
