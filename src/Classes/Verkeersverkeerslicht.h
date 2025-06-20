@@ -70,8 +70,13 @@ public:
     std::vector<Voertuig> voertuigen_voor_licht() const {
         return voertuigenVoorLicht;
     }
+
+    void set_voertuigen_voor_licht(const std::vector<Voertuig> &voertuigen_voor_licht) {
+        voertuigenVoorLicht = voertuigen_voor_licht;
+    }
+
     void voeg_voertuigvoorlicht(Voertuig &voertuig) {
-        voertuigen_voor_licht().push_back(voertuig);
+        voertuigenVoorLicht.push_back(voertuig);
     }
 };
 

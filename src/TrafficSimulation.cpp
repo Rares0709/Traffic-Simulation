@@ -115,11 +115,12 @@ void TrafficSim::Simulate(int duration) {
                 std::cout << "Geen verkeerslichten beschikbaar!" << std::endl;
             }
         }
+        std::vector<Voertuig> empty;
         verhoogTijd();
         if (!voertuigengen.empty())
             simVoertuiggenerator();
         for (Verkeersverkeerslicht &verkeerslicht: verkeerslichten) {
-             verkeerslicht.voertuigen_voor_licht().clear();
+             verkeerslicht.set_voertuigen_voor_licht(empty);
         }
     }
     //ENSURE(!verkeerslichten.empty(), "Na simulatie mogen de verkeerslichten niet leeg zijn.");
@@ -190,7 +191,7 @@ void TrafficSim::berekenSnelheid(Voertuig &voertuig) {
 void TrafficSim::versnellen(Voertuig &voertuig) {
     REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
     REQUIRE(!voertuigen.empty(), "Er bevindt zich geen voertuig op de baan.");
-    voertuig.set_m_maxsnelheid(voertuig.m_maxsnelheid());
+    voertuig.set_maxsnelheid(voertuig.m_Maxsnelheid());
     /*int indexLijst = voertuig.voertuigNummer - 1;
     if (indexLijst == 0) {
         size_t indexVoertuig2 = indexLijst - 1;
@@ -199,15 +200,15 @@ void TrafficSim::versnellen(Voertuig &voertuig) {
             voertuig.maxsnelheid = voertuig2.mMaxsnelheid;
         }
     }*/
-    ENSURE(voertuig.maxsnelheid1() == voertuig.m_maxsnelheid(), "Voertuig moet zijn maximumsnelheid terug hebben.");
+    ENSURE(voertuig.maxsnelheid1() == voertuig.m_Maxsnelheid(), "Voertuig moet zijn maximumsnelheid terug hebben.");
 }
 Voertuig TrafficSim::vertragen(Voertuig &voertuig) {
     REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
     REQUIRE(!voertuigen.empty(), "Er bevindt zich geen voertuig op de baan.");
     double s=voertuig.vertraagfactor1();
-    voertuig.set_m_maxsnelheid(s*voertuig.m_maxsnelheid());
+    voertuig.set_maxsnelheid(s*voertuig.m_Maxsnelheid());
     return voertuig;
-    ENSURE(voertuig.maxsnelheid1() < voertuig.m_maxsnelheid(), "Na vertraging moet maxsnelheid lager zijn.");
+    ENSURE(voertuig.maxsnelheid1() < voertuig.m_Maxsnelheid(), "Na vertraging moet maxsnelheid lager zijn.");
 }
 void TrafficSim::kruispuntSim(/*std::vector<Kruispunt> kruispunten, */Voertuig& voertuig/*, std::vector<Baan>& banen*/) {
     REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");

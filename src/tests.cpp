@@ -129,8 +129,7 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRoodFalse) {
     voertuig.set_positie(200);
     trafficSim.voegvoertuigtoe(voertuig);
     trafficSim.Simulate(1);
-
-    ASSERT_LT(trafficSim.getVoertuigen()[0].snelheid1(), speed);
+    ASSERT_LT(speed, trafficSim.getVoertuigen()[0].snelheid1());
     Voertuig::resetVolgendeNummer();
 }
 

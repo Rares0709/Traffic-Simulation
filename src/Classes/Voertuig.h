@@ -93,11 +93,11 @@ public:
         this->positie = positie;
     }
 
-    double m_maxsnelheid() const {
+    double m_Maxsnelheid() const {
         return mMaxsnelheid;
     }
 
-    void set_m_maxsnelheid(double m_maxsnelheid) {
+    void set_m_Maxsnelheid(double m_maxsnelheid) {
         mMaxsnelheid = m_maxsnelheid;
     }
 
