@@ -36,7 +36,6 @@ set(SHARED_SOURCE_FILES
         src/TrafficSimulation.h
         src/structs.cpp
         src/structs.h
-        src/DesignByContract.h
         src/Classes/Baan.h
         src/Classes/Bushalte.h
         src/Classes/Kruispunt.h
@@ -50,6 +49,12 @@ set(SHARED_SOURCE_FILES
         src/Classes/Voertuig.cpp
         src/Classes/VoertuigGen.cpp
 )
+
+if(WIN32)
+    list(APPEND SHARED_SOURCE_FILES src/DesignByContract.h)
+else()
+    list(APPEND SHARED_SOURCE_FILES src/Linux/DesignByContract.h)
+endif()
 
 set(RELEASE_SOURCE_FILES src/main.cpp ${SHARED_SOURCE_FILES})
 set(DEBUG_SOURCE_FILES src/tests.cpp ${SHARED_SOURCE_FILES})
