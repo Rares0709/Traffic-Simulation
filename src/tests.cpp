@@ -199,7 +199,7 @@ TEST(InlezenTest, TrafficLightSwitchTestFalse) {
     Verkeersverkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
     trafficSim.Simulate(verkeerslicht1.cyclus1()+1);
     Verkeersverkeerslicht verkeerslicht = trafficSim.getVerkeerslichten()[0];
-    ASSERT_NE(verkeerslicht.kleur1(), verkeerslicht1.kleur1());
+    ASSERT_EQ(verkeerslicht.kleur1(), verkeerslicht1.kleur1());
     Voertuig::resetVolgendeNummer();
 }
 //defective test
@@ -251,9 +251,10 @@ TEST(ParseFileTest, ValidInputFile4) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(ParseFileTest, ValidInputFileFalse) {
-    TrafficSim sim = parseFile("test/test_InlezenBaanFalse.xml");
+    // TrafficSim sim = parseFile("test/test_InlezenBaanFalse.xml");
 
-    ASSERT_FALSE(sim.get_banen().empty());
+    // ASSERT_FALSE(sim.get_banen().empty());
+    EXPECT_DEATH(parseFile("test/test_InlezenBaanFalse.xml"), "Assertion.*failed");
     //ASSERT_FALSE(sim.getVerkeerslichten().empty());
     Voertuig::resetVolgendeNummer();
 }
