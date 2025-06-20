@@ -109,6 +109,6 @@ TrafficSim parseFile(const std::string inputfile) {
     }
     doc.Clear();
     TrafficSim sim(banen, verkeerslichten, voertuigen, voertuigengen, bushaltes, kruispunten);
-    ENSURE(!banen.empty(), "De ingelezen verkeerssituatie moet minstens één element bevatten");
+    ENSURE(!banen.empty(), "De ingelezen verkeerssituatie moet minstens 1 element bevatten");
     return sim;;
 }
