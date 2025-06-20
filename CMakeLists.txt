@@ -23,6 +23,12 @@ endif()
 include_directories(${GTEST_INCLUDE_DIRS})
 link_directories(${GTEST_LIB_DIRS})
 
+if(WIN32)
+    include_directories(src src/Windows)
+else()
+    include_directories(src src/Linux)
+endif()
+
 set(SHARED_SOURCE_FILES
         src/tinystr.cpp
         src/tinyxmlerror.cpp
@@ -51,7 +57,7 @@ set(SHARED_SOURCE_FILES
 )
 
 if(WIN32)
-    list(APPEND SHARED_SOURCE_FILES src/DesignByContract.h)
+    list(APPEND SHARED_SOURCE_FILES src/Windows/DesignByContract.h)
 else()
     list(APPEND SHARED_SOURCE_FILES src/Linux/DesignByContract.h)
 endif()
