@@ -55,7 +55,7 @@ void Verkeersverkeerslicht::verkeerslichtSim(Verkeersverkeerslicht& verkeerslich
     if (!testingMode) {
         std::cout << "Verkeerslicht op " << verkeerslicht.positie1() << " heeft kleur: " << verkeerslicht.kleur1() << std::endl;
     }
-    int tijd = this->currTime;
+    int tijd = currTime;
     if (!testingMode) {
         std::cout << tijd << std::endl;
     }
