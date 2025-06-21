@@ -5,6 +5,7 @@
 #ifndef BUSHALTE_H
 #define BUSHALTE_H
 #include <string>
+#include "Voertuig.h"
 
 
 class Bushalte {
@@ -34,6 +35,24 @@ public:
 
     void set_wachttijd(int wachttijd) {
         this->wachttijd = wachttijd;
+    }
+    /**
+    * Deze functie checkt of een bus moet stoppen aan een bushalte.
+    * @param bus is het voertuig.
+    */
+    /**
+     *@author Rares Grama
+     *@date /
+     *@version
+     */
+    void simBushaltes(Voertuig &bus);
+
+    std::vector<Bushalte> get_bushaltes() const {
+        return bushaltes;
+    }
+
+    void set_bushaltes(const std::vector<Bushalte> &bushaltes) {
+        this->bushaltes = bushaltes;
     }
 };
 

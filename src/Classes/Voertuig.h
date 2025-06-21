@@ -232,7 +232,16 @@ public:
     void set_type(const std::string &type) {
         this->type = type;
     }
-
+    /**
+     * Deze functie berekent de versnelling van het voertuig.
+     * @param voertuig is het voertuig.
+     */
+    /**
+     *@author Ilyas Sefiani
+     *@author Rares Grama
+     *@date /
+     *@version
+     */
     void berekenVersnelling(Voertuig& voertuig);
     /**
      * Deze functie berekent de snelheid van het voertuig.
@@ -275,6 +284,26 @@ public:
      *@date /
      *@version
      */
+
+    void geldig(Voertuig& voertuig);
+
+    void wagenToDelete(Voertuig &voertuig);
+    int getPositie(Voertuig voertuig) {
+        return voertuig.positie1();
+    }
+    std::vector<Voertuig>& getVoertuigen() {
+        return voertuigen;
+    }
+    void setVoertuigen(const std::vector<Voertuig> &voertuigen) {
+        this->voertuigen = voertuigen;
+    }
+    int getSnelheid(Voertuig voertuig) {
+        return voertuig.snelheid1();
+    }
+
+    void voegvoertuigtoe(Voertuig voertuig) {
+        this->voertuigen.push_back(voertuig);
+    }
 };
 
 

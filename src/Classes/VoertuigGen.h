@@ -5,7 +5,7 @@
 #ifndef VOERTUIGGEN_H
 #define VOERTUIGGEN_H
 #include <string>
-
+#include "DesignByContract.h"
 
 class VoertuigGen {
     std::string baan;
@@ -34,6 +34,24 @@ public:
 
     void set_laatste_tijd(int laatste_tijd) {
         laatsteTijd = laatste_tijd;
+    }
+    /**
+     *Deze functie genereert voertuigen.
+     */
+    /**
+     *@author Rares Grama
+     *@author Ilyas Sefiani
+     *@date /
+     *@version
+     */
+    void simVoertuiggenerator();
+
+    std::vector<VoertuigGen> get_VoertuigGen() const {
+        return voertuigengen;
+    }
+
+    void set_voertuigengen(const std::vector<VoertuigGen> &voertuigengen) {
+        this->voertuigengen = voertuigengen;
     }
 };
 

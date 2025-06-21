@@ -5,7 +5,7 @@
 #ifndef VERKEERSVERKEERSLICHT_H
 #define VERKEERSVERKEERSLICHT_H
 
-//#include "Classes/Voertuig.h"
+// #include "Classes/Voertuig.h"
 #include <vector>
 
 #include "Voertuig.h"
@@ -77,6 +77,28 @@ public:
 
     void voeg_voertuigvoorlicht(Voertuig &voertuig) {
         voertuigenVoorLicht.push_back(voertuig);
+    }
+    void verkeerslichtSim(Verkeersverkeerslicht& verkeerslicht);
+    /**
+     *Deze functie zorgt ervoor wat de auto's doen op basis van de cyclus van het verkeerslicht en deze functie checkt of het voertuig een prioriteitsvoertuig is.
+     */
+    /**
+     *@author Jonas Saelens
+     *@date /
+     *@version
+     */
+    void checkverkeerslicht();
+
+    std::vector<Verkeersverkeerslicht> getVerkeerslichten() const {
+        return verkeerslichten;
+    }
+
+    void setVerkeerslichten(const std::vector<Verkeersverkeerslicht> &verkeerslichten) {
+        this->verkeerslichten = verkeerslichten;
+    }
+
+    void voegverkeerslichttoe(Verkeersverkeerslicht licht) {
+        this->verkeerslichten.push_back(licht);
     }
 };
 

@@ -126,3 +126,35 @@ Voertuig Voertuig::vertragen(Voertuig &voertuig) {
     return voertuig;
     ENSURE(voertuig.maxsnelheid1() < voertuig.m_Maxsnelheid(), "Na vertraging moet maxsnelheid lager zijn.");
 }
+
+void Voertuig::geldig(Voertuig &voertuig) {
+    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    REQUIRE(!voertuigen.empty(), "Er bevindt zich geen voertuig op de baan.");
+    int indexLijst = voertuig.voertuig_nummer() - 1;
+
+    std::string baannaam = voertuig.baan1();
+    int lengte = getBaanLengte(baannaam, banen);
+    if (lengte < 0) {
+        /*std::cout << "Bestaat niet." << std::endl;*/
+    }
+    else if (voertuig.positie1() > lengte) {
+        // if (voertuigen.size() > 1){
+        //     Voertuig& voertuig2 = voertuigen[indexLijst + 1];
+        //     voertuig2.voertuigNummer = voertuig.voertuigNummer;
+        // }
+        Voertuig &voertuigtodelete = voertuigen[indexLijst];
+        //voertuigen.erase(voertuigen.begin()+indexLijst);
+        wagenToDelete(voertuigtodelete);
+        /*std::cout << "Voertuig weg van de baan" << std::endl;*/
+    }
+    else {
+        /*std::cout << "er gebeurt niks" << std::endl;*/
+    }
+    std::string baanNaam=voertuig.baan1();
+    ENSURE(std::find_if(toDelete.begin(), toDelete.end(), [&](const Voertuig& v) { return v.voertuig_nummer() == voertuig.voertuig_nummer(); }) != toDelete.end() || voertuig.positie1() <= getBaanLengte(baanNaam, banen), "Voertuig is ongeldig verwijderd of buiten baan.");
+}
+void Voertuig::wagenToDelete(Voertuig &voertuig) {
+    toDelete.push_back(voertuig);
+    ENSURE(!toDelete.empty(), "Voertuig werd niet aan de deletelijst toegevoegd.");
+    ENSURE(toDelete.back().voertuig_nummer() == voertuig.voertuig_nummer(), "Laatste voertuig in deletelijst is niet het toegevoegde voertuig.");
+}
