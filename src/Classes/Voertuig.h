@@ -288,22 +288,7 @@ public:
     void geldig(Voertuig& voertuig);
 
     void wagenToDelete(Voertuig &voertuig);
-    int getPositie(Voertuig voertuig) {
-        return voertuig.positie1();
-    }
-    std::vector<Voertuig>& getVoertuigen() {
-        return voertuigen;
-    }
-    void setVoertuigen(const std::vector<Voertuig> &voertuigen) {
-        this->voertuigen = voertuigen;
-    }
-    int getSnelheid(Voertuig voertuig) {
-        return voertuig.snelheid1();
-    }
 
-    void voegvoertuigtoe(Voertuig voertuig) {
-        this->voertuigen.push_back(voertuig);
-    }
 };
 
 

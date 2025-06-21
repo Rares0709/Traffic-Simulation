@@ -32,7 +32,7 @@ class TrafficSim {
     bool testingMode = false;
 public:
     /**
-     * Deze functuie simuleert de verkeerssituatie door alle voertuigen te verwerken en de tijd te verhogen.
+     * Deze functie simuleert de verkeerssituatie door alle voertuigen te verwerken en de tijd te verhogen.
      */
     /**
      *@author Jonas Saelens

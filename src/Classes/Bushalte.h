@@ -47,13 +47,6 @@ public:
      */
     void simBushaltes(Voertuig &bus);
 
-    std::vector<Bushalte> get_bushaltes() const {
-        return bushaltes;
-    }
-
-    void set_bushaltes(const std::vector<Bushalte> &bushaltes) {
-        this->bushaltes = bushaltes;
-    }
 };
 
 

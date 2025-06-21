@@ -5,6 +5,7 @@
 #ifndef KRUISPUNT_H
 #define KRUISPUNT_H
 #include <string>
+#include "DesignByContract.h"
 
 
 class Kruispunt {
@@ -43,14 +44,6 @@ public:
 
     void set_to_positie(int to_positie) {
         toPositie = to_positie;
-    }
-
-    std::vector<Kruispunt> get_kruispunten() const {
-        return kruispunten;
-    }
-
-    void set_kruispunten(const std::vector<Kruispunt> &kruispunten) {
-        this->kruispunten = kruispunten;
     }
 
     void kruispuntSim(/*std::vector<Kruispunt> kruispunten, */Voertuig& voertuig/*, std::vector<Baan>& banen*/);

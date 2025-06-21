@@ -7,8 +7,8 @@
 
 // #include "Classes/Voertuig.h"
 #include <vector>
-
 #include "Voertuig.h"
+#include "DesignByContract.h"
 
 
 class Verkeersverkeerslicht {
@@ -89,17 +89,6 @@ public:
      */
     void checkverkeerslicht();
 
-    std::vector<Verkeersverkeerslicht> getVerkeerslichten() const {
-        return verkeerslichten;
-    }
-
-    void setVerkeerslichten(const std::vector<Verkeersverkeerslicht> &verkeerslichten) {
-        this->verkeerslichten = verkeerslichten;
-    }
-
-    void voegverkeerslichttoe(Verkeersverkeerslicht licht) {
-        this->verkeerslichten.push_back(licht);
-    }
 };
 
 

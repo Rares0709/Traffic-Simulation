@@ -45,14 +45,6 @@ public:
      *@version
      */
     void simVoertuiggenerator();
-
-    std::vector<VoertuigGen> get_VoertuigGen() const {
-        return voertuigengen;
-    }
-
-    void set_voertuigengen(const std::vector<VoertuigGen> &voertuigengen) {
-        this->voertuigengen = voertuigengen;
-    }
 };
 
 
