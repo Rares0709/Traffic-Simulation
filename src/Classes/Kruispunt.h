@@ -5,6 +5,8 @@
 #ifndef KRUISPUNT_H
 #define KRUISPUNT_H
 #include <string>
+#include "Voertuig.h"
+#include "Baan.h"
 #include "DesignByContract.h"
 
 
@@ -46,7 +48,7 @@ public:
         toPositie = to_positie;
     }
 
-    void kruispuntSim(/*std::vector<Kruispunt> kruispunten, */Voertuig& voertuig/*, std::vector<Baan>& banen*/);
+    void kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen);
 };
 
 
