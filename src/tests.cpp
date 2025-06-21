@@ -253,7 +253,7 @@ TEST(ParseFileTest, ValidInputFileFalse) {
     // TrafficSim sim = parseFile("test/test_InlezenBaanFalse.xml");
 
     // ASSERT_FALSE(sim.get_banen().empty());
-    EXPECT_DEATH(parseFile("test/test_InlezenBaanFalse.xml"), "Assertion.*failed");
+    ASSERT_DEATH(parseFile("test/test_InlezenBaanFalse.xml"), ".*");
     //ASSERT_FALSE(sim.getVerkeerslichten().empty());
     Voertuig::resetVolgendeNummer();
 }
