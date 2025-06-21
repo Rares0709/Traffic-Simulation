@@ -5,7 +5,19 @@
 #ifndef VOERTUIG_H
 #define VOERTUIG_H
 #include <string>
-
+#include "DesignByContract.h"
+#include <fstream>
+// #include "structs.h"
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+#include <cmath>
+#include "Classes/Baan.h"
+#include "Classes/Bushalte.h"
+#include "Classes/Kruispunt.h"
+#include "Classes/Verkeersverkeerslicht.h"
+#include "Classes/Voertuig.h"
+#include "Classes/VoertuigGen.h"
 
 class Voertuig {
     std::string baan;
@@ -220,6 +232,49 @@ public:
     void set_type(const std::string &type) {
         this->type = type;
     }
+
+    void berekenVersnelling(Voertuig& voertuig);
+    /**
+     * Deze functie berekent de snelheid van het voertuig.
+     * @param voertuig is het voertuig.
+     */
+    /**
+     *@author Ilyas Sefiani
+     *@author Rares Grama
+     *@date /
+     *@version
+     */
+    void berekenSnelheid(Voertuig& voertuig);
+    /**
+     * Deze functie berekent hoe het voertuig kan versnellen.
+     * @param voertuig is het voertuig.
+     */
+    /**
+     *@author Ilyas Sefiani
+     *@date /
+     *@version
+     */
+    void versnellen(Voertuig& voertuig);
+    /**
+     * Deze functie berekent hoe het voertuig kan vertragen.
+     * @param voertuig is het voertuig.
+     */
+    /**
+     *@author Rares Grama
+     *@date /
+     *@version
+     */
+    Voertuig vertragen(Voertuig& voertuig);
+    /**
+     * Deze functie bekijkt of het voertuig in zijn baan mag blijven.
+     * @param voertuig is het voertuig.
+     */
+    /**
+     *@author Ilyas Sefiani
+     *@author Jonas Saelens
+     *@date /
+     *@version
+     */
 };
 
 
