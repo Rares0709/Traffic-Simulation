@@ -6,7 +6,8 @@
 #define VOERTUIGGEN_H
 #include <string>
 #include "DesignByContract.h"
-
+#include <cmath>
+#include "Voertuig.h"
 class VoertuigGen {
     std::string baan;
     int freq = 0;
@@ -44,7 +45,8 @@ public:
      *@date /
      *@version
      */
-    void simVoertuiggenerator();
+    void VoertuigGen::simVoertuiggenerator(std::vector<Voertuig>* voertuigen, double currTime);
+
 };
 
 

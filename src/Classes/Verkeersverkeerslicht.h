@@ -9,10 +9,10 @@
 #include <vector>
 #include "Voertuig.h"
 #include "DesignByContract.h"
+#include <iostream>
 
 
 class Verkeersverkeerslicht {
-private:
     std::string baan;
     int positie = 0;
     int cyclus = 0;
@@ -21,6 +21,8 @@ private:
     std::string kleur="rood";
     int laatsteTijd = 0;
     std::vector<Voertuig> voertuigenVoorLicht;
+    bool testingMode = false;
+
 public:
     void set_positie(int positie) {
         this->positie = positie;
@@ -78,7 +80,7 @@ public:
     void voeg_voertuigvoorlicht(Voertuig &voertuig) {
         voertuigenVoorLicht.push_back(voertuig);
     }
-    void verkeerslichtSim(Verkeersverkeerslicht& verkeerslicht);
+    void verkeerslichtSim(Verkeersverkeerslicht& verkeerslicht, std::vector<Voertuig> voertuigen, double currTime);
     /**
      *Deze functie zorgt ervoor wat de auto's doen op basis van de cyclus van het verkeerslicht en deze functie checkt of het voertuig een prioriteitsvoertuig is.
      */
@@ -87,7 +89,10 @@ public:
      *@date /
      *@version
      */
-    void checkverkeerslicht();
+    void checkverkeerslicht(std::vector<Voertuig> voertuigen);
+    void TestingModeOn() {
+        testingMode = true;
+    }
 
 };
 

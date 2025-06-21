@@ -3,50 +3,45 @@
 //
 
 #include "Verkeersverkeerslicht.h"
-void Verkeersverkeerslicht::checkverkeerslicht() {
+void Verkeersverkeerslicht::checkverkeerslicht(std::vector<Voertuig> voertuigen) {
     REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
     REQUIRE(!verkeerslichten.empty(), "Er bevinden zich geen verkeerslichten op de baan.");
-    for (Verkeersverkeerslicht& verkeerslicht : verkeerslichten) {
-        if (verkeerslicht.kleur1()==verkeerslicht.rood1()) {
-            if (!testingMode) {
-                std::cout << "Aantal voertuigen: " << voertuigen.size() << std::endl;
-            }
-            bool eersteGevonden = false;
-            Voertuig eersteVoertuig;
-            for (auto& voertuig : verkeerslicht.voertuigen_voor_licht()) {
-                if (voertuig.positie1() < verkeerslicht.positie1() && (eersteGevonden != true || voertuig.positie1() >= eersteVoertuig.positie1() )) {
-                    if (!voertuig.prioriteit1()) {
-                        eersteVoertuig = voertuig;
-                        eersteGevonden = true;
-                    }
+    if (this->kleur1()==this->rood1()) {
+        bool eersteGevonden = false;
+        Voertuig eersteVoertuig;
+        for (auto& voertuig : this->voertuigen_voor_licht()) {
+            if (voertuig.positie1() < this->positie1() && (eersteGevonden != true || voertuig.positie1() >= eersteVoertuig.positie1() )) {
+                if (!voertuig.prioriteit1()) {
+                    eersteVoertuig = voertuig;
+                    eersteGevonden = true;
                 }
             }
-            if (!eersteVoertuig.prioriteit1() && eersteGevonden) {
-                double Vertraag = verkeerslicht.positie1() - eersteVoertuig.vertraagafstand1();
-                double Stop = verkeerslicht.positie1() - eersteVoertuig.stopafstand1();
-                if (eersteVoertuig.positie1() < Stop && eersteVoertuig.positie1() >= Vertraag) {
-                    eersteVoertuig = vertragen(eersteVoertuig);
-                    for (auto& voertuig : verkeerslicht.voertuigen_voor_licht()) {
-                        if (voertuig.voertuig_nummer() == eersteVoertuig.voertuig_nummer()) {
-                            voertuig = eersteVoertuig;
-                        }
+        }
+        if (!eersteVoertuig.prioriteit1() && eersteGevonden) {
+            double Vertraag = this->positie1() - eersteVoertuig.vertraagafstand1();
+            double Stop = this->positie1() - eersteVoertuig.stopafstand1();
+            if (eersteVoertuig.positie1() < Stop && eersteVoertuig.positie1() >= Vertraag) {
+                eersteVoertuig.vertragen();
+                for (auto& voertuig : this->voertuigen_voor_licht()) {
+                    if (voertuig.voertuig_nummer() == eersteVoertuig.voertuig_nummer()) {
+                        voertuig = eersteVoertuig;
                     }
-                    for (auto& voertuig : voertuigen) {
-                        if (voertuig.voertuig_nummer() == eersteVoertuig.voertuig_nummer()) {
-                            voertuig = eersteVoertuig;
-                        }
+                }
+                for (auto& voertuig : voertuigen) {
+                    if (voertuig.voertuig_nummer() == eersteVoertuig.voertuig_nummer()) {
+                        voertuig = eersteVoertuig;
                     }
-                } else if (eersteVoertuig.positie1() < verkeerslicht.positie1() && eersteVoertuig.positie1() >= Stop) {
-                    //stoppen(eersteVoertuig);
-                    for (auto& voertuig : verkeerslicht.voertuigen_voor_licht()) {
-                        if (voertuig.voertuig_nummer() == eersteVoertuig.voertuig_nummer()) {
-                            voertuig = eersteVoertuig;
-                        }
+                }
+            } else if (eersteVoertuig.positie1() < this->positie1() && eersteVoertuig.positie1() >= Stop) {
+                //stoppen(eersteVoertuig);
+                for (auto& voertuig : this->voertuigen_voor_licht()) {
+                    if (voertuig.voertuig_nummer() == eersteVoertuig.voertuig_nummer()) {
+                        voertuig = eersteVoertuig;
                     }
-                    for (auto& voertuig : voertuigen) {
-                        if (voertuig.voertuig_nummer() == eersteVoertuig.voertuig_nummer()) {
-                            voertuig = eersteVoertuig;
-                        }
+                }
+                for (auto& voertuig : voertuigen) {
+                    if (voertuig.voertuig_nummer() == eersteVoertuig.voertuig_nummer()) {
+                        voertuig = eersteVoertuig;
                     }
                 }
             }
@@ -54,17 +49,17 @@ void Verkeersverkeerslicht::checkverkeerslicht() {
     }
     ENSURE(!verkeerslichten.empty(), "Verkeerslichten mogen niet leeg zijn na controle.");
 }
-void Verkeersverkeerslicht::verkeerslichtSim(Verkeersverkeerslicht& verkeerslicht) {
+void Verkeersverkeerslicht::verkeerslichtSim(Verkeersverkeerslicht& verkeerslicht, std::vector<Voertuig> voertuigen, double currTime) {
     REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
     REQUIRE(!verkeerslichten.empty(), "Er bevinden zich geen verkeerslichten op de baan.");
     if (!testingMode) {
         std::cout << "Verkeerslicht op " << verkeerslicht.positie1() << " heeft kleur: " << verkeerslicht.kleur1() << std::endl;
     }
-    int tijd = this->time;
+    int tijd = this->currTime;
     if (!testingMode) {
         std::cout << tijd << std::endl;
     }
-    int TimeForSwitch = ceil(time - verkeerslicht.laatste_tijd());
+    int TimeForSwitch = ceil(currTime - verkeerslicht.laatste_tijd());
     int verkeerslichtCyclus = verkeerslicht.cyclus1();
     if (TimeForSwitch>verkeerslichtCyclus) {
         if (verkeerslicht.kleur1()==verkeerslicht.rood1()) {
@@ -82,7 +77,7 @@ void Verkeersverkeerslicht::verkeerslichtSim(Verkeersverkeerslicht& verkeerslich
             }
             eersteVoertuig.set_gestopt(false);
             if (eersteGevonden)
-                versnellen(eersteVoertuig);
+                eersteVoertuig.versnellen();
         }
         else if (verkeerslicht.kleur1()==verkeerslicht.groen1()) {
             verkeerslicht.set_kleur("rood");
@@ -101,7 +96,7 @@ void Verkeersverkeerslicht::verkeerslichtSim(Verkeersverkeerslicht& verkeerslich
                 double Vertraag = verkeerslicht.positie1() - eersteVoertuig.vertraagafstand1();
                 double Stop = verkeerslicht.positie1() - eersteVoertuig.stopafstand1();
                 if (eersteVoertuig.positie1() < Stop && eersteVoertuig.positie1() >= Vertraag) {
-                    eersteVoertuig = vertragen(eersteVoertuig);
+                    eersteVoertuig.vertragen();
                     for (auto& voertuig : verkeerslicht.voertuigen_voor_licht()) {
                         if (voertuig.voertuig_nummer() == eersteVoertuig.voertuig_nummer()) {
                             voertuig = eersteVoertuig;
@@ -129,7 +124,7 @@ void Verkeersverkeerslicht::verkeerslichtSim(Verkeersverkeerslicht& verkeerslich
             }
         }
 
-        verkeerslicht.set_laatsteTijd(time);
+        verkeerslicht.set_laatsteTijd(currTime);
     }
     ENSURE(verkeerslicht.kleur1() == verkeerslicht.rood1() || verkeerslicht.kleur1() == verkeerslicht.groen1(), "Kleur van verkeerslicht moet geldig zijn.");
     ENSURE(verkeerslicht.laatste_tijd() <= time, "Laatste tijd van verkeerslicht mag niet in de toekomst liggen.");
