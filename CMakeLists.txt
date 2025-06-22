@@ -54,6 +54,7 @@ set(SHARED_SOURCE_FILES
         src/Classes/Verkeersverkeerslicht.cpp
         src/Classes/Voertuig.cpp
         src/Classes/VoertuigGen.cpp
+        src/demonstration.cpp
 )
 
 if(WIN32)
