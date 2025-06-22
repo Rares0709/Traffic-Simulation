@@ -102,7 +102,6 @@ TEST(Demonstratie, SimulatieVanVerkeerslicht) {
     Verkeersverkeerslicht verkeerslicht = trafficSim.getVerkeerslichten()[0];
     std::cout << "de kleur van dit verkeerslicht na zijn cyclus is: " << verkeerslicht.kleur1() << std::endl;
     EXPECT_EQ(verkeerslicht.kleur1(), "groen");
-    //Voertuig* voertuig = &trafficSim.getVoertuigen()[0];
 
     TrafficSim trafficSim1(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
     trafficSim1.TestingModeOn();
@@ -113,13 +112,55 @@ TEST(Demonstratie, SimulatieVanVerkeerslicht) {
     }
     ASSERT_EQ(trafficSim1.getVoertuigen()[0].gestopt1(), true);
     std::cout << "Voertuig " << trafficSim1.getVoertuigen()[0].voertuig_nummer() << " is gestopt" << std::endl;
-    // voertuig.set_baan(&banen[0]);
-    // double speed =16.6;
-    // voertuig.set_snelheid(speed);
-    // voertuig.set_versnelling(1.44);
-    // voertuig.set_positie(200);
-    // trafficSim.voegvoertuigtoe(voertuig);
-    // trafficSim.Simulate(1);
+    Voertuig::resetVolgendeNummer();
+}
+TEST(Demonstratie, SimulatieMetGenerator) {
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/Demonstratie.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+    trafficSim.TestingModeOn();
+
+    std::cout << "de originele grote van de voertuigen vector is: " << voertuigen.size() << std::endl;
+
+    double duration = 0.0166;
+    while (trafficSim.getVoertuigen().size() == voertuigen.size()) {
+        trafficSim.Simulate(duration);
+        duration += 0.0166;
+    }
+
+    std::cout << "de grote van de voertuigen vector na de generators cyclus is: " << trafficSim.getVoertuigen().size() << std::endl;
+    Voertuig::resetVolgendeNummer();
+}
+TEST(Demonstratie, RijdenMetType) {
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/Demonstratie.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    voertuigen.clear();
+    Ziekenwagen voertuig;
+    voertuig.set_positie(300);
+    voertuig.set_baan(&banen[0]);
+    voertuigen.push_back(voertuig);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+    trafficSim.TestingModeOn();
+
+    double duration = 0.0166;
+    double Stop = trafficSim.getVerkeerslichten()[0].positie1() - voertuig.stopafstand1();
+    while (trafficSim.getVoertuigen()[0].positie1() <= Stop) {
+        trafficSim.Simulate(duration);
+        duration += 0.0166;
+    }
+    ASSERT_EQ(trafficSim.getVoertuigen()[0].gestopt1(), false);
+    std::cout << "Voertuig " << trafficSim.getVoertuigen()[0].voertuig_nummer() << " is niet gestopt" << std::endl;
+    Voertuig::resetVolgendeNummer();
 }
 
 
