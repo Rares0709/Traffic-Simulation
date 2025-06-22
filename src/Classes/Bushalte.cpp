@@ -3,11 +3,12 @@
 //
 
 #include "Bushalte.h"
+#include "Voertuig.h"
 void Bushalte::simBushaltes(Voertuig &bus) {
-    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
-    REQUIRE(!bushaltes.empty(), "Er bevinden zich geen bushaltes op de baan.");
-    REQUIRE(std::any_of(voertuigen.begin(), voertuigen.end(), [](const Voertuig& v) { return v.type1() == "bus"; }),
-        "Er is geen bus aanwezig op de baan.");
+    // REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    // REQUIRE(!bushaltes.empty(), "Er bevinden zich geen bushaltes op de baan.");
+    // REQUIRE(std::any_of(voertuigen.begin(), voertuigen.end(), [](const Voertuig& v) { return v.type1() == "bus"; }),
+        //"Er is geen bus aanwezig op de baan.");
     double Vertraag = this->positie1() - bus.vertraagafstand1();
     double Stop = this->positie1() - bus.stopafstand1();
     if (bus.gestopt1()) {

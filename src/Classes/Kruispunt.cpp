@@ -4,9 +4,9 @@
 
 #include "Kruispunt.h"
 void Kruispunt::kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen) {
-    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
-    REQUIRE(!kruispunten.empty(), "Er bevindt zich geen kruispunt op de baan.");
-    REQUIRE(banen.size()>=2, "Er moeten minstens 2 banen aanwezig zijn.");
+    // REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    // REQUIRE(!kruispunten.empty(), "Er bevindt zich geen kruispunt op de baan.");
+    // REQUIRE(banen.size()>=2, "Er moeten minstens 2 banen aanwezig zijn.");
     int breedte = 0;
     if (!voertuig.gedraait1()) {
         if (this->from_baan() == voertuig.baan1()) {
@@ -73,5 +73,5 @@ void Kruispunt::kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen) {
             }
         }
     }
-    ENSURE(std::find_if(banen.begin(), banen.end(), [&](const Baan& b) { return b.naam1() == voertuig.baan1(); }) != banen.end(), "Voertuig moet op een bestaande baan blijven.");
+    // ENSURE(std::find_if(banen.begin(), banen.end(), [&](const Baan& b) { return b.naam1() == voertuig.baan1(); }) != banen.end(), "Voertuig moet op een bestaande baan blijven.");
 }

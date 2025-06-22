@@ -285,7 +285,7 @@ public:
      *@version
      */
 
-    void geldig(std::vector<Baan> &banen, Voertuig& voertuigenToDelete);
+    void geldig(std::vector<Baan> &banen,Voertuig& voertuigtodelete,std::vector<Voertuig> toDelete);
 
     void wagenToDelete(Voertuig &voertuig,std::vector<Voertuig>& toDelete);
 

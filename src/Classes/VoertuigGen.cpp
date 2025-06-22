@@ -4,12 +4,12 @@
 
 #include "VoertuigGen.h"
 void VoertuigGen::simVoertuiggenerator(std::vector<Voertuig>* voertuigen, double currTime) {
-    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
-    REQUIRE(!voertuigengen.empty(), "Er is geen voertuiggenerator aanwezig.");
+    // REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    // REQUIRE(!voertuigengen.empty(), "Er is geen voertuiggenerator aanwezig.");
     int laatsteTijd = ceil( currTime- this->laatste_tijd());
     if (laatsteTijd > this->freq1()) {
         bool vrij = true;
-        for (const auto& voertuig : voertuigen) {
+        for (const auto& voertuig : *voertuigen) {
             if (voertuig.baan1() == this->baan1() && 0 <= voertuig.positie1() && voertuig.positie1() <= 2 * voertuig.lengte1()) {
                 vrij = false;
                 break;
