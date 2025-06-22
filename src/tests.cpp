@@ -5,6 +5,7 @@
 #include <gtest/gtest.h>
 #include "ParseFile.h"
 
+
 /*class TrafficSimTest : public ::testing::Test {
 protected:
     TrafficSim trafficSim;
@@ -26,7 +27,14 @@ protected:
     }
 };*/
 TEST(VerkeerslichtTest, VoertuigStoptBijRood) {
-    TrafficSim trafficSim = parseFile("test/test_VerkeerslichtTest.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_VerkeerslichtTest.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
 
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
@@ -44,7 +52,14 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(VerkeerslichtTest, VoertuigStoptBijRood1) {
-    TrafficSim trafficSim = parseFile("test/test_VerkeerslichtTest1.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_VerkeerslichtTest1.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
     Voertuig voertuig;
@@ -60,7 +75,14 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood1) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(VerkeerslichtTest, VoertuigStoptBijRood2) {
-    TrafficSim trafficSim = parseFile("test/test_VerkeerslichtTest2.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_VerkeerslichtTest2.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
     Voertuig voertuig;
@@ -76,7 +98,14 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood2) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(VerkeerslichtTest, VoertuigStoptBijRood3) {
-    TrafficSim trafficSim = parseFile("test/test_VerkeerslichtTest3.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_VerkeerslichtTest3.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
     Voertuig voertuig;
@@ -93,7 +122,14 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood3) {
 }
 
 TEST(VerkeerslichtTest, VoertuigStoptBijRood4) {
-    TrafficSim trafficSim = parseFile("test/test_VerkeerslichtTest4.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_VerkeerslichtTest4.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
     Voertuig voertuig;
@@ -118,7 +154,14 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood4) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(VerkeerslichtTest, VoertuigStoptBijRoodFalse) {
-    TrafficSim trafficSim = parseFile("test/test_VerkeerslichtTestFalse.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_VerkeerslichtTestFalse.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
 
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
@@ -149,7 +192,15 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRoodFalse) {
 }*/
 //test if lightcolor switches
 TEST(InlezenTest, TrafficLightSwitchTest) {
-    TrafficSim trafficSim = parseFile("test/test_InlezenTest.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_InlezenTest.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficSim.TestingModeOn();
     Verkeersverkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
     trafficSim.Simulate(verkeerslicht1.cyclus1()+1);
@@ -158,7 +209,14 @@ TEST(InlezenTest, TrafficLightSwitchTest) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(InlezenTest, TrafficLightSwitchTest1) {
-    TrafficSim trafficSim = parseFile("test/test_InlezenTest1.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_InlezenTest1.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
     trafficSim.TestingModeOn();
     Verkeersverkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
     trafficSim.Simulate(verkeerslicht1.cyclus1()+1);
@@ -167,7 +225,15 @@ TEST(InlezenTest, TrafficLightSwitchTest1) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(InlezenTest, TrafficLightSwitchTest2) {
-    TrafficSim trafficSim = parseFile("test/test_InlezenTest2.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_InlezenTest2.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficSim.TestingModeOn();
     Verkeersverkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
     trafficSim.Simulate(verkeerslicht1.cyclus1()+1);
@@ -176,7 +242,15 @@ TEST(InlezenTest, TrafficLightSwitchTest2) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(InlezenTest, TrafficLightSwitchTest3) {
-    TrafficSim trafficSim = parseFile("test/test_InlezenTest3.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_InlezenTest3.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficSim.TestingModeOn();
     Verkeersverkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
     trafficSim.Simulate(verkeerslicht1.cyclus1()+1);
@@ -185,7 +259,15 @@ TEST(InlezenTest, TrafficLightSwitchTest3) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(InlezenTest, TrafficLightSwitchTest4) {
-    TrafficSim trafficSim = parseFile("test/test_InlezenTest4.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_InlezenTest4.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficSim.TestingModeOn();
     Verkeersverkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
     trafficSim.Simulate(verkeerslicht1.cyclus1()+1);
@@ -194,7 +276,15 @@ TEST(InlezenTest, TrafficLightSwitchTest4) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(InlezenTest, TrafficLightSwitchTestFalse) {
-    TrafficSim trafficSim = parseFile("test/test_InlezenTestFalse.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_InlezenTestFalse.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficSim.TestingModeOn();
     Verkeersverkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
     trafficSim.Simulate(verkeerslicht1.cyclus1()+1);
@@ -216,131 +306,222 @@ TEST(InlezenTest, TrafficLightSwitchTestFalse) {
     ASSERT_GT(trafficSim.getVoertuigen().size(), 1);
 }*/
 TEST(ParseFileTest, ValidInputFile) {
-    TrafficSim sim = parseFile("test/test_InlezenBaan.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_InlezenBaan.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim sim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
 
     ASSERT_FALSE(sim.get_banen().empty());
     //ASSERT_FALSE(sim.getVerkeerslichten().empty());
     Voertuig::resetVolgendeNummer();
 }
 TEST(ParseFileTest, ValidInputFile1) {
-    TrafficSim sim = parseFile("test/test_InlezenBaan1.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_InlezenBaan1.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim sim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
 
     ASSERT_FALSE(sim.get_banen().empty());
     //ASSERT_FALSE(sim.getVerkeerslichten().empty());
     Voertuig::resetVolgendeNummer();
 }
 TEST(ParseFileTest, ValidInputFile2) {
-    TrafficSim sim = parseFile("test/test_InlezenBaan2.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_InlezenBaan2.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim sim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
 
     ASSERT_FALSE(sim.get_banen().empty());
     //ASSERT_FALSE(sim.getVerkeerslichten().empty());
     Voertuig::resetVolgendeNummer();
 }
 TEST(ParseFileTest, ValidInputFile3) {
-    TrafficSim sim = parseFile("test/test_InlezenBaan3.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_InlezenBaan3.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim sim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
 
     ASSERT_FALSE(sim.get_banen().empty());
     //ASSERT_FALSE(sim.getVerkeerslichten().empty());
     Voertuig::resetVolgendeNummer();
 }
 TEST(ParseFileTest, ValidInputFile4) {
-    TrafficSim sim = parseFile("test/test_InlezenBaan4.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_InlezenBaan4.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim sim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
 
     ASSERT_FALSE(sim.get_banen().empty());
     //ASSERT_FALSE(sim.getVerkeerslichten().empty());
     Voertuig::resetVolgendeNummer();
 }
 TEST(ParseFileTest, ValidInputFileFalse) {
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_InlezenBaanFalse.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
     // TrafficSim sim = parseFile("test/test_InlezenBaanFalse.xml");
 
     // ASSERT_FALSE(sim.get_banen().empty());
-    ASSERT_DEATH(parseFile("test/test_InlezenBaanFalse.xml"), ".*");
+    ASSERT_DEATH(parseFile("test/test_InlezenBaanFalse.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+, ".*");
     //ASSERT_FALSE(sim.getVerkeerslichten().empty());
     Voertuig::resetVolgendeNummer();
 }
 
 //voor Verkeessituatie in te lezen!
 TEST(InlezenTest, VerkeersSituatieWordtCorrectIngelezen) {
-    TrafficSim trafficsim = parseFile("test/test_verkeersinlezing.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_verkeersinlezing.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
 
-    std::vector<Baan> banen = trafficsim.get_banen();
-    ASSERT_EQ(banen.size(), size_t(1));
-    EXPECT_EQ(banen[0].naam1(), "Middelheimlaan");
-    EXPECT_EQ(banen[0].lengte1(), 500);
+    std::vector<Baan> banen1 = trafficsim.get_banen();
+    ASSERT_EQ(banen1.size(), size_t(1));
+    EXPECT_EQ(banen1[0].naam1(), "Middelheimlaan");
+    EXPECT_EQ(banen1[0].lengte1(), 500);
 
-    std::vector<Verkeersverkeerslicht> verkeerslichten = trafficsim.getVerkeerslichten();
-    ASSERT_EQ(verkeerslichten.size(), size_t(1));
-    EXPECT_EQ(verkeerslichten[0].baan1(), "Middelheimlaan");
-    EXPECT_EQ(verkeerslichten[0].positie1(), 400);
-    EXPECT_EQ(verkeerslichten[0].cyclus1(), 20);
+    std::vector<Verkeersverkeerslicht> verkeerslichten1 = trafficsim.getVerkeerslichten();
+    ASSERT_EQ(verkeerslichten1.size(), size_t(1));
+    EXPECT_EQ(verkeerslichten1[0].baan1()->naam1(), "Middelheimlaan");
+    EXPECT_EQ(verkeerslichten1[0].positie1(), 400);
+    EXPECT_EQ(verkeerslichten1[0].cyclus1(), 20);
 
-    std::vector<Voertuig> voertuigen = trafficsim.getVoertuigen();
-    ASSERT_EQ(voertuigen.size(), size_t(2));
+    std::vector<Voertuig> voertuigen1 = trafficsim.getVoertuigen();
+    ASSERT_EQ(voertuigen1.size(), size_t(2));
 
-    EXPECT_EQ(voertuigen[0].baan1(), "Middelheimlaan");
-    EXPECT_EQ(voertuigen[1].baan1(), "Middelheimlaan");
-    EXPECT_EQ(voertuigen[0].positie1(), 20);
-    EXPECT_EQ(voertuigen[1].positie1(), 0);
+    EXPECT_EQ(voertuigen1[0].baan1()->naam1(), "Middelheimlaan");
+    EXPECT_EQ(voertuigen1[1].baan1()->naam1(), "Middelheimlaan");
+    EXPECT_EQ(voertuigen1[0].positie1(), 20);
+    EXPECT_EQ(voertuigen1[1].positie1(), 0);
     Voertuig::resetVolgendeNummer();
 }
 //VoertuigGen wordt ingelezen!
 TEST(InlezenTest, VoertuiggeneratorWordtCorrectIngelezen) {
-    TrafficSim trafficsim = parseFile("test/test_voertuigGenInlezen.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_voertuigGenInlezen.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
 
     std::vector<VoertuigGen> generators = trafficsim.get_VoertuigGen();
     ASSERT_EQ(generators.size(), size_t(1));
-    EXPECT_EQ(generators[0].baan1(), "Middelheimlaan");
+    EXPECT_EQ(generators[0].baan1()->naam1(), "Middelheimlaan");
     EXPECT_EQ(generators[0].freq1(), 5);
     Voertuig::resetVolgendeNummer();
 }
 //Type auto inlezen!
 TEST(InlezenTest, VoertuigenMetTypeWordenCorrectIngelezen) {
-    TrafficSim trafficsim = parseFile("test/test_voertuigTypeInlezen.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_voertuigTypeInlezen.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
 
-    std::vector<Voertuig> voertuigen = trafficsim.getVoertuigen();
+    std::vector<Voertuig> voertuigen1 = trafficsim.getVoertuigen();
     ASSERT_EQ(voertuigen.size(), size_t(4));
-    EXPECT_EQ(voertuigen[0].type1(), "bus");
-    EXPECT_EQ(voertuigen[1].type1(), "brandweerwagen");
-    EXPECT_EQ(voertuigen[2].type1(), "ziekenwagen");
-    EXPECT_EQ(voertuigen[3].type1(), "politiecombi");
+    EXPECT_EQ(voertuigen1[0].type1(), "bus");
+    EXPECT_EQ(voertuigen1[1].type1(), "brandweerwagen");
+    EXPECT_EQ(voertuigen1[2].type1(), "ziekenwagen");
+    EXPECT_EQ(voertuigen1[3].type1(), "politiecombi");
     Voertuig::resetVolgendeNummer();
 }
 //Bushalte inlezen!
 TEST(InlezenTest, BushaltesWordenCorrectIngelezen) {
-    TrafficSim trafficsim = parseFile("test/test_bushalteInlezen.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_bushalteInlezen.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
 
     std::vector<Bushalte> haltes = trafficsim.get_bushaltes();
     ASSERT_EQ(haltes.size(), size_t(1));
-    EXPECT_EQ(haltes[0].baan1(), "Middelheimlaan");
+    EXPECT_EQ(haltes[0].baan1()->naam1(), "Middelheimlaan");
     EXPECT_EQ(haltes[0].positie1(), 250);
     EXPECT_EQ(haltes[0].wachttijd1(), 20);
     Voertuig::resetVolgendeNummer();
 }
 //Kruispunt inlezen!
 TEST(InlezenTest, KruispuntenWordenCorrectIngelezen) {
-    TrafficSim trafficsim = parseFile("test/test_kruispuntInlezen.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_kruispuntInlezen.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
 
-    std::vector<Kruispunt> kruispunten = trafficsim.get_kruispunten();
-    ASSERT_EQ(kruispunten.size(), size_t(2));
+    std::vector<Kruispunt> kruispunten1 = trafficsim.get_kruispunten();
+    ASSERT_EQ(kruispunten1.size(), size_t(2));
 
-    EXPECT_EQ(kruispunten[0].from_baan(), "Middelheimlaan");
-    EXPECT_EQ(kruispunten[0].from_positie(), 250);
-    EXPECT_EQ(kruispunten[0].to_baan(), "Floralienlaan");
-    EXPECT_EQ(kruispunten[0].to_positie(), 500);
+    EXPECT_EQ(kruispunten1[0].from_baan()->naam1(), "Middelheimlaan");
+    EXPECT_EQ(kruispunten1[0].from_positie(), 250);
+    EXPECT_EQ(kruispunten1[0].to_baan()->naam1(), "Floralienlaan");
+    EXPECT_EQ(kruispunten1[0].to_positie(), 500);
 
-    EXPECT_EQ(kruispunten[1].from_baan(), "Middelheimlaan");
-    EXPECT_EQ(kruispunten[1].from_positie(), 500);
-    EXPECT_EQ(kruispunten[1].to_baan(), "Beukenlaan");
-    EXPECT_EQ(kruispunten[1].to_positie(), 500);
+    EXPECT_EQ(kruispunten1[1].from_baan()->naam1(), "Middelheimlaan");
+    EXPECT_EQ(kruispunten1[1].from_positie(), 500);
+    EXPECT_EQ(kruispunten1[1].to_baan()->naam1(), "Beukenlaan");
+    EXPECT_EQ(kruispunten1[1].to_positie(), 500);
     Voertuig::resetVolgendeNummer();
 }
 TEST(InlezenTest, VoertuigVerwijderen) {
-    TrafficSim trafficsim = parseFile("test/test_VoertuigVerwijderen.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_VoertuigVerwijderen.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     ASSERT_EQ(trafficsim.getVoertuigen().size(), size_t(2));
     trafficsim.Simulate(1);
@@ -348,7 +529,15 @@ TEST(InlezenTest, VoertuigVerwijderen) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(InlezenTest, VoertuigVerwijderen1) {
-    TrafficSim trafficsim = parseFile("test/test_VoertuigVerwijderen1.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_VoertuigVerwijderen1.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     ASSERT_EQ(trafficsim.getVoertuigen().size(), size_t(2));
     trafficsim.Simulate(1);
@@ -356,7 +545,15 @@ TEST(InlezenTest, VoertuigVerwijderen1) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(InlezenTest, VoertuigVerwijderen2) {
-    TrafficSim trafficsim = parseFile("test/test_VoertuigVerwijderen2.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_VoertuigVerwijderen2.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     ASSERT_EQ(trafficsim.getVoertuigen().size(), size_t(2));
     trafficsim.Simulate(1);
@@ -364,7 +561,15 @@ TEST(InlezenTest, VoertuigVerwijderen2) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(InlezenTest, VoertuigVerwijderen3) {
-    TrafficSim trafficsim = parseFile("test/test_VoertuigVerwijderen3.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_VoertuigVerwijderen3.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     ASSERT_EQ(trafficsim.getVoertuigen().size(), size_t(2));
     trafficsim.Simulate(1);
@@ -372,7 +577,15 @@ TEST(InlezenTest, VoertuigVerwijderen3) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(InlezenTest, VoertuigVerwijderen4) {
-    TrafficSim trafficsim = parseFile("test/test_VoertuigVerwijderen4.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_VoertuigVerwijderen4.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     ASSERT_EQ(trafficsim.getVoertuigen().size(), size_t(2));
     trafficsim.Simulate(1);
@@ -383,26 +596,41 @@ TEST(InlezenTest, VoertuigVerwijderen4) {
 
 
 TEST(BerekenSnelheidTest, SnelheidEnPositie) {
-    TrafficSim trafficsim = parseFile("test/test_VoertuigBerekenSnelheidEnPositie.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_VoertuigBerekenSnelheidEnPositie.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Voertuig &voertuig= trafficsim.getVoertuigen()[0];
     voertuig.set_snelheid(6);
     voertuig.set_versnelling(1.03);
     trafficsim.setDeltaTime(1.0);
-    trafficsim.berekenSnelheid(voertuig);
+    voertuig.berekenSnelheid(trafficsim.getDeltaTime());
     EXPECT_EQ(voertuig.snelheid1(), 7.03);
     EXPECT_EQ(voertuig.positie1(), 27.545);
     Voertuig::resetVolgendeNummer();
 }
 
 TEST(BerekenSnelheidTest, Versnelling) {
-    TrafficSim trafficsim = parseFile("test/test_VoertuigBerekenVersnelling.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_VoertuigBerekenVersnelling.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Voertuig &voertuig = trafficsim.getVoertuigen()[0];
     double versnelling = voertuig.versnelling1();
     voertuig.set_snelheid(14);
-
-    trafficsim.berekenVersnelling(voertuig);
+    voertuig.berekenVersnelling();
     EXPECT_GT(voertuig.versnelling1(), versnelling);
     // EXPECT_EQ(voertuig.versnelling, 0.7114786517627);
     // EXPECT_EQ(voertuig1.versnelling, 0.3298317128635);
@@ -410,7 +638,15 @@ TEST(BerekenSnelheidTest, Versnelling) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(VerkeerslichtTest, LichtSwitch) {
-    TrafficSim trafficsim = parseFile("test/test_verkeerslichtSwitch.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_verkeerslichtSwitch.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Verkeersverkeerslicht verkeerslicht1 = trafficsim.getVerkeerslichten()[0];
     EXPECT_EQ(verkeerslicht1.kleur1(), "rood");
@@ -423,7 +659,15 @@ TEST(VerkeerslichtTest, LichtSwitch) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(VerkeerslichtTest, LichtSwitch1) {
-    TrafficSim trafficsim = parseFile("test/test_verkeerslichtSwitch1.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_verkeerslichtSwitch1.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Verkeersverkeerslicht verkeerslicht1 = trafficsim.getVerkeerslichten()[0];
     EXPECT_EQ(verkeerslicht1.kleur1(), "rood");
@@ -436,7 +680,15 @@ TEST(VerkeerslichtTest, LichtSwitch1) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(VerkeerslichtTest, LichtSwitch2) {
-    TrafficSim trafficsim = parseFile("test/test_verkeerslichtSwitch2.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_verkeerslichtSwitch2.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Verkeersverkeerslicht verkeerslicht1 = trafficsim.getVerkeerslichten()[0];
     EXPECT_EQ(verkeerslicht1.kleur1(), "rood");
@@ -449,7 +701,15 @@ TEST(VerkeerslichtTest, LichtSwitch2) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(VerkeerslichtTest, LichtSwitch3) {
-    TrafficSim trafficsim = parseFile("test/test_verkeerslichtSwitch3.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_verkeerslichtSwitch3.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Verkeersverkeerslicht verkeerslicht1 = trafficsim.getVerkeerslichten()[0];
     EXPECT_EQ(verkeerslicht1.kleur1(), "rood");
@@ -462,7 +722,15 @@ TEST(VerkeerslichtTest, LichtSwitch3) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(VerkeerslichtTest, LichtSwitch4) {
-    TrafficSim trafficsim = parseFile("test/test_verkeerslichtSwitch4.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_verkeerslichtSwitch4.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Verkeersverkeerslicht verkeerslicht1 = trafficsim.getVerkeerslichten()[0];
     EXPECT_EQ(verkeerslicht1.kleur1(), "rood");
@@ -475,7 +743,15 @@ TEST(VerkeerslichtTest, LichtSwitch4) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(VerkeerslichtTest, LichtSwitchFalse) {
-    TrafficSim trafficsim = parseFile("test/test_verkeerslichtSwitch.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_verkeerslichtSwitchFalse.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Verkeersverkeerslicht verkeerslicht1 = trafficsim.getVerkeerslichten()[0];
     EXPECT_EQ(verkeerslicht1.kleur1(), "rood");
@@ -488,15 +764,21 @@ TEST(VerkeerslichtTest, LichtSwitchFalse) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(VerkeerslichtTest, BussenStoppenBijBushaltes) {
-    TrafficSim trafficSim = parseFile("test/test_BusStoptBijBushalte.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_BusStoptBijBushalte.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
     trafficSim.TestingModeOn();
-    Voertuig bus;
+    Bus bus;
     bus.set_baan(trafficSim.get_bushaltes()[0].baan1());
     double speed = 10.0;
     bus.set_snelheid(speed);
     bus.set_versnelling(0.88);
     bus.set_positie(249);
-    bus.setType("bus");
     trafficSim.voegvoertuigtoe(bus);
     trafficSim.Simulate(1);
 
@@ -504,81 +786,128 @@ TEST(VerkeerslichtTest, BussenStoppenBijBushaltes) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(RijdenTest, VersnellenEnVertragen) {
-    TrafficSim trafficsim = parseFile("test/test_autoRijden.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_autoRijden.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
     voertuig.set_snelheid(12);
     voertuig.set_versnelling(0.5);
     Voertuig voertuig1 = voertuig;
-    trafficsim.vertragen(voertuig1);
+    voertuig1.vertragen();
     for (int i = 0; i < 6; ++i) {
-        trafficsim.berekenSnelheid(voertuig1);
-        trafficsim.berekenVersnelling(voertuig1);
+        voertuig1.berekenSnelheid(trafficsim.getDeltaTime());
+        voertuig1.berekenVersnelling();
     }
     EXPECT_GT(voertuig.snelheid1(),voertuig1.snelheid1());
     Voertuig voertuig2 = voertuig1;
-    trafficsim.versnellen(voertuig2);
+    voertuig2.versnellen();
     for (int i = 0; i < 10; ++i) {
-        trafficsim.berekenSnelheid(voertuig2);
-        trafficsim.berekenVersnelling(voertuig2);
+        voertuig2.berekenSnelheid(trafficsim.getDeltaTime());
+        voertuig2.berekenVersnelling();
     }
     EXPECT_GT(voertuig2.snelheid1(), voertuig1.snelheid1());
     Voertuig::resetVolgendeNummer();
 }
 TEST(ToevoegenVoertuigen, VoertuigGenSim) {
-    TrafficSim trafficsim = parseFile("test/test_autoRijden.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_autoRijden.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
-    std::vector<Voertuig> voertuigen = trafficsim.getVoertuigen();
-    EXPECT_EQ(voertuigen.size(),size_t(2));
+    std::vector<Voertuig> voertuigen1 = trafficsim.getVoertuigen();
+    EXPECT_EQ(voertuigen1.size(),size_t(2));
     int freq = trafficsim.get_VoertuigGen()[0].freq1()+1;
     trafficsim.Simulate(freq);
     std::vector<Voertuig> voertuigenTest = trafficsim.getVoertuigen();
-    EXPECT_GT(voertuigenTest.size(), voertuigen.size());
+    EXPECT_GT(voertuigenTest.size(), voertuigen1.size());
     Voertuig::resetVolgendeNummer();
 }
 
 TEST(ToevoegenVoertuigen, VoertuigGenSim1) {
-    TrafficSim trafficsim = parseFile("test/test_autoRijden1.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_autoRijden1.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
-    std::vector<Voertuig> voertuigen = trafficsim.getVoertuigen();
-    EXPECT_EQ(voertuigen.size(),size_t(1));
+    std::vector<Voertuig> voertuigen1 = trafficsim.getVoertuigen();
+    EXPECT_EQ(voertuigen1.size(),size_t(1));
     int freq = trafficsim.get_VoertuigGen()[0].freq1()+1;
     trafficsim.Simulate(freq);
     std::vector<Voertuig> voertuigenTest = trafficsim.getVoertuigen();
-    EXPECT_GT(voertuigenTest.size(), voertuigen.size());
+    EXPECT_GT(voertuigenTest.size(), voertuigen1.size());
     Voertuig::resetVolgendeNummer();
 }
 TEST(ToevoegenVoertuigen, VoertuigGenSim2) {
-    TrafficSim trafficsim = parseFile("test/test_autoRijden2.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_autoRijden2.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
-    std::vector<Voertuig> voertuigen = trafficsim.getVoertuigen();
-    EXPECT_EQ(voertuigen.size(),size_t(1));
+    std::vector<Voertuig> voertuigen1 = trafficsim.getVoertuigen();
+    EXPECT_EQ(voertuigen1.size(),size_t(1));
     int freq = trafficsim.get_VoertuigGen()[0].freq1()+1;
     trafficsim.Simulate(freq);
     std::vector<Voertuig> voertuigenTest = trafficsim.getVoertuigen();
-    EXPECT_GT(voertuigenTest.size(), voertuigen.size());
+    EXPECT_GT(voertuigenTest.size(), voertuigen1.size());
     Voertuig::resetVolgendeNummer();
 }
 TEST(ToevoegenVoertuigen, VoertuigGenSim3) {
-    TrafficSim trafficsim = parseFile("test/test_autoRijden3.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_autoRijden3.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
-    std::vector<Voertuig> voertuigen = trafficsim.getVoertuigen();
-    EXPECT_EQ(voertuigen.size(),size_t(2));
+    std::vector<Voertuig> voertuigen1 = trafficsim.getVoertuigen();
+    EXPECT_EQ(voertuigen1.size(),size_t(2));
     int freq = trafficsim.get_VoertuigGen()[0].freq1()+1;
     trafficsim.Simulate(freq);
     std::vector<Voertuig> voertuigenTest = trafficsim.getVoertuigen();
-    EXPECT_GT(voertuigenTest.size(), voertuigen.size());
+    EXPECT_GT(voertuigenTest.size(), voertuigen1.size());
     Voertuig::resetVolgendeNummer();
 }
 TEST(ToevoegenVoertuigen, VoertuigGenSim4) {
-    TrafficSim trafficsim = parseFile("test/test_autoRijden4.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_autoRijden4.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
-    std::vector<Voertuig> voertuigen = trafficsim.getVoertuigen();
-    EXPECT_EQ(voertuigen.size(),size_t(0));
+    std::vector<Voertuig> voertuigen1 = trafficsim.getVoertuigen();
+    EXPECT_EQ(voertuigen1.size(),size_t(0));
     int freq = trafficsim.get_VoertuigGen()[0].freq1()+1;
     trafficsim.Simulate(freq);
     std::vector<Voertuig> voertuigenTest = trafficsim.getVoertuigen();
-    EXPECT_GT(voertuigenTest.size(), voertuigen.size());
+    EXPECT_GT(voertuigenTest.size(), voertuigen1.size());
     Voertuig::resetVolgendeNummer();
 }
 // TEST(ToevoegenVoertuigen, VoertuigGenSimFalse) {
@@ -593,11 +922,21 @@ TEST(ToevoegenVoertuigen, VoertuigGenSim4) {
 //     Voertuig::resetVolgendeNummer();
 // }
 TEST(KruispuntWegen, WegenKiezen) {
-    TrafficSim trafficsim = parseFile("test/test_Wegkiezen.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_Wegkiezen.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
     std::string voertuigBaanFirst = voertuig.baan1()->naam1();
-    trafficsim.kruispuntSim(voertuig);
+    for (Kruispunt& kruispunt: trafficsim.get_kruispunten()) {
+        kruispunt.kruispuntSim(voertuig, banen);
+    }
     std::string voertuigBaanLast = voertuig.baan1()->naam1();
     if (voertuigBaanFirst == voertuigBaanLast) {
         EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
@@ -608,11 +947,21 @@ TEST(KruispuntWegen, WegenKiezen) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(KruispuntWegen, WegenKiezen1) {
-    TrafficSim trafficsim = parseFile("test/test_Wegkiezen1.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_Wegkiezen1.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
     std::string voertuigBaanFirst = voertuig.baan1()->naam1();
-    trafficsim.kruispuntSim(voertuig);
+    for (Kruispunt& kruispunt: trafficsim.get_kruispunten()) {
+        kruispunt.kruispuntSim(voertuig, banen);
+    }
     std::string voertuigBaanLast = voertuig.baan1()->naam1();
     if (voertuigBaanFirst == voertuigBaanLast) {
         EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
@@ -623,11 +972,21 @@ TEST(KruispuntWegen, WegenKiezen1) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(KruispuntWegen, WegenKiezen2) {
-    TrafficSim trafficsim = parseFile("test/test_Wegkiezen2.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_Wegkiezen2.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
     std::string voertuigBaanFirst = voertuig.baan1()->naam1();
-    trafficsim.kruispuntSim(voertuig);
+    for (Kruispunt& kruispunt: trafficsim.get_kruispunten()) {
+        kruispunt.kruispuntSim(voertuig, banen);
+    }
     std::string voertuigBaanLast = voertuig.baan1()->naam1();
     if (voertuigBaanFirst == voertuigBaanLast) {
         EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
@@ -638,11 +997,21 @@ TEST(KruispuntWegen, WegenKiezen2) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(KruispuntWegen, WegenKiezen3) {
-    TrafficSim trafficsim = parseFile("test/test_Wegkiezen3.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_Wegkiezen3.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
     std::string voertuigBaanFirst = voertuig.baan1()->naam1();
-    trafficsim.kruispuntSim(voertuig);
+    for (Kruispunt& kruispunt: trafficsim.get_kruispunten()) {
+        kruispunt.kruispuntSim(voertuig, banen);
+    }
     std::string voertuigBaanLast = voertuig.baan1()->naam1();
     if (voertuigBaanFirst == voertuigBaanLast) {
         EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
@@ -653,11 +1022,21 @@ TEST(KruispuntWegen, WegenKiezen3) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(KruispuntWegen, WegenKiezen4) {
-    TrafficSim trafficsim = parseFile("test/test_Wegkiezen4.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_Wegkiezen4.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
     std::string voertuigBaanFirst = voertuig.baan1()->naam1();
-    trafficsim.kruispuntSim(voertuig);
+    for (Kruispunt& kruispunt: trafficsim.get_kruispunten()) {
+        kruispunt.kruispuntSim(voertuig, banen);
+    }
     std::string voertuigBaanLast = voertuig.baan1()->naam1();
     if (voertuigBaanFirst == voertuigBaanLast) {
         EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
@@ -683,79 +1062,139 @@ TEST(KruispuntWegen, WegenKiezen4) {
 //     Voertuig::resetVolgendeNummer();
 // }
 TEST(TypeVoertuig,VoertuigLatenDoorrijden) {
-    TrafficSim trafficsim = parseFile("test/test_DoorrijdenType.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_DoorrijdenType.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
     Verkeersverkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
     while (voertuig.positie1() <= verkeerslicht.positie1()) {
-        trafficsim.checkverkeerslicht();
-        trafficsim.berekenSnelheid(voertuig);
-        trafficsim.berekenVersnelling(voertuig);
+        for (Verkeersverkeerslicht verkeerlicht:trafficsim.getVerkeerslichten()) {
+            verkeerslicht.verkeerslichtSim(verkeerslicht,voertuigen, trafficsim.getTime(), true);
+        }
+        voertuig.berekenSnelheid(trafficsim.getDeltaTime());
+        voertuig.berekenVersnelling();
     }
     EXPECT_GT(voertuig.positie1(),verkeerslicht.positie1());
     Voertuig::resetVolgendeNummer();
 }
 TEST(TypeVoertuig,VoertuigLatenDoorrijden1) {
-    TrafficSim trafficsim = parseFile("test/test_DoorrijdenType1.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_DoorrijdenType1.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
     Verkeersverkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
     while (voertuig.positie1() <= verkeerslicht.positie1()) {
-        trafficsim.checkverkeerslicht();
-        trafficsim.berekenSnelheid(voertuig);
-        trafficsim.berekenVersnelling(voertuig);
+        for (Verkeersverkeerslicht verkeerlicht:trafficsim.getVerkeerslichten()) {
+            verkeerslicht.verkeerslichtSim(verkeerslicht,voertuigen, trafficsim.getTime(), true);
+        }
+        voertuig.berekenSnelheid(trafficsim.getDeltaTime());
+        voertuig.berekenVersnelling();
     }
     EXPECT_GT(voertuig.positie1(),verkeerslicht.positie1());
     Voertuig::resetVolgendeNummer();
 }
 TEST(TypeVoertuig,VoertuigLatenDoorrijden2) {
-    TrafficSim trafficsim = parseFile("test/test_DoorrijdenType2.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_DoorrijdenType2.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
     Verkeersverkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
     while (voertuig.positie1() <= verkeerslicht.positie1()) {
-        trafficsim.checkverkeerslicht();
-        trafficsim.berekenSnelheid(voertuig);
-        trafficsim.berekenVersnelling(voertuig);
+        for (Verkeersverkeerslicht verkeerlicht:trafficsim.getVerkeerslichten()) {
+            verkeerslicht.verkeerslichtSim(verkeerslicht,voertuigen, trafficsim.getTime(), true);
+        }
+        voertuig.berekenSnelheid(trafficsim.getDeltaTime());
+        voertuig.berekenVersnelling();
     }
     EXPECT_GT(voertuig.positie1(),verkeerslicht.positie1());
     Voertuig::resetVolgendeNummer();
 }
 TEST(TypeVoertuig,VoertuigLatenDoorrijden3) {
-    TrafficSim trafficsim = parseFile("test/test_DoorrijdenType3.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_DoorrijdenType3.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
     Verkeersverkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
     while (voertuig.positie1() <= verkeerslicht.positie1()) {
-        trafficsim.checkverkeerslicht();
-        trafficsim.berekenSnelheid(voertuig);
-        trafficsim.berekenVersnelling(voertuig);
+        for (Verkeersverkeerslicht verkeerlicht:trafficsim.getVerkeerslichten()) {
+            verkeerslicht.verkeerslichtSim(verkeerslicht,voertuigen, trafficsim.getTime(), true);
+        }
+        voertuig.berekenSnelheid(trafficsim.getDeltaTime());
+        voertuig.berekenVersnelling();
     }
     EXPECT_GT(voertuig.positie1(),verkeerslicht.positie1());
     Voertuig::resetVolgendeNummer();
 }
 TEST(TypeVoertuig,VoertuigLatenDoorrijden4) {
-    TrafficSim trafficsim = parseFile("test/test_DoorrijdenType4.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_DoorrijdenType4.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
     Verkeersverkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
     while (voertuig.positie1() <= verkeerslicht.positie1()) {
-        trafficsim.checkverkeerslicht();
-        trafficsim.berekenSnelheid(voertuig);
-        trafficsim.berekenVersnelling(voertuig);
+        for (Verkeersverkeerslicht verkeerlicht:trafficsim.getVerkeerslichten()) {
+            verkeerslicht.verkeerslichtSim(verkeerslicht,voertuigen, trafficsim.getTime(), true);
+        }
+        voertuig.berekenSnelheid(trafficsim.getDeltaTime());
+        voertuig.berekenVersnelling();
     }
     EXPECT_GT(voertuig.positie1(),verkeerslicht.positie1());
     Voertuig::resetVolgendeNummer();
 }
 TEST(TypeVoertuig,VoertuigLatenDoorrijdenFalse) {
-    TrafficSim trafficsim = parseFile("test/test_DoorrijdenTypeFalse.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test_DoorrijdenTypeFalse.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficsim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
     Verkeersverkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
     while (voertuig.positie1() <= verkeerslicht.positie1()) {
-        trafficsim.checkverkeerslicht();
-        trafficsim.berekenSnelheid(voertuig);
-        trafficsim.berekenVersnelling(voertuig);
+        for (Verkeersverkeerslicht verkeerlicht:trafficsim.getVerkeerslichten()) {
+            verkeerslicht.verkeerslichtSim(verkeerslicht,voertuigen, trafficsim.getTime(), true);
+        }
+        voertuig.berekenSnelheid(trafficsim.getDeltaTime());
+        voertuig.berekenVersnelling();
     }
     EXPECT_GT(voertuig.positie1(),verkeerslicht.positie1());
     Voertuig::resetVolgendeNummer();

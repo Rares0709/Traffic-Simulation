@@ -204,6 +204,10 @@ public:
     double& getTime() {
         return time;
     }
+
+    double& getDeltaTime() {
+        return DeltaTime;
+    }
     /**
     * Deze functie checkt of een bus moet stoppen aan een bushalte.
     * @param bus is het voertuig.
