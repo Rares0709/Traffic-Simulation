@@ -3,7 +3,7 @@
 //
 
 #include "Verkeersverkeerslicht.h"
-void Verkeersverkeerslicht::checkverkeerslicht(std::vector<Voertuig> voertuigen) {
+void Verkeersverkeerslicht::checkverkeerslicht(std::vector<Voertuig>* voertuigen) {
     // REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
     // REQUIRE(!verkeerslichten.empty(), "Er bevinden zich geen verkeerslichten op de baan.");
     if (this->kleur1()==this->rood1()) {
@@ -27,7 +27,7 @@ void Verkeersverkeerslicht::checkverkeerslicht(std::vector<Voertuig> voertuigen)
                         voertuig = eersteVoertuig;
                     }
                 }
-                for (auto& voertuig : voertuigen) {
+                for (auto& voertuig : *voertuigen) {
                     if (voertuig.voertuig_nummer() == eersteVoertuig.voertuig_nummer()) {
                         voertuig = eersteVoertuig;
                     }
@@ -39,7 +39,7 @@ void Verkeersverkeerslicht::checkverkeerslicht(std::vector<Voertuig> voertuigen)
                         voertuig = eersteVoertuig;
                     }
                 }
-                for (auto& voertuig : voertuigen) {
+                for (auto& voertuig : *voertuigen) {
                     if (voertuig.voertuig_nummer() == eersteVoertuig.voertuig_nummer()) {
                         voertuig = eersteVoertuig;
                     }
