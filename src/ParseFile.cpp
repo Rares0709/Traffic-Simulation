@@ -23,51 +23,46 @@ void parseFile(const std::string inputfile,std::vector<Baan>* banen,std::vector<
     for (TiXmlElement* elem = doc.FirstChildElement(); elem != NULL; elem = elem->NextSiblingElement()) {
         std::string elemName = elem->Value();
         if (elemName == "VOERTUIG") {
-            Voertuig voertuig;
+            Baan *gevondenBaan=nullptr;
+            int positie=0;
             for (TiXmlElement* child = elem->FirstChildElement(); child != NULL; child = child->NextSiblingElement()) {
                 TiXmlText* text = child->FirstChild()->ToText();
                 std::string childName = child->Value();
                 if (childName == "baan") {
-                    bool isGevonden = false;
-                    Baan* gevondenBaan;
                     std::string baannaam= text->Value();
                     for (Baan& baan: *banen) {
                         if (baan.naam1() == baannaam) {
                             gevondenBaan = &baan;
-                            isGevonden = true;
                         }
                     }
-                    if (isGevonden) {
-                        voertuig.set_baan(gevondenBaan);
-                    }
                 }
-                if (childName == "positie") voertuig.set_positie(std::stoi(text->Value()));
+                if (childName == "positie") positie = std::stoi(text->Value());
                 if (childName == "type") {
                     std::string type = text->Value();
                     if (type == "auto") {
                         Auto a;
-                        a.set_baan(voertuig.baan1());
-                        a.set_positie(voertuig.positie1());
+                        a.set_baan(gevondenBaan);
+                        a.set_positie(positie);
                         voertuigen->push_back(a);
                     } else if (type == "bus") {
                         Bus b;
-                        b.set_baan(voertuig.baan1());
-                        b.set_positie(voertuig.positie1());
+                        b.set_baan(gevondenBaan);
+                        b.set_positie(positie);
                         voertuigen->push_back(b);
                     } else if (type == "brandweerwagen") {
                         Brandweerwagen bw;
-                        bw.set_baan(voertuig.baan1());
-                        bw.set_positie(voertuig.positie1());
+                        bw.set_baan(gevondenBaan);
+                        bw.set_positie(positie);
                         voertuigen->push_back(bw);
                     } else if (type == "ziekenwagen") {
                         Ziekenwagen z;
-                        z.set_baan(voertuig.baan1());
-                        z.set_positie(voertuig.positie1());
+                        z.set_baan(gevondenBaan);
+                        z.set_positie(positie);
                         voertuigen->push_back(z);
                     } else if (type == "politiecombi") {
                         Politiecombi p;
-                        p.set_baan(voertuig.baan1());
-                        p.set_positie(voertuig.positie1());
+                        p.set_baan(gevondenBaan);
+                        p.set_positie(positie);
                         voertuigen->push_back(p);
                     }
                 }

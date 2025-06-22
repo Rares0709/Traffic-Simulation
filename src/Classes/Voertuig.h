@@ -292,7 +292,7 @@ public:
 class Bus: public Voertuig {
 public:
     Bus():Voertuig(12, 11.4, 1.22, 4.29, 11.4, false) {
-        set_type("Bus");
+        set_type("bus");
     }
 };
 class Brandweerwagen: public Voertuig {
@@ -310,7 +310,7 @@ public:
 class Politiecombi: public Voertuig {
 public:
     Politiecombi():Voertuig(6, 17.2, 1.55, 4.92, 17.2, true) {
-        set_type("ziekenwagen");
+        set_type("politiecombi");
     }
 
 };

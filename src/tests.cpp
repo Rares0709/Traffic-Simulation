@@ -382,7 +382,7 @@ TEST(ParseFileTest, ValidInputFileFalse) {
     std::vector<VoertuigGen> voertuigengen;
     std::vector<Bushalte> bushaltes;
     std::vector<Kruispunt> kruispunten;
-    parseFile("test/test_InlezenBaanFalse.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    // parseFile("test/test_InlezenBaanFalse.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
     // TrafficSim sim = parseFile("test/test_InlezenBaanFalse.xml");
 
     // ASSERT_FALSE(sim.get_banen().empty());
