@@ -145,6 +145,7 @@ TEST(Demonstratie, RijdenMetType) {
     std::vector<Kruispunt> kruispunten;
     parseFile("test/Demonstratie.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
     voertuigen.clear();
+    Voertuig::resetVolgendeNummer();
     Ziekenwagen voertuig;
     voertuig.set_positie(300);
     voertuig.set_baan(&banen[0]);
