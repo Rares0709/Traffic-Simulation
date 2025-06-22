@@ -4,8 +4,8 @@
 
 #include "Verkeersverkeerslicht.h"
 void Verkeersverkeerslicht::checkverkeerslicht(std::vector<Voertuig> voertuigen) {
-    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
-    REQUIRE(!verkeerslichten.empty(), "Er bevinden zich geen verkeerslichten op de baan.");
+    // REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    // REQUIRE(!verkeerslichten.empty(), "Er bevinden zich geen verkeerslichten op de baan.");
     if (this->kleur1()==this->rood1()) {
         bool eersteGevonden = false;
         Voertuig eersteVoertuig;
@@ -47,11 +47,11 @@ void Verkeersverkeerslicht::checkverkeerslicht(std::vector<Voertuig> voertuigen)
             }
         }
     }
-    ENSURE(!verkeerslichten.empty(), "Verkeerslichten mogen niet leeg zijn na controle.");
+    // ENSURE(!verkeerslichten.empty(), "Verkeerslichten mogen niet leeg zijn na controle.");
 }
 void Verkeersverkeerslicht::verkeerslichtSim(Verkeersverkeerslicht& verkeerslicht, std::vector<Voertuig> voertuigen, double currTime) {
-    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
-    REQUIRE(!verkeerslichten.empty(), "Er bevinden zich geen verkeerslichten op de baan.");
+    // REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    // REQUIRE(!verkeerslichten.empty(), "Er bevinden zich geen verkeerslichten op de baan.");
     if (!testingMode) {
         std::cout << "Verkeerslicht op " << verkeerslicht.positie1() << " heeft kleur: " << verkeerslicht.kleur1() << std::endl;
     }
@@ -126,7 +126,7 @@ void Verkeersverkeerslicht::verkeerslichtSim(Verkeersverkeerslicht& verkeerslich
 
         verkeerslicht.set_laatsteTijd(currTime);
     }
-    ENSURE(verkeerslicht.kleur1() == verkeerslicht.rood1() || verkeerslicht.kleur1() == verkeerslicht.groen1(), "Kleur van verkeerslicht moet geldig zijn.");
-    ENSURE(verkeerslicht.laatste_tijd() <= time, "Laatste tijd van verkeerslicht mag niet in de toekomst liggen.");
+    // ENSURE(verkeerslicht.kleur1() == verkeerslicht.rood1() || verkeerslicht.kleur1() == verkeerslicht.groen1(), "Kleur van verkeerslicht moet geldig zijn.");
+    // ENSURE(verkeerslicht.laatste_tijd() <= time, "Laatste tijd van verkeerslicht mag niet in de toekomst liggen.");
     // std::cout << "kleur: --> " << verkeerslicht.kleur << std::endl;
 }

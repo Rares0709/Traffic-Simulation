@@ -5,7 +5,8 @@
 #ifndef BUSHALTE_H
 #define BUSHALTE_H
 #include <string>
-#include "Voertuig.h"
+
+class Voertuig;
 
 
 class Bushalte {
@@ -45,7 +46,7 @@ public:
      *@date /
      *@version
      */
-    void simBushaltes(Voertuig &bus);
+    void simBushaltes(Voertuig& bus);
 
 };
 
