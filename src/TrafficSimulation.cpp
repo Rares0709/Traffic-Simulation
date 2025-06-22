@@ -61,7 +61,7 @@ void TrafficSim::Simulate(int duration) {
         }
         if (!verkeerslichten.empty())
             for (Verkeersverkeerslicht verkeerslicht : verkeerslichten)
-                verkeerslicht.checkverkeerslicht(voertuigen);
+                verkeerslicht.checkverkeerslicht(&voertuigen);
             //checkverkeerslicht();
         for (auto& voertuig : voertuigen) {
             voertuig.berekenSnelheid(DeltaTime);

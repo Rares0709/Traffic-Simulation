@@ -92,7 +92,7 @@ public:
      *@date /
      *@version
      */
-    void checkverkeerslicht(std::vector<Voertuig> voertuigen);
+    void checkverkeerslicht(std::vector<Voertuig>* voertuigen);
     void TestingModeOn() {
         testingMode = true;
     }
