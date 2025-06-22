@@ -20,6 +20,9 @@
 #include "Classes/VoertuigGen.h"
 
 class Voertuig {
+    static int volgendeNummer;
+    int voertuigNummer = 1;
+
     Baan*baan = nullptr;
     int fmin = 4;
     int lengte = 4;
@@ -28,11 +31,9 @@ class Voertuig {
     double maxversnelling = 1.44;
     double snelheid = 0;
     double versnelling = 0;
-    static int volgendeNummer;
     double vertraagfactor = 0.4;
     int vertraagafstand = 50;
     int stopafstand = 15;
-    int voertuigNummer = 1;
     double maxremfactor = 4.61;
     double maxsnelheid = 16.6;
     bool prioriteit = false;
@@ -46,10 +47,22 @@ public:
 
     Voertuig() : voertuigNummer(volgendeNummer++) {}
 
+    Voertuig(int lengte, double m_maxsnelheid, double maxversnelling, double maxremfactor, double maxsnelheid,
+        bool prioriteit=false)
+        : voertuigNummer(volgendeNummer++),
+          lengte(lengte),
+          mMaxsnelheid(m_maxsnelheid),
+          maxversnelling(maxversnelling),
+          maxremfactor(maxremfactor),
+          maxsnelheid(maxsnelheid),
+          prioriteit(prioriteit){
+    }
+
     static void lowerVolgendeNummer();
     static void resetVolgendeNummer() {
         volgendeNummer = 1;
     }
+
 
     Baan* baan1() const {
         return baan;
@@ -270,209 +283,36 @@ public:
 
 };
 class Auto: public Voertuig {
-    Baan*baan = nullptr;
-    int fmin = 4;
-    int lengte = 4;
-    double positie = 0;
-    double mMaxsnelheid = 16.6;
-    double maxversnelling = 1.44;
-    double snelheid = 0;
-    double versnelling = 0;
-    double vertraagfactor = 0.4;
-    int vertraagafstand = 50;
-    int stopafstand = 15;
-    double maxremfactor = 4.61;
-    double maxsnelheid = 16.6;
-    bool prioriteit = false;
-    bool gestopt = false;
-    bool gedraait = false;
-    int timestop = 0;
-    bool recentGestopt= false;
-    std::string type = "auto"; // default is auto
 public:
-    Auto(Baan*baan, int fmin, int lengte, double positie, double mMaxsnelheid, double maxversnelling,
-             double snelheid, double versnelling, double vertraagfactor, int vertraagafstand, int stopafstand,
-             double maxremfactor, double maxsnelheid1, const std::string& type)
-        : baan(baan),
-          fmin(fmin),
-          lengte(lengte),
-          positie(positie),
-          mMaxsnelheid(mMaxsnelheid),
-          maxversnelling(maxversnelling),
-          snelheid(snelheid),
-          versnelling(versnelling),
-          vertraagfactor(vertraagfactor),
-          vertraagafstand(vertraagafstand),
-          stopafstand(stopafstand),
-          maxremfactor(maxremfactor),
-          maxsnelheid(maxsnelheid1),
-          type(type) {
-        // type wordt ingesteld bij constructie
+    Auto()
+    : Voertuig(4, 16.6, 1.44, 4.61, 16.6, false) {
+        set_type("auto");
     }
 };
 class Bus: public Voertuig {
-    Baan*baan = nullptr;
-    int fmin = 12;
-    int lengte = 12;
-    double positie = 0;
-    double mMaxsnelheid = 11.4;
-    double maxversnelling = 1.22;
-    double snelheid = 0;
-    double versnelling = 0;
-    double vertraagfactor = 0.4;
-    int vertraagafstand = 50;
-    int stopafstand = 15;
-    double maxremfactor = 4.29;
-    double maxsnelheid = 11.4;
-    bool prioriteit = false;
-    bool gestopt = false;
-    bool gedraait = false;
-    int timestop = 0;
-    bool recentGestopt= false;
-    std::string type = "bus"; // default is auto
 public:
-    Bus(Baan*baan, int fmin, int lengte, double positie, double mMaxsnelheid, double maxversnelling,
-             double snelheid, double versnelling, double vertraagfactor, int vertraagafstand, int stopafstand,
-             double maxremfactor, double maxsnelheid1, const std::string& type)
-        : baan(baan),
-          fmin(fmin),
-          lengte(lengte),
-          positie(positie),
-          mMaxsnelheid(mMaxsnelheid),
-          maxversnelling(maxversnelling),
-          snelheid(snelheid),
-          versnelling(versnelling),
-          vertraagfactor(vertraagfactor),
-          vertraagafstand(vertraagafstand),
-          stopafstand(stopafstand),
-          maxremfactor(maxremfactor),
-          maxsnelheid(maxsnelheid1),
-          type(type) {
-        // type wordt ingesteld bij constructie
+    Bus():Voertuig(12, 11.4, 1.22, 4.29, 11.4, false) {
+        set_type("Bus");
     }
 };
 class Brandweerwagen: public Voertuig {
-    Baan*baan = nullptr;
-    int fmin = 10;
-    int lengte = 10;
-    double positie = 0;
-    double mMaxsnelheid =  14.6;
-    double maxversnelling = 1.33;
-    double snelheid = 0;
-    double versnelling = 0;
-    double vertraagfactor = 0.4;
-    int vertraagafstand = 50;
-    int stopafstand = 15;
-    double maxremfactor = 4.56;
-    double maxsnelheid =  14.6;
-    bool prioriteit = true;
-    bool gestopt = false;
-    bool gedraait = false;
-    int timestop = 0;
-    bool recentGestopt= false;
-    std::string type = "brandweerwagen"; // default is auto
 public:
-    Brandweerwagen(Baan*baan, int fmin, int lengte, double positie, double mMaxsnelheid, double maxversnelling,
-             double snelheid, double versnelling, double vertraagfactor, int vertraagafstand, int stopafstand,
-             double maxremfactor, double maxsnelheid1, const std::string& type)
-        : baan(baan),
-          fmin(fmin),
-          lengte(lengte),
-          positie(positie),
-          mMaxsnelheid(mMaxsnelheid),
-          maxversnelling(maxversnelling),
-          snelheid(snelheid),
-          versnelling(versnelling),
-          vertraagfactor(vertraagfactor),
-          vertraagafstand(vertraagafstand),
-          stopafstand(stopafstand),
-          maxremfactor(maxremfactor),
-          maxsnelheid(maxsnelheid1),
-          type(type) {
-        // type wordt ingesteld bij constructie
+    Brandweerwagen():Voertuig(10, 14.6, 1.33, 4.56, 14.6, true) {
+        set_type("brandweerwagen");
     }
 };
 class Ziekenwagen: public Voertuig {
-    Baan*baan = nullptr;
-    int fmin = 8;
-    int lengte = 8;
-    double positie = 0;
-    double mMaxsnelheid = 15.5;
-    double maxversnelling = 1.44;
-    double snelheid = 0;
-    double versnelling = 0;
-    double vertraagfactor = 0.4;
-    int vertraagafstand = 50;
-    int stopafstand = 15;
-    double maxremfactor = 4.47;
-    double maxsnelheid = 15.5;
-    bool prioriteit = true;
-    bool gestopt = false;
-    bool gedraait = false;
-    int timestop = 0;
-    bool recentGestopt= false;
-    std::string type = "ziekenwagen"; // default is auto
 public:
-    Ziekenwagen(Baan*baan, int fmin, int lengte, double positie, double mMaxsnelheid, double maxversnelling,
-             double snelheid, double versnelling, double vertraagfactor, int vertraagafstand, int stopafstand,
-                double maxremfactor, double maxsnelheid1, const std::string& type)
-        : baan(baan),
-          fmin(fmin),
-          lengte(lengte),
-          positie(positie),
-          mMaxsnelheid(mMaxsnelheid),
-          maxversnelling(maxversnelling),
-          snelheid(snelheid),
-          versnelling(versnelling),
-          vertraagfactor(vertraagfactor),
-          vertraagafstand(vertraagafstand),
-          stopafstand(stopafstand),
-          maxremfactor(maxremfactor),
-          maxsnelheid(maxsnelheid1),
-          type(type) {
-        // type wordt ingesteld bij constructie
+    Ziekenwagen():Voertuig(8, 15.5, 1.44, 4.47, 15.5, true) {
+        set_type("ziekenwagen");
     }
 };
 class Politiecombi: public Voertuig {
-    Baan*baan = nullptr;
-    int fmin = 6;
-    int lengte = 6;
-    double positie = 0;
-    double mMaxsnelheid = 17.2;
-    double maxversnelling = 1.55;
-    double snelheid = 0;
-    double versnelling = 0;
-    double vertraagfactor = 0.4;
-    int vertraagafstand = 50;
-    int stopafstand = 15;
-    double maxremfactor = 4.92;
-    double maxsnelheid = 17.2;
-    bool prioriteit = true;
-    bool gestopt = false;
-    bool gedraait = false;
-    int timestop = 0;
-    bool recentGestopt= false;
-    std::string type = "politiecombi"; // default is auto
 public:
-    Politiecombi(Baan*baan, int fmin, int lengte, double positie, double mMaxsnelheid, double maxversnelling,
-             double snelheid, double versnelling, double vertraagfactor, int vertraagafstand, int stopafstand,
-             double maxremfactor, double maxsnelheid1, const std::string& type)
-        : baan(baan),
-          fmin(fmin),
-          lengte(lengte),
-          positie(positie),
-          mMaxsnelheid(mMaxsnelheid),
-          maxversnelling(maxversnelling),
-          snelheid(snelheid),
-          versnelling(versnelling),
-          vertraagfactor(vertraagfactor),
-          vertraagafstand(vertraagafstand),
-          stopafstand(stopafstand),
-          maxremfactor(maxremfactor),
-          maxsnelheid(maxsnelheid1),
-          type(type) {
-        // type wordt ingesteld bij constructie
+    Politiecombi():Voertuig(6, 17.2, 1.55, 4.92, 17.2, true) {
+        set_type("ziekenwagen");
     }
+
 };
 
 

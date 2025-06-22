@@ -45,19 +45,34 @@ void parseFile(const std::string inputfile,std::vector<Baan>* banen,std::vector<
                 if (childName == "type") {
                     std::string type = text->Value();
                     if (type == "auto") {
+                        Auto a;
+                        a.set_baan(voertuig.baan1());
+                        a.set_positie(voertuig.positie1());
+                        voertuigen->push_back(a);
                     } else if (type == "bus") {
-
+                        Bus b;
+                        b.set_baan(voertuig.baan1());
+                        b.set_positie(voertuig.positie1());
+                        voertuigen->push_back(b);
                     } else if (type == "brandweerwagen") {
-
+                        Brandweerwagen bw;
+                        bw.set_baan(voertuig.baan1());
+                        bw.set_positie(voertuig.positie1());
+                        voertuigen->push_back(bw);
                     } else if (type == "ziekenwagen") {
-
+                        Ziekenwagen z;
+                        z.set_baan(voertuig.baan1());
+                        z.set_positie(voertuig.positie1());
+                        voertuigen->push_back(z);
                     } else if (type == "politiecombi") {
-
+                        Politiecombi p;
+                        p.set_baan(voertuig.baan1());
+                        p.set_positie(voertuig.positie1());
+                        voertuigen->push_back(p);
                     }
                 }
             }
             //std::cout << voertuig.baan << " " << voertuig.positie << std::endl;
-            voertuigen->push_back(voertuig);
         }
         else if (elemName == "BAAN") {
             Baan baan;
