@@ -60,6 +60,7 @@ TEST(Demonstratie, simpeleUitvoer) {
     TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
 
     trafficSim.print();
+    Voertuig::resetVolgendeNummer();
 }
 
 TEST(Demonstratie, rijdenVoertuig) {
@@ -76,11 +77,46 @@ TEST(Demonstratie, rijdenVoertuig) {
         std::cout<<"Originele positie van voertuig "<<voertuig.voertuig_nummer()<<": "<<voertuig.positie1() <<std::endl;
     }
 
-    trafficSim.Simulate(10);
-    for (Voertuig &voertuig:voertuigen) {
+    trafficSim.Simulate(4);
+
+    for (Voertuig &voertuig: trafficSim.getVoertuigen()) {
         std::cout<<"Positie van voertuig "<<voertuig.voertuig_nummer()<<" na de simulatie: "<<voertuig.positie1() <<std::endl;
     }
+    Voertuig::resetVolgendeNummer();
 }
+TEST(Demonstratie, SimulatieVanVerkeerslicht) {
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/Demonstratie.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+    trafficSim.TestingModeOn();
+
+    Verkeersverkeerslicht verkeerslicht1 = trafficSim.getVerkeerslichten()[0];
+    std::cout << "de originele kleur van dit verkeerslicht is: " << verkeerslicht1.kleur1() << std::endl;
+    EXPECT_EQ(verkeerslicht1.kleur1(), "rood");
+    trafficSim.Simulate(verkeerslicht1.cyclus1()+1);
+    Verkeersverkeerslicht verkeerslicht = trafficSim.getVerkeerslichten()[0];
+    std::cout << "de kleur van dit verkeerslicht na zijn cyclus is: " << verkeerslicht.kleur1() << std::endl;
+    EXPECT_EQ(verkeerslicht.kleur1(), "groen");
+    //Voertuig* voertuig = &trafficSim.getVoertuigen()[0];
+
+    TrafficSim trafficSim1(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+    while (!trafficSim1.getVoertuigen()[0].gestopt1()) {
+        trafficSim1.Simulate(0.0166);
+    }
+    // voertuig.set_baan(&banen[0]);
+    // double speed =16.6;
+    // voertuig.set_snelheid(speed);
+    // voertuig.set_versnelling(1.44);
+    // voertuig.set_positie(200);
+    // trafficSim.voegvoertuigtoe(voertuig);
+    // trafficSim.Simulate(1);
+}
+
 
 
 

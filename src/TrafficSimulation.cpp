@@ -4,7 +4,7 @@
 #include <algorithm>
 #include "TrafficSimulation.h"
 #include "DesignByContract.h"
-void TrafficSim::Simulate(int duration) {
+void TrafficSim::Simulate(double duration) {
     REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
     REQUIRE(!this->get_banen().empty(), "Banen empty is niet goed geïnitialiseerd.");
     std::vector<std::vector<Verkeersverkeerslicht>> baanVerkeerslicht;

@@ -39,7 +39,7 @@ public:
      *@date /
      *@version
      */
-    void Simulate(int duration = -1);
+    void Simulate(double duration = -1);
 
     TrafficSim(const std::vector<Baan> &banen, const std::vector<Verkeersverkeerslicht> &verkeerslichten,
         const std::vector<Voertuig> &voertuigen, const std::vector<VoertuigGen> &voertuigengen, const std::vector<Bushalte> &bushaltes, const std::vector<Kruispunt> &kruispunten)
