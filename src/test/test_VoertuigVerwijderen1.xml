@@ -5,8 +5,10 @@
 <VOERTUIG>
 <baan>Middelheimlaan</baan>
 <positie>600</positie>
+<type>auto</type>
 </VOERTUIG>
 <VOERTUIG>
 <baan>Middelheimlaan</baan>
 <positie>450</positie>
+<type>auto</type>
 </VOERTUIG>

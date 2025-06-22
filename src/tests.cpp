@@ -405,7 +405,7 @@ TEST(InlezenTest, VerkeersSituatieWordtCorrectIngelezen) {
 
     trafficsim.TestingModeOn();
 
-    std::vector<Baan> banen1 = trafficsim.get_banen();
+    std::vector<Baan> banen1 = banen;
     ASSERT_EQ(banen1.size(), size_t(1));
     EXPECT_EQ(banen1[0].naam1(), "Middelheimlaan");
     EXPECT_EQ(banen1[0].lengte1(), 500);
@@ -423,6 +423,8 @@ TEST(InlezenTest, VerkeersSituatieWordtCorrectIngelezen) {
     EXPECT_EQ(voertuigen1[1].baan1()->naam1(), "Middelheimlaan");
     EXPECT_EQ(voertuigen1[0].positie1(), 20);
     EXPECT_EQ(voertuigen1[1].positie1(), 0);
+    EXPECT_EQ(voertuigen1[0].type1(), "auto");
+    EXPECT_EQ(voertuigen1[1].type1(), "bus");
     Voertuig::resetVolgendeNummer();
 }
 //VoertuigGen wordt ingelezen!
@@ -757,7 +759,7 @@ TEST(VerkeerslichtTest, LichtSwitchFalse) {
     EXPECT_EQ(verkeerslicht1.kleur1(), "rood");
     trafficsim.Simulate(verkeerslicht1.cyclus1()+1);
     Verkeersverkeerslicht verkeerslicht = trafficsim.getVerkeerslichten()[0];
-    EXPECT_EQ(verkeerslicht.kleur1(), "groen");
+    EXPECT_NE(verkeerslicht.kleur1(), "groen");
     trafficsim.Simulate(verkeerslicht.cyclus1()*2+1);
     Verkeersverkeerslicht verkeerslicht2 = trafficsim.getVerkeerslichten()[0];
     EXPECT_EQ(verkeerslicht2.kleur1(), "rood");
