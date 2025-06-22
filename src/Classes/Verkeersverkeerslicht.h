@@ -13,13 +13,13 @@
 
 
 class Verkeersverkeerslicht {
-    std::string baan;
+    Baan*baan=nullptr;
     int positie = 0;
     int cyclus = 0;
     std::string rood="rood";
     std::string groen="groen";
     std::string kleur="rood";
-    int laatsteTijd = 0;
+    double laatsteTijd = 0;
     std::vector<Voertuig> voertuigenVoorLicht;
     bool testingMode = false;
 
@@ -31,10 +31,10 @@ public:
     void set_cyclus(int cyclus) {
         this->cyclus = cyclus;
     }
-    void set_baan(const std::string &baan) {
+    void set_baan(Baan* baan) {
         this->baan = baan;
     }
-    std::string baan1() const {
+    Baan* baan1() const {
         return baan;
     }
 
@@ -61,10 +61,10 @@ public:
         kleur=kleurstring;
     }
 
-    int laatste_tijd() const {
+    double laatste_tijd() const {
         return laatsteTijd;
     }
-    void set_laatsteTijd(int laatstetijd) {
+    void set_laatsteTijd(double laatstetijd) {
         laatsteTijd=laatstetijd;
 
     }

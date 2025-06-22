@@ -11,16 +11,16 @@
 
 
 class Kruispunt {
-    std::string fromBaan;
+    Baan* fromBaan= nullptr;
     int fromPositie;
-    std::string toBaan;
+    Baan* toBaan= nullptr;
     int toPositie;
 public:
-    std::string from_baan() const {
+    Baan* from_baan() const {
         return fromBaan;
     }
 
-    void set_from_baan(const std::string &from_baan) {
+    void set_from_baan(Baan * from_baan) {
         fromBaan = from_baan;
     }
 
@@ -32,11 +32,11 @@ public:
         fromPositie = from_positie;
     }
 
-    std::string to_baan() const {
+    Baan* to_baan() const {
         return toBaan;
     }
 
-    void set_to_baan(const std::string &to_baan) {
+    void set_to_baan(Baan*to_baan) {
         toBaan = to_baan;
     }
 

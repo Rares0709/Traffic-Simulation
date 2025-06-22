@@ -139,7 +139,7 @@ public:
         return banen;
     }
 
-    void setBanen(const std::vector<Baan> &banen) {
+    void setBanen(std::vector<Baan> &banen) {
         this->banen = banen;
     }
     /**
@@ -154,7 +154,7 @@ public:
      */
     void wagenToDelete(Voertuig &voertuig);
 
-    void voegbaantoe(Baan baan) {
+    void voegbaantoe(Baan &baan) {
         this->banen.push_back(baan);
     }
     int getPositie(Voertuig voertuig) {

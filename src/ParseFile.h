@@ -20,7 +20,7 @@
     *@date /
     *@version
     */
-TrafficSim parseFile(const std::string inputfile);
+void parseFile(const std::string inputfile,std::vector<Baan>* banen,std::vector<Verkeersverkeerslicht>* verkeerslichten,std::vector<Voertuig>* voertuigen,std::vector<VoertuigGen> *voertuigengen,std::vector<Bushalte> *bushaltes,std::vector<Kruispunt> *kruispunten);
 
     /**
      * Dit is de main. Hier roepen we de functie aan die alles op gang zet.

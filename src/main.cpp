@@ -6,7 +6,14 @@
 #include "ParseFile.h"
 
 int main() {
-    TrafficSim traffic = parseFile("test/test1.xml");
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/test1.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim traffic(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
     traffic.Simulate();
     return 0;
 }

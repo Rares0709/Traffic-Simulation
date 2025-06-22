@@ -6,19 +6,21 @@
 #define BUSHALTE_H
 #include <string>
 
+#include "Baan.h"
+
 class Voertuig;
 
 
 class Bushalte {
-    std::string baan;
+    Baan*baan=nullptr;
     int positie = 0;
     int wachttijd =0;
 public:
-    std::string baan1() const {
+    Baan* baan1() const {
         return baan;
     }
 
-    void set_baan(const std::string &baan) {
+    void set_baan(Baan*baan) {
         this->baan = baan;
     }
 
