@@ -64,13 +64,17 @@ endif()
 
 set(RELEASE_SOURCE_FILES src/main.cpp ${SHARED_SOURCE_FILES})
 set(DEBUG_SOURCE_FILES src/tests.cpp ${SHARED_SOURCE_FILES})
+set(DEMONSTRATION_SOURCE_FILES src/demonstration.cpp ${SHARED_SOURCE_FILES})
 
 add_executable(Traffic-Simulation ${RELEASE_SOURCE_FILES})
 add_executable(TS ${DEBUG_SOURCE_FILES})
+add_executable(demonstration ${DEMONSTRATION_SOURCE_FILES})
 target_link_libraries(TS gtest)
+target_link_libraries(demonstration gtest)
 
+#[[
 add_custom_target(clean-all
         COMMAND ${CMAKE_MAKE_PROGRAM} clean
         COMMAND ${CMAKE_COMMAND} -E rm -rf doc/html
         COMMENT "Cleaning project and removing Doxygen documentation"
-)
+)]]
