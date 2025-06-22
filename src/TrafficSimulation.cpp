@@ -62,13 +62,27 @@ void TrafficSim::Simulate(int duration) {
         if (!verkeerslichten.empty())
             checkverkeerslicht();
         for (auto& voertuig : voertuigen) {
-            berekenSnelheid(voertuig);
-            berekenVersnelling(voertuig);
-            geldig(voertuig);
+            voertuig.berekenSnelheid(DeltaTime);
+            //berekenSnelheid(voertuig);
+            if (voertuig.voertuig_nummer()-1 > 0) {
+                Voertuig voertuig2 = voertuigen[voertuig.voertuig_nummer()-2];
+                voertuig.berekenVersnelling(&voertuig2);
+            }
+            else
+                voertuig.berekenVersnelling();
+            //berekenVersnelling(voertuig);
+            voertuig.geldig(banen, voertuig, &toDelete);
+            //geldig(voertuig);
             if (!kruispunten.empty())
-                kruispuntSim(voertuig);
+                for (Kruispunt& kruispunt : kruispunten) {
+                    kruispunt.kruispuntSim(voertuig,banen);
+                }
+                //kruispuntSim(voertuig);
             if (voertuig.type1() == "bus" && !bushaltes.empty())
-                simBushaltes(voertuig);
+                for (Bushalte& bushalte : bushaltes) {
+                    bushalte.simBushaltes(voertuig);
+                }
+                //simBushaltes(voertuig);
         }
         // int size = toDelete.size();
         // for (Voertuig& voertuig: toDelete) {

@@ -234,6 +234,7 @@ public:
     }
     /**
      * Deze functie berekent de versnelling van het voertuig.
+     * @param voertuig2
      * @param voertuig is het voertuig.
      */
     /**
@@ -242,7 +243,7 @@ public:
      *@date /
      *@version
      */
-    void berekenVersnelling(Voertuig& voertuig2);
+    void berekenVersnelling(Voertuig* voertuig2 = nullptr);
     /**
      * Deze functie berekent de snelheid van het voertuig.
      * @param voertuig is het voertuig.
@@ -285,9 +286,9 @@ public:
      *@version
      */
 
-    void geldig(std::vector<Baan> &banen,Voertuig& voertuigtodelete,std::vector<Voertuig> toDelete);
+    void geldig(std::vector<Baan> &banen,Voertuig& voertuigtodelete,std::vector<Voertuig>* toDelete);
 
-    void wagenToDelete(Voertuig &voertuig,std::vector<Voertuig>& toDelete);
+    void wagenToDelete(Voertuig &voertuig,std::vector<Voertuig>* toDelete);
 
 };
 
