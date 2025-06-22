@@ -40,7 +40,7 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood) {
     trafficSim.TestingModeOn();
 
     Voertuig voertuig;
-    voertuig.set_baan(&trafficSim.get_banen()[0]);
+    voertuig.set_baan(&banen[0]);
     double speed =16.6;
     voertuig.set_snelheid(speed);
     voertuig.set_versnelling(1.44);
@@ -63,7 +63,7 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood1) {
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
     Voertuig voertuig;
-    voertuig.set_baan(&trafficSim.get_banen()[0]);
+    voertuig.set_baan(&banen[0]);
     double speed = 16.6;
     voertuig.set_snelheid(speed);
     voertuig.set_versnelling(1.44);
@@ -86,7 +86,7 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood2) {
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
     Voertuig voertuig;
-    voertuig.set_baan(&trafficSim.get_banen()[0]);
+    voertuig.set_baan(&banen[0]);
     double speed = 16.6;
     voertuig.set_snelheid(speed);
     voertuig.set_versnelling(1.44);
@@ -109,7 +109,7 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood3) {
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
     Voertuig voertuig;
-    voertuig.set_baan(&trafficSim.get_banen()[0]);
+    voertuig.set_baan(&banen[0]);
     double speed = 16.6;
     voertuig.set_snelheid(speed);
     voertuig.set_versnelling(1.44);
@@ -133,14 +133,14 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood4) {
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
     Voertuig voertuig;
-    voertuig.set_baan(&trafficSim.get_banen()[0]);
+    voertuig.set_baan(&banen[0]);
     double speed = 16.6;
     voertuig.set_snelheid(speed);
     voertuig.set_versnelling(1.01);
     voertuig.set_positie(200);
 
     Voertuig voertuig1;
-    voertuig1.set_baan(&trafficSim.get_banen()[1]);
+    voertuig1.set_baan(&banen[1]);
     double speed1 = 16.6;
     voertuig1.set_snelheid(speed1);
     voertuig1.set_versnelling(1.12);
@@ -166,7 +166,7 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRoodFalse) {
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
     Voertuig voertuig;
-    voertuig.set_baan(&trafficSim.get_banen()[0]);
+    voertuig.set_baan(&banen[0]);
     double speed = 16.6;
     voertuig.set_snelheid(speed);
     voertuig.set_versnelling(1.44);
