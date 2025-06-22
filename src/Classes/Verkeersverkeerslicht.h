@@ -80,7 +80,10 @@ public:
     void voeg_voertuigvoorlicht(Voertuig &voertuig) {
         voertuigenVoorLicht.push_back(voertuig);
     }
-    void verkeerslichtSim(Verkeersverkeerslicht& verkeerslicht, std::vector<Voertuig> voertuigen, double currTime);
+    void clear_voertuigvoorlicht() {
+        voertuigen_voor_licht().clear();
+    }
+    void verkeerslichtSim(Verkeersverkeerslicht& verkeerslicht, std::vector<Voertuig> voertuigen, double currTime, bool testingMode = false);
     /**
      *Deze functie zorgt ervoor wat de auto's doen op basis van de cyclus van het verkeerslicht en deze functie checkt of het voertuig een prioriteitsvoertuig is.
      */

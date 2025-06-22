@@ -49,7 +49,7 @@ void Verkeersverkeerslicht::checkverkeerslicht(std::vector<Voertuig> voertuigen)
     }
     // ENSURE(!verkeerslichten.empty(), "Verkeerslichten mogen niet leeg zijn na controle.");
 }
-void Verkeersverkeerslicht::verkeerslichtSim(Verkeersverkeerslicht& verkeerslicht, std::vector<Voertuig> voertuigen, double currTime) {
+void Verkeersverkeerslicht::verkeerslichtSim(Verkeersverkeerslicht& verkeerslicht, std::vector<Voertuig> voertuigen, double currTime, bool testingMode) {
     // REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
     // REQUIRE(!verkeerslichten.empty(), "Er bevinden zich geen verkeerslichten op de baan.");
     if (!testingMode) {

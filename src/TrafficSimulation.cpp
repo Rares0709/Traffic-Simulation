@@ -60,7 +60,9 @@ void TrafficSim::Simulate(int duration) {
             }
         }
         if (!verkeerslichten.empty())
-            checkverkeerslicht();
+            for (Verkeersverkeerslicht verkeerslicht : verkeerslichten)
+                verkeerslicht.checkverkeerslicht(voertuigen);
+            //checkverkeerslicht();
         for (auto& voertuig : voertuigen) {
             voertuig.berekenSnelheid(DeltaTime);
             //berekenSnelheid(voertuig);
@@ -123,7 +125,8 @@ void TrafficSim::Simulate(int duration) {
                 std::cout << verkeerslichten.size() << std::endl;
             }
             for (auto& verkeerslicht : verkeerslichten)
-                verkeerslichtSim(verkeerslicht);
+                verkeerslicht.verkeerslichtSim(verkeerslicht, voertuigen, time, testingMode);
+                //verkeerslichtSim(verkeerslicht);
         } else {
             if (!testingMode) {
                 std::cout << "Geen verkeerslichten beschikbaar!" << std::endl;
@@ -132,9 +135,11 @@ void TrafficSim::Simulate(int duration) {
         std::vector<Voertuig> empty;
         verhoogTijd();
         if (!voertuigengen.empty())
-            simVoertuiggenerator();
+            for (VoertuigGen& gen : voertuigengen)
+                gen.simVoertuiggenerator(&voertuigen, time);
+            //simVoertuiggenerator();
         for (Verkeersverkeerslicht &verkeerslicht: verkeerslichten) {
-             verkeerslicht.set_voertuigen_voor_licht(empty);
+             verkeerslicht.clear_voertuigvoorlicht();
         }
     }
     //ENSURE(!verkeerslichten.empty(), "Na simulatie mogen de verkeerslichten niet leeg zijn.");
