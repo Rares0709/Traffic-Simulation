@@ -109,9 +109,9 @@ TEST(Demonstratie, SimulatieVanVerkeerslicht) {
     double duration = 0.0166;
     while (!trafficSim1.getVoertuigen()[0].gestopt1()) {
         trafficSim1.Simulate(duration);
-        duration += trafficSim1.getTime();
+        duration += 0.0166;
     }
-    //ASSERT_EQ(trafficSim1.getVoertuigen()[0].gestopt1(), true);
+    ASSERT_EQ(trafficSim1.getVoertuigen()[0].gestopt1(), true);
     std::cout << "Voertuig " << trafficSim1.getVoertuigen()[0].voertuig_nummer() << " is gestopt" << std::endl;
     // voertuig.set_baan(&banen[0]);
     // double speed =16.6;
