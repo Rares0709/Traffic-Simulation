@@ -10,7 +10,7 @@ void VoertuigGen::simVoertuiggenerator(std::vector<Voertuig>* voertuigen, double
     if (laatsteTijd > this->freq1()) {
         bool vrij = true;
         for (const auto& voertuig : *voertuigen) {
-            if (voertuig.baan1() == this->baan1() && 0 <= voertuig.positie1() && voertuig.positie1() <= 2 * voertuig.lengte1()) {
+            if (voertuig.baan1()->naam1() == this->baan1()->naam1() && 0 <= voertuig.positie1() && voertuig.positie1() <= 2 * voertuig.lengte1()) {
                 vrij = false;
                 break;
             }

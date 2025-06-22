@@ -9,10 +9,10 @@ void Kruispunt::kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen) {
     // REQUIRE(banen.size()>=2, "Er moeten minstens 2 banen aanwezig zijn.");
     int breedte = 0;
     if (!voertuig.gedraait1()) {
-        if (this->from_baan() == voertuig.baan1()) {
+        if (this->from_baan()->naam1() == voertuig.baan1()->naam1()) {
             //int breedte;
             for (const Baan& b : banen) {
-                if (b.naam1() == this->from_baan()) {
+                if (b.naam1() == this->from_baan()->naam1()) {
                     breedte = b.breedte1();
                     break;
                 }
@@ -32,9 +32,9 @@ void Kruispunt::kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen) {
                 }
             }
         }
-        else if (this->to_baan() == voertuig.baan1()) {
+        else if (this->to_baan()->naam1() == voertuig.baan1()->naam1()) {
             for (const Baan& b : banen) {
-                if (b.naam1() == this->to_baan()) {
+                if (b.naam1() == this->to_baan()->naam1()) {
                     breedte = b.breedte1();
                     break;
                 }
@@ -55,18 +55,18 @@ void Kruispunt::kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen) {
             }
         }
     }
-    else if (voertuig.baan1() == this->from_baan()) {
+    else if (voertuig.baan1()->naam1() == this->from_baan()->naam1()) {
         for (auto& baan : banen) {
-            if (this->from_baan() == baan.naam1()) {
+            if (this->from_baan()->naam1() == baan.naam1()) {
                 if (voertuig.positie1() > this->from_positie() + baan.breedte1()) {
                     voertuig.set_gedraait(false);
                 }
             }
         }
     }
-    else if (voertuig.baan1() == this->to_baan()) {
+    else if (voertuig.baan1()->naam1() == this->to_baan()->naam1()) {
         for (auto& baan : banen) {
-            if (this->to_baan() == baan.naam1()) {
+            if (this->to_baan()->naam1() == baan.naam1()) {
                 if (voertuig.positie1() > this->to_positie() + baan.breedte1()) {
                     voertuig.set_gedraait(false);
                 }

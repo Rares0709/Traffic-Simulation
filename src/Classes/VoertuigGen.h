@@ -9,15 +9,15 @@
 #include <cmath>
 #include "Voertuig.h"
 class VoertuigGen {
-    std::string baan;
+    Baan*baan= nullptr;
     int freq = 0;
     int laatsteTijd=0;
 public:
-    std::string baan1() const {
+    Baan* baan1() const {
         return baan;
     }
 
-    void set_baan(const std::string &baan) {
+    void set_baan(Baan*baan) {
         this->baan = baan;
     }
 

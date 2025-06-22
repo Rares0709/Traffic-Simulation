@@ -30,8 +30,9 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood) {
 
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
+
     Voertuig voertuig;
-    voertuig.set_baan("Middelheimlaan");
+    voertuig.set_baan(&trafficSim.get_banen()[0]);
     double speed =16.6;
     voertuig.set_snelheid(speed);
     voertuig.set_versnelling(1.44);
@@ -47,7 +48,7 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood1) {
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
     Voertuig voertuig;
-    voertuig.set_baan("Middelheimlaan");
+    voertuig.set_baan(&trafficSim.get_banen()[0]);
     double speed = 16.6;
     voertuig.set_snelheid(speed);
     voertuig.set_versnelling(1.44);
@@ -63,7 +64,7 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood2) {
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
     Voertuig voertuig;
-    voertuig.set_baan("Middelheimlaan");
+    voertuig.set_baan(&trafficSim.get_banen()[0]);
     double speed = 16.6;
     voertuig.set_snelheid(speed);
     voertuig.set_versnelling(1.44);
@@ -79,7 +80,7 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood3) {
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
     Voertuig voertuig;
-    voertuig.set_baan("Beukenlaan");
+    voertuig.set_baan(&trafficSim.get_banen()[0]);
     double speed = 16.6;
     voertuig.set_snelheid(speed);
     voertuig.set_versnelling(1.44);
@@ -96,14 +97,14 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRood4) {
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
     Voertuig voertuig;
-    voertuig.set_baan("Floralienlaan");
+    voertuig.set_baan(&trafficSim.get_banen()[0]);
     double speed = 16.6;
     voertuig.set_snelheid(speed);
     voertuig.set_versnelling(1.01);
     voertuig.set_positie(200);
 
     Voertuig voertuig1;
-    voertuig1.set_baan("Middelheimlaan");
+    voertuig1.set_baan(&trafficSim.get_banen()[1]);
     double speed1 = 16.6;
     voertuig1.set_snelheid(speed1);
     voertuig1.set_versnelling(1.12);
@@ -122,7 +123,7 @@ TEST(VerkeerslichtTest, VoertuigStoptBijRoodFalse) {
     // Controleer begin: er zijn initieel 2 voertuigen
     trafficSim.TestingModeOn();
     Voertuig voertuig;
-    voertuig.set_baan("Middelheimlaan");
+    voertuig.set_baan(&trafficSim.get_banen()[0]);
     double speed = 16.6;
     voertuig.set_snelheid(speed);
     voertuig.set_versnelling(1.44);
@@ -595,9 +596,9 @@ TEST(KruispuntWegen, WegenKiezen) {
     TrafficSim trafficsim = parseFile("test/test_Wegkiezen.xml");
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
-    std::string voertuigBaanFirst = voertuig.baan1();
+    std::string voertuigBaanFirst = voertuig.baan1()->naam1();
     trafficsim.kruispuntSim(voertuig);
-    std::string voertuigBaanLast = voertuig.baan1();
+    std::string voertuigBaanLast = voertuig.baan1()->naam1();
     if (voertuigBaanFirst == voertuigBaanLast) {
         EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
     }
@@ -610,9 +611,9 @@ TEST(KruispuntWegen, WegenKiezen1) {
     TrafficSim trafficsim = parseFile("test/test_Wegkiezen1.xml");
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
-    std::string voertuigBaanFirst = voertuig.baan1();
+    std::string voertuigBaanFirst = voertuig.baan1()->naam1();
     trafficsim.kruispuntSim(voertuig);
-    std::string voertuigBaanLast = voertuig.baan1();
+    std::string voertuigBaanLast = voertuig.baan1()->naam1();
     if (voertuigBaanFirst == voertuigBaanLast) {
         EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
     }
@@ -625,9 +626,9 @@ TEST(KruispuntWegen, WegenKiezen2) {
     TrafficSim trafficsim = parseFile("test/test_Wegkiezen2.xml");
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
-    std::string voertuigBaanFirst = voertuig.baan1();
+    std::string voertuigBaanFirst = voertuig.baan1()->naam1();
     trafficsim.kruispuntSim(voertuig);
-    std::string voertuigBaanLast = voertuig.baan1();
+    std::string voertuigBaanLast = voertuig.baan1()->naam1();
     if (voertuigBaanFirst == voertuigBaanLast) {
         EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
     }
@@ -640,9 +641,9 @@ TEST(KruispuntWegen, WegenKiezen3) {
     TrafficSim trafficsim = parseFile("test/test_Wegkiezen3.xml");
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
-    std::string voertuigBaanFirst = voertuig.baan1();
+    std::string voertuigBaanFirst = voertuig.baan1()->naam1();
     trafficsim.kruispuntSim(voertuig);
-    std::string voertuigBaanLast = voertuig.baan1();
+    std::string voertuigBaanLast = voertuig.baan1()->naam1();
     if (voertuigBaanFirst == voertuigBaanLast) {
         EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
     }
@@ -655,9 +656,9 @@ TEST(KruispuntWegen, WegenKiezen4) {
     TrafficSim trafficsim = parseFile("test/test_Wegkiezen4.xml");
     trafficsim.TestingModeOn();
     Voertuig voertuig = trafficsim.getVoertuigen()[0];
-    std::string voertuigBaanFirst = voertuig.baan1();
+    std::string voertuigBaanFirst = voertuig.baan1()->naam1();
     trafficsim.kruispuntSim(voertuig);
-    std::string voertuigBaanLast = voertuig.baan1();
+    std::string voertuigBaanLast = voertuig.baan1()->naam1();
     if (voertuigBaanFirst == voertuigBaanLast) {
         EXPECT_EQ(voertuigBaanFirst,voertuigBaanLast);
     }
