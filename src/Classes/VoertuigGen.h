@@ -13,29 +13,17 @@ class VoertuigGen {
     int freq = 0;
     int laatsteTijd=0;
 public:
-    Baan* baan1() const {
-        return baan;
-    }
+    Baan* baan1() const;
 
-    void set_baan(Baan*baan) {
-        this->baan = baan;
-    }
+    void set_baan(Baan*baan);
 
-    int freq1() const {
-        return freq;
-    }
+    int freq1() const;
 
-    void set_freq(int freq) {
-        this->freq = freq;
-    }
+    void set_freq(int freq);
 
-    int laatste_tijd() const {
-        return laatsteTijd;
-    }
+    int laatste_tijd() const;
 
-    void set_laatste_tijd(int laatste_tijd) {
-        laatsteTijd = laatste_tijd;
-    }
+    void set_laatste_tijd(int laatste_tijd);
     /**
      *Deze functie genereert voertuigen.
      */
