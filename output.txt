@@ -1,0 +1,10041 @@
+Tijd: 0
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20
+-> snelheid: 0
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0
+-> snelheid: 0
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0
+tijd verhoogd: 0->0.0166
+Tijd: 0.0166
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20
+-> snelheid: 0
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0
+-> snelheid: 0
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.0166
+tijd verhoogd: 0.0166->0.0332
+Tijd: 0.0332
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0006
+-> snelheid: 0.023904
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.000472758
+-> snelheid: 0.0189862
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.0332
+tijd verhoogd: 0.0332->0.0498
+Tijd: 0.0498
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0016
+-> snelheid: 0.047808
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.00126039
+-> snelheid: 0.0379605
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.0498
+tijd verhoogd: 0.0498->0.0664
+Tijd: 0.0664
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.003
+-> snelheid: 0.071712
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.00236269
+-> snelheid: 0.0569227
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.0664
+tijd verhoogd: 0.0664->0.083
+Tijd: 0.083
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0048
+-> snelheid: 0.095616
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.00377947
+-> snelheid: 0.0758729
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.083
+tijd verhoogd: 0.083->0.0996
+Tijd: 0.0996
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0069
+-> snelheid: 0.11952
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.00551052
+-> snelheid: 0.094811
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.0996
+tijd verhoogd: 0.0996->0.1162
+Tijd: 0.1162
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0095
+-> snelheid: 0.143424
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.00755564
+-> snelheid: 0.113737
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.1162
+tijd verhoogd: 0.1162->0.1328
+Tijd: 0.1328
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0125
+-> snelheid: 0.167328
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.00991464
+-> snelheid: 0.132651
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.1328
+tijd verhoogd: 0.1328->0.1494
+Tijd: 0.1494
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0159
+-> snelheid: 0.191232
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.0125873
+-> snelheid: 0.151553
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.1494
+tijd verhoogd: 0.1494->0.166
+Tijd: 0.166
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0196
+-> snelheid: 0.215136
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.0155734
+-> snelheid: 0.170443
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.166
+tijd verhoogd: 0.166->0.1826
+Tijd: 0.1826
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0238
+-> snelheid: 0.23904
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.0188729
+-> snelheid: 0.189321
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.1826
+tijd verhoogd: 0.1826->0.1992
+Tijd: 0.1992
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0284
+-> snelheid: 0.262944
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.0224854
+-> snelheid: 0.208187
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.1992
+tijd verhoogd: 0.1992->0.2158
+Tijd: 0.2158
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0333
+-> snelheid: 0.286848
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.0264107
+-> snelheid: 0.227041
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.2158
+tijd verhoogd: 0.2158->0.2324
+Tijd: 0.2324
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0387
+-> snelheid: 0.310752
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.0306487
+-> snelheid: 0.245882
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.2324
+tijd verhoogd: 0.2324->0.249
+Tijd: 0.249
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0444
+-> snelheid: 0.334656
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.0351992
+-> snelheid: 0.264712
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.249
+tijd verhoogd: 0.249->0.2656
+Tijd: 0.2656
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0506
+-> snelheid: 0.35856
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.040062
+-> snelheid: 0.283529
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.2656
+tijd verhoogd: 0.2656->0.2822
+Tijd: 0.2822
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0571
+-> snelheid: 0.382464
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.0452369
+-> snelheid: 0.302335
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.2822
+tijd verhoogd: 0.2822->0.2988
+Tijd: 0.2988
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0641
+-> snelheid: 0.406368
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.0507236
+-> snelheid: 0.321128
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.2988
+tijd verhoogd: 0.2988->0.3154
+Tijd: 0.3154
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0714
+-> snelheid: 0.430272
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.056522
+-> snelheid: 0.33991
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.3154
+tijd verhoogd: 0.3154->0.332
+Tijd: 0.332
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0792
+-> snelheid: 0.454176
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.0626318
+-> snelheid: 0.358679
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.332
+tijd verhoogd: 0.332->0.3486
+Tijd: 0.3486
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0873
+-> snelheid: 0.47808
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.069053
+-> snelheid: 0.377436
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.3486
+tijd verhoogd: 0.3486->0.3652
+Tijd: 0.3652
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.0958
+-> snelheid: 0.501984
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.0757852
+-> snelheid: 0.396182
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.3652
+tijd verhoogd: 0.3652->0.3818
+Tijd: 0.3818
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.1048
+-> snelheid: 0.525888
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.0828282
+-> snelheid: 0.414915
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.3818
+tijd verhoogd: 0.3818->0.3984
+Tijd: 0.3984
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.1141
+-> snelheid: 0.549792
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.090182
+-> snelheid: 0.433636
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.3984
+tijd verhoogd: 0.3984->0.415
+Tijd: 0.415
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.1238
+-> snelheid: 0.573696
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.0978462
+-> snelheid: 0.452345
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.415
+tijd verhoogd: 0.415->0.4316
+Tijd: 0.4316
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.1339
+-> snelheid: 0.5976
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.105821
+-> snelheid: 0.471043
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.4316
+tijd verhoogd: 0.4316->0.4482
+Tijd: 0.4482
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.1444
+-> snelheid: 0.621504
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.114105
+-> snelheid: 0.489728
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.4482
+tijd verhoogd: 0.4482->0.4648
+Tijd: 0.4648
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.1553
+-> snelheid: 0.645408
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.1227
+-> snelheid: 0.508401
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.4648
+tijd verhoogd: 0.4648->0.4814
+Tijd: 0.4814
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.1667
+-> snelheid: 0.669312
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.131604
+-> snelheid: 0.527062
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.4814
+tijd verhoogd: 0.4814->0.498
+Tijd: 0.498
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.1784
+-> snelheid: 0.693216
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.140817
+-> snelheid: 0.545712
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.498
+tijd verhoogd: 0.498->0.5146
+Tijd: 0.5146
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.1905
+-> snelheid: 0.71712
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.15034
+-> snelheid: 0.564349
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.5146
+tijd verhoogd: 0.5146->0.5312
+Tijd: 0.5312
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.203
+-> snelheid: 0.741023
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.160172
+-> snelheid: 0.582975
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.5312
+tijd verhoogd: 0.5312->0.5478
+Tijd: 0.5478
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.2159
+-> snelheid: 0.764927
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.170313
+-> snelheid: 0.601588
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.5478
+tijd verhoogd: 0.5478->0.5644
+Tijd: 0.5644
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.2292
+-> snelheid: 0.788831
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.180763
+-> snelheid: 0.62019
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.5644
+tijd verhoogd: 0.5644->0.581
+Tijd: 0.581
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.2428
+-> snelheid: 0.812735
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.191521
+-> snelheid: 0.63878
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.581
+tijd verhoogd: 0.581->0.5976
+Tijd: 0.5976
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.2569
+-> snelheid: 0.836639
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.202587
+-> snelheid: 0.657358
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.5976
+tijd verhoogd: 0.5976->0.6142
+Tijd: 0.6142
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.2714
+-> snelheid: 0.860543
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.213962
+-> snelheid: 0.675924
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.6142
+tijd verhoogd: 0.6142->0.6308
+Tijd: 0.6308
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.2863
+-> snelheid: 0.884447
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.225644
+-> snelheid: 0.694479
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.6308
+tijd verhoogd: 0.6308->0.6474
+Tijd: 0.6474
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.3016
+-> snelheid: 0.90835
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.237634
+-> snelheid: 0.713021
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.6474
+tijd verhoogd: 0.6474->0.664
+Tijd: 0.664
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.3172
+-> snelheid: 0.932254
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.249932
+-> snelheid: 0.731552
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.664
+tijd verhoogd: 0.664->0.6806
+Tijd: 0.6806
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.3333
+-> snelheid: 0.956158
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.262536
+-> snelheid: 0.750071
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.6806
+tijd verhoogd: 0.6806->0.6972
+Tijd: 0.6972
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.3498
+-> snelheid: 0.980062
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.275448
+-> snelheid: 0.768579
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.6972
+tijd verhoogd: 0.6972->0.7138
+Tijd: 0.7138
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.3666
+-> snelheid: 1.00397
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.288667
+-> snelheid: 0.787074
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.7138
+tijd verhoogd: 0.7138->0.7304
+Tijd: 0.7304
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.3839
+-> snelheid: 1.02787
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.302193
+-> snelheid: 0.805559
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.7304
+tijd verhoogd: 0.7304->0.747
+Tijd: 0.747
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.4016
+-> snelheid: 1.05177
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.316025
+-> snelheid: 0.824031
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.747
+tijd verhoogd: 0.747->0.7636
+Tijd: 0.7636
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.4196
+-> snelheid: 1.07568
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.330164
+-> snelheid: 0.842492
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.7636
+tijd verhoogd: 0.7636->0.7802
+Tijd: 0.7802
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.4381
+-> snelheid: 1.09958
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.344609
+-> snelheid: 0.860941
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.7802
+tijd verhoogd: 0.7802->0.7968
+Tijd: 0.7968
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.4569
+-> snelheid: 1.12348
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.359359
+-> snelheid: 0.879379
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.7968
+tijd verhoogd: 0.7968->0.8134
+Tijd: 0.8134
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.4762
+-> snelheid: 1.14739
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.374416
+-> snelheid: 0.897805
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.8134
+tijd verhoogd: 0.8134->0.83
+Tijd: 0.83
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.4958
+-> snelheid: 1.17129
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.389778
+-> snelheid: 0.91622
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.83
+tijd verhoogd: 0.83->0.8466
+Tijd: 0.8466
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.5158
+-> snelheid: 1.19519
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.405445
+-> snelheid: 0.934623
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.8466
+tijd verhoogd: 0.8466->0.8632
+Tijd: 0.8632
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.5363
+-> snelheid: 1.2191
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.421418
+-> snelheid: 0.953015
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.8632
+tijd verhoogd: 0.8632->0.8798
+Tijd: 0.8798
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.5571
+-> snelheid: 1.243
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.437696
+-> snelheid: 0.971395
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.8798
+tijd verhoogd: 0.8798->0.8964
+Tijd: 0.8964
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.5783
+-> snelheid: 1.2669
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.454278
+-> snelheid: 0.989764
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.8964
+tijd verhoogd: 0.8964->0.913
+Tijd: 0.913
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.6
+-> snelheid: 1.29081
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.471166
+-> snelheid: 1.00812
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.913
+tijd verhoogd: 0.913->0.9296
+Tijd: 0.9296
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.622
+-> snelheid: 1.31471
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.488357
+-> snelheid: 1.02647
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.9296
+tijd verhoogd: 0.9296->0.9462
+Tijd: 0.9462
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.6444
+-> snelheid: 1.33861
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.505853
+-> snelheid: 1.0448
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.9462
+tijd verhoogd: 0.9462->0.9628
+Tijd: 0.9628
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.6672
+-> snelheid: 1.36252
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.523653
+-> snelheid: 1.06313
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.9628
+tijd verhoogd: 0.9628->0.9794
+Tijd: 0.9794
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.6904
+-> snelheid: 1.38642
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.541757
+-> snelheid: 1.08144
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.9794
+tijd verhoogd: 0.9794->0.996
+Tijd: 0.996
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.7141
+-> snelheid: 1.41032
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.560165
+-> snelheid: 1.09974
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+0.996
+tijd verhoogd: 0.996->1.0126
+Tijd: 1.0126
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.7381
+-> snelheid: 1.43422
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.578876
+-> snelheid: 1.11803
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.0126
+tijd verhoogd: 1.0126->1.0292
+Tijd: 1.0292
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.7625
+-> snelheid: 1.45813
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.59789
+-> snelheid: 1.13631
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.0292
+tijd verhoogd: 1.0292->1.0458
+Tijd: 1.0458
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.7873
+-> snelheid: 1.48203
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.617208
+-> snelheid: 1.15458
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.0458
+tijd verhoogd: 1.0458->1.0624
+Tijd: 1.0624
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.8125
+-> snelheid: 1.50593
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.636829
+-> snelheid: 1.17284
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.0624
+tijd verhoogd: 1.0624->1.079
+Tijd: 1.079
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.8381
+-> snelheid: 1.52983
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.656752
+-> snelheid: 1.19108
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.079
+tijd verhoogd: 1.079->1.0956
+Tijd: 1.0956
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.864
+-> snelheid: 1.55374
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.676978
+-> snelheid: 1.20932
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.0956
+tijd verhoogd: 1.0956->1.1122
+Tijd: 1.1122
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.8904
+-> snelheid: 1.57764
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.697507
+-> snelheid: 1.22754
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.1122
+tijd verhoogd: 1.1122->1.1288
+Tijd: 1.1288
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.9172
+-> snelheid: 1.60154
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.718337
+-> snelheid: 1.24576
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.1288
+tijd verhoogd: 1.1288->1.1454
+Tijd: 1.1454
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.9444
+-> snelheid: 1.62544
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.73947
+-> snelheid: 1.26396
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.1454
+tijd verhoogd: 1.1454->1.162
+Tijd: 1.162
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.972
+-> snelheid: 1.64935
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.760905
+-> snelheid: 1.28215
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.162
+tijd verhoogd: 1.162->1.1786
+Tijd: 1.1786
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 20.9999
+-> snelheid: 1.67325
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.782641
+-> snelheid: 1.30033
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.1786
+tijd verhoogd: 1.1786->1.1952
+Tijd: 1.1952
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.0283
+-> snelheid: 1.69715
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.804679
+-> snelheid: 1.31851
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.1952
+tijd verhoogd: 1.1952->1.2118
+Tijd: 1.2118
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.0571
+-> snelheid: 1.72105
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.827019
+-> snelheid: 1.33667
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.2118
+tijd verhoogd: 1.2118->1.2284
+Tijd: 1.2284
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.0862
+-> snelheid: 1.74495
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.849659
+-> snelheid: 1.35482
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.2284
+tijd verhoogd: 1.2284->1.245
+Tijd: 1.245
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.1158
+-> snelheid: 1.76885
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.872601
+-> snelheid: 1.37295
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.245
+tijd verhoogd: 1.245->1.2616
+Tijd: 1.2616
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.1458
+-> snelheid: 1.79275
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.895843
+-> snelheid: 1.39108
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.2616
+tijd verhoogd: 1.2616->1.2782
+Tijd: 1.2782
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.1761
+-> snelheid: 1.81665
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.919387
+-> snelheid: 1.4092
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.2782
+tijd verhoogd: 1.2782->1.2948
+Tijd: 1.2948
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.2069
+-> snelheid: 1.84055
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.94323
+-> snelheid: 1.42731
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.2948
+tijd verhoogd: 1.2948->1.3114
+Tijd: 1.3114
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.238
+-> snelheid: 1.86445
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.967374
+-> snelheid: 1.44541
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.3114
+tijd verhoogd: 1.3114->1.328
+Tijd: 1.328
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.2696
+-> snelheid: 1.88835
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 0.991818
+-> snelheid: 1.46349
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.328
+tijd verhoogd: 1.328->1.3446
+Tijd: 1.3446
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.3015
+-> snelheid: 1.91225
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.01656
+-> snelheid: 1.48157
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.3446
+tijd verhoogd: 1.3446->1.3612
+Tijd: 1.3612
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.3338
+-> snelheid: 1.93615
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.04161
+-> snelheid: 1.49964
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.3612
+tijd verhoogd: 1.3612->1.3778
+Tijd: 1.3778
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.3666
+-> snelheid: 1.96005
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.06695
+-> snelheid: 1.5177
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.3778
+tijd verhoogd: 1.3778->1.3944
+Tijd: 1.3944
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.3997
+-> snelheid: 1.98395
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.09259
+-> snelheid: 1.53574
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.3944
+tijd verhoogd: 1.3944->1.411
+Tijd: 1.411
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.4332
+-> snelheid: 2.00785
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.11854
+-> snelheid: 1.55378
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.411
+tijd verhoogd: 1.411->1.4276
+Tijd: 1.4276
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.4672
+-> snelheid: 2.03175
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.14478
+-> snelheid: 1.57181
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.4276
+tijd verhoogd: 1.4276->1.4442
+Tijd: 1.4442
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.5015
+-> snelheid: 2.05565
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.17132
+-> snelheid: 1.58982
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.4442
+tijd verhoogd: 1.4442->1.4608
+Tijd: 1.4608
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.5362
+-> snelheid: 2.07955
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.19816
+-> snelheid: 1.60783
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.4608
+tijd verhoogd: 1.4608->1.4774
+Tijd: 1.4774
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.5713
+-> snelheid: 2.10345
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.2253
+-> snelheid: 1.62583
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.4774
+tijd verhoogd: 1.4774->1.494
+Tijd: 1.494
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.6068
+-> snelheid: 2.12734
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.25273
+-> snelheid: 1.64381
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.494
+tijd verhoogd: 1.494->1.5106
+Tijd: 1.5106
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.6427
+-> snelheid: 2.15124
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.28047
+-> snelheid: 1.66179
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.5106
+tijd verhoogd: 1.5106->1.5272
+Tijd: 1.5272
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.6791
+-> snelheid: 2.17514
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.3085
+-> snelheid: 1.67976
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.5272
+tijd verhoogd: 1.5272->1.5438
+Tijd: 1.5438
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.7158
+-> snelheid: 2.19904
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.33683
+-> snelheid: 1.69772
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.5438
+tijd verhoogd: 1.5438->1.5604
+Tijd: 1.5604
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.7529
+-> snelheid: 2.22293
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.36546
+-> snelheid: 1.71567
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.5604
+tijd verhoogd: 1.5604->1.577
+Tijd: 1.577
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.7904
+-> snelheid: 2.24683
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.39439
+-> snelheid: 1.7336
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.577
+tijd verhoogd: 1.577->1.5936
+Tijd: 1.5936
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.8282
+-> snelheid: 2.27073
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.42361
+-> snelheid: 1.75153
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.5936
+tijd verhoogd: 1.5936->1.6102
+Tijd: 1.6102
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.8665
+-> snelheid: 2.29462
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.45313
+-> snelheid: 1.76946
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.6102
+tijd verhoogd: 1.6102->1.6268
+Tijd: 1.6268
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.9052
+-> snelheid: 2.31852
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.48295
+-> snelheid: 1.78737
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.6268
+tijd verhoogd: 1.6268->1.6434
+Tijd: 1.6434
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.9443
+-> snelheid: 2.34241
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.51307
+-> snelheid: 1.80527
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.6434
+tijd verhoogd: 1.6434->1.66
+Tijd: 1.66
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 21.9838
+-> snelheid: 2.36631
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.54348
+-> snelheid: 1.82316
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.66
+tijd verhoogd: 1.66->1.6766
+Tijd: 1.6766
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.0237
+-> snelheid: 2.3902
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.57419
+-> snelheid: 1.84104
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.6766
+tijd verhoogd: 1.6766->1.6932
+Tijd: 1.6932
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.0639
+-> snelheid: 2.41409
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.6052
+-> snelheid: 1.85892
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.6932
+tijd verhoogd: 1.6932->1.7098
+Tijd: 1.7098
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.1046
+-> snelheid: 2.43799
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.6365
+-> snelheid: 1.87678
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.7098
+tijd verhoogd: 1.7098->1.7264
+Tijd: 1.7264
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.1457
+-> snelheid: 2.46188
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.6681
+-> snelheid: 1.89464
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.7264
+tijd verhoogd: 1.7264->1.743
+Tijd: 1.743
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.1871
+-> snelheid: 2.48577
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.69999
+-> snelheid: 1.91249
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.743
+tijd verhoogd: 1.743->1.7596
+Tijd: 1.7596
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.229
+-> snelheid: 2.50966
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.73219
+-> snelheid: 1.93032
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.7596
+tijd verhoogd: 1.7596->1.7762
+Tijd: 1.7762
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.2712
+-> snelheid: 2.53356
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.76467
+-> snelheid: 1.94815
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.7762
+tijd verhoogd: 1.7762->1.7928
+Tijd: 1.7928
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.3139
+-> snelheid: 2.55745
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.79746
+-> snelheid: 1.96597
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.7928
+tijd verhoogd: 1.7928->1.8094
+Tijd: 1.8094
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.3569
+-> snelheid: 2.58134
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.83054
+-> snelheid: 1.98379
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.8094
+tijd verhoogd: 1.8094->1.826
+Tijd: 1.826
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.4004
+-> snelheid: 2.60523
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.86391
+-> snelheid: 2.00159
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.826
+tijd verhoogd: 1.826->1.8426
+Tijd: 1.8426
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.4442
+-> snelheid: 2.62912
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.89758
+-> snelheid: 2.01939
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.8426
+tijd verhoogd: 1.8426->1.8592
+Tijd: 1.8592
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.4885
+-> snelheid: 2.65301
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.93154
+-> snelheid: 2.03717
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.8592
+tijd verhoogd: 1.8592->1.8758
+Tijd: 1.8758
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.5331
+-> snelheid: 2.67689
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 1.9658
+-> snelheid: 2.05495
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.8758
+tijd verhoogd: 1.8758->1.8924
+Tijd: 1.8924
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.5781
+-> snelheid: 2.70078
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.00036
+-> snelheid: 2.07272
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.8924
+tijd verhoogd: 1.8924->1.909
+Tijd: 1.909
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.6236
+-> snelheid: 2.72467
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.03521
+-> snelheid: 2.09048
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.909
+tijd verhoogd: 1.909->1.9256
+Tijd: 1.9256
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.6694
+-> snelheid: 2.74856
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.07035
+-> snelheid: 2.10823
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.9256
+tijd verhoogd: 1.9256->1.9422
+Tijd: 1.9422
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.7156
+-> snelheid: 2.77244
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.10579
+-> snelheid: 2.12598
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.9422
+tijd verhoogd: 1.9422->1.9588
+Tijd: 1.9588
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.7622
+-> snelheid: 2.79633
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.14152
+-> snelheid: 2.14371
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.9588
+tijd verhoogd: 1.9588->1.9754
+Tijd: 1.9754
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.8092
+-> snelheid: 2.82021
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.17755
+-> snelheid: 2.16144
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.9754
+tijd verhoogd: 1.9754->1.992
+Tijd: 1.992
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.8566
+-> snelheid: 2.8441
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.21387
+-> snelheid: 2.17916
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+1.992
+tijd verhoogd: 1.992->2.0086
+Tijd: 2.0086
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.9044
+-> snelheid: 2.86798
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.25049
+-> snelheid: 2.19687
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.0086
+tijd verhoogd: 2.0086->2.0252
+Tijd: 2.0252
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 22.9527
+-> snelheid: 2.89186
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.28739
+-> snelheid: 2.21458
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.0252
+tijd verhoogd: 2.0252->2.0418
+Tijd: 2.0418
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.0013
+-> snelheid: 2.91574
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.3246
+-> snelheid: 2.23227
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.0418
+tijd verhoogd: 2.0418->2.0584
+Tijd: 2.0584
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.0502
+-> snelheid: 2.93963
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.36209
+-> snelheid: 2.24996
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.0584
+tijd verhoogd: 2.0584->2.075
+Tijd: 2.075
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.0996
+-> snelheid: 2.96351
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.39988
+-> snelheid: 2.26764
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.075
+tijd verhoogd: 2.075->2.0916
+Tijd: 2.0916
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.1494
+-> snelheid: 2.98739
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.43797
+-> snelheid: 2.28532
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.0916
+tijd verhoogd: 2.0916->2.1082
+Tijd: 2.1082
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.1996
+-> snelheid: 3.01126
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.47634
+-> snelheid: 2.30298
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.1082
+tijd verhoogd: 2.1082->2.1248
+Tijd: 2.1248
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.2502
+-> snelheid: 3.03514
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.51501
+-> snelheid: 2.32064
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.1248
+tijd verhoogd: 2.1248->2.1414
+Tijd: 2.1414
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.3012
+-> snelheid: 3.05902
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.55397
+-> snelheid: 2.33829
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.1414
+tijd verhoogd: 2.1414->2.158
+Tijd: 2.158
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.3525
+-> snelheid: 3.0829
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.59323
+-> snelheid: 2.35593
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.158
+tijd verhoogd: 2.158->2.1746
+Tijd: 2.1746
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.4043
+-> snelheid: 3.10677
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.63278
+-> snelheid: 2.37357
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.1746
+tijd verhoogd: 2.1746->2.1912
+Tijd: 2.1912
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.4565
+-> snelheid: 3.13065
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.67262
+-> snelheid: 2.39119
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.1912
+tijd verhoogd: 2.1912->2.2078
+Tijd: 2.2078
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.509
+-> snelheid: 3.15452
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.71275
+-> snelheid: 2.40881
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.2078
+tijd verhoogd: 2.2078->2.2244
+Tijd: 2.2244
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.562
+-> snelheid: 3.17839
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.75317
+-> snelheid: 2.42643
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.2244
+tijd verhoogd: 2.2244->2.241
+Tijd: 2.241
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.6154
+-> snelheid: 3.20226
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.79389
+-> snelheid: 2.44403
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.241
+tijd verhoogd: 2.241->2.2576
+Tijd: 2.2576
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.6691
+-> snelheid: 3.22614
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.8349
+-> snelheid: 2.46163
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.2576
+tijd verhoogd: 2.2576->2.2742
+Tijd: 2.2742
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.7233
+-> snelheid: 3.25001
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.8762
+-> snelheid: 2.47922
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.2742
+tijd verhoogd: 2.2742->2.2908
+Tijd: 2.2908
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.7778
+-> snelheid: 3.27387
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.91779
+-> snelheid: 2.49681
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.2908
+tijd verhoogd: 2.2908->2.3074
+Tijd: 2.3074
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.8327
+-> snelheid: 3.29774
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 2.95968
+-> snelheid: 2.51439
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.3074
+tijd verhoogd: 2.3074->2.324
+Tijd: 2.324
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.8881
+-> snelheid: 3.32161
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.00185
+-> snelheid: 2.53196
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.324
+tijd verhoogd: 2.324->2.3406
+Tijd: 2.3406
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.9438
+-> snelheid: 3.34547
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.04432
+-> snelheid: 2.54952
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.3406
+tijd verhoogd: 2.3406->2.3572
+Tijd: 2.3572
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 23.9999
+-> snelheid: 3.36934
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.08708
+-> snelheid: 2.56708
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.3572
+tijd verhoogd: 2.3572->2.3738
+Tijd: 2.3738
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 24.0565
+-> snelheid: 3.3932
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.13013
+-> snelheid: 2.58463
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.3738
+tijd verhoogd: 2.3738->2.3904
+Tijd: 2.3904
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 24.1134
+-> snelheid: 3.41707
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.17347
+-> snelheid: 2.60218
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.3904
+tijd verhoogd: 2.3904->2.407
+Tijd: 2.407
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 24.1707
+-> snelheid: 3.44093
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.21711
+-> snelheid: 2.61971
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.407
+tijd verhoogd: 2.407->2.4236
+Tijd: 2.4236
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 24.2284
+-> snelheid: 3.46479
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.26103
+-> snelheid: 2.63724
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.4236
+tijd verhoogd: 2.4236->2.4402
+Tijd: 2.4402
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 24.2865
+-> snelheid: 3.48864
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.30525
+-> snelheid: 2.65477
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.4402
+tijd verhoogd: 2.4402->2.4568
+Tijd: 2.4568
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 24.345
+-> snelheid: 3.5125
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.34975
+-> snelheid: 2.67229
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.4568
+tijd verhoogd: 2.4568->2.4734
+Tijd: 2.4734
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 24.4039
+-> snelheid: 3.53636
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.39455
+-> snelheid: 2.6898
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.4734
+tijd verhoogd: 2.4734->2.49
+Tijd: 2.49
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 24.4632
+-> snelheid: 3.56021
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.43963
+-> snelheid: 2.7073
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.49
+tijd verhoogd: 2.49->2.5066
+Tijd: 2.5066
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 24.5229
+-> snelheid: 3.58407
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.48501
+-> snelheid: 2.7248
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.5066
+tijd verhoogd: 2.5066->2.5232
+Tijd: 2.5232
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 24.583
+-> snelheid: 3.60792
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.53068
+-> snelheid: 2.7423
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.5232
+tijd verhoogd: 2.5232->2.5398
+Tijd: 2.5398
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 24.6435
+-> snelheid: 3.63177
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.57663
+-> snelheid: 2.75978
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.5398
+tijd verhoogd: 2.5398->2.5564
+Tijd: 2.5564
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 24.7044
+-> snelheid: 3.65562
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.62288
+-> snelheid: 2.77726
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.5564
+tijd verhoogd: 2.5564->2.573
+Tijd: 2.573
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 24.7657
+-> snelheid: 3.67947
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.66942
+-> snelheid: 2.79474
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.573
+tijd verhoogd: 2.573->2.5896
+Tijd: 2.5896
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 24.8273
+-> snelheid: 3.70331
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.71625
+-> snelheid: 2.81221
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.5896
+tijd verhoogd: 2.5896->2.6062
+Tijd: 2.6062
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 24.8894
+-> snelheid: 3.72716
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.76337
+-> snelheid: 2.82967
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.6062
+tijd verhoogd: 2.6062->2.6228
+Tijd: 2.6228
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 24.9519
+-> snelheid: 3.751
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.81077
+-> snelheid: 2.84712
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.6228
+tijd verhoogd: 2.6228->2.6394
+Tijd: 2.6394
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 25.0147
+-> snelheid: 3.77484
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.85847
+-> snelheid: 2.86458
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.6394
+tijd verhoogd: 2.6394->2.656
+Tijd: 2.656
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 25.078
+-> snelheid: 3.79868
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.90646
+-> snelheid: 2.88202
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.656
+tijd verhoogd: 2.656->2.6726
+Tijd: 2.6726
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 25.1416
+-> snelheid: 3.82252
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 3.95473
+-> snelheid: 2.89946
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.6726
+tijd verhoogd: 2.6726->2.6892
+Tijd: 2.6892
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 25.2057
+-> snelheid: 3.84636
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.0033
+-> snelheid: 2.91689
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.6892
+tijd verhoogd: 2.6892->2.7058
+Tijd: 2.7058
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 25.2701
+-> snelheid: 3.87019
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.05215
+-> snelheid: 2.93432
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.7058
+tijd verhoogd: 2.7058->2.7224
+Tijd: 2.7224
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 25.335
+-> snelheid: 3.89403
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.10129
+-> snelheid: 2.95174
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.7224
+tijd verhoogd: 2.7224->2.739
+Tijd: 2.739
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 25.4002
+-> snelheid: 3.91786
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.15073
+-> snelheid: 2.96916
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.739
+tijd verhoogd: 2.739->2.7556
+Tijd: 2.7556
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 25.4658
+-> snelheid: 3.94169
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.20045
+-> snelheid: 2.98657
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.7556
+tijd verhoogd: 2.7556->2.7722
+Tijd: 2.7722
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 25.5319
+-> snelheid: 3.96552
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.25046
+-> snelheid: 3.00398
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.7722
+tijd verhoogd: 2.7722->2.7888
+Tijd: 2.7888
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 25.5983
+-> snelheid: 3.98934
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.30076
+-> snelheid: 3.02138
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.7888
+tijd verhoogd: 2.7888->2.8054
+Tijd: 2.8054
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 25.6651
+-> snelheid: 4.01317
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.35135
+-> snelheid: 3.03877
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.8054
+tijd verhoogd: 2.8054->2.822
+Tijd: 2.822
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 25.7323
+-> snelheid: 4.03699
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.40222
+-> snelheid: 3.05616
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.822
+tijd verhoogd: 2.822->2.8386
+Tijd: 2.8386
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 25.7999
+-> snelheid: 4.06081
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.45339
+-> snelheid: 3.07355
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.8386
+tijd verhoogd: 2.8386->2.8552
+Tijd: 2.8552
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 25.8679
+-> snelheid: 4.08463
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.50484
+-> snelheid: 3.09093
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.8552
+tijd verhoogd: 2.8552->2.8718
+Tijd: 2.8718
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 25.9363
+-> snelheid: 4.10844
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.55658
+-> snelheid: 3.1083
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.8718
+tijd verhoogd: 2.8718->2.8884
+Tijd: 2.8884
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 26.0051
+-> snelheid: 4.13226
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.60861
+-> snelheid: 3.12567
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.8884
+tijd verhoogd: 2.8884->2.905
+Tijd: 2.905
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 26.0743
+-> snelheid: 4.15607
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.66093
+-> snelheid: 3.14303
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.905
+tijd verhoogd: 2.905->2.9216
+Tijd: 2.9216
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 26.1439
+-> snelheid: 4.17988
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.71354
+-> snelheid: 3.16039
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.9216
+tijd verhoogd: 2.9216->2.9382
+Tijd: 2.9382
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 26.2139
+-> snelheid: 4.20369
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.76643
+-> snelheid: 3.17775
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.9382
+tijd verhoogd: 2.9382->2.9548
+Tijd: 2.9548
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 26.2842
+-> snelheid: 4.22749
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.81962
+-> snelheid: 3.19509
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.9548
+tijd verhoogd: 2.9548->2.9714
+Tijd: 2.9714
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 26.355
+-> snelheid: 4.2513
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.87309
+-> snelheid: 3.21244
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.9714
+tijd verhoogd: 2.9714->2.988
+Tijd: 2.988
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 26.4262
+-> snelheid: 4.2751
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.92684
+-> snelheid: 3.22978
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+2.988
+tijd verhoogd: 2.988->3.0046
+Tijd: 3.0046
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 26.4977
+-> snelheid: 4.2989
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 4.98089
+-> snelheid: 3.24711
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.0046
+tijd verhoogd: 3.0046->3.0212
+Tijd: 3.0212
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 26.5697
+-> snelheid: 4.32269
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.03522
+-> snelheid: 3.26444
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.0212
+tijd verhoogd: 3.0212->3.0378
+Tijd: 3.0378
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 26.642
+-> snelheid: 4.34649
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.08985
+-> snelheid: 3.28177
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.0378
+tijd verhoogd: 3.0378->3.0544
+Tijd: 3.0544
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 26.7148
+-> snelheid: 4.37028
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.14475
+-> snelheid: 3.29909
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.0544
+tijd verhoogd: 3.0544->3.071
+Tijd: 3.071
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 26.7879
+-> snelheid: 4.39407
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.19995
+-> snelheid: 3.3164
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.071
+tijd verhoogd: 3.071->3.0876
+Tijd: 3.0876
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 26.8614
+-> snelheid: 4.41785
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.25543
+-> snelheid: 3.33371
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.0876
+tijd verhoogd: 3.0876->3.1042
+Tijd: 3.1042
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 26.9354
+-> snelheid: 4.44164
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.3112
+-> snelheid: 3.35102
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.1042
+tijd verhoogd: 3.1042->3.1208
+Tijd: 3.1208
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 27.0097
+-> snelheid: 4.46542
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.36726
+-> snelheid: 3.36832
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.1208
+tijd verhoogd: 3.1208->3.1374
+Tijd: 3.1374
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 27.0844
+-> snelheid: 4.4892
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.42361
+-> snelheid: 3.38562
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.1374
+tijd verhoogd: 3.1374->3.154
+Tijd: 3.154
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 27.1595
+-> snelheid: 4.51298
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.48024
+-> snelheid: 3.40291
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.154
+tijd verhoogd: 3.154->3.1706
+Tijd: 3.1706
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 27.235
+-> snelheid: 4.53675
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.53716
+-> snelheid: 3.4202
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.1706
+tijd verhoogd: 3.1706->3.1872
+Tijd: 3.1872
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 27.3109
+-> snelheid: 4.56052
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.59436
+-> snelheid: 3.43748
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.1872
+tijd verhoogd: 3.1872->3.2038
+Tijd: 3.2038
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 27.3872
+-> snelheid: 4.58429
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.65186
+-> snelheid: 3.45476
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.2038
+tijd verhoogd: 3.2038->3.2204
+Tijd: 3.2204
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 27.4639
+-> snelheid: 4.60805
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.70963
+-> snelheid: 3.47204
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.2204
+tijd verhoogd: 3.2204->3.237
+Tijd: 3.237
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 27.541
+-> snelheid: 4.63181
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.7677
+-> snelheid: 3.48931
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.237
+tijd verhoogd: 3.237->3.2536
+Tijd: 3.2536
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 27.6185
+-> snelheid: 4.65557
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.82605
+-> snelheid: 3.50657
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.2536
+tijd verhoogd: 3.2536->3.2702
+Tijd: 3.2702
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 27.6964
+-> snelheid: 4.67933
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.88469
+-> snelheid: 3.52384
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.2702
+tijd verhoogd: 3.2702->3.2868
+Tijd: 3.2868
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 27.7746
+-> snelheid: 4.70308
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 5.94362
+-> snelheid: 3.54109
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.2868
+tijd verhoogd: 3.2868->3.3034
+Tijd: 3.3034
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 27.8533
+-> snelheid: 4.72683
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.00283
+-> snelheid: 3.55835
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.3034
+tijd verhoogd: 3.3034->3.32
+Tijd: 3.32
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 27.9324
+-> snelheid: 4.75058
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.06233
+-> snelheid: 3.5756
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.32
+tijd verhoogd: 3.32->3.3366
+Tijd: 3.3366
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 28.0118
+-> snelheid: 4.77432
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.12211
+-> snelheid: 3.59284
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.3366
+tijd verhoogd: 3.3366->3.3532
+Tijd: 3.3532
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 28.0916
+-> snelheid: 4.79806
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.18218
+-> snelheid: 3.61008
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.3532
+tijd verhoogd: 3.3532->3.3698
+Tijd: 3.3698
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 28.1719
+-> snelheid: 4.8218
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.24254
+-> snelheid: 3.62732
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.3698
+tijd verhoogd: 3.3698->3.3864
+Tijd: 3.3864
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 28.2525
+-> snelheid: 4.84553
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.30318
+-> snelheid: 3.64455
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.3864
+tijd verhoogd: 3.3864->3.403
+Tijd: 3.403
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 28.3335
+-> snelheid: 4.86927
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.36411
+-> snelheid: 3.66178
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.403
+tijd verhoogd: 3.403->3.4196
+Tijd: 3.4196
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 28.415
+-> snelheid: 4.89299
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.42532
+-> snelheid: 3.67901
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.4196
+tijd verhoogd: 3.4196->3.4362
+Tijd: 3.4362
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 28.4968
+-> snelheid: 4.91672
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.48682
+-> snelheid: 3.69623
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.4362
+tijd verhoogd: 3.4362->3.4528
+Tijd: 3.4528
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 28.579
+-> snelheid: 4.94044
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.54861
+-> snelheid: 3.71344
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.4528
+tijd verhoogd: 3.4528->3.4694
+Tijd: 3.4694
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 28.6616
+-> snelheid: 4.96415
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.61068
+-> snelheid: 3.73066
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.4694
+tijd verhoogd: 3.4694->3.486
+Tijd: 3.486
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 28.7446
+-> snelheid: 4.98786
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.67304
+-> snelheid: 3.74786
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.486
+tijd verhoogd: 3.486->3.5026
+Tijd: 3.5026
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 28.828
+-> snelheid: 5.01157
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.73568
+-> snelheid: 3.76507
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.5026
+tijd verhoogd: 3.5026->3.5192
+Tijd: 3.5192
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 28.9118
+-> snelheid: 5.03528
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.79861
+-> snelheid: 3.78227
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.5192
+tijd verhoogd: 3.5192->3.5358
+Tijd: 3.5358
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 28.9959
+-> snelheid: 5.05898
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.86182
+-> snelheid: 3.79947
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.5358
+tijd verhoogd: 3.5358->3.5524
+Tijd: 3.5524
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 29.0805
+-> snelheid: 5.08268
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.92532
+-> snelheid: 3.81666
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.5524
+tijd verhoogd: 3.5524->3.569
+Tijd: 3.569
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 29.1655
+-> snelheid: 5.10637
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 6.98911
+-> snelheid: 3.83385
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.569
+tijd verhoogd: 3.569->3.5856
+Tijd: 3.5856
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 29.2508
+-> snelheid: 5.13006
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 7.05318
+-> snelheid: 3.85104
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.5856
+tijd verhoogd: 3.5856->3.6022
+Tijd: 3.6022
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 29.3366
+-> snelheid: 5.15375
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 7.11753
+-> snelheid: 3.86822
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.6022
+tijd verhoogd: 3.6022->3.6188
+Tijd: 3.6188
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 29.4227
+-> snelheid: 5.17743
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 7.18217
+-> snelheid: 3.8854
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.6188
+tijd verhoogd: 3.6188->3.6354
+Tijd: 3.6354
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 29.5092
+-> snelheid: 5.20111
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 7.2471
+-> snelheid: 3.90257
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.6354
+tijd verhoogd: 3.6354->3.652
+Tijd: 3.652
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 29.5962
+-> snelheid: 5.22478
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 7.31231
+-> snelheid: 3.91974
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.652
+tijd verhoogd: 3.652->3.6686
+Tijd: 3.6686
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 29.6835
+-> snelheid: 5.24845
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 7.3778
+-> snelheid: 3.93691
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.6686
+tijd verhoogd: 3.6686->3.6852
+Tijd: 3.6852
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 29.7712
+-> snelheid: 5.27212
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 7.44358
+-> snelheid: 3.95407
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.6852
+tijd verhoogd: 3.6852->3.7018
+Tijd: 3.7018
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 29.8593
+-> snelheid: 5.29578
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 7.50965
+-> snelheid: 3.97123
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.7018
+tijd verhoogd: 3.7018->3.7184
+Tijd: 3.7184
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 29.9478
+-> snelheid: 5.31943
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 7.576
+-> snelheid: 3.98838
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.7184
+tijd verhoogd: 3.7184->3.735
+Tijd: 3.735
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 30.0367
+-> snelheid: 5.34309
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 7.64263
+-> snelheid: 4.00553
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.735
+tijd verhoogd: 3.735->3.7516
+Tijd: 3.7516
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 30.126
+-> snelheid: 5.36673
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 7.70955
+-> snelheid: 4.02268
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.7516
+tijd verhoogd: 3.7516->3.7682
+Tijd: 3.7682
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 30.2157
+-> snelheid: 5.39038
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 7.77675
+-> snelheid: 4.03982
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.7682
+tijd verhoogd: 3.7682->3.7848
+Tijd: 3.7848
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 30.3057
+-> snelheid: 5.41401
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 7.84424
+-> snelheid: 4.05696
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.7848
+tijd verhoogd: 3.7848->3.8014
+Tijd: 3.8014
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 30.3962
+-> snelheid: 5.43765
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 7.91201
+-> snelheid: 4.0741
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.8014
+tijd verhoogd: 3.8014->3.818
+Tijd: 3.818
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 30.487
+-> snelheid: 5.46128
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 7.98007
+-> snelheid: 4.09123
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.818
+tijd verhoogd: 3.818->3.8346
+Tijd: 3.8346
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 30.5783
+-> snelheid: 5.4849
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 8.04841
+-> snelheid: 4.10836
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.8346
+tijd verhoogd: 3.8346->3.8512
+Tijd: 3.8512
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 30.6699
+-> snelheid: 5.50852
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 8.11704
+-> snelheid: 4.12548
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.8512
+tijd verhoogd: 3.8512->3.8678
+Tijd: 3.8678
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 30.762
+-> snelheid: 5.53213
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 8.18595
+-> snelheid: 4.14261
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.8678
+tijd verhoogd: 3.8678->3.8844
+Tijd: 3.8844
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 30.8544
+-> snelheid: 5.55574
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 8.25514
+-> snelheid: 4.15972
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.8844
+tijd verhoogd: 3.8844->3.901
+Tijd: 3.901
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 30.9472
+-> snelheid: 5.57935
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 8.32462
+-> snelheid: 4.17684
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.901
+tijd verhoogd: 3.901->3.9176
+Tijd: 3.9176
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 31.0404
+-> snelheid: 5.60295
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 8.39438
+-> snelheid: 4.19395
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.9176
+tijd verhoogd: 3.9176->3.9342
+Tijd: 3.9342
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 31.134
+-> snelheid: 5.62654
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 8.46442
+-> snelheid: 4.21105
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.9342
+tijd verhoogd: 3.9342->3.9508
+Tijd: 3.9508
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 31.228
+-> snelheid: 5.65013
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 8.53475
+-> snelheid: 4.22815
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.9508
+tijd verhoogd: 3.9508->3.9674
+Tijd: 3.9674
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 31.3224
+-> snelheid: 5.67371
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 8.60537
+-> snelheid: 4.24525
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.9674
+tijd verhoogd: 3.9674->3.984
+Tijd: 3.984
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 31.4171
+-> snelheid: 5.69729
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 8.67626
+-> snelheid: 4.26235
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+3.984
+tijd verhoogd: 3.984->4.0006
+Tijd: 4.0006
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 31.5123
+-> snelheid: 5.72086
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 8.74744
+-> snelheid: 4.27944
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.0006
+tijd verhoogd: 4.0006->4.0172
+Tijd: 4.0172
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 31.6078
+-> snelheid: 5.74443
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 8.81891
+-> snelheid: 4.29652
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.0172
+tijd verhoogd: 4.0172->4.0338
+Tijd: 4.0338
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 31.7038
+-> snelheid: 5.76799
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 8.89066
+-> snelheid: 4.31361
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.0338
+tijd verhoogd: 4.0338->4.0504
+Tijd: 4.0504
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 31.8001
+-> snelheid: 5.79155
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 8.96269
+-> snelheid: 4.33068
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.0504
+tijd verhoogd: 4.0504->4.067
+Tijd: 4.067
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 31.8969
+-> snelheid: 5.81509
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 9.035
+-> snelheid: 4.34776
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.067
+tijd verhoogd: 4.067->4.0836
+Tijd: 4.0836
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 31.994
+-> snelheid: 5.83864
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 9.1076
+-> snelheid: 4.36483
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.0836
+tijd verhoogd: 4.0836->4.1002
+Tijd: 4.1002
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 32.0915
+-> snelheid: 5.86218
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 9.18048
+-> snelheid: 4.3819
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.1002
+tijd verhoogd: 4.1002->4.1168
+Tijd: 4.1168
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 32.1894
+-> snelheid: 5.88571
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 9.25365
+-> snelheid: 4.39896
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.1168
+tijd verhoogd: 4.1168->4.1334
+Tijd: 4.1334
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 32.2877
+-> snelheid: 5.90924
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 9.32709
+-> snelheid: 4.41602
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.1334
+tijd verhoogd: 4.1334->4.15
+Tijd: 4.15
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 32.3863
+-> snelheid: 5.93276
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 9.40082
+-> snelheid: 4.43308
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.15
+tijd verhoogd: 4.15->4.1666
+Tijd: 4.1666
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 32.4854
+-> snelheid: 5.95627
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 9.47484
+-> snelheid: 4.45013
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.1666
+tijd verhoogd: 4.1666->4.1832
+Tijd: 4.1832
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 32.5849
+-> snelheid: 5.97978
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 9.54913
+-> snelheid: 4.46718
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.1832
+tijd verhoogd: 4.1832->4.1998
+Tijd: 4.1998
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 32.6847
+-> snelheid: 6.00328
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 9.62371
+-> snelheid: 4.48422
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.1998
+tijd verhoogd: 4.1998->4.2164
+Tijd: 4.2164
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 32.785
+-> snelheid: 6.02677
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 9.69858
+-> snelheid: 4.50126
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.2164
+tijd verhoogd: 4.2164->4.233
+Tijd: 4.233
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 32.8856
+-> snelheid: 6.05026
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 9.77372
+-> snelheid: 4.51829
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.233
+tijd verhoogd: 4.233->4.2496
+Tijd: 4.2496
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 32.9866
+-> snelheid: 6.07374
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 9.84915
+-> snelheid: 4.53533
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.2496
+tijd verhoogd: 4.2496->4.2662
+Tijd: 4.2662
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 33.088
+-> snelheid: 6.09722
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 9.92486
+-> snelheid: 4.55235
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.2662
+tijd verhoogd: 4.2662->4.2828
+Tijd: 4.2828
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 33.1898
+-> snelheid: 6.12069
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 10.0009
+-> snelheid: 4.56938
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.2828
+tijd verhoogd: 4.2828->4.2994
+Tijd: 4.2994
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 33.292
+-> snelheid: 6.14415
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 10.0771
+-> snelheid: 4.58639
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.2994
+tijd verhoogd: 4.2994->4.316
+Tijd: 4.316
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 33.3946
+-> snelheid: 6.16761
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 10.1537
+-> snelheid: 4.60341
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.316
+tijd verhoogd: 4.316->4.3326
+Tijd: 4.3326
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 33.4975
+-> snelheid: 6.19106
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 10.2305
+-> snelheid: 4.62042
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.3326
+tijd verhoogd: 4.3326->4.3492
+Tijd: 4.3492
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 33.6009
+-> snelheid: 6.2145
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 10.3076
+-> snelheid: 4.63742
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.3492
+tijd verhoogd: 4.3492->4.3658
+Tijd: 4.3658
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 33.7046
+-> snelheid: 6.23793
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 10.3851
+-> snelheid: 4.65443
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.3658
+tijd verhoogd: 4.3658->4.3824
+Tijd: 4.3824
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 33.8088
+-> snelheid: 6.26136
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 10.4627
+-> snelheid: 4.67142
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.3824
+tijd verhoogd: 4.3824->4.399
+Tijd: 4.399
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 33.9133
+-> snelheid: 6.28478
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 10.5407
+-> snelheid: 4.68842
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.399
+tijd verhoogd: 4.399->4.4156
+Tijd: 4.4156
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 34.0182
+-> snelheid: 6.30819
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 10.619
+-> snelheid: 4.70541
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.4156
+tijd verhoogd: 4.4156->4.4322
+Tijd: 4.4322
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 34.1235
+-> snelheid: 6.3316
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 10.6975
+-> snelheid: 4.72239
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.4322
+tijd verhoogd: 4.4322->4.4488
+Tijd: 4.4488
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 34.2292
+-> snelheid: 6.355
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 10.7763
+-> snelheid: 4.73937
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.4488
+tijd verhoogd: 4.4488->4.4654
+Tijd: 4.4654
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 34.3353
+-> snelheid: 6.37839
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 10.8554
+-> snelheid: 4.75634
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.4654
+tijd verhoogd: 4.4654->4.482
+Tijd: 4.482
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 34.4417
+-> snelheid: 6.40177
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 10.9348
+-> snelheid: 4.77331
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.482
+tijd verhoogd: 4.482->4.4986
+Tijd: 4.4986
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 34.5486
+-> snelheid: 6.42514
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 11.0144
+-> snelheid: 4.79028
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.4986
+tijd verhoogd: 4.4986->4.5152
+Tijd: 4.5152
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 34.6558
+-> snelheid: 6.44851
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 11.0944
+-> snelheid: 4.80724
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.5152
+tijd verhoogd: 4.5152->4.5318
+Tijd: 4.5318
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 34.7635
+-> snelheid: 6.47187
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 11.1746
+-> snelheid: 4.8242
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.5318
+tijd verhoogd: 4.5318->4.5484
+Tijd: 4.5484
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 34.8715
+-> snelheid: 6.49522
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 11.2551
+-> snelheid: 4.84115
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.5484
+tijd verhoogd: 4.5484->4.565
+Tijd: 4.565
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 34.9799
+-> snelheid: 6.51857
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 11.3359
+-> snelheid: 4.8581
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.565
+tijd verhoogd: 4.565->4.5816
+Tijd: 4.5816
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 35.0887
+-> snelheid: 6.5419
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 11.417
+-> snelheid: 4.87504
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.5816
+tijd verhoogd: 4.5816->4.5982
+Tijd: 4.5982
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 35.1978
+-> snelheid: 6.56523
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 11.4983
+-> snelheid: 4.89198
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.5982
+tijd verhoogd: 4.5982->4.6148
+Tijd: 4.6148
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 35.3074
+-> snelheid: 6.58855
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 11.5799
+-> snelheid: 4.90891
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.6148
+tijd verhoogd: 4.6148->4.6314
+Tijd: 4.6314
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 35.4174
+-> snelheid: 6.61186
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 11.6618
+-> snelheid: 4.92584
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.6314
+tijd verhoogd: 4.6314->4.648
+Tijd: 4.648
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 35.5277
+-> snelheid: 6.63516
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 11.744
+-> snelheid: 4.94276
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.648
+tijd verhoogd: 4.648->4.6646
+Tijd: 4.6646
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 35.6384
+-> snelheid: 6.65846
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 11.8265
+-> snelheid: 4.95968
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.6646
+tijd verhoogd: 4.6646->4.6812
+Tijd: 4.6812
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 35.7495
+-> snelheid: 6.68174
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 11.9093
+-> snelheid: 4.97659
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.6812
+tijd verhoogd: 4.6812->4.6978
+Tijd: 4.6978
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 35.861
+-> snelheid: 6.70502
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 11.9923
+-> snelheid: 4.99349
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.6978
+tijd verhoogd: 4.6978->4.7144
+Tijd: 4.7144
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 35.9729
+-> snelheid: 6.72829
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 12.0756
+-> snelheid: 5.0104
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.7144
+tijd verhoogd: 4.7144->4.731
+Tijd: 4.731
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 36.0852
+-> snelheid: 6.75154
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 12.1592
+-> snelheid: 5.02729
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.731
+tijd verhoogd: 4.731->4.7476
+Tijd: 4.7476
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 36.1978
+-> snelheid: 6.77479
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 12.2431
+-> snelheid: 5.04418
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.7476
+tijd verhoogd: 4.7476->4.7642
+Tijd: 4.7642
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 36.3109
+-> snelheid: 6.79804
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 12.3272
+-> snelheid: 5.06107
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.7642
+tijd verhoogd: 4.7642->4.7808
+Tijd: 4.7808
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 36.4243
+-> snelheid: 6.82127
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 12.4117
+-> snelheid: 5.07795
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.7808
+tijd verhoogd: 4.7808->4.7974
+Tijd: 4.7974
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 36.5381
+-> snelheid: 6.84449
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 12.4964
+-> snelheid: 5.09482
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.7974
+tijd verhoogd: 4.7974->4.814
+Tijd: 4.814
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 36.6523
+-> snelheid: 6.8677
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 12.5814
+-> snelheid: 5.11169
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.814
+tijd verhoogd: 4.814->4.8306
+Tijd: 4.8306
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 36.7669
+-> snelheid: 6.89091
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 12.6666
+-> snelheid: 5.12856
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.8306
+tijd verhoogd: 4.8306->4.8472
+Tijd: 4.8472
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 36.8818
+-> snelheid: 6.9141
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 12.7522
+-> snelheid: 5.14541
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.8472
+tijd verhoogd: 4.8472->4.8638
+Tijd: 4.8638
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 36.9972
+-> snelheid: 6.93728
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 12.838
+-> snelheid: 5.16227
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.8638
+tijd verhoogd: 4.8638->4.8804
+Tijd: 4.8804
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 37.1129
+-> snelheid: 6.96046
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 12.9241
+-> snelheid: 5.17911
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.8804
+tijd verhoogd: 4.8804->4.897
+Tijd: 4.897
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 37.2291
+-> snelheid: 6.98362
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 13.0105
+-> snelheid: 5.19595
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.897
+tijd verhoogd: 4.897->4.9136
+Tijd: 4.9136
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 37.3456
+-> snelheid: 7.00678
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 13.0972
+-> snelheid: 5.21279
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.9136
+tijd verhoogd: 4.9136->4.9302
+Tijd: 4.9302
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 37.4624
+-> snelheid: 7.02993
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 13.1842
+-> snelheid: 5.22961
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.9302
+tijd verhoogd: 4.9302->4.9468
+Tijd: 4.9468
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 37.5797
+-> snelheid: 7.05306
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 13.2714
+-> snelheid: 5.24644
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.9468
+tijd verhoogd: 4.9468->4.9634
+Tijd: 4.9634
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 37.6974
+-> snelheid: 7.07619
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 13.3589
+-> snelheid: 5.26325
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.9634
+tijd verhoogd: 4.9634->4.98
+Tijd: 4.98
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 37.8154
+-> snelheid: 7.0993
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 13.4467
+-> snelheid: 5.28006
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.98
+tijd verhoogd: 4.98->4.9966
+Tijd: 4.9966
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 37.9338
+-> snelheid: 7.1224
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 13.5348
+-> snelheid: 5.29686
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+4.9966
+tijd verhoogd: 4.9966->5.0132
+Tijd: 5.0132
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 38.0526
+-> snelheid: 7.1455
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 13.6231
+-> snelheid: 5.31366
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.0132
+tijd verhoogd: 5.0132->5.0298
+Tijd: 5.0298
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 38.1718
+-> snelheid: 7.16858
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 13.7117
+-> snelheid: 5.33045
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.0298
+tijd verhoogd: 5.0298->5.0464
+Tijd: 5.0464
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 38.2914
+-> snelheid: 7.19165
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 13.8006
+-> snelheid: 5.34723
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.0464
+tijd verhoogd: 5.0464->5.063
+Tijd: 5.063
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 38.4114
+-> snelheid: 7.21472
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 13.8898
+-> snelheid: 5.36401
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.063
+tijd verhoogd: 5.063->5.0796
+Tijd: 5.0796
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 38.5317
+-> snelheid: 7.23777
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 13.9793
+-> snelheid: 5.38078
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.0796
+tijd verhoogd: 5.0796->5.0962
+Tijd: 5.0962
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 38.6524
+-> snelheid: 7.26081
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 14.069
+-> snelheid: 5.39755
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.0962
+tijd verhoogd: 5.0962->5.1128
+Tijd: 5.1128
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 38.7735
+-> snelheid: 7.28384
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 14.159
+-> snelheid: 5.4143
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.1128
+tijd verhoogd: 5.1128->5.1294
+Tijd: 5.1294
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 38.895
+-> snelheid: 7.30685
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 14.2493
+-> snelheid: 5.43105
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.1294
+tijd verhoogd: 5.1294->5.146
+Tijd: 5.146
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 39.0169
+-> snelheid: 7.32986
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 14.3399
+-> snelheid: 5.44779
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.146
+tijd verhoogd: 5.146->5.1626
+Tijd: 5.1626
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 39.1391
+-> snelheid: 7.35286
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 14.4307
+-> snelheid: 5.46453
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.1626
+tijd verhoogd: 5.1626->5.1792
+Tijd: 5.1792
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 39.2618
+-> snelheid: 7.37584
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 14.5219
+-> snelheid: 5.48126
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.1792
+tijd verhoogd: 5.1792->5.1958
+Tijd: 5.1958
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 39.3848
+-> snelheid: 7.39881
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 14.6133
+-> snelheid: 5.49798
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.1958
+tijd verhoogd: 5.1958->5.2124
+Tijd: 5.2124
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 39.5082
+-> snelheid: 7.42177
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 14.705
+-> snelheid: 5.51469
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.2124
+tijd verhoogd: 5.2124->5.229
+Tijd: 5.229
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 39.6319
+-> snelheid: 7.44472
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 14.7969
+-> snelheid: 5.5314
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.229
+tijd verhoogd: 5.229->5.2456
+Tijd: 5.2456
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 39.7561
+-> snelheid: 7.46766
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 14.8892
+-> snelheid: 5.5481
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.2456
+tijd verhoogd: 5.2456->5.2622
+Tijd: 5.2622
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 39.8806
+-> snelheid: 7.49058
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 14.9817
+-> snelheid: 5.56479
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.2622
+tijd verhoogd: 5.2622->5.2788
+Tijd: 5.2788
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 40.0055
+-> snelheid: 7.5135
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 15.0745
+-> snelheid: 5.58147
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.2788
+tijd verhoogd: 5.2788->5.2954
+Tijd: 5.2954
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 40.1308
+-> snelheid: 7.5364
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 15.1675
+-> snelheid: 5.59815
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.2954
+tijd verhoogd: 5.2954->5.312
+Tijd: 5.312
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 40.2565
+-> snelheid: 7.55929
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 15.2609
+-> snelheid: 5.61481
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.312
+tijd verhoogd: 5.312->5.3286
+Tijd: 5.3286
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 40.3826
+-> snelheid: 7.58216
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 15.3545
+-> snelheid: 5.63147
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.3286
+tijd verhoogd: 5.3286->5.3452
+Tijd: 5.3452
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 40.509
+-> snelheid: 7.60503
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 15.4484
+-> snelheid: 5.64813
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.3452
+tijd verhoogd: 5.3452->5.3618
+Tijd: 5.3618
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 40.6358
+-> snelheid: 7.62788
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 15.5426
+-> snelheid: 5.66477
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.3618
+tijd verhoogd: 5.3618->5.3784
+Tijd: 5.3784
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 40.763
+-> snelheid: 7.65071
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 15.637
+-> snelheid: 5.6814
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.3784
+tijd verhoogd: 5.3784->5.395
+Tijd: 5.395
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 40.8906
+-> snelheid: 7.67354
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 15.7317
+-> snelheid: 5.69803
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.395
+tijd verhoogd: 5.395->5.4116
+Tijd: 5.4116
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 41.0185
+-> snelheid: 7.69635
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 15.8267
+-> snelheid: 5.71465
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.4116
+tijd verhoogd: 5.4116->5.4282
+Tijd: 5.4282
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 41.1468
+-> snelheid: 7.71915
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 15.922
+-> snelheid: 5.73126
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.4282
+tijd verhoogd: 5.4282->5.4448
+Tijd: 5.4448
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 41.2755
+-> snelheid: 7.74194
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 16.0176
+-> snelheid: 5.74786
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.4448
+tijd verhoogd: 5.4448->5.4614
+Tijd: 5.4614
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 41.4046
+-> snelheid: 7.76471
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 16.1134
+-> snelheid: 5.76445
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.4614
+tijd verhoogd: 5.4614->5.478
+Tijd: 5.478
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 41.5341
+-> snelheid: 7.78747
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 16.2095
+-> snelheid: 5.78104
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.478
+tijd verhoogd: 5.478->5.4946
+Tijd: 5.4946
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 41.6639
+-> snelheid: 7.81022
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 16.3059
+-> snelheid: 5.79761
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.4946
+tijd verhoogd: 5.4946->5.5112
+Tijd: 5.5112
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 41.7941
+-> snelheid: 7.83295
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 16.4025
+-> snelheid: 5.81418
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.5112
+tijd verhoogd: 5.5112->5.5278
+Tijd: 5.5278
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 41.9247
+-> snelheid: 7.85567
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 16.4995
+-> snelheid: 5.83073
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.5278
+tijd verhoogd: 5.5278->5.5444
+Tijd: 5.5444
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 42.0557
+-> snelheid: 7.87837
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 16.5967
+-> snelheid: 5.84728
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.5444
+tijd verhoogd: 5.5444->5.561
+Tijd: 5.561
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 42.1871
+-> snelheid: 7.90107
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 16.6941
+-> snelheid: 5.86382
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.561
+tijd verhoogd: 5.561->5.5776
+Tijd: 5.5776
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 42.3188
+-> snelheid: 7.92374
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 16.7919
+-> snelheid: 5.88034
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.5776
+tijd verhoogd: 5.5776->5.5942
+Tijd: 5.5942
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 42.4509
+-> snelheid: 7.94641
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 16.8899
+-> snelheid: 5.89686
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.5942
+tijd verhoogd: 5.5942->5.6108
+Tijd: 5.6108
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 42.5833
+-> snelheid: 7.96905
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 16.9882
+-> snelheid: 5.91337
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.6108
+tijd verhoogd: 5.6108->5.6274
+Tijd: 5.6274
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 42.7162
+-> snelheid: 7.99169
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 17.0868
+-> snelheid: 5.92987
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.6274
+tijd verhoogd: 5.6274->5.644
+Tijd: 5.644
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 42.8494
+-> snelheid: 8.01431
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 17.1856
+-> snelheid: 5.94636
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.644
+tijd verhoogd: 5.644->5.6606
+Tijd: 5.6606
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 42.983
+-> snelheid: 8.03691
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 17.2847
+-> snelheid: 5.96284
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.6606
+tijd verhoogd: 5.6606->5.6772
+Tijd: 5.6772
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 43.117
+-> snelheid: 8.0595
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 17.3841
+-> snelheid: 5.97931
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.6772
+tijd verhoogd: 5.6772->5.6938
+Tijd: 5.6938
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 43.2513
+-> snelheid: 8.08208
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 17.4838
+-> snelheid: 5.99577
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.6938
+tijd verhoogd: 5.6938->5.7104
+Tijd: 5.7104
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 43.3861
+-> snelheid: 8.10464
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 17.5837
+-> snelheid: 6.01222
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.7104
+tijd verhoogd: 5.7104->5.727
+Tijd: 5.727
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 43.5212
+-> snelheid: 8.12719
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 17.684
+-> snelheid: 6.02865
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.727
+tijd verhoogd: 5.727->5.7436
+Tijd: 5.7436
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 43.6566
+-> snelheid: 8.14972
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 17.7844
+-> snelheid: 6.04508
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.7436
+tijd verhoogd: 5.7436->5.7602
+Tijd: 5.7602
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 43.7925
+-> snelheid: 8.17223
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 17.8852
+-> snelheid: 6.0615
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.7602
+tijd verhoogd: 5.7602->5.7768
+Tijd: 5.7768
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 43.9287
+-> snelheid: 8.19473
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 17.9862
+-> snelheid: 6.0779
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.7768
+tijd verhoogd: 5.7768->5.7934
+Tijd: 5.7934
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 44.0653
+-> snelheid: 8.21722
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 18.0875
+-> snelheid: 6.0943
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.7934
+tijd verhoogd: 5.7934->5.81
+Tijd: 5.81
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 44.2023
+-> snelheid: 8.23969
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 18.1891
+-> snelheid: 6.11068
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.81
+tijd verhoogd: 5.81->5.8266
+Tijd: 5.8266
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 44.3396
+-> snelheid: 8.26214
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 18.2909
+-> snelheid: 6.12706
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.8266
+tijd verhoogd: 5.8266->5.8432
+Tijd: 5.8432
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 44.4773
+-> snelheid: 8.28458
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 18.3931
+-> snelheid: 6.14342
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.8432
+tijd verhoogd: 5.8432->5.8598
+Tijd: 5.8598
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 44.6154
+-> snelheid: 8.307
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 18.4955
+-> snelheid: 6.15977
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.8598
+tijd verhoogd: 5.8598->5.8764
+Tijd: 5.8764
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 44.7539
+-> snelheid: 8.3294
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 18.5981
+-> snelheid: 6.17611
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.8764
+tijd verhoogd: 5.8764->5.893
+Tijd: 5.893
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 44.8927
+-> snelheid: 8.35179
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 18.701
+-> snelheid: 6.19243
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.893
+tijd verhoogd: 5.893->5.9096
+Tijd: 5.9096
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 45.0319
+-> snelheid: 8.37416
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 18.8042
+-> snelheid: 6.20875
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.9096
+tijd verhoogd: 5.9096->5.9262
+Tijd: 5.9262
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 45.1714
+-> snelheid: 8.39652
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 18.9077
+-> snelheid: 6.22505
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.9262
+tijd verhoogd: 5.9262->5.9428
+Tijd: 5.9428
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 45.3114
+-> snelheid: 8.41886
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 19.0115
+-> snelheid: 6.24134
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.9428
+tijd verhoogd: 5.9428->5.9594
+Tijd: 5.9594
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 45.4517
+-> snelheid: 8.44118
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 19.1155
+-> snelheid: 6.25762
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.9594
+tijd verhoogd: 5.9594->5.976
+Tijd: 5.976
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 45.5924
+-> snelheid: 8.46349
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 19.2197
+-> snelheid: 6.27389
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.976
+tijd verhoogd: 5.976->5.9926
+Tijd: 5.9926
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 45.7334
+-> snelheid: 8.48578
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 19.3243
+-> snelheid: 6.29014
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+5.9926
+tijd verhoogd: 5.9926->6.0092
+Tijd: 6.0092
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 45.8748
+-> snelheid: 8.50805
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 19.4291
+-> snelheid: 6.30639
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.0092
+tijd verhoogd: 6.0092->6.0258
+Tijd: 6.0258
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 46.0166
+-> snelheid: 8.5303
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 19.5342
+-> snelheid: 6.32262
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.0258
+tijd verhoogd: 6.0258->6.0424
+Tijd: 6.0424
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 46.1588
+-> snelheid: 8.55254
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 19.6396
+-> snelheid: 6.33883
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.0424
+tijd verhoogd: 6.0424->6.059
+Tijd: 6.059
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 46.3013
+-> snelheid: 8.57476
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 19.7452
+-> snelheid: 6.35504
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.059
+tijd verhoogd: 6.059->6.0756
+Tijd: 6.0756
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 46.4442
+-> snelheid: 8.59696
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 19.8511
+-> snelheid: 6.37123
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.0756
+tijd verhoogd: 6.0756->6.0922
+Tijd: 6.0922
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 46.5875
+-> snelheid: 8.61915
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 19.9573
+-> snelheid: 6.38741
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.0922
+tijd verhoogd: 6.0922->6.1088
+Tijd: 6.1088
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 46.7311
+-> snelheid: 8.64131
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 20.0637
+-> snelheid: 6.40357
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.1088
+tijd verhoogd: 6.1088->6.1254
+Tijd: 6.1254
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 46.8751
+-> snelheid: 8.66346
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 20.1704
+-> snelheid: 6.41972
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.1254
+tijd verhoogd: 6.1254->6.142
+Tijd: 6.142
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 47.0195
+-> snelheid: 8.68559
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 20.2774
+-> snelheid: 6.43586
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.142
+tijd verhoogd: 6.142->6.1586
+Tijd: 6.1586
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 47.1642
+-> snelheid: 8.7077
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 20.3846
+-> snelheid: 6.45199
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.1586
+tijd verhoogd: 6.1586->6.1752
+Tijd: 6.1752
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 47.3093
+-> snelheid: 8.7298
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 20.4921
+-> snelheid: 6.4681
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.1752
+tijd verhoogd: 6.1752->6.1918
+Tijd: 6.1918
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 47.4547
+-> snelheid: 8.75187
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 20.5999
+-> snelheid: 6.48419
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.1918
+tijd verhoogd: 6.1918->6.2084
+Tijd: 6.2084
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 47.6006
+-> snelheid: 8.77393
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 20.7079
+-> snelheid: 6.50028
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.2084
+tijd verhoogd: 6.2084->6.225
+Tijd: 6.225
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 47.7468
+-> snelheid: 8.79597
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 20.8162
+-> snelheid: 6.51635
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.225
+tijd verhoogd: 6.225->6.2416
+Tijd: 6.2416
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 47.8933
+-> snelheid: 8.81799
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 20.9248
+-> snelheid: 6.5324
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.2416
+tijd verhoogd: 6.2416->6.2582
+Tijd: 6.2582
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 48.0403
+-> snelheid: 8.83999
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 21.0336
+-> snelheid: 6.54844
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.2582
+tijd verhoogd: 6.2582->6.2748
+Tijd: 6.2748
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 48.1876
+-> snelheid: 8.86197
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 21.1427
+-> snelheid: 6.56447
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.2748
+tijd verhoogd: 6.2748->6.2914
+Tijd: 6.2914
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 48.3352
+-> snelheid: 8.88393
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 21.2521
+-> snelheid: 6.58048
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.2914
+tijd verhoogd: 6.2914->6.308
+Tijd: 6.308
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 48.4832
+-> snelheid: 8.90588
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 21.3617
+-> snelheid: 6.59647
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.308
+tijd verhoogd: 6.308->6.3246
+Tijd: 6.3246
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 48.6316
+-> snelheid: 8.9278
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 21.4716
+-> snelheid: 6.61245
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.3246
+tijd verhoogd: 6.3246->6.3412
+Tijd: 6.3412
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 48.7804
+-> snelheid: 8.9497
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 21.5818
+-> snelheid: 6.62842
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.3412
+tijd verhoogd: 6.3412->6.3578
+Tijd: 6.3578
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 48.9295
+-> snelheid: 8.97159
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 21.6922
+-> snelheid: 6.64437
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.3578
+tijd verhoogd: 6.3578->6.3744
+Tijd: 6.3744
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 49.0789
+-> snelheid: 8.99345
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 21.8029
+-> snelheid: 6.66031
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.3744
+tijd verhoogd: 6.3744->6.391
+Tijd: 6.391
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 49.2288
+-> snelheid: 9.0153
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 21.9139
+-> snelheid: 6.67623
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.391
+tijd verhoogd: 6.391->6.4076
+Tijd: 6.4076
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 49.379
+-> snelheid: 9.03712
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 22.0251
+-> snelheid: 6.69213
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.4076
+tijd verhoogd: 6.4076->6.4242
+Tijd: 6.4242
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 49.5295
+-> snelheid: 9.05893
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 22.1366
+-> snelheid: 6.70802
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.4242
+tijd verhoogd: 6.4242->6.4408
+Tijd: 6.4408
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 49.6805
+-> snelheid: 9.08071
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 22.2483
+-> snelheid: 6.72389
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.4408
+tijd verhoogd: 6.4408->6.4574
+Tijd: 6.4574
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 49.8317
+-> snelheid: 9.10247
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 22.3603
+-> snelheid: 6.73975
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.4574
+tijd verhoogd: 6.4574->6.474
+Tijd: 6.474
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 49.9834
+-> snelheid: 9.12422
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 22.4726
+-> snelheid: 6.75559
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.474
+tijd verhoogd: 6.474->6.4906
+Tijd: 6.4906
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 50.1354
+-> snelheid: 9.14594
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 22.5852
+-> snelheid: 6.77141
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.4906
+tijd verhoogd: 6.4906->6.5072
+Tijd: 6.5072
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 50.2877
+-> snelheid: 9.16764
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 22.698
+-> snelheid: 6.78722
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.5072
+tijd verhoogd: 6.5072->6.5238
+Tijd: 6.5238
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 50.4405
+-> snelheid: 9.18932
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 22.811
+-> snelheid: 6.80301
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.5238
+tijd verhoogd: 6.5238->6.5404
+Tijd: 6.5404
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 50.5935
+-> snelheid: 9.21098
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 22.9243
+-> snelheid: 6.81879
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.5404
+tijd verhoogd: 6.5404->6.557
+Tijd: 6.557
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 50.747
+-> snelheid: 9.23262
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 23.0379
+-> snelheid: 6.83454
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.557
+tijd verhoogd: 6.557->6.5736
+Tijd: 6.5736
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 50.9008
+-> snelheid: 9.25423
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 23.1518
+-> snelheid: 6.85028
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.5736
+tijd verhoogd: 6.5736->6.5902
+Tijd: 6.5902
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 51.0549
+-> snelheid: 9.27583
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 23.2659
+-> snelheid: 6.86601
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.5902
+tijd verhoogd: 6.5902->6.6068
+Tijd: 6.6068
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 51.2095
+-> snelheid: 9.2974
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 23.3802
+-> snelheid: 6.88171
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.6068
+tijd verhoogd: 6.6068->6.6234
+Tijd: 6.6234
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 51.3643
+-> snelheid: 9.31895
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 23.4949
+-> snelheid: 6.8974
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.6234
+tijd verhoogd: 6.6234->6.64
+Tijd: 6.64
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 51.5196
+-> snelheid: 9.34048
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 23.6098
+-> snelheid: 6.91307
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.64
+tijd verhoogd: 6.64->6.6566
+Tijd: 6.6566
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 51.6752
+-> snelheid: 9.36199
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 23.7249
+-> snelheid: 6.92873
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.6566
+tijd verhoogd: 6.6566->6.6732
+Tijd: 6.6732
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 51.8311
+-> snelheid: 9.38348
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 23.8403
+-> snelheid: 6.94436
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.6732
+tijd verhoogd: 6.6732->6.6898
+Tijd: 6.6898
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 51.9874
+-> snelheid: 9.40494
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 23.956
+-> snelheid: 6.95998
+-> type: bus
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.6898
+tijd verhoogd: 6.6898->6.7064
+Er is een nieuw voertuig toegevoegd.
+Tijd: 6.7064
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 52.1441
+-> snelheid: 9.42638
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 24.0719
+-> snelheid: 6.97558
+-> type: bus
+Voertuig -401
+-> baan: Middelheimlaan
+-> positie: 0
+-> snelheid: 0
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.7064
+tijd verhoogd: 6.7064->6.723
+Tijd: 6.723
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 52.3011
+-> snelheid: 9.4478
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 24.1881
+-> snelheid: 6.99116
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0
+-> snelheid: 0
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.723
+tijd verhoogd: 6.723->6.7396
+Tijd: 6.7396
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 52.4584
+-> snelheid: 9.4692
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 24.3045
+-> snelheid: 7.00673
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.00059521
+-> snelheid: 0.023904
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.7396
+tijd verhoogd: 6.7396->6.7562
+Tijd: 6.7562
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 52.6162
+-> snelheid: 9.49057
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 24.4212
+-> snelheid: 7.02227
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.00152432
+-> snelheid: 0.0452816
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.7562
+tijd verhoogd: 6.7562->6.7728
+Tijd: 6.7728
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 52.7742
+-> snelheid: 9.51192
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 24.5382
+-> snelheid: 7.0378
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.00280946
+-> snelheid: 0.0667061
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.7728
+tijd verhoogd: 6.7728->6.7894
+Tijd: 6.7894
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 52.9327
+-> snelheid: 9.53325
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 24.6554
+-> snelheid: 7.0533
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.00445139
+-> snelheid: 0.0881761
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.7894
+tijd verhoogd: 6.7894->6.806
+Tijd: 6.806
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 53.0914
+-> snelheid: 9.55455
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 24.7729
+-> snelheid: 7.06879
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.00645081
+-> snelheid: 0.10969
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.806
+tijd verhoogd: 6.806->6.8226
+Tijd: 6.8226
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 53.2506
+-> snelheid: 9.57583
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 24.8906
+-> snelheid: 7.08426
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.00880845
+-> snelheid: 0.131248
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.8226
+tijd verhoogd: 6.8226->6.8392
+Tijd: 6.8392
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 53.4101
+-> snelheid: 9.59709
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 25.0086
+-> snelheid: 7.09971
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.011525
+-> snelheid: 0.152847
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.8392
+tijd verhoogd: 6.8392->6.8558
+Tijd: 6.8558
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 53.5699
+-> snelheid: 9.61832
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 25.1268
+-> snelheid: 7.11514
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.0146011
+-> snelheid: 0.174487
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.8558
+tijd verhoogd: 6.8558->6.8724
+Tijd: 6.8724
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 53.7301
+-> snelheid: 9.63953
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 25.2453
+-> snelheid: 7.13055
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.0180374
+-> snelheid: 0.196166
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.8724
+tijd verhoogd: 6.8724->6.889
+Tijd: 6.889
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 53.8906
+-> snelheid: 9.66072
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 25.3641
+-> snelheid: 7.14594
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.0218345
+-> snelheid: 0.217884
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.889
+tijd verhoogd: 6.889->6.9056
+Tijd: 6.9056
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 54.0515
+-> snelheid: 9.68188
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 25.4831
+-> snelheid: 7.16131
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.0259931
+-> snelheid: 0.23964
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.9056
+tijd verhoogd: 6.9056->6.9222
+Tijd: 6.9222
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 54.2128
+-> snelheid: 9.70302
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 25.6023
+-> snelheid: 7.17666
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.0305137
+-> snelheid: 0.261432
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.9222
+tijd verhoogd: 6.9222->6.9388
+Tijd: 6.9388
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 54.3744
+-> snelheid: 9.72413
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 25.7218
+-> snelheid: 7.19199
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.035397
+-> snelheid: 0.283259
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.9388
+tijd verhoogd: 6.9388->6.9554
+Tijd: 6.9554
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 54.5363
+-> snelheid: 9.74522
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 25.8416
+-> snelheid: 7.20731
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.0406435
+-> snelheid: 0.305122
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.9554
+tijd verhoogd: 6.9554->6.972
+Tijd: 6.972
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 54.6986
+-> snelheid: 9.76628
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 25.9616
+-> snelheid: 7.2226
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.0462537
+-> snelheid: 0.327017
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.972
+tijd verhoogd: 6.972->6.9886
+Tijd: 6.9886
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 54.8613
+-> snelheid: 9.78732
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 26.0819
+-> snelheid: 7.23787
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.0522282
+-> snelheid: 0.348946
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+6.9886
+tijd verhoogd: 6.9886->7.0052
+Tijd: 7.0052
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 55.0243
+-> snelheid: 9.80834
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 26.2024
+-> snelheid: 7.25311
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.0585676
+-> snelheid: 0.370907
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.0052
+tijd verhoogd: 7.0052->7.0218
+Tijd: 7.0218
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 55.1876
+-> snelheid: 9.82933
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 26.3232
+-> snelheid: 7.26834
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.0652722
+-> snelheid: 0.392899
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.0218
+tijd verhoogd: 7.0218->7.0384
+Tijd: 7.0384
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 55.3513
+-> snelheid: 9.8503
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 26.4442
+-> snelheid: 7.28355
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.0723427
+-> snelheid: 0.414922
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.0384
+tijd verhoogd: 7.0384->7.055
+Tijd: 7.055
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 55.5153
+-> snelheid: 9.87124
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 26.5655
+-> snelheid: 7.29874
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.0797795
+-> snelheid: 0.436974
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.055
+tijd verhoogd: 7.055->7.0716
+Tijd: 7.0716
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 55.6797
+-> snelheid: 9.89215
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 26.6871
+-> snelheid: 7.3139
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.0875831
+-> snelheid: 0.459056
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.0716
+tijd verhoogd: 7.0716->7.0882
+Tijd: 7.0882
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 55.8444
+-> snelheid: 9.91304
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 26.8088
+-> snelheid: 7.32904
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.095754
+-> snelheid: 0.481165
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.0882
+tijd verhoogd: 7.0882->7.1048
+Tijd: 7.1048
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 56.0095
+-> snelheid: 9.9339
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 26.9309
+-> snelheid: 7.34417
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.104293
+-> snelheid: 0.503302
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.1048
+tijd verhoogd: 7.1048->7.1214
+Tijd: 7.1214
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 56.1749
+-> snelheid: 9.95474
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 27.0532
+-> snelheid: 7.35927
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.113199
+-> snelheid: 0.525467
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.1214
+tijd verhoogd: 7.1214->7.138
+Tijd: 7.138
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 56.3407
+-> snelheid: 9.97556
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 27.1757
+-> snelheid: 7.37435
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.122475
+-> snelheid: 0.547657
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.138
+tijd verhoogd: 7.138->7.1546
+Tijd: 7.1546
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 56.5068
+-> snelheid: 9.99634
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 27.2985
+-> snelheid: 7.3894
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.132119
+-> snelheid: 0.569873
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.1546
+tijd verhoogd: 7.1546->7.1712
+Tijd: 7.1712
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 56.6733
+-> snelheid: 10.0171
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 27.4215
+-> snelheid: 7.40444
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.142133
+-> snelheid: 0.592114
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.1712
+tijd verhoogd: 7.1712->7.1878
+Tijd: 7.1878
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 56.8401
+-> snelheid: 10.0378
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 27.5448
+-> snelheid: 7.41945
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.152516
+-> snelheid: 0.61438
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.1878
+tijd verhoogd: 7.1878->7.2044
+Tijd: 7.2044
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 57.0072
+-> snelheid: 10.0585
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 27.6684
+-> snelheid: 7.43444
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.16327
+-> snelheid: 0.63667
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.2044
+tijd verhoogd: 7.2044->7.221
+Tijd: 7.221
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 57.1747
+-> snelheid: 10.0792
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 27.7922
+-> snelheid: 7.4494
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.174394
+-> snelheid: 0.658983
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.221
+tijd verhoogd: 7.221->7.2376
+Tijd: 7.2376
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 57.3425
+-> snelheid: 10.0999
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 27.9162
+-> snelheid: 7.46435
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.185889
+-> snelheid: 0.681319
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.2376
+tijd verhoogd: 7.2376->7.2542
+Tijd: 7.2542
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 57.5107
+-> snelheid: 10.1205
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 28.0405
+-> snelheid: 7.47927
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.197756
+-> snelheid: 0.703677
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.2542
+tijd verhoogd: 7.2542->7.2708
+Tijd: 7.2708
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 57.6792
+-> snelheid: 10.1411
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 28.165
+-> snelheid: 7.49417
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.209994
+-> snelheid: 0.726057
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.2708
+tijd verhoogd: 7.2708->7.2874
+Tijd: 7.2874
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 57.8481
+-> snelheid: 10.1617
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 28.2898
+-> snelheid: 7.50905
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.222605
+-> snelheid: 0.748459
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.2874
+tijd verhoogd: 7.2874->7.304
+Tijd: 7.304
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 58.0173
+-> snelheid: 10.1822
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 28.4148
+-> snelheid: 7.5239
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.235587
+-> snelheid: 0.770881
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.304
+tijd verhoogd: 7.304->7.3206
+Tijd: 7.3206
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 58.1868
+-> snelheid: 10.2028
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 28.5401
+-> snelheid: 7.53873
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.248943
+-> snelheid: 0.793324
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.3206
+tijd verhoogd: 7.3206->7.3372
+Tijd: 7.3372
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 58.3567
+-> snelheid: 10.2232
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 28.6656
+-> snelheid: 7.55353
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.262671
+-> snelheid: 0.815787
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.3372
+tijd verhoogd: 7.3372->7.3538
+Tijd: 7.3538
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 58.5269
+-> snelheid: 10.2437
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 28.7913
+-> snelheid: 7.56831
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.276773
+-> snelheid: 0.838269
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.3538
+tijd verhoogd: 7.3538->7.3704
+Tijd: 7.3704
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 58.6974
+-> snelheid: 10.2641
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 28.9173
+-> snelheid: 7.58307
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.291249
+-> snelheid: 0.86077
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.3704
+tijd verhoogd: 7.3704->7.387
+Tijd: 7.387
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 58.8683
+-> snelheid: 10.2846
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 29.0436
+-> snelheid: 7.5978
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.306098
+-> snelheid: 0.883291
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.387
+tijd verhoogd: 7.387->7.4036
+Tijd: 7.4036
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 59.0396
+-> snelheid: 10.3049
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 29.1701
+-> snelheid: 7.61251
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.321322
+-> snelheid: 0.905829
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.4036
+tijd verhoogd: 7.4036->7.4202
+Tijd: 7.4202
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 59.2111
+-> snelheid: 10.3253
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 29.2968
+-> snelheid: 7.6272
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.33692
+-> snelheid: 0.928386
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.4202
+tijd verhoogd: 7.4202->7.4368
+Tijd: 7.4368
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 59.383
+-> snelheid: 10.3456
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 29.4238
+-> snelheid: 7.64186
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.352894
+-> snelheid: 0.95096
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.4368
+tijd verhoogd: 7.4368->7.4534
+Tijd: 7.4534
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 59.5553
+-> snelheid: 10.3659
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 29.551
+-> snelheid: 7.6565
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.369242
+-> snelheid: 0.973551
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.4534
+tijd verhoogd: 7.4534->7.47
+Tijd: 7.47
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 59.7279
+-> snelheid: 10.3862
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 29.6784
+-> snelheid: 7.67111
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.385966
+-> snelheid: 0.996159
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.47
+tijd verhoogd: 7.47->7.4866
+Tijd: 7.4866
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 59.9008
+-> snelheid: 10.4064
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 29.8062
+-> snelheid: 7.6857
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.403066
+-> snelheid: 1.01878
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.4866
+tijd verhoogd: 7.4866->7.5032
+Tijd: 7.5032
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 60.074
+-> snelheid: 10.4266
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 29.9341
+-> snelheid: 7.70026
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.420541
+-> snelheid: 1.04142
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.5032
+tijd verhoogd: 7.5032->7.5198
+Tijd: 7.5198
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 60.2476
+-> snelheid: 10.4468
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 30.0623
+-> snelheid: 7.7148
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.438393
+-> snelheid: 1.06408
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.5198
+tijd verhoogd: 7.5198->7.5364
+Tijd: 7.5364
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 60.4215
+-> snelheid: 10.467
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 30.1907
+-> snelheid: 7.72931
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.456621
+-> snelheid: 1.08675
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.5364
+tijd verhoogd: 7.5364->7.553
+Tijd: 7.553
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 60.5958
+-> snelheid: 10.4871
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 30.3194
+-> snelheid: 7.74379
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.475226
+-> snelheid: 1.10944
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.553
+tijd verhoogd: 7.553->7.5696
+Tijd: 7.5696
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 60.7704
+-> snelheid: 10.5072
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 30.4483
+-> snelheid: 7.75826
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.494208
+-> snelheid: 1.13214
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.5696
+tijd verhoogd: 7.5696->7.5862
+Tijd: 7.5862
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 60.9453
+-> snelheid: 10.5273
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 30.5774
+-> snelheid: 7.77269
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.513568
+-> snelheid: 1.15486
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.5862
+tijd verhoogd: 7.5862->7.6028
+Tijd: 7.6028
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 61.1205
+-> snelheid: 10.5473
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 30.7068
+-> snelheid: 7.7871
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.533304
+-> snelheid: 1.17759
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.6028
+tijd verhoogd: 7.6028->7.6194
+Tijd: 7.6194
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 61.2961
+-> snelheid: 10.5673
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 30.8364
+-> snelheid: 7.80149
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.553419
+-> snelheid: 1.20034
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.6194
+tijd verhoogd: 7.6194->7.636
+Tijd: 7.636
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 61.472
+-> snelheid: 10.5873
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 30.9663
+-> snelheid: 7.81584
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.573911
+-> snelheid: 1.2231
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.636
+tijd verhoogd: 7.636->7.6526
+Tijd: 7.6526
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 61.6483
+-> snelheid: 10.6072
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 31.0964
+-> snelheid: 7.83018
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.594781
+-> snelheid: 1.24587
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.6526
+tijd verhoogd: 7.6526->7.6692
+Tijd: 7.6692
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 61.8249
+-> snelheid: 10.6272
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 31.2267
+-> snelheid: 7.84448
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.61603
+-> snelheid: 1.26865
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.6692
+tijd verhoogd: 7.6692->7.6858
+Tijd: 7.6858
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 62.0018
+-> snelheid: 10.647
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 31.3573
+-> snelheid: 7.85876
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.637658
+-> snelheid: 1.29145
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.6858
+tijd verhoogd: 7.6858->7.7024
+Tijd: 7.7024
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 62.179
+-> snelheid: 10.6669
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 31.4881
+-> snelheid: 7.87301
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.659664
+-> snelheid: 1.31427
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.7024
+tijd verhoogd: 7.7024->7.719
+Tijd: 7.719
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 62.3566
+-> snelheid: 10.6867
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 31.6192
+-> snelheid: 7.88724
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.682049
+-> snelheid: 1.33709
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.719
+tijd verhoogd: 7.719->7.7356
+Tijd: 7.7356
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 62.5345
+-> snelheid: 10.7065
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 31.7505
+-> snelheid: 7.90144
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.704813
+-> snelheid: 1.35993
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.7356
+tijd verhoogd: 7.7356->7.7522
+Tijd: 7.7522
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 62.7127
+-> snelheid: 10.7263
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 31.882
+-> snelheid: 7.91561
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.727957
+-> snelheid: 1.38277
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.7522
+tijd verhoogd: 7.7522->7.7688
+Tijd: 7.7688
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 62.8912
+-> snelheid: 10.746
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 32.0137
+-> snelheid: 7.92975
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.75148
+-> snelheid: 1.40564
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.7688
+tijd verhoogd: 7.7688->7.7854
+Tijd: 7.7854
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 63.0701
+-> snelheid: 10.7657
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 32.1457
+-> snelheid: 7.94387
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.775383
+-> snelheid: 1.42851
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.7854
+tijd verhoogd: 7.7854->7.802
+Tijd: 7.802
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 63.2493
+-> snelheid: 10.7854
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 32.2779
+-> snelheid: 7.95796
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.799666
+-> snelheid: 1.45139
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.802
+tijd verhoogd: 7.802->7.8186
+Tijd: 7.8186
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 63.4288
+-> snelheid: 10.8051
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 32.4104
+-> snelheid: 7.97203
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.824329
+-> snelheid: 1.47429
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.8186
+tijd verhoogd: 7.8186->7.8352
+Tijd: 7.8352
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 63.6087
+-> snelheid: 10.8247
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 32.5431
+-> snelheid: 7.98606
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.849373
+-> snelheid: 1.49719
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.8352
+tijd verhoogd: 7.8352->7.8518
+Tijd: 7.8518
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 63.7889
+-> snelheid: 10.8443
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 32.676
+-> snelheid: 8.00007
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.874797
+-> snelheid: 1.52011
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.8518
+tijd verhoogd: 7.8518->7.8684
+Tijd: 7.8684
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 63.9694
+-> snelheid: 10.8638
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 32.8091
+-> snelheid: 8.01405
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.900602
+-> snelheid: 1.54303
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.8684
+tijd verhoogd: 7.8684->7.885
+Tijd: 7.885
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 64.1502
+-> snelheid: 10.8833
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 32.9425
+-> snelheid: 8.028
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.926787
+-> snelheid: 1.56597
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.885
+tijd verhoogd: 7.885->7.9016
+Tijd: 7.9016
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 64.3313
+-> snelheid: 10.9028
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 33.0761
+-> snelheid: 8.04193
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.953354
+-> snelheid: 1.58892
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.9016
+tijd verhoogd: 7.9016->7.9182
+Tijd: 7.9182
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 64.5128
+-> snelheid: 10.9223
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 33.21
+-> snelheid: 8.05582
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 0.980301
+-> snelheid: 1.61188
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.9182
+tijd verhoogd: 7.9182->7.9348
+Tijd: 7.9348
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 64.6946
+-> snelheid: 10.9417
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 33.344
+-> snelheid: 8.06969
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.00763
+-> snelheid: 1.63484
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.9348
+tijd verhoogd: 7.9348->7.9514
+Tijd: 7.9514
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 64.8767
+-> snelheid: 10.9611
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 33.4783
+-> snelheid: 8.08353
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.03534
+-> snelheid: 1.65782
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.9514
+tijd verhoogd: 7.9514->7.968
+Tijd: 7.968
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 65.0592
+-> snelheid: 10.9804
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 33.6129
+-> snelheid: 8.09734
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.06343
+-> snelheid: 1.68081
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.968
+tijd verhoogd: 7.968->7.9846
+Tijd: 7.9846
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 65.2419
+-> snelheid: 10.9998
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 33.7476
+-> snelheid: 8.11112
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.09191
+-> snelheid: 1.7038
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+7.9846
+tijd verhoogd: 7.9846->8.0012
+Tijd: 8.0012
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 65.425
+-> snelheid: 11.0191
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 33.8826
+-> snelheid: 8.12487
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.12076
+-> snelheid: 1.72681
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.0012
+tijd verhoogd: 8.0012->8.0178
+Tijd: 8.0178
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 65.6084
+-> snelheid: 11.0383
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 34.0178
+-> snelheid: 8.1386
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.15
+-> snelheid: 1.74982
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.0178
+tijd verhoogd: 8.0178->8.0344
+Tijd: 8.0344
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 65.7921
+-> snelheid: 11.0576
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 34.1533
+-> snelheid: 8.15229
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.17962
+-> snelheid: 1.77284
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.0344
+tijd verhoogd: 8.0344->8.051
+Tijd: 8.051
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 65.9761
+-> snelheid: 11.0768
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 34.2889
+-> snelheid: 8.16596
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.20962
+-> snelheid: 1.79588
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.051
+tijd verhoogd: 8.051->8.0676
+Tijd: 8.0676
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 66.1605
+-> snelheid: 11.0959
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 34.4248
+-> snelheid: 8.17959
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.24001
+-> snelheid: 1.81892
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.0676
+tijd verhoogd: 8.0676->8.0842
+Tijd: 8.0842
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 66.3452
+-> snelheid: 11.1151
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 34.561
+-> snelheid: 8.1932
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.27078
+-> snelheid: 1.84196
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.0842
+tijd verhoogd: 8.0842->8.1008
+Tijd: 8.1008
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 66.5301
+-> snelheid: 11.1342
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 34.6973
+-> snelheid: 8.20678
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.30193
+-> snelheid: 1.86502
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.1008
+tijd verhoogd: 8.1008->8.1174
+Tijd: 8.1174
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 66.7154
+-> snelheid: 11.1532
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 34.8339
+-> snelheid: 8.22032
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.33346
+-> snelheid: 1.88809
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.1174
+tijd verhoogd: 8.1174->8.134
+Tijd: 8.134
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 66.9011
+-> snelheid: 11.1723
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 34.9707
+-> snelheid: 8.23384
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.36538
+-> snelheid: 1.91116
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.134
+tijd verhoogd: 8.134->8.1506
+Tijd: 8.1506
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 67.087
+-> snelheid: 11.1913
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 35.1077
+-> snelheid: 8.24733
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.39768
+-> snelheid: 1.93424
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.1506
+tijd verhoogd: 8.1506->8.1672
+Tijd: 8.1672
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 67.2732
+-> snelheid: 11.2102
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 35.2449
+-> snelheid: 8.26079
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.43036
+-> snelheid: 1.95733
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.1672
+tijd verhoogd: 8.1672->8.1838
+Tijd: 8.1838
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 67.4598
+-> snelheid: 11.2292
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 35.3824
+-> snelheid: 8.27422
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.46343
+-> snelheid: 1.98042
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.1838
+tijd verhoogd: 8.1838->8.2004
+Tijd: 8.2004
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 67.6467
+-> snelheid: 11.2481
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 35.5201
+-> snelheid: 8.28761
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.49688
+-> snelheid: 2.00352
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.2004
+tijd verhoogd: 8.2004->8.217
+Tijd: 8.217
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 67.8339
+-> snelheid: 11.2669
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 35.658
+-> snelheid: 8.30098
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.53071
+-> snelheid: 2.02664
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.217
+tijd verhoogd: 8.217->8.2336
+Tijd: 8.2336
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 68.0214
+-> snelheid: 11.2857
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 35.7961
+-> snelheid: 8.31432
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.56493
+-> snelheid: 2.04975
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.2336
+tijd verhoogd: 8.2336->8.2502
+Tijd: 8.2502
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 68.2092
+-> snelheid: 11.3045
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 35.9345
+-> snelheid: 8.32763
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.59953
+-> snelheid: 2.07288
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.2502
+tijd verhoogd: 8.2502->8.2668
+Tijd: 8.2668
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 68.3973
+-> snelheid: 11.3233
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 36.073
+-> snelheid: 8.3409
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.63452
+-> snelheid: 2.09601
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.2668
+tijd verhoogd: 8.2668->8.2834
+Tijd: 8.2834
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 68.5857
+-> snelheid: 11.342
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 36.2118
+-> snelheid: 8.35415
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.66989
+-> snelheid: 2.11915
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.2834
+tijd verhoogd: 8.2834->8.3
+Tijd: 8.3
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 68.7745
+-> snelheid: 11.3607
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 36.3508
+-> snelheid: 8.36736
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.70564
+-> snelheid: 2.14229
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.3
+tijd verhoogd: 8.3->8.3166
+Tijd: 8.3166
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 68.9635
+-> snelheid: 11.3794
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 36.49
+-> snelheid: 8.38054
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.74178
+-> snelheid: 2.16544
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.3166
+tijd verhoogd: 8.3166->8.3332
+Tijd: 8.3332
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 69.1529
+-> snelheid: 11.398
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 36.6295
+-> snelheid: 8.3937
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.7783
+-> snelheid: 2.1886
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.3332
+tijd verhoogd: 8.3332->8.3498
+Tijd: 8.3498
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 69.3426
+-> snelheid: 11.4166
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 36.7692
+-> snelheid: 8.40682
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.81521
+-> snelheid: 2.21177
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.3498
+tijd verhoogd: 8.3498->8.3664
+Tijd: 8.3664
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 69.5325
+-> snelheid: 11.4352
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 36.909
+-> snelheid: 8.41991
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.8525
+-> snelheid: 2.23494
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.3664
+tijd verhoogd: 8.3664->8.383
+Tijd: 8.383
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 69.7228
+-> snelheid: 11.4537
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 37.0491
+-> snelheid: 8.43297
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.89018
+-> snelheid: 2.25811
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.383
+tijd verhoogd: 8.383->8.3996
+Tijd: 8.3996
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 69.9134
+-> snelheid: 11.4722
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 37.1894
+-> snelheid: 8.44599
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.92824
+-> snelheid: 2.2813
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.3996
+tijd verhoogd: 8.3996->8.4162
+Tijd: 8.4162
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 70.1043
+-> snelheid: 11.4906
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 37.33
+-> snelheid: 8.45899
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 1.96669
+-> snelheid: 2.30448
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.4162
+tijd verhoogd: 8.4162->8.4328
+Tijd: 8.4328
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 70.2955
+-> snelheid: 11.509
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 37.4707
+-> snelheid: 8.47195
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.00552
+-> snelheid: 2.32768
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.4328
+tijd verhoogd: 8.4328->8.4494
+Tijd: 8.4494
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 70.487
+-> snelheid: 11.5274
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 37.6117
+-> snelheid: 8.48488
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.04474
+-> snelheid: 2.35088
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.4494
+tijd verhoogd: 8.4494->8.466
+Tijd: 8.466
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 70.6788
+-> snelheid: 11.5458
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 37.7528
+-> snelheid: 8.49778
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.08434
+-> snelheid: 2.37409
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.466
+tijd verhoogd: 8.466->8.4826
+Tijd: 8.4826
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 70.8709
+-> snelheid: 11.5641
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 37.8942
+-> snelheid: 8.51065
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.12433
+-> snelheid: 2.3973
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.4826
+tijd verhoogd: 8.4826->8.4992
+Tijd: 8.4992
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 71.0634
+-> snelheid: 11.5823
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 38.0358
+-> snelheid: 8.52349
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.1647
+-> snelheid: 2.42051
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.4992
+tijd verhoogd: 8.4992->8.5158
+Tijd: 8.5158
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 71.2561
+-> snelheid: 11.6006
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 38.1776
+-> snelheid: 8.53629
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.20546
+-> snelheid: 2.44374
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.5158
+tijd verhoogd: 8.5158->8.5324
+Tijd: 8.5324
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 71.4491
+-> snelheid: 11.6188
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 38.3196
+-> snelheid: 8.54906
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.2466
+-> snelheid: 2.46696
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.5324
+tijd verhoogd: 8.5324->8.549
+Tijd: 8.549
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 71.6424
+-> snelheid: 11.637
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 38.4619
+-> snelheid: 8.5618
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.28813
+-> snelheid: 2.49019
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.549
+tijd verhoogd: 8.549->8.5656
+Tijd: 8.5656
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 71.8361
+-> snelheid: 11.6551
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 38.6043
+-> snelheid: 8.57451
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.33005
+-> snelheid: 2.51343
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.5656
+tijd verhoogd: 8.5656->8.5822
+Tijd: 8.5822
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 72.03
+-> snelheid: 11.6732
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 38.747
+-> snelheid: 8.58718
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.37235
+-> snelheid: 2.53667
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.5822
+tijd verhoogd: 8.5822->8.5988
+Tijd: 8.5988
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 72.2242
+-> snelheid: 11.6912
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 38.8898
+-> snelheid: 8.59982
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.41504
+-> snelheid: 2.55992
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.5988
+tijd verhoogd: 8.5988->8.6154
+Tijd: 8.6154
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 72.4187
+-> snelheid: 11.7093
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 39.0329
+-> snelheid: 8.61243
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.45811
+-> snelheid: 2.58317
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.6154
+tijd verhoogd: 8.6154->8.632
+Tijd: 8.632
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 72.6136
+-> snelheid: 11.7273
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 39.1762
+-> snelheid: 8.62501
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.50157
+-> snelheid: 2.60643
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.632
+tijd verhoogd: 8.632->8.6486
+Tijd: 8.6486
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 72.8087
+-> snelheid: 11.7452
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 39.3197
+-> snelheid: 8.63755
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.54542
+-> snelheid: 2.62969
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.6486
+tijd verhoogd: 8.6486->8.6652
+Tijd: 8.6652
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 73.0041
+-> snelheid: 11.7631
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 39.4634
+-> snelheid: 8.65006
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.58965
+-> snelheid: 2.65296
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.6652
+tijd verhoogd: 8.6652->8.6818
+Tijd: 8.6818
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 73.1998
+-> snelheid: 11.781
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 39.6073
+-> snelheid: 8.66254
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.63427
+-> snelheid: 2.67623
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.6818
+tijd verhoogd: 8.6818->8.6984
+Tijd: 8.6984
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 73.3958
+-> snelheid: 11.7988
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 39.7514
+-> snelheid: 8.67498
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.67927
+-> snelheid: 2.6995
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.6984
+tijd verhoogd: 8.6984->8.715
+Tijd: 8.715
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 73.5921
+-> snelheid: 11.8166
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 39.8957
+-> snelheid: 8.68739
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.72467
+-> snelheid: 2.72278
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.715
+tijd verhoogd: 8.715->8.7316
+Tijd: 8.7316
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 73.7887
+-> snelheid: 11.8344
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 40.0402
+-> snelheid: 8.69977
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.77044
+-> snelheid: 2.74606
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.7316
+tijd verhoogd: 8.7316->8.7482
+Tijd: 8.7482
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 73.9856
+-> snelheid: 11.8521
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 40.1849
+-> snelheid: 8.71211
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.81661
+-> snelheid: 2.76935
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.7482
+tijd verhoogd: 8.7482->8.7648
+Tijd: 8.7648
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 74.1828
+-> snelheid: 11.8698
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 40.3299
+-> snelheid: 8.72442
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.86316
+-> snelheid: 2.79264
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.7648
+tijd verhoogd: 8.7648->8.7814
+Tijd: 8.7814
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 74.3803
+-> snelheid: 11.8875
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 40.475
+-> snelheid: 8.7367
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.9101
+-> snelheid: 2.81594
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.7814
+tijd verhoogd: 8.7814->8.798
+Tijd: 8.798
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 74.578
+-> snelheid: 11.9051
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 40.6203
+-> snelheid: 8.74894
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 2.95742
+-> snelheid: 2.83924
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.798
+tijd verhoogd: 8.798->8.8146
+Tijd: 8.8146
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 74.7761
+-> snelheid: 11.9227
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 40.7659
+-> snelheid: 8.76115
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.00513
+-> snelheid: 2.86254
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.8146
+tijd verhoogd: 8.8146->8.8312
+Tijd: 8.8312
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 74.9745
+-> snelheid: 11.9402
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 40.9116
+-> snelheid: 8.77333
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.05323
+-> snelheid: 2.88585
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.8312
+tijd verhoogd: 8.8312->8.8478
+Tijd: 8.8478
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 75.1731
+-> snelheid: 11.9577
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 41.0575
+-> snelheid: 8.78547
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.10172
+-> snelheid: 2.90916
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.8478
+tijd verhoogd: 8.8478->8.8644
+Tijd: 8.8644
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 75.372
+-> snelheid: 11.9752
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 41.2037
+-> snelheid: 8.79758
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.15059
+-> snelheid: 2.93247
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.8644
+tijd verhoogd: 8.8644->8.881
+Tijd: 8.881
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 75.5713
+-> snelheid: 11.9926
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 41.35
+-> snelheid: 8.80965
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.19985
+-> snelheid: 2.95579
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.881
+tijd verhoogd: 8.881->8.8976
+Tijd: 8.8976
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 75.7708
+-> snelheid: 12.01
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 41.4966
+-> snelheid: 8.82169
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.2495
+-> snelheid: 2.97911
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.8976
+tijd verhoogd: 8.8976->8.9142
+Tijd: 8.9142
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 75.9706
+-> snelheid: 12.0274
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 41.6433
+-> snelheid: 8.83369
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.29953
+-> snelheid: 3.00243
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.9142
+tijd verhoogd: 8.9142->8.9308
+Tijd: 8.9308
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 76.1706
+-> snelheid: 12.0447
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 41.7902
+-> snelheid: 8.84567
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.34995
+-> snelheid: 3.02576
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.9308
+tijd verhoogd: 8.9308->8.9474
+Tijd: 8.9474
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 76.371
+-> snelheid: 12.062
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 41.9374
+-> snelheid: 8.8576
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.40076
+-> snelheid: 3.04909
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.9474
+tijd verhoogd: 8.9474->8.964
+Tijd: 8.964
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 76.5717
+-> snelheid: 12.0792
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 42.0847
+-> snelheid: 8.86951
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.45196
+-> snelheid: 3.07242
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.964
+tijd verhoogd: 8.964->8.9806
+Tijd: 8.9806
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 76.7726
+-> snelheid: 12.0964
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 42.2322
+-> snelheid: 8.88137
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.50354
+-> snelheid: 3.09576
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.9806
+tijd verhoogd: 8.9806->8.9972
+Tijd: 8.9972
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 76.9738
+-> snelheid: 12.1136
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 42.38
+-> snelheid: 8.89321
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.55551
+-> snelheid: 3.1191
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+8.9972
+tijd verhoogd: 8.9972->9.0138
+Tijd: 9.0138
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 77.1754
+-> snelheid: 12.1307
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 42.5279
+-> snelheid: 8.90501
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.60787
+-> snelheid: 3.14244
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.0138
+tijd verhoogd: 9.0138->9.0304
+Tijd: 9.0304
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 77.3772
+-> snelheid: 12.1478
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 42.676
+-> snelheid: 8.91677
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.66061
+-> snelheid: 3.16579
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.0304
+tijd verhoogd: 9.0304->9.047
+Tijd: 9.047
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 77.5792
+-> snelheid: 12.1648
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 42.8243
+-> snelheid: 8.9285
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.71375
+-> snelheid: 3.18914
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.047
+tijd verhoogd: 9.047->9.0636
+Tijd: 9.0636
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 77.7816
+-> snelheid: 12.1818
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 42.9728
+-> snelheid: 8.9402
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.76727
+-> snelheid: 3.21249
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.0636
+tijd verhoogd: 9.0636->9.0802
+Tijd: 9.0802
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 77.9842
+-> snelheid: 12.1988
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 43.1215
+-> snelheid: 8.95186
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.82118
+-> snelheid: 3.23584
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.0802
+tijd verhoogd: 9.0802->9.0968
+Tijd: 9.0968
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 78.1872
+-> snelheid: 12.2157
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 43.2704
+-> snelheid: 8.96349
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.87547
+-> snelheid: 3.2592
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.0968
+tijd verhoogd: 9.0968->9.1134
+Tijd: 9.1134
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 78.3904
+-> snelheid: 12.2326
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 43.4195
+-> snelheid: 8.97508
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.93016
+-> snelheid: 3.28256
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.1134
+tijd verhoogd: 9.1134->9.13
+Tijd: 9.13
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 78.5938
+-> snelheid: 12.2495
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 43.5688
+-> snelheid: 8.98663
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 3.98523
+-> snelheid: 3.30592
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.13
+tijd verhoogd: 9.13->9.1466
+Tijd: 9.1466
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 78.7976
+-> snelheid: 12.2663
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 43.7182
+-> snelheid: 8.99815
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.04069
+-> snelheid: 3.32928
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.1466
+tijd verhoogd: 9.1466->9.1632
+Tijd: 9.1632
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 79.0016
+-> snelheid: 12.2831
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 43.8679
+-> snelheid: 9.00964
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.09654
+-> snelheid: 3.35265
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.1632
+tijd verhoogd: 9.1632->9.1798
+Tijd: 9.1798
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 79.206
+-> snelheid: 12.2998
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 44.0177
+-> snelheid: 9.02109
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.15277
+-> snelheid: 3.37602
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.1798
+tijd verhoogd: 9.1798->9.1964
+Tijd: 9.1964
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 79.4105
+-> snelheid: 12.3165
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 44.1678
+-> snelheid: 9.03251
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.2094
+-> snelheid: 3.39939
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.1964
+tijd verhoogd: 9.1964->9.213
+Tijd: 9.213
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 79.6154
+-> snelheid: 12.3332
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 44.318
+-> snelheid: 9.04389
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.26641
+-> snelheid: 3.42276
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.213
+tijd verhoogd: 9.213->9.2296
+Tijd: 9.2296
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 79.8206
+-> snelheid: 12.3498
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 44.4684
+-> snelheid: 9.05523
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.32381
+-> snelheid: 3.44613
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.2296
+tijd verhoogd: 9.2296->9.2462
+Tijd: 9.2462
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 80.026
+-> snelheid: 12.3664
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 44.619
+-> snelheid: 9.06654
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.3816
+-> snelheid: 3.46951
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.2462
+tijd verhoogd: 9.2462->9.2628
+Tijd: 9.2628
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 80.2317
+-> snelheid: 12.3829
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 44.7698
+-> snelheid: 9.07782
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.43977
+-> snelheid: 3.49289
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.2628
+tijd verhoogd: 9.2628->9.2794
+Tijd: 9.2794
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 80.4376
+-> snelheid: 12.3994
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 44.9207
+-> snelheid: 9.08906
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.49834
+-> snelheid: 3.51627
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.2794
+tijd verhoogd: 9.2794->9.296
+Tijd: 9.296
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 80.6439
+-> snelheid: 12.4159
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 45.0719
+-> snelheid: 9.10026
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.55729
+-> snelheid: 3.53965
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.296
+tijd verhoogd: 9.296->9.3126
+Tijd: 9.3126
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 80.8504
+-> snelheid: 12.4323
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 45.2232
+-> snelheid: 9.11143
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.61663
+-> snelheid: 3.56304
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.3126
+tijd verhoogd: 9.3126->9.3292
+Tijd: 9.3292
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 81.0572
+-> snelheid: 12.4487
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 45.3748
+-> snelheid: 9.12256
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.67636
+-> snelheid: 3.58642
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.3292
+tijd verhoogd: 9.3292->9.3458
+Tijd: 9.3458
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 81.2642
+-> snelheid: 12.465
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 45.5265
+-> snelheid: 9.13366
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.73648
+-> snelheid: 3.60981
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.3458
+tijd verhoogd: 9.3458->9.3624
+Tijd: 9.3624
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 81.4716
+-> snelheid: 12.4813
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 45.6784
+-> snelheid: 9.14472
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.79698
+-> snelheid: 3.6332
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.3624
+tijd verhoogd: 9.3624->9.379
+Tijd: 9.379
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 81.6792
+-> snelheid: 12.4976
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 45.8304
+-> snelheid: 9.15575
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.85788
+-> snelheid: 3.65659
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.379
+tijd verhoogd: 9.379->9.3956
+Tijd: 9.3956
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 81.887
+-> snelheid: 12.5138
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 45.9827
+-> snelheid: 9.16674
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.91916
+-> snelheid: 3.67998
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.3956
+tijd verhoogd: 9.3956->9.4122
+Tijd: 9.4122
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 82.0952
+-> snelheid: 12.53
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 46.1351
+-> snelheid: 9.17769
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 4.98083
+-> snelheid: 3.70338
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.4122
+tijd verhoogd: 9.4122->9.4288
+Tijd: 9.4288
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 82.3036
+-> snelheid: 12.5462
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 46.2878
+-> snelheid: 9.18861
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 5.04289
+-> snelheid: 3.72677
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.4288
+tijd verhoogd: 9.4288->9.4454
+Tijd: 9.4454
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 82.5122
+-> snelheid: 12.5623
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 46.4406
+-> snelheid: 9.19949
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 5.10533
+-> snelheid: 3.75017
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.4454
+tijd verhoogd: 9.4454->9.462
+Tijd: 9.462
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 82.7212
+-> snelheid: 12.5783
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 46.5936
+-> snelheid: 9.21034
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 5.16817
+-> snelheid: 3.77356
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.462
+tijd verhoogd: 9.462->9.4786
+Tijd: 9.4786
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 82.9304
+-> snelheid: 12.5944
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 46.7467
+-> snelheid: 9.22115
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 5.23139
+-> snelheid: 3.79696
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.4786
+tijd verhoogd: 9.4786->9.4952
+Tijd: 9.4952
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 83.1398
+-> snelheid: 12.6103
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 46.9001
+-> snelheid: 9.23193
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 5.295
+-> snelheid: 3.82036
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.4952
+tijd verhoogd: 9.4952->9.5118
+Tijd: 9.5118
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 83.3495
+-> snelheid: 12.6263
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 47.0536
+-> snelheid: 9.24267
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 5.359
+-> snelheid: 3.84376
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.5118
+tijd verhoogd: 9.5118->9.5284
+Tijd: 9.5284
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 83.5595
+-> snelheid: 12.6422
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 47.2073
+-> snelheid: 9.25337
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 5.42339
+-> snelheid: 3.86716
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.5284
+tijd verhoogd: 9.5284->9.545
+Tijd: 9.545
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 83.7698
+-> snelheid: 12.658
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 47.3611
+-> snelheid: 9.26404
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 5.48817
+-> snelheid: 3.89057
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.545
+tijd verhoogd: 9.545->9.5616
+Tijd: 9.5616
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 83.9803
+-> snelheid: 12.6739
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 47.5152
+-> snelheid: 9.27467
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 5.55334
+-> snelheid: 3.91397
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.5616
+tijd verhoogd: 9.5616->9.5782
+Tijd: 9.5782
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 84.1911
+-> snelheid: 12.6897
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 47.6694
+-> snelheid: 9.28527
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 5.61889
+-> snelheid: 3.93737
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.5782
+tijd verhoogd: 9.5782->9.5948
+Tijd: 9.5948
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 84.4021
+-> snelheid: 12.7054
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 47.8238
+-> snelheid: 9.29583
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 5.68484
+-> snelheid: 3.96078
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.5948
+tijd verhoogd: 9.5948->9.6114
+Tijd: 9.6114
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 84.6134
+-> snelheid: 12.7211
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 47.9784
+-> snelheid: 9.30636
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 5.75117
+-> snelheid: 3.98418
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.6114
+tijd verhoogd: 9.6114->9.628
+Tijd: 9.628
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 84.825
+-> snelheid: 12.7368
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 48.1331
+-> snelheid: 9.31684
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 5.81789
+-> snelheid: 4.00759
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.628
+tijd verhoogd: 9.628->9.6446
+Tijd: 9.6446
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 85.0368
+-> snelheid: 12.7524
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 48.288
+-> snelheid: 9.3273
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 5.885
+-> snelheid: 4.031
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.6446
+tijd verhoogd: 9.6446->9.6612
+Tijd: 9.6612
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 85.2489
+-> snelheid: 12.768
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 48.4431
+-> snelheid: 9.33771
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 5.95249
+-> snelheid: 4.0544
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.6612
+tijd verhoogd: 9.6612->9.6778
+Tijd: 9.6778
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 85.4612
+-> snelheid: 12.7835
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 48.5984
+-> snelheid: 9.34809
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 6.02038
+-> snelheid: 4.07781
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.6778
+tijd verhoogd: 9.6778->9.6944
+Tijd: 9.6944
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 85.6738
+-> snelheid: 12.799
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 48.7538
+-> snelheid: 9.35844
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 6.08865
+-> snelheid: 4.10122
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.6944
+tijd verhoogd: 9.6944->9.711
+Tijd: 9.711
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 85.8867
+-> snelheid: 12.8144
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 48.9094
+-> snelheid: 9.36874
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 6.15732
+-> snelheid: 4.12463
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.711
+tijd verhoogd: 9.711->9.7276
+Tijd: 9.7276
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 86.0998
+-> snelheid: 12.8299
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 49.0652
+-> snelheid: 9.37902
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 6.22637
+-> snelheid: 4.14804
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.7276
+tijd verhoogd: 9.7276->9.7442
+Tijd: 9.7442
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 86.3131
+-> snelheid: 12.8452
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 49.2212
+-> snelheid: 9.38925
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 6.29581
+-> snelheid: 4.17144
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.7442
+tijd verhoogd: 9.7442->9.7608
+Tijd: 9.7608
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 86.5267
+-> snelheid: 12.8606
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 49.3773
+-> snelheid: 9.39945
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 6.36564
+-> snelheid: 4.19485
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.7608
+tijd verhoogd: 9.7608->9.7774
+Tijd: 9.7774
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 86.7406
+-> snelheid: 12.8759
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 49.5336
+-> snelheid: 9.40962
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 6.43586
+-> snelheid: 4.21826
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.7774
+tijd verhoogd: 9.7774->9.794
+Tijd: 9.794
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 86.9547
+-> snelheid: 12.8911
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 49.69
+-> snelheid: 9.41974
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 6.50646
+-> snelheid: 4.24167
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.794
+tijd verhoogd: 9.794->9.8106
+Tijd: 9.8106
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 87.1691
+-> snelheid: 12.9063
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 49.8466
+-> snelheid: 9.42983
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 6.57746
+-> snelheid: 4.26508
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.8106
+tijd verhoogd: 9.8106->9.8272
+Tijd: 9.8272
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 87.3837
+-> snelheid: 12.9215
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 50.0034
+-> snelheid: 9.43989
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 6.64884
+-> snelheid: 4.28849
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.8272
+tijd verhoogd: 9.8272->9.8438
+Tijd: 9.8438
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 87.5986
+-> snelheid: 12.9366
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 50.1604
+-> snelheid: 9.44991
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 6.72061
+-> snelheid: 4.3119
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.8438
+tijd verhoogd: 9.8438->9.8604
+Tijd: 9.8604
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 87.8137
+-> snelheid: 12.9517
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 50.3175
+-> snelheid: 9.45989
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 6.79277
+-> snelheid: 4.3353
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.8604
+tijd verhoogd: 9.8604->9.877
+Tijd: 9.877
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 88.0291
+-> snelheid: 12.9668
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 50.4748
+-> snelheid: 9.46984
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 6.86532
+-> snelheid: 4.35871
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.877
+tijd verhoogd: 9.877->9.8936
+Tijd: 9.8936
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 88.2447
+-> snelheid: 12.9818
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 50.6322
+-> snelheid: 9.47975
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 6.93826
+-> snelheid: 4.38211
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.8936
+tijd verhoogd: 9.8936->9.9102
+Tijd: 9.9102
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 88.4606
+-> snelheid: 12.9967
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 50.7898
+-> snelheid: 9.48962
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 7.01158
+-> snelheid: 4.4055
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.9102
+tijd verhoogd: 9.9102->9.9268
+Tijd: 9.9268
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 88.6767
+-> snelheid: 13.0116
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 50.9476
+-> snelheid: 9.49946
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 7.0853
+-> snelheid: 4.4289
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.9268
+tijd verhoogd: 9.9268->9.9434
+Tijd: 9.9434
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 88.8931
+-> snelheid: 13.0265
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 51.1055
+-> snelheid: 9.50926
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 7.1594
+-> snelheid: 4.45229
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.9434
+tijd verhoogd: 9.9434->9.96
+Tijd: 9.96
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 89.1097
+-> snelheid: 13.0414
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 51.2636
+-> snelheid: 9.51903
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 7.23389
+-> snelheid: 4.47568
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.96
+tijd verhoogd: 9.96->9.9766
+Tijd: 9.9766
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 89.3265
+-> snelheid: 13.0562
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 51.4219
+-> snelheid: 9.52875
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 7.30877
+-> snelheid: 4.49907
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.9766
+tijd verhoogd: 9.9766->9.9932
+Tijd: 9.9932
+Voertuig 1
+-> baan: Middelheimlaan
+-> positie: 89.5436
+-> snelheid: 13.0709
+-> type: auto
+Voertuig 2
+-> baan: Middelheimlaan
+-> positie: 51.5803
+-> snelheid: 9.53845
+-> type: bus
+Voertuig 3
+-> baan: Middelheimlaan
+-> positie: 7.38403
+-> snelheid: 4.52245
+-> type: auto
+1
+Verkeerslicht op 400 heeft kleur: rood
+9.9932
+tijd verhoogd: 9.9932->10.0098

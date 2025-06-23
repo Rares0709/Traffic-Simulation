@@ -1201,6 +1201,36 @@ TEST(TypeVoertuig,VoertuigLatenDoorrijdenFalse) {
     EXPECT_GT(voertuig.positie1(),verkeerslicht.positie1());
     Voertuig::resetVolgendeNummer();
 }
+TEST(OutputTest, OutputCorrect) {
+    // Setup
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+
+    parseFile("test/test1.xml", &banen, &verkeerslichten, &voertuigen, &voertuigengen, &bushaltes, &kruispunten);
+    TrafficSim traffic(banen, verkeerslichten, voertuigen, voertuigengen, bushaltes, kruispunten);
+
+    std::streambuf* orig_buf = std::cout.rdbuf();
+    std::ostringstream buffer;
+    std::cout.rdbuf(buffer.rdbuf());
+
+    traffic.Simulate(10);
+    std::cout.rdbuf(orig_buf);
+
+    std::ifstream expected_file("../output.txt");
+    ASSERT_TRUE(expected_file.is_open()) << "Kon expected_output.txt niet openen";
+
+    std::stringstream expected_buffer;
+    expected_buffer << expected_file.rdbuf();
+
+    std::string actual = buffer.str();
+    std::string expected = expected_buffer.str();
+
+    EXPECT_EQ(actual, expected) << "De output van de simulatie komt niet overeen met de verwachte output.";
+}
 //Alle testen!
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);

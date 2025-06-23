@@ -59,7 +59,7 @@ void VoertuigGen::simVoertuiggenerator(std::vector<Voertuig>* voertuigen, double
             this->set_laatste_tijd(currTime);
 
             if (!testingMode) {
-                std::cout<<"Er is een nieuw voertuig toegevoegd. "<<std::endl;
+                std::cout<<"Er is een nieuw voertuig toegevoegd."<<std::endl;
             }
             ENSURE(voertuigen->size() == origineleGrootte + 1, "Er is succesvol een voertuig toegevoegd.");
             ENSURE(voertuigen->back().positie1() == 0, "Het nieuwe voertuig start op positie 0.");
