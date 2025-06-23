@@ -50,90 +50,7 @@ public:
           bushaltes(bushaltes),
           kruispunten(kruispunten){
     }
-    /**
-     * Deze functie berekent de versnelling van het voertuig.
-     * @param voertuig is het voertuig.
-     */
-    /**
-     *@author Ilyas Sefiani
-     *@author Rares Grama
-     *@date /
-     *@version
-     */
-    void berekenVersnelling(Voertuig& voertuig);
-    /**
-     * Deze functie berekent de snelheid van het voertuig.
-     * @param voertuig is het voertuig.
-     */
-    /**
-     *@author Ilyas Sefiani
-     *@author Rares Grama
-     *@date /
-     *@version
-     */
-    void berekenSnelheid(Voertuig& voertuig);
-    /**
-     * Deze functie berekent hoe het voertuig kan versnellen.
-     * @param voertuig is het voertuig.
-     */
-    /**
-     *@author Ilyas Sefiani
-     *@date /
-     *@version
-     */
-    void versnellen(Voertuig& voertuig);
-    /**
-     * Deze functie berekent hoe het voertuig kan vertragen.
-     * @param voertuig is het voertuig.
-     */
-    /**
-     *@author Rares Grama
-     *@date /
-     *@version
-     */
-    Voertuig vertragen(Voertuig& voertuig);
-    /**
-     * Deze functie bekijkt of het voertuig in zijn baan mag blijven.
-     * @param voertuig is het voertuig.
-     */
-    /**
-     *@author Ilyas Sefiani
-     *@author Jonas Saelens
-     *@date /
-     *@version
-     */
-    void geldig(Voertuig& voertuig);
-    /**
-     * Deze functie zorgt ervoor wat de auto's doen op basis van de cyclus van het verkeerslicht en deze functie checkt of het voertuig een prioriteitsvoertuig is.
-     * @param verkeerslicht is het verkeerslicht.
-     */
-    /**
-     *@author Rares Grama
-     *@author Ilyas Sefiani
-     *@author Jonas Saelens
-     *@date /
-     *@version
-     */
-    void verkeerslichtSim(Verkeersverkeerslicht& verkeerslicht);
-    /**
-     *Deze functie zorgt ervoor wat de auto's doen op basis van de cyclus van het verkeerslicht en deze functie checkt of het voertuig een prioriteitsvoertuig is.
-     */
-    /**
-     *@author Jonas Saelens
-     *@date /
-     *@version
-     */
-    void checkverkeerslicht();
-    /**
-     *Deze functie genereert voertuigen.
-     */
-    /**
-     *@author Rares Grama
-     *@author Ilyas Sefiani
-     *@date /
-     *@version
-     */
-    void simVoertuiggenerator();
+
 
     std::vector<Baan> get_banen() const {
         return banen;
@@ -142,17 +59,6 @@ public:
     void setBanen(std::vector<Baan> &banen) {
         this->banen = banen;
     }
-    /**
-   * Deze functie verwijdert voertuigen.
-   * @param voertuig is het voertuig.
-   */
-    /**
-     *@author Jonas Saelens
-     *@author Ilyas Sefiani
-     *@date /
-     *@version
-     */
-    void wagenToDelete(Voertuig &voertuig);
 
     void voegbaantoe(Baan &baan) {
         this->banen.push_back(baan);
@@ -208,16 +114,6 @@ public:
     double& getDeltaTime() {
         return DeltaTime;
     }
-    /**
-    * Deze functie checkt of een bus moet stoppen aan een bushalte.
-    * @param bus is het voertuig.
-    */
-    /**
-     *@author Rares Grama
-     *@date /
-     *@version
-     */
-    void simBushaltes(Voertuig &bus);
 
     std::vector<Verkeersverkeerslicht> getVerkeerslichten() const {
         return verkeerslichten;
@@ -286,7 +182,6 @@ public:
      *@version
      */
     void kruispuntSim(/*std::vector<Kruispunt> kruispunten, */Voertuig& voertuig/*, std::vector<Baan>& banen*/);
-
 
 };
 

@@ -198,7 +198,16 @@ public:
      */
 
     void geldig(std::vector<Baan>& banen,Voertuig& voertuigtodelete,std::vector<Voertuig>* toDelete);
-
+    /**
+   * Deze functie verwijdert voertuigen.
+   * @param voertuig is het voertuig.
+   */
+    /**
+     *@author Jonas Saelens
+     *@author Ilyas Sefiani
+     *@date /
+     *@version
+     */
     void wagenToDelete(Voertuig &voertuig,std::vector<Voertuig>* toDelete);
 
 };

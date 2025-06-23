@@ -142,25 +142,33 @@ void TrafficSim::Simulate(double duration) {
              verkeerslicht.clear_voertuigvoorlicht();
         }
     }
-    //ENSURE(!verkeerslichten.empty(), "Na simulatie mogen de verkeerslichten niet leeg zijn.");
     ENSURE(time >= 0, "De tijd moet positief zijn na simulatie.");
 }
 void TrafficSim::verhoogTijd() {
+    REQUIRE(DeltaTime >= 0, "DeltaTime moet groter of gelijk zijn aan 0.");
+    REQUIRE(time >= 0, "De tijd moet positief zijn vóór het verhogen.");
     double oldTime = this->time;
     double add = this->DeltaTime;
     setTime(this->time+add);
     if (!testingMode) {
         std::cout << "tijd verhoogd: " << oldTime << "->" << this->time << std::endl;
     }
+    ENSURE(time == oldTime + DeltaTime, "De tijd is niet correct verhoogd.");
+    ENSURE(time >= 0, "De tijd moet positief zijn na simulatie.");
 }
 void TrafficSim::print() const {
+    REQUIRE(time >= 0, "De tijd moet positief zijn om af te drukken.");
+    REQUIRE(!voertuigen.empty(), "Er moeten voertuigen zijn om af te drukken.");
     std::cout << "Tijd: " << time << std::endl;
     for (const auto& voertuig : voertuigen) {
+        REQUIRE(voertuig.baan1() != nullptr, "Voertuig moet een geldige baan hebben.");
         std::cout << "Voertuig " << voertuig.voertuig_nummer() << std::endl;
         std::cout << "-> baan: " << voertuig.baan1()->naam1() << std::endl;
         std::cout << "-> positie: " << voertuig.positie1() << std::endl;
         std::cout << "-> snelheid: " << voertuig.snelheid1() << std::endl;  // Snelheid is placeholder
     }
+    ENSURE(time >= 0, "De tijd moet positief blijven na het printen.");
+    ENSURE(!voertuigen.empty(), "De voertuigenlijst mag niet leeg zijn na het printen.");
 }
 
 

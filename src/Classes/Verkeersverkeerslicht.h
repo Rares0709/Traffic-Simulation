@@ -56,6 +56,17 @@ public:
 
     void clear_voertuigvoorlicht();
 
+    /**
+     * Deze functie zorgt ervoor wat de auto's doen op basis van de cyclus van het verkeerslicht en deze functie checkt of het voertuig een prioriteitsvoertuig is.
+     * @param verkeerslicht is het verkeerslicht.
+     */
+    /**
+     *@author Rares Grama
+     *@author Ilyas Sefiani
+     *@author Jonas Saelens
+     *@date /
+     *@version
+     */
     void verkeerslichtSim(Verkeersverkeerslicht& verkeerslicht, std::vector<Voertuig> voertuigen, double currTime, bool testingMode = false);
     /**
      *Deze functie zorgt ervoor wat de auto's doen op basis van de cyclus van het verkeerslicht en deze functie checkt of het voertuig een prioriteitsvoertuig is.

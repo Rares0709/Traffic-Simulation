@@ -31,7 +31,16 @@ public:
     int to_positie() const;
 
     void set_to_positie(int to_positie);
-
+    /**
+    * Deze functie simuleert kruispunten.
+    * @param voertuig is het voertuig.
+    */
+    /**
+     *@author Jonas Saelens
+     *@author Ilyas Sefiani
+     *@date /
+     *@version
+     */
     void kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen);
 };
 
