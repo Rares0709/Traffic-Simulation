@@ -103,6 +103,7 @@ TEST(Demonstratie, SimulatieVanVerkeerslicht) {
     std::cout << "de kleur van dit verkeerslicht na zijn cyclus is: " << verkeerslicht.kleur1() << std::endl;
     EXPECT_EQ(verkeerslicht.kleur1(), "groen");
 
+    voertuigen[0].set_positie(verkeerslichten[0].positie1() - voertuigen[0].stopafstand1()+1);
     TrafficSim trafficSim1(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
     trafficSim1.TestingModeOn();
     double duration = 0.0166;
