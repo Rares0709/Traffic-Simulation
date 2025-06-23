@@ -163,6 +163,53 @@ TEST(Demonstratie, RijdenMetType) {
     std::cout << "Voertuig " << trafficSim.getVoertuigen()[0].voertuig_nummer() << " is niet gestopt" << std::endl;
     Voertuig::resetVolgendeNummer();
 }
+TEST(Demonstratie, SimulatieBushalte) {
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/Demonstratie.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+    trafficSim.TestingModeOn();
+
+    double duration = 0.0166;
+    while (!trafficSim.getVoertuigen()[1].gestopt1()) {
+        trafficSim.Simulate(duration);
+        duration += 0.0166;
+    }
+    ASSERT_EQ(trafficSim.getVoertuigen()[1].gestopt1(), true);
+    std::cout << "Voertuig " << trafficSim.getVoertuigen()[0].voertuig_nummer() << " is gestopt aan een bushalte" << std::endl;
+    Voertuig::resetVolgendeNummer();
+}
+TEST(Demonstratie, SimulatieKruispunt) {
+    std::vector<Baan> banen;
+    std::vector<Verkeersverkeerslicht> verkeerslichten;
+    std::vector<Voertuig> voertuigen;
+    std::vector<VoertuigGen> voertuigengen;
+    std::vector<Bushalte> bushaltes;
+    std::vector<Kruispunt> kruispunten;
+    parseFile("test/Demonstratie.xml",&banen,&verkeerslichten,&voertuigen,&voertuigengen,&bushaltes,&kruispunten);
+    voertuigen.clear();
+    Voertuig::resetVolgendeNummer();
+    Ziekenwagen voertuig;
+    voertuig.set_positie(300);
+    voertuig.set_baan(&banen[0]);
+    voertuigen.push_back(voertuig);
+    TrafficSim trafficSim(banen,verkeerslichten,voertuigen,voertuigengen,bushaltes,kruispunten);
+    trafficSim.TestingModeOn();
+
+    trafficSim.getVoertuigen()[0].set_positie(260);
+    std::string origineleBaan = voertuigen[0].baan1()->naam1();
+    std::cout << "de baan van voertuig " << voertuigen[0].voertuig_nummer() << " is " << voertuigen[0].baan1()->naam1() << " voor het kruispunt" << std::endl;
+    while (origineleBaan == trafficSim.getVoertuigen()[0].baan1()->naam1()) {
+        trafficSim.get_kruispunten()[0].kruispuntSim(trafficSim.getVoertuigen()[0], banen);
+    }
+    std::cout << "de baan van voertuig " << trafficSim.getVoertuigen()[0].voertuig_nummer() << " is " << trafficSim.getVoertuigen()[0].baan1()->naam1() << " na het kruispunt" << std::endl;
+
+    Voertuig::resetVolgendeNummer();
+}
 
 
 
