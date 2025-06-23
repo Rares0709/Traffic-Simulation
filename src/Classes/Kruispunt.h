@@ -41,7 +41,7 @@ public:
      *@date /
      *@version
      */
-    void kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen);
+    void kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen, bool testingMode=false);
 };
 
 

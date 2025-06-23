@@ -21,7 +21,6 @@ class Verkeersverkeerslicht {
     std::string kleur="rood";
     double laatsteTijd = 0;
     std::vector<Voertuig> voertuigenVoorLicht;
-    bool testingMode = false;
 
 public:
     void set_positie(int positie);
@@ -76,10 +75,7 @@ public:
      *@date /
      *@version
      */
-    void checkverkeerslicht(std::vector<Voertuig>* voertuigen);
-    void TestingModeOn() {
-        testingMode = true;
-    }
+    void checkverkeerslicht(std::vector<Voertuig>* voertuigen, bool testingMode=false);
 
 };
 

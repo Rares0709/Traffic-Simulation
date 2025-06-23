@@ -45,7 +45,6 @@ void TrafficSim::Simulate(double duration) {
         for (Verkeersverkeerslicht& verkeerslicht : verkeerslichten) {
             for (Voertuig& voertuig : voertuigen) {
                 if (voertuig.positie1() < verkeerslicht.positie1()) {
-                    // Only add if not already in usedVoertuigen
                     auto it = std::find_if(usedVoertuigen.begin(), usedVoertuigen.end(), [&](const Voertuig& v) {
                         return v.voertuig_nummer() == voertuig.voertuig_nummer();
                     });
@@ -61,7 +60,7 @@ void TrafficSim::Simulate(double duration) {
         }
         if (!verkeerslichten.empty())
             for (Verkeersverkeerslicht verkeerslicht : verkeerslichten)
-                verkeerslicht.checkverkeerslicht(&voertuigen);
+                verkeerslicht.checkverkeerslicht(&voertuigen, testingMode);
             /*checkverkeerslicht();*/
         for (auto& voertuig : voertuigen) {
             voertuig.berekenSnelheid(DeltaTime);
@@ -77,12 +76,12 @@ void TrafficSim::Simulate(double duration) {
             //geldig(voertuig);
             if (!kruispunten.empty())
                 for (Kruispunt& kruispunt : kruispunten) {
-                    kruispunt.kruispuntSim(voertuig,banen);
+                    kruispunt.kruispuntSim(voertuig,banen, testingMode);
                 }
                 //kruispuntSim(voertuig);
             if (voertuig.type1() == "bus" && !bushaltes.empty())
                 for (Bushalte& bushalte : bushaltes) {
-                    bushalte.simBushaltes(voertuig);
+                    bushalte.simBushaltes(voertuig, testingMode);
                 }
                 //simBushaltes(voertuig);
         }
@@ -136,7 +135,7 @@ void TrafficSim::Simulate(double duration) {
         verhoogTijd();
         if (!voertuigengen.empty())
             for (VoertuigGen& gen : voertuigengen)
-                gen.simVoertuiggenerator(&voertuigen, time);
+                gen.simVoertuiggenerator(&voertuigen, time, testingMode);
             //simVoertuiggenerator();
         for (Verkeersverkeerslicht &verkeerslicht: verkeerslichten) {
              verkeerslicht.clear_voertuigvoorlicht();
@@ -165,7 +164,8 @@ void TrafficSim::print() const {
         std::cout << "Voertuig " << voertuig.voertuig_nummer() << std::endl;
         std::cout << "-> baan: " << voertuig.baan1()->naam1() << std::endl;
         std::cout << "-> positie: " << voertuig.positie1() << std::endl;
-        std::cout << "-> snelheid: " << voertuig.snelheid1() << std::endl;  // Snelheid is placeholder
+        std::cout << "-> snelheid: " << voertuig.snelheid1() << std::endl;
+        std::cout << "-> type: " << voertuig.type1() << std::endl;
     }
     ENSURE(time >= 0, "De tijd moet positief blijven na het printen.");
     ENSURE(!voertuigen.empty(), "De voertuigenlijst mag niet leeg zijn na het printen.");

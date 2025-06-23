@@ -36,7 +36,7 @@ public:
      *@date /
      *@version
      */
-    void simBushaltes(Voertuig& bus);
+    void simBushaltes(Voertuig& bus, bool testingMode=false);
 
 };
 

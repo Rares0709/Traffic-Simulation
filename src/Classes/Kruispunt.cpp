@@ -44,7 +44,7 @@ void Kruispunt::set_to_positie(int to_positie) {
     toPositie = to_positie;
     ENSURE(this->toPositie==to_positie,"De (to)positie is verkeerd geset.");
 }
-void Kruispunt::kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen) {
+void Kruispunt::kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen, bool testingMode) {
     REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
     REQUIRE(banen.size()>=2, "Er moeten minstens 2 banen aanwezig zijn.");
     REQUIRE(voertuig.baan1() != nullptr, "Voertuig moet een geldige baan hebben.");
@@ -72,6 +72,9 @@ void Kruispunt::kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen) {
                     voertuig.set_baan(this->to_baan());
                     voertuig.set_positie(this->to_positie());
                     voertuig.set_gedraait(true);
+                    if (!testingMode) {
+                        std::cout<<"Voertuig "<<voertuig.voertuig_nummer()<<" gaat naar "<<voertuig.baan1()->naam1()<<std::endl;
+                    }
                 }
             }
         }
@@ -94,6 +97,9 @@ void Kruispunt::kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen) {
                     voertuig.set_baan(this->from_baan());
                     voertuig.set_positie(this->from_positie());
                     voertuig.set_gedraait(true);
+                    if (!testingMode) {
+                        std::cout<<"Voertuig "<<voertuig.voertuig_nummer()<<" gaat naar "<<voertuig.baan1()->naam1()<<std::endl;
+                    }
                 }
             }
         }

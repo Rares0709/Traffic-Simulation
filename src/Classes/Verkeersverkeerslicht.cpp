@@ -82,7 +82,7 @@ void Verkeersverkeerslicht::clear_voertuigvoorlicht() {
     voertuigenVoorLicht.clear();
     ENSURE(voertuigenVoorLicht.empty(), "Alle voertuigen zijn succesvol verwijderd.");
 }
-void Verkeersverkeerslicht::checkverkeerslicht(std::vector<Voertuig>* voertuigen) {
+void Verkeersverkeerslicht::checkverkeerslicht(std::vector<Voertuig>* voertuigen, bool testingMode) {
     REQUIRE(voertuigen != nullptr, "De lijst met voertuigen mag niet null zijn.");
     REQUIRE(this->positie1() >= 0, "De positie van het verkeerslicht moet positief zijn.");
     if (this->kleur1()==this->rood1()) {
@@ -101,6 +101,9 @@ void Verkeersverkeerslicht::checkverkeerslicht(std::vector<Voertuig>* voertuigen
             double Stop = this->positie1() - eersteVoertuig.stopafstand1();
             REQUIRE(Vertraag <= this->positie1() && Stop <= this->positie1(), "Vertraag- en stopafstand moeten vóór het verkeerslicht liggen.");
             if (eersteVoertuig.positie1() < Stop && eersteVoertuig.positie1() >= Vertraag) {
+                if (!testingMode) {
+                    std::cout<<"Voertuig "<<eersteVoertuig.voertuig_nummer()<<" gaat vertragen."<<std::endl;
+                }
                 eersteVoertuig.vertragen();
                 for (auto& voertuig : this->voertuigen_voor_licht()) {
                     if (voertuig.voertuig_nummer() == eersteVoertuig.voertuig_nummer()) {
@@ -158,8 +161,12 @@ void Verkeersverkeerslicht::verkeerslichtSim(Verkeersverkeerslicht& verkeerslich
                 }
             }
             eersteVoertuig.set_gestopt(false);
-            if (eersteGevonden)
+            if (eersteGevonden) {
+                if (!testingMode) {
+                    std::cout<<"Voertuig "<<eersteVoertuig.voertuig_nummer()<<" gaat terug starten."<<std::endl;
+                }
                 eersteVoertuig.versnellen();
+            }
         }
         else if (verkeerslicht.kleur1()==verkeerslicht.groen1()) {
             verkeerslicht.set_kleur("rood");
@@ -179,6 +186,9 @@ void Verkeersverkeerslicht::verkeerslichtSim(Verkeersverkeerslicht& verkeerslich
                 double Stop = verkeerslicht.positie1() - eersteVoertuig.stopafstand1();
                 REQUIRE(Vertraag <= verkeerslicht.positie1() && Stop <= verkeerslicht.positie1(), "Stop- en vertraagafstand moeten vóór het verkeerslicht liggen.");
                 if (eersteVoertuig.positie1() < Stop && eersteVoertuig.positie1() >= Vertraag) {
+                    if (!testingMode) {
+                        std::cout<<"Voertuig "<<eersteVoertuig.voertuig_nummer()<<" gaat vertragen."<<std::endl;
+                    }
                     eersteVoertuig.vertragen();
                     for (auto& voertuig : verkeerslicht.voertuigen_voor_licht()) {
                         if (voertuig.voertuig_nummer() == eersteVoertuig.voertuig_nummer()) {
@@ -191,6 +201,9 @@ void Verkeersverkeerslicht::verkeerslichtSim(Verkeersverkeerslicht& verkeerslich
                         }
                     }
                 } else if (eersteVoertuig.positie1() < verkeerslicht.positie1() && eersteVoertuig.positie1() >= Stop) {
+                    if (!testingMode) {
+                        std::cout<<"Voertuig "<<eersteVoertuig.voertuig_nummer()<<" gaat stoppen."<<std::endl;
+                    }
                     //stoppen(eersteVoertuig);
                     eersteVoertuig.set_gestopt(true);
                     for (auto& voertuig : verkeerslicht.voertuigen_voor_licht()) {

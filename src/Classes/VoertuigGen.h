@@ -33,7 +33,7 @@ public:
      *@date /
      *@version
      */
-    void simVoertuiggenerator(std::vector<Voertuig>* voertuigen, double currTime);
+    void simVoertuiggenerator(std::vector<Voertuig>* voertuigen, double currTime, bool testingMode=false);
 
 };
 

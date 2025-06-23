@@ -35,7 +35,7 @@ void Bushalte::set_wachttijd(int wachttijd) {
     this->wachttijd = wachttijd;
     ENSURE(this->wachttijd == wachttijd, "De wachttijd moet correct zijn toegewezen.");
 }
-void Bushalte::simBushaltes(Voertuig &bus) {
+void Bushalte::simBushaltes(Voertuig &bus, bool testingMode) {
     REQUIRE(bus.type1() == "bus", "Het voertuig moet een bus zijn.");
     REQUIRE(this->positie1() >= 0, "De positie van de bushalte moet positief zijn.");
     REQUIRE(bus.positie1() >= 0, "De positie van de bus moet positief zijn.");
@@ -51,9 +51,15 @@ void Bushalte::simBushaltes(Voertuig &bus) {
         bus.set_timestop(1);
     }
     if (bus.positie1() >= Vertraag && bus.positie1() <= Stop) {
+        if (!testingMode) {
+            std::cout<<"Bus "<<bus.voertuig_nummer()<<" gaat vertragen."<<std::endl;
+        }
         bus.vertragen();
     } else if(!bus.recent_gestopt() && bus.positie1() >= Stop && bus.positie1() <= this->positie1()) {
         bus.set_gestopt(true);
+        if (!testingMode) {
+            std::cout<<"Bus "<<bus.voertuig_nummer()<<" gaat stoppen."<<std::endl;
+        }
     } else if (bus.recent_gestopt() && bus.positie1() > this->positie1()){
         bus.set_recent_gestopt(false);
     }
@@ -61,6 +67,9 @@ void Bushalte::simBushaltes(Voertuig &bus) {
         bus.versnellen();
         bus.set_gestopt(false);
         bus.set_timestop(0);
+        if (!testingMode) {
+            std::cout<<"Bus "<<bus.voertuig_nummer()<<" gaat vertrekken."<<std::endl;
+        }
     }
     ENSURE(bus.timestop1() >= 0, "De tijd dat de bus gestopt is moet niet negatief zijn.");
     ENSURE(!bus.recent_gestopt() || bus.positie1() >= this->positie1(), "Als de bus recent gestopt is, moet hij voorbij de bushalte zijn.");

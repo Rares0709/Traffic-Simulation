@@ -34,7 +34,7 @@ void VoertuigGen::set_laatste_tijd(int laatste_tijd) {
     ENSURE(this->laatsteTijd == laatste_tijd, "Laatste tijd is correct ingesteld.");
 }
 
-void VoertuigGen::simVoertuiggenerator(std::vector<Voertuig>* voertuigen, double currTime) {
+void VoertuigGen::simVoertuiggenerator(std::vector<Voertuig>* voertuigen, double currTime, bool testingMode) {
     REQUIRE(voertuigen != nullptr, "De voertuigenlijst mag niet null zijn.");
     REQUIRE(currTime >= 0.0, "Huidige tijd moet positief zijn.");
     REQUIRE(this->baan1() != nullptr, "Voertuiggenerator moet aan een geldige baan gekoppeld zijn.");
@@ -58,6 +58,9 @@ void VoertuigGen::simVoertuiggenerator(std::vector<Voertuig>* voertuigen, double
             voertuigen->push_back(nieuwVoertuig);
             this->set_laatste_tijd(currTime);
 
+            if (!testingMode) {
+                std::cout<<"Er is een nieuw voertuig toegevoegd. "<<std::endl;
+            }
             ENSURE(voertuigen->size() == origineleGrootte + 1, "Er is succesvol een voertuig toegevoegd.");
             ENSURE(voertuigen->back().positie1() == 0, "Het nieuwe voertuig start op positie 0.");
         }
