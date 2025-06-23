@@ -227,8 +227,7 @@ void Voertuig::set_type(const std::string &type) {
     ENSURE(this->fmin==fmin,"De verkeerde fmin werd geset.");
 }
 void Voertuig::berekenVersnelling(Voertuig* voertuig2) {
-    // REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
-    // REQUIRE(!voertuigen.empty(), "Er bevindt zich geen voertuig op de baan.");
+    REQUIRE(voertuig2 != nullptr,"voertuig2 mag geen nullptr zijn");
     int indexLijst = this->voertuig_nummer() - 1;
     if (indexLijst > 0) {
         if (this->gestopt1()) {
@@ -250,11 +249,10 @@ void Voertuig::berekenVersnelling(Voertuig* voertuig2) {
             this->set_versnelling(versnelling);
         }
     }
-    // ENSURE(std::isfinite(this->versnelling1()), "Versnelling moet een geldig getal zijn.");
+    ENSURE(std::isfinite(this->versnelling1()), "Versnelling moet een geldig getal zijn.");
 }
 void Voertuig::berekenSnelheid(double& DeltaTime) {
-    // REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
-    // REQUIRE(!voertuigen.empty(), "Er bevindt zich geen voertuig op de baan.");
+    REQUIRE(DeltaTime >=0 , "DeltaTime moet positief of 0 zijn.");
     double snelheid = this->snelheid1();
     double versnelling = this->versnelling1();
     double formule = snelheid + (versnelling*DeltaTime);
@@ -276,13 +274,12 @@ void Voertuig::berekenSnelheid(double& DeltaTime) {
     }
     /*}*/
     this->set_snelheid(snelheid);
-    // ENSURE(this->snelheid1() >= 0, "Snelheid mag niet negatief zijn.");
-    // ENSURE(std::isfinite(this->positie1()), "Positie moet een geldig getal zijn.");
+    ENSURE(this->snelheid1() >= 0, "Snelheid mag niet negatief zijn.");
+    ENSURE(std::isfinite(this->positie1()), "Positie moet een geldig getal zijn.");
 
 }
 void Voertuig::versnellen() {
-    // REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
-    // REQUIRE(!voertuigen.empty(), "Er bevindt zich geen voertuig op de baan.");
+    REQUIRE(this->m_Maxsnelheid() >=0, "mMaxsnelheid moet positief zijn of 0.");
     this->set_maxsnelheid(this->m_Maxsnelheid());
     /*int indexLijst = voertuig.voertuigNummer - 1;
     if (indexLijst == 0) {
@@ -292,19 +289,19 @@ void Voertuig::versnellen() {
             voertuig.maxsnelheid = voertuig2.mMaxsnelheid;
         }
     }*/
-    // ENSURE(this->maxsnelheid1() == this->m_Maxsnelheid(), "Voertuig moet zijn maximumsnelheid terug hebben.");
+    ENSURE(this->maxsnelheid1() == this->m_Maxsnelheid(), "Voertuig moet zijn maximumsnelheid terug hebben.");
 }
 void Voertuig::vertragen() {
-    // REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
-    // REQUIRE(!voertuigen.empty(), "Er bevindt zich geen voertuig op de baan.");
+    REQUIRE(this->vertraagfactor1() > 0 && this->vertraagfactor1() < 1, "Vertraagfactor moet tussen 0 en 1 zijn.");
+    REQUIRE(this->m_Maxsnelheid() >= 0, "mMaxsnelheid moet positief zijn of 0.");
     double s=this->vertraagfactor1();
     this->set_maxsnelheid(s*this->m_Maxsnelheid());
-    // ENSURE(this->maxsnelheid1() < this->m_Maxsnelheid(), "Na vertraging moet maxsnelheid lager zijn.");
+    ENSURE(this->maxsnelheid1() < this->m_Maxsnelheid(), "Na vertraging moet maxsnelheid lager zijn.");
 }
 
 void Voertuig::geldig(std::vector<Baan>& banen,Voertuig& voertuigtodelete,std::vector<Voertuig>* toDelete) {
-    // REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
-    // REQUIRE(!voertuigen.empty(), "Er bevindt zich geen voertuig op de baan.");
+    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    REQUIRE(toDelete != nullptr, "De toDelete mag niet null zijn.");
     //int indexLijst = this->voertuig_nummer() - 1;
     std::string baannaam = this->baan1()->naam1();
     int lengte =0;
@@ -329,10 +326,18 @@ void Voertuig::geldig(std::vector<Baan>& banen,Voertuig& voertuigtodelete,std::v
         /*std::cout << "er gebeurt niks" << std::endl;*/
     }
     std::string baanNaam=this->baan1()->naam1();
-    // ENSURE(std::find_if(toDelete.begin(), toDelete.end(), [&](const Voertuig& v) { return v.voertuig_nummer() == voertuig.voertuig_nummer(); }) != toDelete.end() || voertuig.positie1() <= getBaanLengte(baanNaam, banen), "Voertuig is ongeldig verwijderd of buiten baan.");
+    ENSURE(this->positie1() <= lengte || toDelete->back().voertuig_nummer() == voertuigtodelete.voertuig_nummer(), "Voertuig moet op baan blijven of correct worden verwijderd.");
 }
 void Voertuig::wagenToDelete(Voertuig &voertuig,std::vector<Voertuig>* toDelete) {
+    REQUIRE(toDelete != nullptr, "De toDelete mag niet null zijn.");
     toDelete->push_back(voertuig);
-    // ENSURE(!toDelete.empty(), "Voertuig werd niet aan de deletelijst toegevoegd.");
-    // ENSURE(toDelete.back().voertuig_nummer() == voertuig.voertuig_nummer(), "Laatste voertuig in deletelijst is niet het toegevoegde voertuig.");
+    bool gevondenVoertuig = false;
+    for (const Voertuig& Voertuig : *toDelete) {
+        if (&Voertuig == &voertuig) {
+            gevondenVoertuig = true;
+            break;
+        }
+    }
+    ENSURE(gevondenVoertuig, "Voertuig werd niet aan de deletelijst toegevoegd.");
+    ENSURE(toDelete->back().voertuig_nummer() == voertuig.voertuig_nummer(), "Laatste voertuig in deletelijst is niet het toegevoegde voertuig.");
 }
