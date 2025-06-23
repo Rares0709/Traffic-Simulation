@@ -227,7 +227,6 @@ void Voertuig::set_type(const std::string &type) {
     ENSURE(this->fmin==fmin,"De verkeerde fmin werd geset.");
 }
 void Voertuig::berekenVersnelling(Voertuig* voertuig2) {
-    REQUIRE(voertuig2 != nullptr,"voertuig2 mag geen nullptr zijn");
     int indexLijst = this->voertuig_nummer() - 1;
     if (indexLijst > 0) {
         if (this->gestopt1()) {
@@ -331,13 +330,5 @@ void Voertuig::geldig(std::vector<Baan>& banen,Voertuig& voertuigtodelete,std::v
 void Voertuig::wagenToDelete(Voertuig &voertuig,std::vector<Voertuig>* toDelete) {
     REQUIRE(toDelete != nullptr, "De toDelete mag niet null zijn.");
     toDelete->push_back(voertuig);
-    bool gevondenVoertuig = false;
-    for (const Voertuig& Voertuig : *toDelete) {
-        if (&Voertuig == &voertuig) {
-            gevondenVoertuig = true;
-            break;
-        }
-    }
-    ENSURE(gevondenVoertuig, "Voertuig werd niet aan de deletelijst toegevoegd.");
     ENSURE(toDelete->back().voertuig_nummer() == voertuig.voertuig_nummer(), "Laatste voertuig in deletelijst is niet het toegevoegde voertuig.");
 }

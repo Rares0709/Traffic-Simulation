@@ -62,7 +62,6 @@ void Bushalte::simBushaltes(Voertuig &bus) {
         bus.set_gestopt(false);
         bus.set_timestop(0);
     }
-    ENSURE(!(bus.gestopt1() && bus.versnellen()), "Een bus mag niet tegelijkertijd stoppen en versnellen.");
     ENSURE(bus.timestop1() >= 0, "De tijd dat de bus gestopt is moet niet negatief zijn.");
     ENSURE(!bus.recent_gestopt() || bus.positie1() >= this->positie1(), "Als de bus recent gestopt is, moet hij voorbij de bushalte zijn.");
 

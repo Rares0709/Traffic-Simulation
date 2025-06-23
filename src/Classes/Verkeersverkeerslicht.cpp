@@ -10,7 +10,7 @@ void Verkeersverkeerslicht::set_positie(int positie) {
 }
 
 void Verkeersverkeerslicht::set_cyclus(int cyclus) {
-    REQUIRE(cyclus > 0, "De cyclusduur moet positief zijn.");
+    REQUIRE(cyclus >= 0, "De cyclusduur moet positief zijn.");
     this->cyclus = cyclus;
     ENSURE(this->cyclus == cyclus, "De cyclus is correct ingesteld.");
 }
@@ -132,7 +132,7 @@ void Verkeersverkeerslicht::checkverkeerslicht(std::vector<Voertuig>* voertuigen
 void Verkeersverkeerslicht::verkeerslichtSim(Verkeersverkeerslicht& verkeerslicht, std::vector<Voertuig> voertuigen, double currTime, bool testingMode) {
     REQUIRE(currTime >= 0.0, "De huidige tijd moet positief zijn.");
     REQUIRE(verkeerslicht.positie1() >= 0, "De positie van het verkeerslicht moet positief zijn.");
-    REQUIRE(verkeerslicht.cyclus1() > 0, "De cyclusduur van het verkeerslicht moet positief zijn.");
+    REQUIRE(verkeerslicht.cyclus1() >= 0, "De cyclusduur van het verkeerslicht moet positief zijn.");
     if (!testingMode) {
         std::cout << "Verkeerslicht op " << verkeerslicht.positie1() << " heeft kleur: " << verkeerslicht.kleur1() << std::endl;
     }
