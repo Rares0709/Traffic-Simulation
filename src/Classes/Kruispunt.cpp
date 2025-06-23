@@ -3,10 +3,53 @@
 //
 
 #include "Kruispunt.h"
+Baan* Kruispunt::from_baan() const {
+    ENSURE(this->fromBaan==fromBaan,"De getter geeft de verkeerde (from)baan mee.");
+    return fromBaan;
+}
+
+void Kruispunt::set_from_baan(Baan * from_baan) {
+    fromBaan = from_baan;
+    ENSURE(this->fromBaan==from_baan,"De (from)baan is niet correct geset.");
+}
+
+int Kruispunt::from_positie() const {
+    ENSURE(this->fromPositie==fromPositie,"De getter geeft de verkeerde (from)positie mee.");
+    return fromPositie;
+}
+
+void Kruispunt::set_from_positie(int from_positie) {
+    REQUIRE(from_positie >= 0, "De (from)positie kan alleen 0 of hoger zijn!");
+    fromPositie = from_positie;
+    ENSURE(this->fromPositie==from_positie,"De (from)positie is verkeerd geset.");
+}
+
+Baan* Kruispunt::to_baan() const {
+    ENSURE(this->toBaan==toBaan,"De getter geeft de verkeerde (to)baan mee.");
+    return toBaan;
+}
+
+void Kruispunt::set_to_baan(Baan*to_baan) {
+    toBaan = to_baan;
+    ENSURE(this->toBaan==to_baan,"De (to)baan is niet correct geset.");
+}
+
+int Kruispunt::to_positie() const {
+    ENSURE(this->toPositie==toPositie,"De getter geeft de verkeerde (to)positie mee.");
+    return toPositie;
+}
+
+void Kruispunt::set_to_positie(int to_positie) {
+    REQUIRE(to_positie >= 0, "De (to)positie kan alleen 0 of hoger zijn!");
+    toPositie = to_positie;
+    ENSURE(this->toPositie==to_positie,"De (to)positie is verkeerd geset.");
+}
 void Kruispunt::kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen) {
-    // REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
-    // REQUIRE(!kruispunten.empty(), "Er bevindt zich geen kruispunt op de baan.");
-    // REQUIRE(banen.size()>=2, "Er moeten minstens 2 banen aanwezig zijn.");
+    REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    REQUIRE(banen.size()>=2, "Er moeten minstens 2 banen aanwezig zijn.");
+    REQUIRE(voertuig.baan1() != nullptr, "Voertuig moet een geldige baan hebben.");
+    REQUIRE(this->from_baan() != nullptr, "Kruispunt heeft geen from_baan.");
+    REQUIRE(this->to_baan() != nullptr, "Kruispunt heeft geen to_baan.");
     int breedte = 0;
     if (!voertuig.gedraait1()) {
         if (this->from_baan()->naam1() == voertuig.baan1()->naam1()) {
@@ -73,5 +116,12 @@ void Kruispunt::kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen) {
             }
         }
     }
-    // ENSURE(std::find_if(banen.begin(), banen.end(), [&](const Baan& b) { return b.naam1() == voertuig.baan1(); }) != banen.end(), "Voertuig moet op een bestaande baan blijven.");
+    bool gevondenVoertuig = false;
+    for (const Baan& b : banen) {
+        if (b.naam1() == voertuig.baan1()->naam1()) {
+            gevondenVoertuig = true;
+            break;
+        }
+    }
+    ENSURE(gevondenVoertuig,"Voertuig moet een geldige baan hebben die in de vector banen zit!");
 }

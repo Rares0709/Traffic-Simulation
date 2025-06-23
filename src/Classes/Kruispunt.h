@@ -16,37 +16,21 @@ class Kruispunt {
     Baan* toBaan= nullptr;
     int toPositie;
 public:
-    Baan* from_baan() const {
-        return fromBaan;
-    }
+    Baan* from_baan() const;
 
-    void set_from_baan(Baan * from_baan) {
-        fromBaan = from_baan;
-    }
+    void set_from_baan(Baan * from_baan);
 
-    int from_positie() const {
-        return fromPositie;
-    }
+    int from_positie() const;
 
-    void set_from_positie(int from_positie) {
-        fromPositie = from_positie;
-    }
+    void set_from_positie(int from_positie);
 
-    Baan* to_baan() const {
-        return toBaan;
-    }
+    Baan* to_baan() const;
 
-    void set_to_baan(Baan*to_baan) {
-        toBaan = to_baan;
-    }
+    void set_to_baan(Baan*to_baan);
 
-    int to_positie() const {
-        return toPositie;
-    }
+    int to_positie() const;
 
-    void set_to_positie(int to_positie) {
-        toPositie = to_positie;
-    }
+    void set_to_positie(int to_positie);
 
     void kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen);
 };

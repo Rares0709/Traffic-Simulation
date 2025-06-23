@@ -15,29 +15,17 @@ class Baan {
     int lengte;
     int breedte = 180;
 public:
-    std::string naam1() const {
-        return naam;
-    }
+    std::string naam1() const;
 
-    void set_naam(const std::string &naam) {
-        this->naam = naam;
-    }
+    void set_naam(const std::string &naam);
 
-    int lengte1() const {
-        return lengte;
-    }
+    int lengte1() const;
 
-    void set_lengte(int lengte) {
-        this->lengte = lengte;
-    }
+    void set_lengte(int lengte);
 
-    int breedte1() const {
-        return breedte;
-    }
+    int breedte1() const;
 
-    void set_breedte(int breedte) {
-        this->breedte = breedte;
-    }
+    void set_breedte(int breedte);
 };
 
 
