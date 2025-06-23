@@ -64,224 +64,85 @@ public:
     }
 
 
-    Baan* baan1() const {
-        ENSURE(this->baan==baan,"De getter geeft de verkeerde baan mee.");
-        return baan;
-    }
+    Baan* baan1() const;
 
-    void set_baan(Baan *baan) {
-        this->baan = baan;
-        ENSURE(this->baan==baan,"De verkeerde baan werd geset.");
-    }
+    void set_baan(Baan *baan);
 
-    int fmin1() const {
-        ENSURE(this->fmin==fmin,"De getter geeft de verkeerde fmin mee.");
-        return fmin;
-    }
+    int fmin1() const;
 
-    void set_fmin(int fmin) {
-        REQUIRE(fmin >= 0, "fmin mag alleen 0 of groter zijn");
-        this->fmin = fmin;
-        ENSURE(this->fmin==fmin,"De verkeerde fmin werd geset.");
-    }
+    void set_fmin(int fmin);
 
-    int lengte1() const {
-        ENSURE(this->lengte==lengte,"De getter geeft de verkeerde lengte mee.");
-        return lengte;
-    }
+    int lengte1() const;
 
-    void set_lengte(int lengte) {
-        REQUIRE(lengte >= 0, "lengte mag alleen 0 of groter zijn");
-        this->lengte = lengte;
-        ENSURE(this->lengte==lengte,"De verkeerde lengte werd geset.");
-    }
+    void set_lengte(int lengte);
 
-    double positie1() const {
-        ENSURE(this->positie==positie,"De getter geeft de verkeerde positie mee.");
-        return positie;
-    }
+    double positie1() const;
 
-    void set_positie(double positie) {
-        REQUIRE(positie >= 0, "positie mag alleen 0 of groter zijn");
-        this->positie = positie;
-        ENSURE(this->positie==positie,"De verkeerde positie werd geset.");
-    }
+    void set_positie(double positie);
 
-    double m_Maxsnelheid() const {
-        ENSURE(this->mMaxsnelheid==mMaxsnelheid,"De getter geeft de verkeerde mMaxsnelheid mee.");
-        return mMaxsnelheid;
-    }
+    double m_Maxsnelheid() const;
 
-    void set_m_Maxsnelheid(double m_maxsnelheid) {
-        REQUIRE(m_maxsnelheid >= 0, "mMaxsnelheid mag alleen 0 of groter zijn");
-        mMaxsnelheid = m_maxsnelheid;
-        ENSURE(this->mMaxsnelheid==fmin,"De verkeerde mMaxsnelheid werd geset.");
-    }
+    void set_m_Maxsnelheid(double m_maxsnelheid);
 
-    double maxversnelling1() const {
-        ENSURE(this->maxversnelling==maxversnelling,"De getter geeft de verkeerde maxversnelling mee.");
-        return maxversnelling;
-    }
+    double maxversnelling1() const;
 
-    void set_maxversnelling(double maxversnelling) {
-        REQUIRE(maxversnelling >= 0, "Maxversnelling mag alleen 0 of groter zijn");
-        this->maxversnelling = maxversnelling;
-        ENSURE(this->maxversnelling==maxversnelling,"De verkeerde maxversnelling werd geset.");
-    }
+    void set_maxversnelling(double maxversnelling);
 
-    double snelheid1() const {
-        ENSURE(this->snelheid==snelheid,"De getter geeft de verkeerde snelheid mee.");
-        return snelheid;
-    }
+    double snelheid1() const;
 
-    void set_snelheid(double snelheid) {
-        REQUIRE(snelheid >= 0, "Snelheid mag alleen 0 of groter zijn");
-        this->snelheid = snelheid;
-        ENSURE(this->snelheid==snelheid,"De verkeerde snelheid werd geset.");
-    }
+    void set_snelheid(double snelheid);
 
-    double versnelling1() const {
-        ENSURE(this->versnelling==versnelling,"De getter geeft de verkeerde versnelling mee.");
-        return versnelling;
-    }
+    double versnelling1() const;
 
-    void set_versnelling(double versnelling) {
-        REQUIRE(versnelling >= 0||versnelling <= 0, " mag kleiner dan 0 of groter dan 0 zijn of gelijk aan 0");
-        this->versnelling = versnelling;
-        ENSURE(this->fmin==fmin,"De verkeerde fmin werd geset.");
-    }
+    void set_versnelling(double versnelling);
 
-    double vertraagfactor1() const {
-        ENSURE(this->fmin==fmin,"De getter geeft de verkeerde fmin mee.");
-        return vertraagfactor;
-    }
+    double vertraagfactor1() const;
 
-    void set_vertraagfactor(double vertraagfactor) {
-        REQUIRE(fmin >= 0, "fmin mag alleen 0 of groter zijn");
-        this->vertraagfactor = vertraagfactor;
-        ENSURE(this->fmin==fmin,"De verkeerde fmin werd geset.");
-    }
+    void set_vertraagfactor(double vertraagfactor);
 
-    int vertraagafstand1() const {
-        ENSURE(this->fmin==fmin,"De getter geeft de verkeerde fmin mee.");
-        return vertraagafstand;
-    }
+    int vertraagafstand1() const;
 
-    void set_vertraagafstand(int vertraagafstand) {
-        REQUIRE(fmin >= 0, "fmin mag alleen 0 of groter zijn");
-        this->vertraagafstand = vertraagafstand;
-        ENSURE(this->fmin==fmin,"De verkeerde fmin werd geset.");
-    }
+    void set_vertraagafstand(int vertraagafstand);
 
-    int stopafstand1() const {
-        ENSURE(this->fmin==fmin,"De getter geeft de verkeerde fmin mee.");
-        return stopafstand;
-    }
+    int stopafstand1() const;
 
-    void set_stopafstand(int stopafstand) {
-        REQUIRE(fmin >= 0, "fmin mag alleen 0 of groter zijn");
-        this->stopafstand = stopafstand;
-        ENSURE(this->fmin==fmin,"De verkeerde fmin werd geset.");
-    }
+    void set_stopafstand(int stopafstand);
 
-    int voertuig_nummer() const {
-        ENSURE(this->fmin==fmin,"De getter geeft de verkeerde fmin mee.");
-        return voertuigNummer;
-    }
+    int voertuig_nummer() const;
 
-    void set_voertuig_nummer(int voertuig_nummer) {
-        REQUIRE(fmin >= 0, "fmin mag alleen 0 of groter zijn");
-        voertuigNummer = voertuig_nummer;
-        ENSURE(this->fmin==fmin,"De verkeerde fmin werd geset.");
-    }
+    void set_voertuig_nummer(int voertuig_nummer);
 
-    double maxremfactor1() const {
-        ENSURE(this->fmin==fmin,"De getter geeft de verkeerde fmin mee.");
-        return maxremfactor;
-    }
+    double maxremfactor1() const;
 
-    void set_maxremfactor(double maxremfactor) {
-        REQUIRE(fmin >= 0, "fmin mag alleen 0 of groter zijn");
-        this->maxremfactor = maxremfactor;
-        ENSURE(this->fmin==fmin,"De verkeerde fmin werd geset.");
-    }
+    void set_maxremfactor(double maxremfactor);
 
-    double maxsnelheid1() const {
-        ENSURE(this->fmin==fmin,"De getter geeft de verkeerde fmin mee.");
-        return maxsnelheid;
-    }
+    double maxsnelheid1() const;
 
-    void set_maxsnelheid(double maxsnelheid) {
-        REQUIRE(fmin >= 0, "fmin mag alleen 0 of groter zijn");
-        this->maxsnelheid = maxsnelheid;
-        ENSURE(this->fmin==fmin,"De verkeerde fmin werd geset.");
-    }
+    void set_maxsnelheid(double maxsnelheid);
 
-    bool prioriteit1() const {
-        ENSURE(this->fmin==fmin,"De getter geeft de verkeerde fmin mee.");
-        return prioriteit;
-    }
+    bool prioriteit1() const;
 
-    void set_prioriteit(bool prioriteit) {
-        REQUIRE(fmin >= 0, "fmin mag alleen 0 of groter zijn");
-        this->prioriteit = prioriteit;
-        ENSURE(this->fmin==fmin,"De verkeerde fmin werd geset.");
-    }
+    void set_prioriteit(bool prioriteit);
 
-    bool gestopt1() const {
-        ENSURE(this->fmin==fmin,"De getter geeft de verkeerde fmin mee.");
-        return gestopt;
-    }
+    bool gestopt1() const;
 
-    void set_gestopt(bool gestopt) {
-        REQUIRE(fmin >= 0, "fmin mag alleen 0 of groter zijn");
-        this->gestopt = gestopt;
-        ENSURE(this->fmin==fmin,"De verkeerde fmin werd geset.");
-    }
+    void set_gestopt(bool gestopt);
 
-    bool gedraait1() const {
-        ENSURE(this->fmin==fmin,"De getter geeft de verkeerde fmin mee.");
-        return gedraait;
-    }
+    bool gedraait1() const;
 
-    void set_gedraait(bool gedraait) {
-        REQUIRE(fmin >= 0, "fmin mag alleen 0 of groter zijn");
-        this->gedraait = gedraait;
-        ENSURE(this->fmin==fmin,"De verkeerde fmin werd geset.");
-    }
+    void set_gedraait(bool gedraait);
 
-    int timestop1() const {
-        ENSURE(this->fmin==fmin,"De getter geeft de verkeerde fmin mee.");
-        return timestop;
-    }
+    int timestop1() const;
 
-    void set_timestop(int timestop) {
-        REQUIRE(fmin >= 0, "fmin mag alleen 0 of groter zijn");
-        this->timestop = timestop;
-        ENSURE(this->fmin==fmin,"De verkeerde fmin werd geset.");
-    }
+    void set_timestop(int timestop);
 
-    bool recent_gestopt() const {
-        ENSURE(this->fmin==fmin,"De getter geeft de verkeerde fmin mee.");
-        return recentGestopt;
-    }
+    bool recent_gestopt() const;
 
-    void set_recent_gestopt(bool recent_gestopt) {
-        REQUIRE(fmin >= 0, "fmin mag alleen 0 of groter zijn");
-        recentGestopt = recent_gestopt;
-        ENSURE(this->fmin==fmin,"De verkeerde fmin werd geset.");
-    }
+    void set_recent_gestopt(bool recent_gestopt);
 
-    std::string type1() const {
-        ENSURE(this->fmin==fmin,"De getter geeft de verkeerde fmin mee.");
-        return type;
-    }
+    std::string type1() const;
 
-    void set_type(const std::string &type) {
-        REQUIRE(fmin >= 0, "fmin mag alleen 0 of groter zijn");
-        this->type = type;
-        ENSURE(this->fmin==fmin,"De verkeerde fmin werd geset.");
-    }
+    void set_type(const std::string &type);
     /**
      * Deze functie berekent de versnelling van het voertuig.
      * @param voertuig2
