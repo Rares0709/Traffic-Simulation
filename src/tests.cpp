@@ -1202,34 +1202,26 @@ TEST(TypeVoertuig,VoertuigLatenDoorrijdenFalse) {
     Voertuig::resetVolgendeNummer();
 }
 TEST(OutputTest, OutputCorrect) {
-    // Setup
     std::vector<Baan> banen;
     std::vector<Verkeersverkeerslicht> verkeerslichten;
     std::vector<Voertuig> voertuigen;
     std::vector<VoertuigGen> voertuigengen;
     std::vector<Bushalte> bushaltes;
     std::vector<Kruispunt> kruispunten;
-
     parseFile("test/test1.xml", &banen, &verkeerslichten, &voertuigen, &voertuigengen, &bushaltes, &kruispunten);
     TrafficSim traffic(banen, verkeerslichten, voertuigen, voertuigengen, bushaltes, kruispunten);
-
-    std::streambuf* orig_buf = std::cout.rdbuf();
-    std::ostringstream buffer;
-    std::cout.rdbuf(buffer.rdbuf());
-
+    std::streambuf* de_echte = std::cout.rdbuf();
+    std::ostringstream echte_inlezing;
+    std::cout.rdbuf(echte_inlezing.rdbuf());
     traffic.Simulate(10);
-    std::cout.rdbuf(orig_buf);
-
-    std::ifstream expected_file("../output.txt");
-    ASSERT_TRUE(expected_file.is_open()) << "Kon expected_output.txt niet openen";
-
-    std::stringstream expected_buffer;
-    expected_buffer << expected_file.rdbuf();
-
-    std::string actual = buffer.str();
-    std::string expected = expected_buffer.str();
-
-    EXPECT_EQ(actual, expected) << "De output van de simulatie komt niet overeen met de verwachte output.";
+    std::cout.rdbuf(de_echte);
+    std::ifstream gegevenFile("../output.txt");
+    ASSERT_TRUE(gegevenFile.is_open()) << "output.txt werd niet geopend";
+    std::stringstream verwachte_inlezing;
+    verwachte_inlezing << gegevenFile.rdbuf();
+    std::string echte_output = echte_inlezing.str();
+    std::string verwachte_output = verwachte_inlezing.str();
+    EXPECT_EQ(echte_output, verwachte_output) << "De output van de trafficSim is niet hetzelfde als de verwachte output.";
 }
 //Alle testen!
 int main(int argc, char **argv) {
