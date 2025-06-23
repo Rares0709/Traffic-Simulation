@@ -117,8 +117,8 @@ void Kruispunt::kruispuntSim(Voertuig& voertuig, std::vector<Baan>& banen) {
         }
     }
     bool gevondenVoertuig = false;
-    for (const Baan& b : banen) {
-        if (b.naam1() == voertuig.baan1()->naam1()) {
+    for (const Baan& baan : banen) {
+        if (baan.naam1() == voertuig.baan1()->naam1()) {
             gevondenVoertuig = true;
             break;
         }

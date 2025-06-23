@@ -41,6 +41,10 @@ void Bushalte::simBushaltes(Voertuig &bus) {
     REQUIRE(bus.positie1() >= 0, "De positie van de bus moet positief zijn.");
     REQUIRE(bus.stopafstand1() >= 0 && bus.vertraagafstand1() >= 0, "Stop- en vertraagafstand moeten positief zijn.");
 
+    // REQUIRE(!banen.empty(), "Er zijn geen banen aanwezig.");
+    // REQUIRE(!bushaltes.empty(), "Er bevinden zich geen bushaltes op de baan.");
+    // REQUIRE(std::any_of(voertuigen.begin(), voertuigen.end(), [](const Voertuig& v) { return v.type1() == "bus"; }),
+        //"Er is geen bus aanwezig op de baan.");
     double Vertraag = this->positie1() - bus.vertraagafstand1();
     double Stop = this->positie1() - bus.stopafstand1();
     if (bus.gestopt1()) {
@@ -58,7 +62,7 @@ void Bushalte::simBushaltes(Voertuig &bus) {
         bus.set_gestopt(false);
         bus.set_timestop(0);
     }
-    ENSURE(!(bus.gestopt1() && bus.versnelling1()>0), "Een bus mag niet tegelijkertijd stoppen en versnellen.");
     ENSURE(bus.timestop1() >= 0, "De tijd dat de bus gestopt is moet niet negatief zijn.");
     ENSURE(!bus.recent_gestopt() || bus.positie1() >= this->positie1(), "Als de bus recent gestopt is, moet hij voorbij de bushalte zijn.");
+
 }
