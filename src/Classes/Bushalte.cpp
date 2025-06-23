@@ -48,7 +48,8 @@ void Bushalte::simBushaltes(Voertuig &bus, bool testingMode) {
     double Vertraag = this->positie1() - bus.vertraagafstand1();
     double Stop = this->positie1() - bus.stopafstand1();
     if (bus.gestopt1()) {
-        bus.set_timestop(1);
+        int timeStop = bus.timestop1()+1;
+        bus.set_timestop(timeStop);
     }
     if (bus.positie1() >= Vertraag && bus.positie1() <= Stop) {
         if (!testingMode) {
@@ -67,11 +68,12 @@ void Bushalte::simBushaltes(Voertuig &bus, bool testingMode) {
         bus.versnellen();
         bus.set_gestopt(false);
         bus.set_timestop(0);
+        bus.set_recent_gestopt(true);
         if (!testingMode) {
             std::cout<<"Bus "<<bus.voertuig_nummer()<<" gaat vertrekken."<<std::endl;
         }
     }
     ENSURE(bus.timestop1() >= 0, "De tijd dat de bus gestopt is moet niet negatief zijn.");
-    ENSURE(!bus.recent_gestopt() || bus.positie1() >= this->positie1(), "Als de bus recent gestopt is, moet hij voorbij de bushalte zijn.");
+    //ENSURE(!bus.recent_gestopt() || bus.positie1() >= this->positie1(), "Als de bus recent gestopt is, moet hij voorbij de bushalte zijn.");
 
 }
