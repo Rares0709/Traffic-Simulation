@@ -1,0 +1,21 @@
+\doxysection{Design\+By\+Contract.\+h}
+\hypertarget{Linux_2DesignByContract_8h_source}{}\label{Linux_2DesignByContract_8h_source}\index{src/Linux/DesignByContract.h@{src/Linux/DesignByContract.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Linux_2DesignByContract_8h_source_l00001}00001\ \textcolor{comment}{//============================================================================}}
+\DoxyCodeLine{\Hypertarget{Linux_2DesignByContract_8h_source_l00002}00002\ \textcolor{comment}{//\ Name\ \ \ \ \ \ \ \ :\ DesignByContract.h}}
+\DoxyCodeLine{\Hypertarget{Linux_2DesignByContract_8h_source_l00003}00003\ \textcolor{comment}{//\ Author\ \ \ \ \ \ :\ Serge\ Demeyer,\ modified\ by\ Kasper\ Engelen}}
+\DoxyCodeLine{\Hypertarget{Linux_2DesignByContract_8h_source_l00004}00004\ \textcolor{comment}{//\ Version\ \ \ \ \ :}}
+\DoxyCodeLine{\Hypertarget{Linux_2DesignByContract_8h_source_l00005}00005\ \textcolor{comment}{//\ Copyright\ \ \ :\ Project\ Software\ Engineering\ -\/\ BA1\ Informatica\ -\/\ Serge\ Demeyer\ -\/\ University\ of\ Antwerp}}
+\DoxyCodeLine{\Hypertarget{Linux_2DesignByContract_8h_source_l00006}00006\ \textcolor{comment}{//\ Description\ :\ Declarations\ for\ design\ by\ contract\ in\ C++,\ compatible\ with\ Windows-\/based\ C++\ buildsystems}}
+\DoxyCodeLine{\Hypertarget{Linux_2DesignByContract_8h_source_l00007}00007\ \textcolor{comment}{//============================================================================}}
+\DoxyCodeLine{\Hypertarget{Linux_2DesignByContract_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{Linux_2DesignByContract_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{\Hypertarget{Linux_2DesignByContract_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Linux_2DesignByContract_8h_source_l00011}00011\ \textcolor{preprocessor}{\#define\ REQUIRE(assertion,\ what)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{Linux_2DesignByContract_8h_source_l00012}00012\ \textcolor{preprocessor}{if\ (!(assertion))\ \_\_assert\ (what,\ \_\_FILE\_\_,\ \_\_LINE\_\_)}}
+\DoxyCodeLine{\Hypertarget{Linux_2DesignByContract_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{Linux_2DesignByContract_8h_source_l00014}00014\ \textcolor{preprocessor}{\#define\ ENSURE(assertion,\ what)\ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{Linux_2DesignByContract_8h_source_l00015}00015\ \textcolor{preprocessor}{if\ (!(assertion))\ \_\_assert\ (what,\ \_\_FILE\_\_,\ \_\_LINE\_\_)}}
+
+\end{DoxyCode}

@@ -1,0 +1,117 @@
+\doxysection{tinystr.\+cpp}
+\hypertarget{tinystr_8cpp_source}{}\label{tinystr_8cpp_source}\index{src/tinystr.cpp@{src/tinystr.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00002}00002\ \textcolor{comment}{www.sourceforge.net/projects/tinyxml}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00003}00003\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00004}00004\ \textcolor{comment}{This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00005}00005\ \textcolor{comment}{warranty.\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00006}00006\ \textcolor{comment}{damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00007}00007\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00008}00008\ \textcolor{comment}{Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00009}00009\ \textcolor{comment}{purpose,\ including\ commercial\ applications,\ and\ to\ alter\ it\ and}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00010}00010\ \textcolor{comment}{redistribute\ it\ freely,\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00011}00011\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00012}00012\ \textcolor{comment}{1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;\ you\ must}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00013}00013\ \textcolor{comment}{not\ claim\ that\ you\ wrote\ the\ original\ software.\ If\ you\ use\ this}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00014}00014\ \textcolor{comment}{software\ in\ a\ product,\ an\ acknowledgment\ in\ the\ product\ documentation}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00015}00015\ \textcolor{comment}{would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00016}00016\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00017}00017\ \textcolor{comment}{2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,\ and}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00018}00018\ \textcolor{comment}{must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00019}00019\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00020}00020\ \textcolor{comment}{3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00021}00021\ \textcolor{comment}{distribution.}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00022}00022\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00025}00025\ \textcolor{preprocessor}{\#ifndef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00027}00027\ \textcolor{preprocessor}{\#include\ "{}tinystr.h"{}}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00029}00029\ \textcolor{comment}{//\ Error\ value\ for\ find\ primitive}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00030}00030\ \textcolor{keyword}{const}\ TiXmlString::size\_type\ TiXmlString::npos\ =\ \textcolor{keyword}{static\_cast<}\ TiXmlString::size\_type\ \textcolor{keyword}{>}(-\/1);}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00033}00033\ \textcolor{comment}{//\ Null\ rep.}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00034}00034\ TiXmlString::Rep\ TiXmlString::nullrep\_\ =\ \{\ 0,\ 0,\ \{\ \textcolor{charliteral}{'\(\backslash\)0'}\ \}\ \};}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00037}00037\ \textcolor{keywordtype}{void}\ TiXmlString::reserve\ (size\_type\ cap)}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00038}00038\ \{}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (cap\ >\ capacity())}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00040}00040\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ TiXmlString\ tmp;}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ tmp.init(length(),\ cap);}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ memcpy(tmp.start(),\ data(),\ length());}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ swap(tmp);}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00049}00049\ \mbox{\hyperlink{classTiXmlString}{TiXmlString}}\&\ TiXmlString::assign(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ size\_type\ len)}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00050}00050\ \{}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00051}00051\ \ \ \ \ size\_type\ cap\ =\ capacity();}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (len\ >\ cap\ ||\ cap\ >\ 3*(len\ +\ 8))}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ TiXmlString\ tmp;}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ tmp.init(len);}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ memcpy(tmp.start(),\ str,\ len);}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ swap(tmp);}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ memmove(start(),\ str,\ len);}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ set\_size(len);}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00068}00068\ \mbox{\hyperlink{classTiXmlString}{TiXmlString}}\&\ TiXmlString::append(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ str,\ size\_type\ len)}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00069}00069\ \{}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00070}00070\ \ \ \ \ size\_type\ newsize\ =\ length()\ +\ len;}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{if}\ (newsize\ >\ capacity())}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00072}00072\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ reserve\ (newsize\ +\ capacity());}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00075}00075\ \ \ \ \ memmove(finish(),\ str,\ len);}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00076}00076\ \ \ \ \ set\_size(newsize);}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00078}00078\ \}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00081}00081\ \mbox{\hyperlink{classTiXmlString}{TiXmlString}}\ operator\ +\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlString}{TiXmlString}}\ \&\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlString}{TiXmlString}}\ \&\ b)}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00082}00082\ \{}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00083}00083\ \ \ \ \ \mbox{\hyperlink{classTiXmlString}{TiXmlString}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00084}00084\ \ \ \ \ tmp.reserve(a.length()\ +\ b.length());}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00085}00085\ \ \ \ \ tmp\ +=\ a;}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00086}00086\ \ \ \ \ tmp\ +=\ b;}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00088}00088\ \}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00090}00090\ \mbox{\hyperlink{classTiXmlString}{TiXmlString}}\ operator\ +\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlString}{TiXmlString}}\ \&\ a,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ b)}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00091}00091\ \{}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{classTiXmlString}{TiXmlString}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00093}00093\ \ \ \ \ TiXmlString::size\_type\ b\_len\ =\ \textcolor{keyword}{static\_cast<}TiXmlString::size\_type\textcolor{keyword}{>}(\ strlen(b)\ );}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00094}00094\ \ \ \ \ tmp.reserve(a.length()\ +\ b\_len);}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00095}00095\ \ \ \ \ tmp\ +=\ a;}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00096}00096\ \ \ \ \ tmp.append(b,\ b\_len);}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00100}00100\ \mbox{\hyperlink{classTiXmlString}{TiXmlString}}\ operator\ +\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ a,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlString}{TiXmlString}}\ \&\ b)}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00101}00101\ \{}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00102}00102\ \ \ \ \ \mbox{\hyperlink{classTiXmlString}{TiXmlString}}\ tmp;}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00103}00103\ \ \ \ \ TiXmlString::size\_type\ a\_len\ =\ \textcolor{keyword}{static\_cast<}TiXmlString::size\_type\textcolor{keyword}{>}(\ strlen(a)\ );}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00104}00104\ \ \ \ \ tmp.reserve(a\_len\ +\ b.length());}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00105}00105\ \ \ \ \ tmp.append(a,\ a\_len);}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00106}00106\ \ \ \ \ tmp\ +=\ b;}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{keywordflow}{return}\ tmp;}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00108}00108\ \}}
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{tinystr_8cpp_source_l00111}00111\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ TIXML\_USE\_STL}}
+
+\end{DoxyCode}

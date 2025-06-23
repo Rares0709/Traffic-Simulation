@@ -1,0 +1,133 @@
+\doxysection{Kruispunt.\+cpp}
+\hypertarget{Kruispunt_8cpp_source}{}\label{Kruispunt_8cpp_source}\index{src/Classes/Kruispunt.cpp@{src/Classes/Kruispunt.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ grama\ on\ 5/13/2025.}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}Kruispunt.h"{}}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00006}00006\ \mbox{\hyperlink{classBaan}{Baan}}*\ Kruispunt::from\_baan()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00007}00007\ \ \ \ \ ENSURE(this-\/>fromBaan==fromBaan,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ (from)baan\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordflow}{return}\ fromBaan;}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00009}00009\ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00011}00011\ \textcolor{keywordtype}{void}\ Kruispunt::set\_from\_baan(\mbox{\hyperlink{classBaan}{Baan}}\ *\ from\_baan)\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00012}00012\ \ \ \ \ fromBaan\ =\ from\_baan;}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00013}00013\ \ \ \ \ ENSURE(this-\/>fromBaan==from\_baan,\textcolor{stringliteral}{"{}De\ (from)baan\ is\ niet\ correct\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00016}00016\ \textcolor{keywordtype}{int}\ Kruispunt::from\_positie()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00017}00017\ \ \ \ \ ENSURE(this-\/>fromPositie==fromPositie,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ (from)positie\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{return}\ fromPositie;}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00021}00021\ \textcolor{keywordtype}{void}\ Kruispunt::set\_from\_positie(\textcolor{keywordtype}{int}\ from\_positie)\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00022}00022\ \ \ \ \ REQUIRE(from\_positie\ >=\ 0,\ \textcolor{stringliteral}{"{}De\ (from)positie\ kan\ alleen\ 0\ of\ hoger\ zijn!"{}});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00023}00023\ \ \ \ \ fromPositie\ =\ from\_positie;}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00024}00024\ \ \ \ \ ENSURE(this-\/>fromPositie==from\_positie,\textcolor{stringliteral}{"{}De\ (from)positie\ is\ verkeerd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00027}00027\ \mbox{\hyperlink{classBaan}{Baan}}*\ Kruispunt::to\_baan()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00028}00028\ \ \ \ \ ENSURE(this-\/>toBaan==toBaan,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ (to)baan\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ toBaan;}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00032}00032\ \textcolor{keywordtype}{void}\ Kruispunt::set\_to\_baan(\mbox{\hyperlink{classBaan}{Baan}}*to\_baan)\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00033}00033\ \ \ \ \ toBaan\ =\ to\_baan;}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00034}00034\ \ \ \ \ ENSURE(this-\/>toBaan==to\_baan,\textcolor{stringliteral}{"{}De\ (to)baan\ is\ niet\ correct\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00037}00037\ \textcolor{keywordtype}{int}\ Kruispunt::to\_positie()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00038}00038\ \ \ \ \ ENSURE(this-\/>toPositie==toPositie,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ (to)positie\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{return}\ toPositie;}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00042}00042\ \textcolor{keywordtype}{void}\ Kruispunt::set\_to\_positie(\textcolor{keywordtype}{int}\ to\_positie)\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00043}00043\ \ \ \ \ REQUIRE(to\_positie\ >=\ 0,\ \textcolor{stringliteral}{"{}De\ (to)positie\ kan\ alleen\ 0\ of\ hoger\ zijn!"{}});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00044}00044\ \ \ \ \ toPositie\ =\ to\_positie;}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00045}00045\ \ \ \ \ ENSURE(this-\/>toPositie==to\_positie,\textcolor{stringliteral}{"{}De\ (to)positie\ is\ verkeerd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00047}00047\ \textcolor{keywordtype}{void}\ Kruispunt::kruispuntSim(\mbox{\hyperlink{classVoertuig}{Voertuig}}\&\ voertuig,\ std::vector<Baan>\&\ banen)\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00048}00048\ \ \ \ \ REQUIRE(!banen.empty(),\ \textcolor{stringliteral}{"{}Er\ zijn\ geen\ banen\ aanwezig."{}});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00049}00049\ \ \ \ \ REQUIRE(banen.size()>=2,\ \textcolor{stringliteral}{"{}Er\ moeten\ minstens\ 2\ banen\ aanwezig\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00050}00050\ \ \ \ \ REQUIRE(voertuig.baan1()\ !=\ \textcolor{keyword}{nullptr},\ \textcolor{stringliteral}{"{}Voertuig\ moet\ een\ geldige\ baan\ hebben."{}});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00051}00051\ \ \ \ \ REQUIRE(this-\/>from\_baan()\ !=\ \textcolor{keyword}{nullptr},\ \textcolor{stringliteral}{"{}Kruispunt\ heeft\ geen\ from\_baan."{}});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00052}00052\ \ \ \ \ REQUIRE(this-\/>to\_baan()\ !=\ \textcolor{keyword}{nullptr},\ \textcolor{stringliteral}{"{}Kruispunt\ heeft\ geen\ to\_baan."{}});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{int}\ breedte\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keywordflow}{if}\ (!voertuig.gedraait1())\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>from\_baan()-\/>naam1()\ ==\ voertuig.baan1()-\/>naam1())\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//int\ breedte;}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ Baan\&\ b\ :\ banen)\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b.naam1()\ ==\ this-\/>from\_baan()-\/>naam1())\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ breedte\ =\ b.breedte1();}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*std::vector<std::string>\ baantje;}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00064}00064\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ baantje.push\_back(kruispunt.fromBaan);}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00065}00065\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ baantje.push\_back(kruispunt.toBaan);*/}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (voertuig.positie1()\ >=\ this-\/>from\_positie()\ \&\&\ voertuig.positie1()\ <=\ this-\/>from\_positie()\ +\ breedte)\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::srand(std::time(0));}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ keuze\ =\ std::rand()\ \%\ 2;}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ voertuig.baan\ =\ baantje[keuze];}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ voertuig.positie\ =\ baantje[]}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keuze)\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voertuig.set\_baan(this-\/>to\_baan());}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voertuig.set\_positie(this-\/>to\_positie());}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voertuig.set\_gedraait(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this-\/>to\_baan()-\/>naam1()\ ==\ voertuig.baan1()-\/>naam1())\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ Baan\&\ b\ :\ banen)\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b.naam1()\ ==\ this-\/>to\_baan()-\/>naam1())\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ breedte\ =\ b.breedte1();}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*std::vector<std::string>\ baantje;}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00086}00086\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ baantje.push\_back(kruispunt.fromBaan);}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00087}00087\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ baantje.push\_back(kruispunt.toBaan);*/}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (voertuig.positie1()\ >=\ this-\/>to\_positie()\ \&\&\ voertuig.positie1()\ <=\ this-\/>to\_positie()\ +\ breedte)\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::srand(std::time(0));}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ keuze\ =\ std::rand()\ \%\ 2;}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ voertuig.baan\ =\ baantje[keuze];}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ voertuig.positie\ =\ baantje[]}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (keuze)\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voertuig.set\_baan(this-\/>from\_baan());}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voertuig.set\_positie(this-\/>from\_positie());}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voertuig.set\_gedraait(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00100}00100\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (voertuig.baan1()-\/>naam1()\ ==\ this-\/>from\_baan()-\/>naam1())\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ baan\ :\ banen)\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>from\_baan()-\/>naam1()\ ==\ baan.naam1())\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (voertuig.positie1()\ >\ this-\/>from\_positie()\ +\ baan.breedte1())\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voertuig.set\_gedraait(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (voertuig.baan1()-\/>naam1()\ ==\ this-\/>to\_baan()-\/>naam1())\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ baan\ :\ banen)\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>to\_baan()-\/>naam1()\ ==\ baan.naam1())\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (voertuig.positie1()\ >\ this-\/>to\_positie()\ +\ baan.breedte1())\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voertuig.set\_gedraait(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00118}00118\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00119}00119\ \ \ \ \ \textcolor{keywordtype}{bool}\ gevondenVoertuig\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ Baan\&\ baan\ :\ banen)\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (baan.naam1()\ ==\ voertuig.baan1()-\/>naam1())\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ gevondenVoertuig\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00126}00126\ \ \ \ \ ENSURE(gevondenVoertuig,\textcolor{stringliteral}{"{}Voertuig\ moet\ een\ geldige\ baan\ hebben\ die\ in\ de\ vector\ banen\ zit!"{}});}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8cpp_source_l00127}00127\ \}}
+
+\end{DoxyCode}

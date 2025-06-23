@@ -1,0 +1,340 @@
+\doxysection{Voertuig.\+cpp}
+\hypertarget{Voertuig_8cpp_source}{}\label{Voertuig_8cpp_source}\index{src/Classes/Voertuig.cpp@{src/Classes/Voertuig.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ grama\ on\ 5/13/2025.}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}Voertuig.h"{}}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}DesignByContract.h"{}}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}TrafficSimulation.h"{}}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00008}00008\ \textcolor{keywordtype}{void}\ Voertuig::lowerVolgendeNummer()\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00009}00009\ \ \ \ \ volgendeNummer-\/-\/;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00010}00010\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00011}00011\ \mbox{\hyperlink{classBaan}{Baan}}*\ Voertuig::baan1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00012}00012\ \ \ \ \ ENSURE(this-\/>baan==baan,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ baan\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{return}\ baan;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00016}00016\ \textcolor{keywordtype}{void}\ Voertuig::set\_baan(\mbox{\hyperlink{classBaan}{Baan}}\ *baan)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00017}00017\ \ \ \ \ this-\/>baan\ =\ baan;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00018}00018\ \ \ \ \ ENSURE(this-\/>baan==baan,\textcolor{stringliteral}{"{}De\ verkeerde\ baan\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00021}00021\ \textcolor{keywordtype}{int}\ Voertuig::fmin1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00022}00022\ \ \ \ \ ENSURE(this-\/>fmin==fmin,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ fmin\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{return}\ fmin;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00024}00024\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00026}00026\ \textcolor{keywordtype}{void}\ Voertuig::set\_fmin(\textcolor{keywordtype}{int}\ fmin)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00027}00027\ \ \ \ \ REQUIRE(fmin\ >=\ 0,\ \textcolor{stringliteral}{"{}fmin\ mag\ alleen\ 0\ of\ groter\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00028}00028\ \ \ \ \ this-\/>fmin\ =\ fmin;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00029}00029\ \ \ \ \ ENSURE(this-\/>fmin==fmin,\textcolor{stringliteral}{"{}De\ verkeerde\ fmin\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00032}00032\ \textcolor{keywordtype}{int}\ Voertuig::lengte1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00033}00033\ \ \ \ \ ENSURE(this-\/>lengte==lengte,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ lengte\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{return}\ lengte;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00037}00037\ \textcolor{keywordtype}{void}\ Voertuig::set\_lengte(\textcolor{keywordtype}{int}\ lengte)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00038}00038\ \ \ \ \ REQUIRE(lengte\ >=\ 0,\ \textcolor{stringliteral}{"{}lengte\ mag\ alleen\ 0\ of\ groter\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00039}00039\ \ \ \ \ this-\/>lengte\ =\ lengte;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00040}00040\ \ \ \ \ ENSURE(this-\/>lengte==lengte,\textcolor{stringliteral}{"{}De\ verkeerde\ lengte\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00043}00043\ \textcolor{keywordtype}{double}\ Voertuig::positie1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00044}00044\ \ \ \ \ ENSURE(this-\/>positie==positie,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ positie\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{return}\ positie;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00048}00048\ \textcolor{keywordtype}{void}\ Voertuig::set\_positie(\textcolor{keywordtype}{double}\ positie)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00049}00049\ \ \ \ \ REQUIRE(positie\ >=\ 0,\ \textcolor{stringliteral}{"{}positie\ mag\ alleen\ 0\ of\ groter\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00050}00050\ \ \ \ \ this-\/>positie\ =\ positie;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00051}00051\ \ \ \ \ ENSURE(this-\/>positie==positie,\textcolor{stringliteral}{"{}De\ verkeerde\ positie\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00054}00054\ \textcolor{keywordtype}{double}\ Voertuig::m\_Maxsnelheid()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00055}00055\ \ \ \ \ ENSURE(this-\/>mMaxsnelheid==mMaxsnelheid,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ mMaxsnelheid\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{return}\ mMaxsnelheid;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00059}00059\ \textcolor{keywordtype}{void}\ Voertuig::set\_m\_Maxsnelheid(\textcolor{keywordtype}{double}\ m\_maxsnelheid)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00060}00060\ \ \ \ \ REQUIRE(m\_maxsnelheid\ >=\ 0,\ \textcolor{stringliteral}{"{}mMaxsnelheid\ mag\ alleen\ 0\ of\ groter\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00061}00061\ \ \ \ \ mMaxsnelheid\ =\ m\_maxsnelheid;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00062}00062\ \ \ \ \ ENSURE(this-\/>mMaxsnelheid==fmin,\textcolor{stringliteral}{"{}De\ verkeerde\ mMaxsnelheid\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00065}00065\ \textcolor{keywordtype}{double}\ Voertuig::maxversnelling1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00066}00066\ \ \ \ \ ENSURE(this-\/>maxversnelling==maxversnelling,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ maxversnelling\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{return}\ maxversnelling;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00070}00070\ \textcolor{keywordtype}{void}\ Voertuig::set\_maxversnelling(\textcolor{keywordtype}{double}\ maxversnelling)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00071}00071\ \ \ \ \ REQUIRE(maxversnelling\ >=\ 0,\ \textcolor{stringliteral}{"{}Maxversnelling\ mag\ alleen\ 0\ of\ groter\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00072}00072\ \ \ \ \ this-\/>maxversnelling\ =\ maxversnelling;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00073}00073\ \ \ \ \ ENSURE(this-\/>maxversnelling==maxversnelling,\textcolor{stringliteral}{"{}De\ verkeerde\ maxversnelling\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00076}00076\ \textcolor{keywordtype}{double}\ Voertuig::snelheid1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00077}00077\ \ \ \ \ ENSURE(this-\/>snelheid==snelheid,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ snelheid\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{return}\ snelheid;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00079}00079\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00081}00081\ \textcolor{keywordtype}{void}\ Voertuig::set\_snelheid(\textcolor{keywordtype}{double}\ snelheid)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00082}00082\ \ \ \ \ REQUIRE(snelheid\ >=\ 0,\ \textcolor{stringliteral}{"{}Snelheid\ mag\ alleen\ 0\ of\ groter\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00083}00083\ \ \ \ \ this-\/>snelheid\ =\ snelheid;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00084}00084\ \ \ \ \ ENSURE(this-\/>snelheid==snelheid,\textcolor{stringliteral}{"{}De\ verkeerde\ snelheid\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00085}00085\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00087}00087\ \textcolor{keywordtype}{double}\ Voertuig::versnelling1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00088}00088\ \ \ \ \ ENSURE(this-\/>versnelling==versnelling,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ versnelling\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{return}\ versnelling;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00092}00092\ \textcolor{keywordtype}{void}\ Voertuig::set\_versnelling(\textcolor{keywordtype}{double}\ versnelling)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00093}00093\ \ \ \ \ REQUIRE(versnelling\ >=\ 0||versnelling\ <=\ 0,\ \textcolor{stringliteral}{"{}\ mag\ kleiner\ dan\ 0\ of\ groter\ dan\ 0\ zijn\ of\ gelijk\ aan\ 0"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00094}00094\ \ \ \ \ this-\/>versnelling\ =\ versnelling;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00095}00095\ \ \ \ \ ENSURE(this-\/>fmin==fmin,\textcolor{stringliteral}{"{}De\ verkeerde\ fmin\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00096}00096\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00098}00098\ \textcolor{keywordtype}{double}\ Voertuig::vertraagfactor1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00099}00099\ \ \ \ \ ENSURE(this-\/>vertraagfactor==vertraagfactor,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ vertraagfactor\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{return}\ vertraagfactor;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00101}00101\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00103}00103\ \textcolor{keywordtype}{void}\ Voertuig::set\_vertraagfactor(\textcolor{keywordtype}{double}\ vertraagfactor)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00104}00104\ \ \ \ \ REQUIRE(vertraagfactor\ >=\ 0,\ \textcolor{stringliteral}{"{}vertraagfactor\ mag\ alleen\ 0\ of\ groter\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00105}00105\ \ \ \ \ this-\/>vertraagfactor\ =\ vertraagfactor;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00106}00106\ \ \ \ \ ENSURE(this-\/>vertraagfactor==vertraagfactor,\textcolor{stringliteral}{"{}De\ verkeerde\ vertraagfactor\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00107}00107\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00109}00109\ \textcolor{keywordtype}{int}\ Voertuig::vertraagafstand1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00110}00110\ \ \ \ \ ENSURE(this-\/>vertraagafstand==vertraagafstand,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ vertraagafstand\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{return}\ vertraagafstand;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00112}00112\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00114}00114\ \textcolor{keywordtype}{void}\ Voertuig::set\_vertraagafstand(\textcolor{keywordtype}{int}\ vertraagafstand)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00115}00115\ \ \ \ \ REQUIRE(vertraagafstand\ >=\ 0,\ \textcolor{stringliteral}{"{}Vertraagafstand\ mag\ alleen\ 0\ of\ groter\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00116}00116\ \ \ \ \ this-\/>vertraagafstand\ =\ vertraagafstand;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00117}00117\ \ \ \ \ ENSURE(this-\/>vertraagafstand==vertraagafstand,\textcolor{stringliteral}{"{}De\ verkeerde\ vertraagafstand\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00118}00118\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00120}00120\ \textcolor{keywordtype}{int}\ Voertuig::stopafstand1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00121}00121\ \ \ \ \ ENSURE(this-\/>stopafstand==stopafstand,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ stopafstand\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordflow}{return}\ stopafstand;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00123}00123\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00125}00125\ \textcolor{keywordtype}{void}\ Voertuig::set\_stopafstand(\textcolor{keywordtype}{int}\ stopafstand)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00126}00126\ \ \ \ \ REQUIRE(stopafstand\ >=\ 0,\ \textcolor{stringliteral}{"{}stopafstand\ mag\ alleen\ 0\ of\ groter\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00127}00127\ \ \ \ \ this-\/>stopafstand\ =\ stopafstand;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00128}00128\ \ \ \ \ ENSURE(this-\/>stopafstand==stopafstand,\textcolor{stringliteral}{"{}De\ verkeerde\ stopafstand\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00129}00129\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00131}00131\ \textcolor{keywordtype}{int}\ Voertuig::voertuig\_nummer()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00132}00132\ \ \ \ \ ENSURE(this-\/>voertuigNummer==voertuigNummer,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ voertuignummer\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordflow}{return}\ voertuigNummer;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00134}00134\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00136}00136\ \textcolor{keywordtype}{void}\ Voertuig::set\_voertuig\_nummer(\textcolor{keywordtype}{int}\ voertuig\_nummer)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00137}00137\ \ \ \ \ REQUIRE(voertuig\_nummer\ >=\ 1,\ \textcolor{stringliteral}{"{}voertuignummer\ mag\ alleen\ 1\ of\ groter\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00138}00138\ \ \ \ \ voertuigNummer\ =\ voertuig\_nummer;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00139}00139\ \ \ \ \ ENSURE(this-\/>voertuigNummer==voertuig\_nummer,\textcolor{stringliteral}{"{}De\ verkeerde\ voertuignummer\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00140}00140\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00142}00142\ \textcolor{keywordtype}{double}\ Voertuig::maxremfactor1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00143}00143\ \ \ \ \ ENSURE(this-\/>maxremfactor==maxremfactor,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ maxremfactor\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00144}00144\ \ \ \ \ \textcolor{keywordflow}{return}\ maxremfactor;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00145}00145\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00147}00147\ \textcolor{keywordtype}{void}\ Voertuig::set\_maxremfactor(\textcolor{keywordtype}{double}\ maxremfactor)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00148}00148\ \ \ \ \ REQUIRE(maxremfactor\ >=\ 0,\ \textcolor{stringliteral}{"{}maxremfactor\ mag\ alleen\ 0\ of\ groter\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00149}00149\ \ \ \ \ this-\/>maxremfactor\ =\ maxremfactor;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00150}00150\ \ \ \ \ ENSURE(this-\/>maxremfactor==maxremfactor,\textcolor{stringliteral}{"{}De\ verkeerde\ maxremfactor\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00151}00151\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00153}00153\ \textcolor{keywordtype}{double}\ Voertuig::maxsnelheid1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00154}00154\ \ \ \ \ ENSURE(this-\/>maxsnelheid==maxsnelheid,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ maxsnelheid\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{return}\ maxsnelheid;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00156}00156\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00158}00158\ \textcolor{keywordtype}{void}\ Voertuig::set\_maxsnelheid(\textcolor{keywordtype}{double}\ maxsnelheid)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00159}00159\ \ \ \ \ REQUIRE(maxsnelheid\ >=\ 0,\ \textcolor{stringliteral}{"{}maxsnelheid\ mag\ alleen\ 0\ of\ groter\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00160}00160\ \ \ \ \ this-\/>maxsnelheid\ =\ maxsnelheid;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00161}00161\ \ \ \ \ ENSURE(this-\/>maxsnelheid==maxsnelheid,\textcolor{stringliteral}{"{}De\ verkeerde\ fmin\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00162}00162\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00164}00164\ \textcolor{keywordtype}{bool}\ Voertuig::prioriteit1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00165}00165\ \ \ \ \ ENSURE(this-\/>prioriteit==prioriteit,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ bool\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00166}00166\ \ \ \ \ \textcolor{keywordflow}{return}\ prioriteit;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00167}00167\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00169}00169\ \textcolor{keywordtype}{void}\ Voertuig::set\_prioriteit(\textcolor{keywordtype}{bool}\ prioriteit)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00170}00170\ \ \ \ \ REQUIRE(prioriteit\ ==\ \textcolor{keyword}{false}\ ||\ prioriteit\ ==\ \textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}prioriteit\ mag\ alleen\ een\ boolean\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00171}00171\ \ \ \ \ this-\/>prioriteit\ =\ prioriteit;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00172}00172\ \ \ \ \ ENSURE(this-\/>prioriteit==prioriteit,\textcolor{stringliteral}{"{}De\ verkeerde\ boolean\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00173}00173\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00175}00175\ \textcolor{keywordtype}{bool}\ Voertuig::gestopt1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00176}00176\ \ \ \ \ ENSURE(this-\/>gestopt==gestopt,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ bool\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00177}00177\ \ \ \ \ \textcolor{keywordflow}{return}\ gestopt;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00178}00178\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00180}00180\ \textcolor{keywordtype}{void}\ Voertuig::set\_gestopt(\textcolor{keywordtype}{bool}\ gestopt)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00181}00181\ \ \ \ \ REQUIRE(gestopt\ ==\ \textcolor{keyword}{false}\ ||\ gestopt\ ==\ \textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}gestopt\ mag\ alleen\ een\ boolean\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00182}00182\ \ \ \ \ this-\/>gestopt\ =\ gestopt;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00183}00183\ \ \ \ \ ENSURE(this-\/>gestopt==gestopt,\textcolor{stringliteral}{"{}De\ verkeerde\ boolean\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00184}00184\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00186}00186\ \textcolor{keywordtype}{bool}\ Voertuig::gedraait1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00187}00187\ \ \ \ \ ENSURE(this-\/>gedraait==gedraait,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ bool\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00188}00188\ \ \ \ \ \textcolor{keywordflow}{return}\ gedraait;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00189}00189\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00191}00191\ \textcolor{keywordtype}{void}\ Voertuig::set\_gedraait(\textcolor{keywordtype}{bool}\ gedraait)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00192}00192\ \ \ \ \ REQUIRE(gedraait\ ==\ \textcolor{keyword}{false}\ ||\ gedraait\ ==\ \textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}gedraait\ mag\ alleen\ een\ boolean\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00193}00193\ \ \ \ \ this-\/>gedraait\ =\ gedraait;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00194}00194\ \ \ \ \ ENSURE(this-\/>gedraait==gedraait,\textcolor{stringliteral}{"{}De\ verkeerde\ boolean\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00195}00195\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00197}00197\ \textcolor{keywordtype}{int}\ Voertuig::timestop1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00198}00198\ \ \ \ \ ENSURE(this-\/>timestop==timestop,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ timestop\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00199}00199\ \ \ \ \ \textcolor{keywordflow}{return}\ timestop;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00200}00200\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00202}00202\ \textcolor{keywordtype}{void}\ Voertuig::set\_timestop(\textcolor{keywordtype}{int}\ timestop)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00203}00203\ \ \ \ \ REQUIRE(timestop\ >=\ 0,\ \textcolor{stringliteral}{"{}timestop\ mag\ alleen\ 0\ of\ groter\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00204}00204\ \ \ \ \ this-\/>timestop\ =\ timestop;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00205}00205\ \ \ \ \ ENSURE(this-\/>timestop==timestop,\textcolor{stringliteral}{"{}De\ verkeerde\ timestop\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00206}00206\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00208}00208\ \textcolor{keywordtype}{bool}\ Voertuig::recent\_gestopt()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00209}00209\ \ \ \ \ ENSURE(this-\/>recentGestopt==recentGestopt,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ bool\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00210}00210\ \ \ \ \ \textcolor{keywordflow}{return}\ recentGestopt;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00211}00211\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00213}00213\ \textcolor{keywordtype}{void}\ Voertuig::set\_recent\_gestopt(\textcolor{keywordtype}{bool}\ recent\_gestopt)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00214}00214\ \ \ \ \ REQUIRE(recentGestopt\ ==\ \textcolor{keyword}{false}\ ||\ recentGestopt\ ==\ \textcolor{keyword}{true},\ \textcolor{stringliteral}{"{}recent\_gestopt\ mag\ alleen\ een\ boolean\ zijn"{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00215}00215\ \ \ \ \ recentGestopt\ =\ recent\_gestopt;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00216}00216\ \ \ \ \ ENSURE(this-\/>recentGestopt==recent\_gestopt,\textcolor{stringliteral}{"{}De\ verkeerde\ boolean\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00217}00217\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00219}00219\ std::string\ Voertuig::type1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00220}00220\ \ \ \ \ ENSURE(this-\/>type==type,\textcolor{stringliteral}{"{}De\ getter\ geeft\ de\ verkeerde\ type\ mee."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00221}00221\ \ \ \ \ \textcolor{keywordflow}{return}\ type;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00222}00222\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00224}00224\ \textcolor{keywordtype}{void}\ Voertuig::set\_type(\textcolor{keyword}{const}\ std::string\ \&type)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00225}00225\ \ \ \ \ REQUIRE(type\ !=\ \textcolor{stringliteral}{"{}"{}},\textcolor{stringliteral}{"{}Er\ is\ geen\ (Voertuig)type\ meegegeven."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00226}00226\ \ \ \ \ this-\/>type\ =\ type;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00227}00227\ \ \ \ \ ENSURE(this-\/>fmin==fmin,\textcolor{stringliteral}{"{}De\ verkeerde\ fmin\ werd\ geset."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00228}00228\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00229}\mbox{\hyperlink{classVoertuig_ae79946f6cac26889c9621bc49b21039e}{00229}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVoertuig_ae79946f6cac26889c9621bc49b21039e}{Voertuig::berekenVersnelling}}(Voertuig*\ voertuig2)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00230}00230\ \ \ \ \ \textcolor{keywordtype}{int}\ indexLijst\ =\ this-\/>voertuig\_nummer()\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00231}00231\ \ \ \ \ \textcolor{keywordflow}{if}\ (indexLijst\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>gestopt1())\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>set\_versnelling(-\/(this-\/>maxremfactor1()*this-\/>snelheid1()/this-\/>maxversnelling1()));}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ volgafstand\ =\ voertuig2-\/>positie1()\ -\/\ this-\/>positie1()\ -\/\ voertuig2-\/>lengte1();}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ snelheidsverschil\ =\ this-\/>snelheid1()\ -\/\ voertuig2-\/>snelheid1();}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ delta\ =\ (this-\/>fmin1()\ +\ std::max(0.0,\ this-\/>snelheid1()\ +\ (\ (this-\/>snelheid1()\ *\ snelheidsverschil)\ /\ (2\ *\ std::sqrt(this-\/>maxversnelling1()\ *\ this-\/>maxremfactor1())))))/\ volgafstand;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ versnelling\ =\ this-\/>maxversnelling1()*(1-\/pow(this-\/>snelheid1()/this-\/>maxsnelheid1(),4)\ -\/\ pow(delta,2));}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>set\_versnelling(versnelling);}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00241}00241\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00242}00242\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>gestopt1())\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>set\_versnelling(-\/(this-\/>maxremfactor1()*this-\/>snelheid1()/this-\/>maxversnelling1()));}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ delta\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ versnelling\ =\ this-\/>maxversnelling1()*(1-\/pow(this-\/>snelheid1()/this-\/>maxsnelheid1(),4)\ -\/\ pow(delta,2));}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>set\_versnelling(versnelling);}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00250}00250\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00251}00251\ \ \ \ \ ENSURE(std::isfinite(this-\/>versnelling1()),\ \textcolor{stringliteral}{"{}Versnelling\ moet\ een\ geldig\ getal\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00252}00252\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00253}\mbox{\hyperlink{classVoertuig_a4cfc3dffca3f8c404de343c5682bb003}{00253}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVoertuig_a4cfc3dffca3f8c404de343c5682bb003}{Voertuig::berekenSnelheid}}(\textcolor{keywordtype}{double}\&\ DeltaTime)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00254}00254\ \ \ \ \ REQUIRE(DeltaTime\ >=0\ ,\ \textcolor{stringliteral}{"{}DeltaTime\ moet\ positief\ of\ 0\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00255}00255\ \ \ \ \ \textcolor{keywordtype}{double}\ snelheid\ =\ this-\/>snelheid1();}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00256}00256\ \ \ \ \ \textcolor{keywordtype}{double}\ versnelling\ =\ this-\/>versnelling1();}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00257}00257\ \ \ \ \ \textcolor{keywordtype}{double}\ formule\ =\ snelheid\ +\ (versnelling*DeltaTime);}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00258}00258\ \ \ \ \ \textcolor{keywordtype}{double}\ positie\ =\ this-\/>positie1();}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00259}00259\ \ \ \ \ \textcolor{comment}{/*if\ (snelheid>voertuig.mMaxsnelheid)\ \{}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00260}00260\ \textcolor{comment}{\ \ \ \ \ \ \ \ snelheid=voertuig.mMaxsnelheid;}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00261}00261\ \textcolor{comment}{\ \ \ \ \ \ \ \ positie\ =\ positie\ +\ (snelheid*DeltaTime)\ +\ (versnelling)*((pow(DeltaTime,2))/2);}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00262}00262\ \textcolor{comment}{\ \ \ \ \ \ \ \ voertuig.positie\ =\ positie;}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00263}00263\ \textcolor{comment}{\ \ \ \ \}\ else\ \{*/}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00264}00264\ \ \ \ \ \textcolor{keywordflow}{if}\ (formule\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ positie\ =\ positie\ -\/\ ((pow(snelheid,\ 2))/(2*versnelling));}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ snelheid\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ this-\/>set\_positie(positie);}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00268}00268\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00269}00269\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ snelheid\ =\ snelheid\ +\ (versnelling*DeltaTime);}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ positie\ =\ positie\ +\ (snelheid*DeltaTime)\ +\ (versnelling)*((pow(DeltaTime,2))/2);}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ this-\/>set\_positie(positie);}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00273}00273\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00274}00274\ \ \ \ \ \textcolor{comment}{/*\}*/}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00275}00275\ \ \ \ \ this-\/>set\_snelheid(snelheid);}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00276}00276\ \ \ \ \ ENSURE(this-\/>snelheid1()\ >=\ 0,\ \textcolor{stringliteral}{"{}Snelheid\ mag\ niet\ negatief\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00277}00277\ \ \ \ \ ENSURE(std::isfinite(this-\/>positie1()),\ \textcolor{stringliteral}{"{}Positie\ moet\ een\ geldig\ getal\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00278}00278\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00279}00279\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00280}\mbox{\hyperlink{classVoertuig_a9b0521e8be6eb2f28ab8bb63444984a1}{00280}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVoertuig_a9b0521e8be6eb2f28ab8bb63444984a1}{Voertuig::versnellen}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00281}00281\ \ \ \ \ REQUIRE(this-\/>m\_Maxsnelheid()\ >=0,\ \textcolor{stringliteral}{"{}mMaxsnelheid\ moet\ positief\ zijn\ of\ 0."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00282}00282\ \ \ \ \ this-\/>set\_maxsnelheid(this-\/>m\_Maxsnelheid());}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00283}00283\ \ \ \ \ \textcolor{comment}{/*int\ indexLijst\ =\ voertuig.voertuigNummer\ -\/\ 1;}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00284}00284\ \textcolor{comment}{\ \ \ \ if\ (indexLijst\ ==\ 0)\ \{}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00285}00285\ \textcolor{comment}{\ \ \ \ \ \ \ \ size\_t\ indexVoertuig2\ =\ indexLijst\ -\/\ 1;}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00286}00286\ \textcolor{comment}{\ \ \ \ \ \ \ \ if\ (indexVoertuig2\ >=\ 0\ \&\&\ indexVoertuig2\ <\ voertuigen.size())\ \{}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00287}00287\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ Voertuig\&\ voertuig2\ =\ voertuigen[indexVoertuig2];}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00288}00288\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ voertuig.maxsnelheid\ =\ voertuig2.mMaxsnelheid;}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00289}00289\ \textcolor{comment}{\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00290}00290\ \textcolor{comment}{\ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00291}00291\ \ \ \ \ ENSURE(this-\/>maxsnelheid1()\ ==\ this-\/>m\_Maxsnelheid(),\ \textcolor{stringliteral}{"{}Voertuig\ moet\ zijn\ maximumsnelheid\ terug\ hebben."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00292}00292\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00293}\mbox{\hyperlink{classVoertuig_a3751554eb0040e9f025e6c3b414e51a2}{00293}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVoertuig_a3751554eb0040e9f025e6c3b414e51a2}{Voertuig::vertragen}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00294}00294\ \ \ \ \ REQUIRE(this-\/>vertraagfactor1()\ >\ 0\ \&\&\ this-\/>vertraagfactor1()\ <\ 1,\ \textcolor{stringliteral}{"{}Vertraagfactor\ moet\ tussen\ 0\ en\ 1\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00295}00295\ \ \ \ \ REQUIRE(this-\/>m\_Maxsnelheid()\ >=\ 0,\ \textcolor{stringliteral}{"{}mMaxsnelheid\ moet\ positief\ zijn\ of\ 0."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00296}00296\ \ \ \ \ \textcolor{keywordtype}{double}\ s=this-\/>vertraagfactor1();}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00297}00297\ \ \ \ \ this-\/>set\_maxsnelheid(s*this-\/>m\_Maxsnelheid());}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00298}00298\ \ \ \ \ ENSURE(this-\/>maxsnelheid1()\ <\ this-\/>m\_Maxsnelheid(),\ \textcolor{stringliteral}{"{}Na\ vertraging\ moet\ maxsnelheid\ lager\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00299}00299\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00300}00300\ }
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00301}\mbox{\hyperlink{classVoertuig_a79b6c4db328b6410d95e35ca2df21901}{00301}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classVoertuig_a79b6c4db328b6410d95e35ca2df21901}{Voertuig::geldig}}(std::vector<Baan>\&\ banen,Voertuig\&\ voertuigtodelete,std::vector<Voertuig>*\ toDelete)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00302}00302\ \ \ \ \ REQUIRE(!banen.empty(),\ \textcolor{stringliteral}{"{}Er\ zijn\ geen\ banen\ aanwezig."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00303}00303\ \ \ \ \ REQUIRE(toDelete\ !=\ \textcolor{keyword}{nullptr},\ \textcolor{stringliteral}{"{}De\ toDelete\ mag\ niet\ null\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00304}00304\ \ \ \ \ \textcolor{comment}{//int\ indexLijst\ =\ this-\/>voertuig\_nummer()\ -\/\ 1;}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00305}00305\ \ \ \ \ std::string\ baannaam\ =\ this-\/>baan1()-\/>naam1();}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00306}00306\ \ \ \ \ \textcolor{keywordtype}{int}\ lengte\ =0;}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00307}00307\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classBaan}{Baan}}\&b\ :\ banen)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (b.naam1()\ ==\ baannaam)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ lengte\ =\ b.lengte1();}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00311}00311\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00312}00312\ \ \ \ \ \textcolor{keywordflow}{if}\ (lengte\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*std::cout\ <<\ "{}Bestaat\ niet."{}\ <<\ std::endl;*/}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00314}00314\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00315}00315\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this-\/>positie1()\ >\ lengte)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ (voertuigen.size()\ >\ 1)\{}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ Voertuig\&\ voertuig2\ =\ voertuigen[indexLijst\ +\ 1];}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ voertuig2.voertuigNummer\ =\ voertuig.voertuigNummer;}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \textcolor{comment}{//voertuigen.erase(voertuigen.begin()+indexLijst);}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ wagenToDelete(voertuigtodelete,toDelete);}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*std::cout\ <<\ "{}Voertuig\ weg\ van\ de\ baan"{}\ <<\ std::endl;*/}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00323}00323\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00324}00324\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*std::cout\ <<\ "{}er\ gebeurt\ niks"{}\ <<\ std::endl;*/}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00326}00326\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00327}00327\ \ \ \ \ std::string\ baanNaam=this-\/>baan1()-\/>naam1();}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00328}00328\ \ \ \ \ ENSURE(this-\/>positie1()\ <=\ lengte\ ||\ toDelete-\/>back().voertuig\_nummer()\ ==\ voertuigtodelete.voertuig\_nummer(),\ \textcolor{stringliteral}{"{}Voertuig\ moet\ op\ baan\ blijven\ of\ correct\ worden\ verwijderd."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00329}00329\ \}}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00330}00330\ \textcolor{keywordtype}{void}\ Voertuig::wagenToDelete(\mbox{\hyperlink{classVoertuig}{Voertuig}}\ \&voertuig,std::vector<Voertuig>*\ toDelete)\ \{}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00331}00331\ \ \ \ \ REQUIRE(toDelete\ !=\ \textcolor{keyword}{nullptr},\ \textcolor{stringliteral}{"{}De\ toDelete\ mag\ niet\ null\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00332}00332\ \ \ \ \ toDelete-\/>push\_back(voertuig);}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00333}00333\ \ \ \ \ ENSURE(toDelete-\/>back().voertuig\_nummer()\ ==\ voertuig.voertuig\_nummer(),\ \textcolor{stringliteral}{"{}Laatste\ voertuig\ in\ deletelijst\ is\ niet\ het\ toegevoegde\ voertuig."{}});}
+\DoxyCodeLine{\Hypertarget{Voertuig_8cpp_source_l00334}00334\ \}}
+
+\end{DoxyCode}

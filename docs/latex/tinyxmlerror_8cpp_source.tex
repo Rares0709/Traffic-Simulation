@@ -1,0 +1,58 @@
+\doxysection{tinyxmlerror.\+cpp}
+\hypertarget{tinyxmlerror_8cpp_source}{}\label{tinyxmlerror_8cpp_source}\index{src/tinyxmlerror.cpp@{src/tinyxmlerror.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00002}00002\ \textcolor{comment}{www.sourceforge.net/projects/tinyxml}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00003}00003\ \textcolor{comment}{Original\ code\ (2.0\ and\ earlier\ )copyright\ (c)\ 2000-\/2006\ Lee\ Thomason\ (www.grinninglizard.com)}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00004}00004\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00005}00005\ \textcolor{comment}{This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied\ }}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00006}00006\ \textcolor{comment}{warranty.\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ }}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00007}00007\ \textcolor{comment}{damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00008}00008\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00009}00009\ \textcolor{comment}{Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ }}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00010}00010\ \textcolor{comment}{purpose,\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ }}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00011}00011\ \textcolor{comment}{redistribute\ it\ freely,\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00012}00012\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00013}00013\ \textcolor{comment}{1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;\ you\ must}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00014}00014\ \textcolor{comment}{not\ claim\ that\ you\ wrote\ the\ original\ software.\ If\ you\ use\ this}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00015}00015\ \textcolor{comment}{software\ in\ a\ product,\ an\ acknowledgment\ in\ the\ product\ documentation}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00016}00016\ \textcolor{comment}{would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00017}00017\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00018}00018\ \textcolor{comment}{2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,\ and}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00019}00019\ \textcolor{comment}{must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00020}00020\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00021}00021\ \textcolor{comment}{3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00022}00022\ \textcolor{comment}{distribution.}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00023}00023\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}tinyxml.h"{}}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00027}00027\ \textcolor{comment}{//\ The\ goal\ of\ the\ seperate\ error\ file\ is\ to\ make\ the\ first}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00028}00028\ \textcolor{comment}{//\ step\ towards\ localization.\ tinyxml\ (currently)\ only\ supports}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00029}00029\ \textcolor{comment}{//\ english\ error\ messages,\ but\ the\ could\ now\ be\ translated.}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00030}00030\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00031}00031\ \textcolor{comment}{//\ It\ also\ cleans\ up\ the\ code\ a\ bit.}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00032}00032\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00034}00034\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ TiXmlBase::errorString[\ TiXmlBase::TIXML\_ERROR\_STRING\_COUNT\ ]\ =}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{stringliteral}{"{}No\ error"{}},}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{stringliteral}{"{}Error"{}},}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ open\ file"{}},}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{stringliteral}{"{}Error\ parsing\ Element."{}},}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ read\ Element\ name"{}},}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{stringliteral}{"{}Error\ reading\ Element\ value."{}},}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{stringliteral}{"{}Error\ reading\ Attributes."{}},}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{stringliteral}{"{}Error:\ empty\ tag."{}},}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{stringliteral}{"{}Error\ reading\ end\ tag."{}},}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{stringliteral}{"{}Error\ parsing\ Unknown."{}},}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{stringliteral}{"{}Error\ parsing\ Comment."{}},}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{stringliteral}{"{}Error\ parsing\ Declaration."{}},}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{stringliteral}{"{}Error\ document\ empty."{}},}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{stringliteral}{"{}Error\ null\ (0)\ or\ unexpected\ EOF\ found\ in\ input\ stream."{}},}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{stringliteral}{"{}Error\ parsing\ CDATA."{}},}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{stringliteral}{"{}Error\ when\ TiXmlDocument\ added\ to\ document,\ because\ TiXmlDocument\ can\ only\ be\ at\ the\ root."{}},}
+\DoxyCodeLine{\Hypertarget{tinyxmlerror_8cpp_source_l00052}00052\ \};}
+
+\end{DoxyCode}

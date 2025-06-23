@@ -1,0 +1,214 @@
+\doxysection{Parse\+File.\+cpp}
+\hypertarget{ParseFile_8cpp_source}{}\label{ParseFile_8cpp_source}\index{src/ParseFile.cpp@{src/ParseFile.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ jonas\ on\ 3/20/2025.}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}ParseFile.h"{}}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}DesignByContract.h"{}}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}tinyxml.h"{}}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00007}00007\ \textcolor{keywordtype}{int}\ Voertuig::volgendeNummer\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00008}00008\ \textcolor{keywordtype}{void}\ parseFile(\textcolor{keyword}{const}\ std::string\ inputfile,std::vector<Baan>*\ banen,std::vector<Verkeersverkeerslicht>*\ verkeerslichten,std::vector<Voertuig>*\ voertuigen,std::vector<VoertuigGen>\ *voertuigengen,std::vector<Bushalte>\ *bushaltes,std::vector<Kruispunt>\ *kruispunten)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00009}00009\ \ \ \ \ REQUIRE(!inputfile.empty(),\ \textcolor{stringliteral}{"{}Inputbestand\ mag\ niet\ leeg\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{classTiXmlDocument}{TiXmlDocument}}\ doc;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{comment}{/*std::vector<Baan>\ banen;}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00012}00012\ \textcolor{comment}{\ \ \ \ std::vector<Verkeersverkeerslicht>\ verkeerslichten;}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00013}00013\ \textcolor{comment}{\ \ \ \ std::vector<Voertuig>\ voertuigen;}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00014}00014\ \textcolor{comment}{\ \ \ \ std::vector<VoertuigGen>\ voertuigengen;}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00015}00015\ \textcolor{comment}{\ \ \ \ std::vector<Bushalte>\ bushaltes;}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00016}00016\ \textcolor{comment}{\ \ \ \ std::vector<Kruispunt>\ kruispunten;*/}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (!doc.\mbox{\hyperlink{classTiXmlDocument_a4c852a889c02cf251117fd1d9fe1845f}{LoadFile}}(inputfile.c\_str()))\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Fout\ bij\ laden\ van\ XML:\ "{}}\ <<\ doc.\mbox{\hyperlink{classTiXmlDocument_a03d596f13b24ebae712b2c42b019a5ab}{ErrorDesc}}()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ exit(1);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classTiXmlElement}{TiXmlElement}}*\ elem\ =\ doc.\mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}();\ elem\ !=\ NULL;\ elem\ =\ elem-\/>\mbox{\hyperlink{classTiXmlNode_ac6105781c913a42aa7f3f17bd1964f7c}{NextSiblingElement}}())\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ std::string\ elemName\ =\ elem-\/>Value();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (elemName\ ==\ \textcolor{stringliteral}{"{}VOERTUIG"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBaan}{Baan}}\ *gevondenBaan=\textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ positie=0;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classTiXmlElement}{TiXmlElement}}*\ child\ =\ elem-\/>\mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}();\ child\ !=\ NULL;\ child\ =\ child-\/>\mbox{\hyperlink{classTiXmlNode_ac6105781c913a42aa7f3f17bd1964f7c}{NextSiblingElement}}())\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlText}{TiXmlText}}*\ text\ =\ child-\/>\mbox{\hyperlink{classTiXmlNode_ae4fc3b6726cc9593784e1b622af249d5}{FirstChild}}()-\/>\mbox{\hyperlink{classTiXmlNode_a249f8cfd73c1fd7259529fa7c606bbd3}{ToText}}();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ childName\ =\ child-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childName\ ==\ \textcolor{stringliteral}{"{}baan"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ baannaam=\ text-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classBaan}{Baan}}\&\ baan:\ *banen)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (baan.naam1()\ ==\ baannaam)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gevondenBaan\ =\ \&baan;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childName\ ==\ \textcolor{stringliteral}{"{}positie"{}})\ positie\ =\ std::stoi(text-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}());}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childName\ ==\ \textcolor{stringliteral}{"{}type"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ type\ =\ text-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}auto"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAuto}{Auto}}\ a;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.set\_baan(gevondenBaan);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ a.set\_positie(positie);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voertuigen-\/>push\_back(a);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}bus"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBus}{Bus}}\ b;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b.set\_baan(gevondenBaan);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ b.set\_positie(positie);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voertuigen-\/>push\_back(b);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}brandweerwagen"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBrandweerwagen}{Brandweerwagen}}\ bw;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bw.set\_baan(gevondenBaan);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bw.set\_positie(positie);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voertuigen-\/>push\_back(bw);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}ziekenwagen"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classZiekenwagen}{Ziekenwagen}}\ z;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z.set\_baan(gevondenBaan);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ z.set\_positie(positie);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voertuigen-\/>push\_back(z);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}politiecombi"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPolitiecombi}{Politiecombi}}\ p;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.set\_baan(gevondenBaan);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.set\_positie(positie);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voertuigen-\/>push\_back(p);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ voertuig.baan\ <<\ "{}\ "{}\ <<\ voertuig.positie\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (elemName\ ==\ \textcolor{stringliteral}{"{}BAAN"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBaan}{Baan}}\ baan;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classTiXmlElement}{TiXmlElement}}*\ child\ =\ elem-\/>\mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}();\ child\ !=\ NULL;\ child\ =\ child-\/>\mbox{\hyperlink{classTiXmlNode_ac6105781c913a42aa7f3f17bd1964f7c}{NextSiblingElement}}())\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlText}{TiXmlText}}*\ text\ =\ child-\/>\mbox{\hyperlink{classTiXmlNode_ae4fc3b6726cc9593784e1b622af249d5}{FirstChild}}()-\/>\mbox{\hyperlink{classTiXmlNode_a249f8cfd73c1fd7259529fa7c606bbd3}{ToText}}();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ childName\ =\ child-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childName\ ==\ \textcolor{stringliteral}{"{}naam"{}})\ baan.set\_naam(text-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}());}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childName\ ==\ \textcolor{stringliteral}{"{}lengte"{}})\ baan.set\_lengte(std::stoi(text-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}()));}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ baan.naam\ <<\ "{}\ "{}\ <<\ baan.lengte\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ banen-\/>push\_back(baan);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (elemName\ ==\ \textcolor{stringliteral}{"{}VERKEERSLICHT"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}}\ verkeerslicht;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classTiXmlElement}{TiXmlElement}}*\ child\ =\ elem-\/>\mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}();\ child\ !=\ NULL;\ child\ =\ child-\/>\mbox{\hyperlink{classTiXmlNode_ac6105781c913a42aa7f3f17bd1964f7c}{NextSiblingElement}}())\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlText}{TiXmlText}}*\ text\ =\ child-\/>\mbox{\hyperlink{classTiXmlNode_ae4fc3b6726cc9593784e1b622af249d5}{FirstChild}}()-\/>\mbox{\hyperlink{classTiXmlNode_a249f8cfd73c1fd7259529fa7c606bbd3}{ToText}}();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ childName\ =\ child-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childName\ ==\ \textcolor{stringliteral}{"{}baan"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isGevonden\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBaan}{Baan}}\ *gevondenBaan\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ baannaam=\ text-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classBaan}{Baan}}\&\ baan:\ *banen)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (baan.naam1()\ ==\ baannaam)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gevondenBaan\ =\ \&baan;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isGevonden\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isGevonden)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ verkeerslicht.set\_baan(gevondenBaan);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childName\ ==\ \textcolor{stringliteral}{"{}positie"{}})\ verkeerslicht.set\_positie(std::stoi(text-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}()));}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childName\ ==\ \textcolor{stringliteral}{"{}cyclus"{}})\ verkeerslicht.set\_cyclus(std::stoi(text-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}()));}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ verkeerslicht.baan\ <<\ "{}\ "{}\ <<\ verkeerslicht.positie\ <<\ "{}\ "{}\ <<\ verkeerslicht.cyclus\ <<\ "{}\ verkeerslicht\ toegevoegd!"{}\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ verkeerslichten-\/>push\_back(verkeerslicht);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (elemName\ ==\ \textcolor{stringliteral}{"{}VOERTUIGGENERATOR"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVoertuigGen}{VoertuigGen}}\ voertuiggen;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classTiXmlElement}{TiXmlElement}}*\ child\ =\ elem-\/>\mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}();\ child\ !=\ NULL;\ child\ =\ child-\/>\mbox{\hyperlink{classTiXmlNode_ac6105781c913a42aa7f3f17bd1964f7c}{NextSiblingElement}}())\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlText}{TiXmlText}}*\ text\ =\ child-\/>\mbox{\hyperlink{classTiXmlNode_ae4fc3b6726cc9593784e1b622af249d5}{FirstChild}}()-\/>\mbox{\hyperlink{classTiXmlNode_a249f8cfd73c1fd7259529fa7c606bbd3}{ToText}}();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ childName\ =\ child-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childName\ ==\ \textcolor{stringliteral}{"{}baan"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isGevonden\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBaan}{Baan}}\ *gevondenBaan;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ baannaam=\ text-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classBaan}{Baan}}\&\ baan:\ *banen)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (baan.naam1()\ ==\ baannaam)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gevondenBaan\ =\ \&baan;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isGevonden\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isGevonden)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voertuiggen.set\_baan(gevondenBaan);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childName\ ==\ \textcolor{stringliteral}{"{}frequentie"{}})\ voertuiggen.set\_freq(std::stoi(text-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}()));}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::cout\ <<\ voertuiggen.baan\ <<\ "{}\ "{}\ <<\ voertuiggen.freq\ <<\ std::endl;}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ voertuigengen-\/>push\_back(voertuiggen);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (elemName\ ==\ \textcolor{stringliteral}{"{}BUSHALTE"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBushalte}{Bushalte}}\ bushalte;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classTiXmlElement}{TiXmlElement}}*\ child\ =\ elem-\/>\mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}();\ child\ !=\ NULL;\ child\ =\ child-\/>\mbox{\hyperlink{classTiXmlNode_ac6105781c913a42aa7f3f17bd1964f7c}{NextSiblingElement}}())\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlText}{TiXmlText}}*\ text\ =\ child-\/>\mbox{\hyperlink{classTiXmlNode_ae4fc3b6726cc9593784e1b622af249d5}{FirstChild}}()-\/>\mbox{\hyperlink{classTiXmlNode_a249f8cfd73c1fd7259529fa7c606bbd3}{ToText}}();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ childName\ =\ child-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childName\ ==\ \textcolor{stringliteral}{"{}baan"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isGevonden\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBaan}{Baan}}\ *gevondenBaan;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ baannaam=\ text-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classBaan}{Baan}}\&\ baan:\ *banen)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (baan.naam1()\ ==\ baannaam)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gevondenBaan\ =\ \&baan;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isGevonden\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isGevonden)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bushalte.set\_baan(gevondenBaan);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childName\ ==\ \textcolor{stringliteral}{"{}positie"{}})\ bushalte.set\_positie(std::stoi(text-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}()));}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (childName\ ==\ \textcolor{stringliteral}{"{}wachttijd"{}})\ bushalte.set\_wachttijd(std::stoi(text-\/>\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}()));}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ bushaltes-\/>push\_back(bushalte);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (elemName\ ==\ \textcolor{stringliteral}{"{}KRUISPUNT"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::pair<std::string,\ int>>\ temp;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classTiXmlElement}{TiXmlElement}}*\ child\ =\ elem-\/>\mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}();\ child\ !=\ NULL;\ child\ =\ child-\/>\mbox{\hyperlink{classTiXmlNode_ac6105781c913a42aa7f3f17bd1964f7c}{NextSiblingElement}}())\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::string(child-\/>Value())\ ==\ \textcolor{stringliteral}{"{}baan"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ positieAttr\ =\ child-\/>Attribute(\textcolor{stringliteral}{"{}positie"{}});}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (positieAttr\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Fout:\ baan\ in\ kruispunt\ zonder\ positie\ attribuut"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ positie\ =\ std::stoi(positieAttr);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ baanNaam\ =\ child-\/>GetText();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ temp.push\_back(\{baanNaam,\ positie\});}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Controle:\ moet\ precies\ 2\ banen\ zijn}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp.size()\ ==\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classKruispunt}{Kruispunt}}\ kruispunt;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isGevonden1\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBaan}{Baan}}\ *gevondenBaan1;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ baannaam1=\ temp[0].first;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classBaan}{Baan}}\&\ baan:\ *banen)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (baan.naam1()\ ==\ baannaam1)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gevondenBaan1\ =\ \&baan;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isGevonden1\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isGevonden1)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kruispunt.set\_from\_baan(gevondenBaan1);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isGevonden2\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBaan}{Baan}}*\ gevondenBaan2;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ baannaam=\ temp[1].first;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classBaan}{Baan}}\&\ baan:\ *banen)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (baan.naam1()\ ==\ baannaam)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gevondenBaan2\ =\ \&baan;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isGevonden2\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isGevonden2)\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kruispunt.set\_to\_baan(gevondenBaan2);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kruispunt.set\_from\_positie(temp[0].second);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kruispunt.set\_to\_positie(temp[1].second);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kruispunten-\/>push\_back(kruispunt);}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Fout:\ kruispunt\ heeft\ niet\ exact\ 2\ banen."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00205}00205\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00206}00206\ \ \ \ \ doc.\mbox{\hyperlink{classTiXmlNode_a708e7f953df61d4d2d12f73171550a4b}{Clear}}();}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00207}00207\ \ \ \ \ ENSURE(!banen-\/>empty(),\ \textcolor{stringliteral}{"{}De\ ingelezen\ verkeerssituatie\ moet\ minstens\ 1\ baan\ bevatten"{}});}
+\DoxyCodeLine{\Hypertarget{ParseFile_8cpp_source_l00208}00208\ \}}
+
+\end{DoxyCode}

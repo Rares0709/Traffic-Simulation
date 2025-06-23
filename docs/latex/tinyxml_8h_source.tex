@@ -1,0 +1,1180 @@
+\doxysection{tinyxml.\+h}
+\hypertarget{tinyxml_8h_source}{}\label{tinyxml_8h_source}\index{src/tinyxml.h@{src/tinyxml.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00002}00002\ \textcolor{comment}{www.sourceforge.net/projects/tinyxml}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00003}00003\ \textcolor{comment}{Original\ code\ by\ Lee\ Thomason\ (www.grinninglizard.com)}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00004}00004\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00005}00005\ \textcolor{comment}{This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00006}00006\ \textcolor{comment}{warranty.\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00007}00007\ \textcolor{comment}{damages\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00008}00008\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00009}00009\ \textcolor{comment}{Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00010}00010\ \textcolor{comment}{purpose,\ including\ commercial\ applications,\ and\ to\ alter\ it\ and}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00011}00011\ \textcolor{comment}{redistribute\ it\ freely,\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00012}00012\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00013}00013\ \textcolor{comment}{1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;\ you\ must}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00014}00014\ \textcolor{comment}{not\ claim\ that\ you\ wrote\ the\ original\ software.\ If\ you\ use\ this}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00015}00015\ \textcolor{comment}{software\ in\ a\ product,\ an\ acknowledgment\ in\ the\ product\ documentation}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00016}00016\ \textcolor{comment}{would\ be\ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00017}00017\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00018}00018\ \textcolor{comment}{2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,\ and}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00019}00019\ \textcolor{comment}{must\ not\ be\ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00020}00020\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00021}00021\ \textcolor{comment}{3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00022}00022\ \textcolor{comment}{distribution.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00023}00023\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00026}00026\ \textcolor{preprocessor}{\#ifndef\ TINYXML\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00027}00027\ \textcolor{preprocessor}{\#define\ TINYXML\_INCLUDED}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00029}00029\ \textcolor{preprocessor}{\#ifdef\ \_MSC\_VER}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00030}00030\ \textcolor{preprocessor}{\#pragma\ warning(\ push\ )}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00031}00031\ \textcolor{preprocessor}{\#pragma\ warning(\ disable\ :\ 4530\ )}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00032}00032\ \textcolor{preprocessor}{\#pragma\ warning(\ disable\ :\ 4786\ )}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00033}00033\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00035}00035\ \textcolor{preprocessor}{\#include\ <ctype.h>}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00036}00036\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00037}00037\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00038}00038\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00039}00039\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00041}00041\ \textcolor{comment}{//\ Help\ out\ windows:}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00042}00042\ \textcolor{preprocessor}{\#if\ defined(\ \_DEBUG\ )\ \&\&\ !defined(\ DEBUG\ )}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00043}00043\ \textcolor{preprocessor}{\#define\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00044}00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00046}00046\ \textcolor{preprocessor}{\#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00047}00047\ \textcolor{preprocessor}{\ \ \ \ \#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00048}00048\ \textcolor{preprocessor}{\ \ \ \ \#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00049}00049\ \textcolor{preprocessor}{\ \ \ \ \#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00050}00050\ \textcolor{preprocessor}{\ \ \ \ \#define\ TIXML\_STRING\ \ \ \ \ \ \ \ std::string}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00051}00051\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00052}00052\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}tinystr.h"{}}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00053}00053\ \textcolor{preprocessor}{\ \ \ \ \#define\ TIXML\_STRING\ \ \ \ \ \ \ \ TiXmlString}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00054}00054\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00056}00056\ \textcolor{comment}{//\ Deprecated\ library\ function\ hell.\ Compilers\ want\ to\ use\ the}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00057}00057\ \textcolor{comment}{//\ new\ safe\ versions.\ This\ probably\ doesn't\ fully\ address\ the\ problem,}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00058}00058\ \textcolor{comment}{//\ but\ it\ gets\ closer.\ There\ are\ too\ many\ compilers\ for\ me\ to\ fully}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00059}00059\ \textcolor{comment}{//\ test.\ If\ you\ get\ compilation\ troubles,\ undefine\ TIXML\_SAFE}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00060}00060\ \textcolor{preprocessor}{\#define\ TIXML\_SAFE}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00062}00062\ \textcolor{preprocessor}{\#ifdef\ TIXML\_SAFE}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00063}00063\ \textcolor{preprocessor}{\ \ \ \ \#if\ defined(\_MSC\_VER)\ \&\&\ (\_MSC\_VER\ >=\ 1400\ )}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Microsoft\ visual\ studio,\ version\ 2005\ and\ higher.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00065}00065\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ TIXML\_SNPRINTF\ \_snprintf\_s}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00066}00066\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ TIXML\_SSCANF\ \ \ sscanf\_s}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00067}00067\ \textcolor{preprocessor}{\ \ \ \ \#elif\ defined(\_MSC\_VER)\ \&\&\ (\_MSC\_VER\ >=\ 1200\ )}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Microsoft\ visual\ studio,\ version\ 6\ and\ higher.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\#pragma\ message(\ "{}Using\ \_sn*\ functions."{}\ )}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00070}00070\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ TIXML\_SNPRINTF\ \_snprintf}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00071}00071\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ TIXML\_SSCANF\ \ \ sscanf}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00072}00072\ \textcolor{preprocessor}{\ \ \ \ \#elif\ defined(\_\_GNUC\_\_)\ \&\&\ (\_\_GNUC\_\_\ >=\ 3\ )}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ GCC\ version\ 3\ and\ higher.s}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\#warning(\ "{}Using\ sn*\ functions."{}\ )}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00075}00075\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ TIXML\_SNPRINTF\ snprintf}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00076}00076\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ TIXML\_SSCANF\ \ \ sscanf}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00077}00077\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00078}00078\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ TIXML\_SNPRINTF\ snprintf}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00079}00079\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ TIXML\_SSCANF\ \ \ sscanf}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00080}00080\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00081}00081\ \textcolor{preprocessor}{\#endif\ \ }}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00083}00083\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTiXmlDocument}{TiXmlDocument}};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00084}00084\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTiXmlElement}{TiXmlElement}};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00085}00085\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTiXmlComment}{TiXmlComment}};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00086}00086\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTiXmlUnknown}{TiXmlUnknown}};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00087}00087\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00088}00088\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTiXmlText}{TiXmlText}};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00089}00089\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTiXmlDeclaration}{TiXmlDeclaration}};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00090}00090\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTiXmlParsingData}{TiXmlParsingData}};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00092}00092\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ TIXML\_MAJOR\_VERSION\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00093}00093\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ TIXML\_MINOR\_VERSION\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00094}00094\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ TIXML\_PATCH\_VERSION\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00096}00096\ \textcolor{comment}{/*\ \ Internal\ structure\ for\ tracking\ location\ of\ items\ }}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00097}00097\ \textcolor{comment}{\ \ \ \ in\ the\ XML\ file.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00098}00098\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00099}\mbox{\hyperlink{structTiXmlCursor}{00099}}\ \textcolor{keyword}{struct\ }TiXmlCursor}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00100}00100\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00101}00101\ \ \ \ \ TiXmlCursor()\ \ \ \ \ \ \ \{\ Clear();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00102}00102\ \ \ \ \ \textcolor{keywordtype}{void}\ Clear()\ \ \ \ \ \ \ \ \{\ row\ =\ col\ =\ -\/1;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00104}00104\ \ \ \ \ \textcolor{keywordtype}{int}\ row;\ \ \ \ \textcolor{comment}{//\ 0\ based.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00105}00105\ \ \ \ \ \textcolor{keywordtype}{int}\ col;\ \ \ \ \textcolor{comment}{//\ 0\ based.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00106}00106\ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00128}\mbox{\hyperlink{classTiXmlVisitor}{00128}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTiXmlVisitor}{TiXmlVisitor}}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00129}00129\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00130}00130\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00131}00131\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlVisitor}{\string~TiXmlVisitor}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00134}\mbox{\hyperlink{classTiXmlVisitor_a07baecb52dd7d8716ae2a48ad0956ee0}{00134}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlVisitor_a07baecb52dd7d8716ae2a48ad0956ee0}{VisitEnter}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlDocument}{TiXmlDocument}}\&\ \textcolor{comment}{/*doc*/}\ )\ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00136}\mbox{\hyperlink{classTiXmlVisitor_aa0ade4f27087447e93974e975c3246ad}{00136}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlVisitor_aa0ade4f27087447e93974e975c3246ad}{VisitExit}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlDocument}{TiXmlDocument}}\&\ \textcolor{comment}{/*doc*/}\ )\ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00139}\mbox{\hyperlink{classTiXmlVisitor_af6c6178ffa517bbdba95d70490875fff}{00139}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlVisitor_af6c6178ffa517bbdba95d70490875fff}{VisitEnter}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlElement}{TiXmlElement}}\&\ \textcolor{comment}{/*element*/},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}*\ \textcolor{comment}{/*firstAttribute*/}\ )\ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00141}\mbox{\hyperlink{classTiXmlVisitor_aec2b1f8116226d52f3a1b95dafd3a32c}{00141}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlVisitor_aec2b1f8116226d52f3a1b95dafd3a32c}{VisitExit}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlElement}{TiXmlElement}}\&\ \textcolor{comment}{/*element*/}\ )\ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00144}\mbox{\hyperlink{classTiXmlVisitor_afad71c71ce6473fb9b4b64cd92de4a19}{00144}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlVisitor_afad71c71ce6473fb9b4b64cd92de4a19}{Visit}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlDeclaration}{TiXmlDeclaration}}\&\ \textcolor{comment}{/*declaration*/}\ )\ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00146}\mbox{\hyperlink{classTiXmlVisitor_a399b8ebca5cd14664974a32d2ce029e5}{00146}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlVisitor_a399b8ebca5cd14664974a32d2ce029e5}{Visit}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlText}{TiXmlText}}\&\ \textcolor{comment}{/*text*/}\ )\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00148}\mbox{\hyperlink{classTiXmlVisitor_a53a60e7a528627b31af3161972cc7fa2}{00148}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlVisitor_a53a60e7a528627b31af3161972cc7fa2}{Visit}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlComment}{TiXmlComment}}\&\ \textcolor{comment}{/*comment*/}\ )\ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00150}\mbox{\hyperlink{classTiXmlVisitor_a7e284d607d275c51dac1adb58159ce28}{00150}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlVisitor_a7e284d607d275c51dac1adb58159ce28}{Visit}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlUnknown}{TiXmlUnknown}}\&\ \textcolor{comment}{/*unknown*/}\ )\ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00151}00151\ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00153}00153\ \textcolor{comment}{//\ Only\ used\ by\ Attribute::Query\ functions}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00154}00154\ \textcolor{keyword}{enum}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00155}00155\ \{\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00156}00156\ \ \ \ \ TIXML\_SUCCESS,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00157}00157\ \ \ \ \ TIXML\_NO\_ATTRIBUTE,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00158}00158\ \ \ \ \ TIXML\_WRONG\_TYPE}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00159}00159\ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00162}00162\ \textcolor{comment}{//\ Used\ by\ the\ parsing\ routines.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00163}00163\ \textcolor{keyword}{enum}\ TiXmlEncoding}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00164}00164\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00165}00165\ \ \ \ \ TIXML\_ENCODING\_UNKNOWN,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00166}00166\ \ \ \ \ TIXML\_ENCODING\_UTF8,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00167}00167\ \ \ \ \ TIXML\_ENCODING\_LEGACY}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00168}00168\ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00170}00170\ \textcolor{keyword}{const}\ TiXmlEncoding\ TIXML\_DEFAULT\_ENCODING\ =\ TIXML\_ENCODING\_UNKNOWN;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00194}\mbox{\hyperlink{classTiXmlBase}{00194}}\ \textcolor{keyword}{class\ }TiXmlBase}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00195}00195\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00196}00196\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }TiXmlNode;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00197}00197\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }TiXmlElement;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00198}00198\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }TiXmlDocument;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00200}00200\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00201}00201\ \ \ \ \ TiXmlBase()\ :\ \ \ \mbox{\hyperlink{classTiXmlBase_ab242c01590191f644569fa89a080d97c}{userData}}(0)\ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00202}00202\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~TiXmlBase()\ \ \ \ \ \ \ \ \ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00213}\mbox{\hyperlink{classTiXmlBase_a0de56b3f2ef14c65091a3b916437b512}{00213}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlBase_a0de56b3f2ef14c65091a3b916437b512}{Print}}(\ FILE*\ cfile,\ \textcolor{keywordtype}{int}\ depth\ )\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00221}\mbox{\hyperlink{classTiXmlBase_a0f799ec645bfb8d8a969e83478f379c1}{00221}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlBase_a0f799ec645bfb8d8a969e83478f379c1}{SetCondenseWhiteSpace}}(\ \textcolor{keywordtype}{bool}\ condense\ )\ \ \ \ \ \{\ condenseWhiteSpace\ =\ condense;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00224}\mbox{\hyperlink{classTiXmlBase_ad4b1472531c647a25b1840a87ae42438}{00224}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlBase_ad4b1472531c647a25b1840a87ae42438}{IsWhiteSpaceCondensed}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ condenseWhiteSpace;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00244}\mbox{\hyperlink{classTiXmlBase_ad0cacca5d76d156b26511f46080b442e}{00244}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTiXmlBase_ad0cacca5d76d156b26511f46080b442e}{Row}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ location.row\ +\ 1;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00245}\mbox{\hyperlink{classTiXmlBase_ad283b95d9858d5d78c334f4a61b07bb4}{00245}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTiXmlBase_ad283b95d9858d5d78c334f4a61b07bb4}{Column}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ location.col\ +\ 1;\ \}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00247}\mbox{\hyperlink{classTiXmlBase_ac6b3e0f790930d4970ec30764e937b5d}{00247}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{classTiXmlBase_ac6b3e0f790930d4970ec30764e937b5d}{SetUserData}}(\ \textcolor{keywordtype}{void}*\ user\ )\ \ \ \ \ \ \ \ \ \ \{\ \mbox{\hyperlink{classTiXmlBase_ab242c01590191f644569fa89a080d97c}{userData}}\ =\ user;\ \}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00248}\mbox{\hyperlink{classTiXmlBase_a436b80c865d437835d370a9eada6f9f5}{00248}}\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classTiXmlBase_a436b80c865d437835d370a9eada6f9f5}{GetUserData}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlBase_ab242c01590191f644569fa89a080d97c}{userData}};\ \}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00249}\mbox{\hyperlink{classTiXmlBase_aa44896ae7cc0e9b1007429b150a81d92}{00249}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{classTiXmlBase_aa44896ae7cc0e9b1007429b150a81d92}{GetUserData}}()\textcolor{keyword}{\ const\ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlBase_ab242c01590191f644569fa89a080d97c}{userData}};\ \}\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00251}00251\ \ \ \ \ \textcolor{comment}{//\ Table\ that\ returs,\ for\ a\ given\ lead\ byte,\ the\ total\ number\ of\ bytes}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00252}00252\ \ \ \ \ \textcolor{comment}{//\ in\ the\ UTF-\/8\ sequence.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00253}00253\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ utf8ByteTable[256];}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00254}00254\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00255}00255\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ Parse(\ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ p,\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlParsingData}{TiXmlParsingData}}*\ data,\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TiXmlEncoding\ encoding\ \textcolor{comment}{/*=\ TIXML\_ENCODING\_UNKNOWN\ */}\ )\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00258}00258\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00262}00262\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlBase_a32ed202562b58de64c7d799ca3c9db98}{EncodeString}}(\ \textcolor{keyword}{const}\ TIXML\_STRING\&\ str,\ TIXML\_STRING*\ out\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00263}00263\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00264}00264\ \ \ \ \ \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00265}00265\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00266}00266\ \ \ \ \ \ \ \ \ TIXML\_NO\_ERROR\ =\ 0,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00267}00267\ \ \ \ \ \ \ \ \ TIXML\_ERROR,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00268}00268\ \ \ \ \ \ \ \ \ TIXML\_ERROR\_OPENING\_FILE,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00269}00269\ \ \ \ \ \ \ \ \ TIXML\_ERROR\_PARSING\_ELEMENT,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00270}00270\ \ \ \ \ \ \ \ \ TIXML\_ERROR\_FAILED\_TO\_READ\_ELEMENT\_NAME,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00271}00271\ \ \ \ \ \ \ \ \ TIXML\_ERROR\_READING\_ELEMENT\_VALUE,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00272}00272\ \ \ \ \ \ \ \ \ TIXML\_ERROR\_READING\_ATTRIBUTES,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00273}00273\ \ \ \ \ \ \ \ \ TIXML\_ERROR\_PARSING\_EMPTY,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00274}00274\ \ \ \ \ \ \ \ \ TIXML\_ERROR\_READING\_END\_TAG,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00275}00275\ \ \ \ \ \ \ \ \ TIXML\_ERROR\_PARSING\_UNKNOWN,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00276}00276\ \ \ \ \ \ \ \ \ TIXML\_ERROR\_PARSING\_COMMENT,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00277}00277\ \ \ \ \ \ \ \ \ TIXML\_ERROR\_PARSING\_DECLARATION,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00278}00278\ \ \ \ \ \ \ \ \ TIXML\_ERROR\_DOCUMENT\_EMPTY,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00279}00279\ \ \ \ \ \ \ \ \ TIXML\_ERROR\_EMBEDDED\_NULL,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00280}00280\ \ \ \ \ \ \ \ \ TIXML\_ERROR\_PARSING\_CDATA,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00281}00281\ \ \ \ \ \ \ \ \ TIXML\_ERROR\_DOCUMENT\_TOP\_ONLY,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00282}00282\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00283}00283\ \ \ \ \ \ \ \ \ TIXML\_ERROR\_STRING\_COUNT}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00284}00284\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00285}00285\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00286}00286\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00287}00287\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00288}00288\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ SkipWhiteSpace(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*,\ TiXmlEncoding\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00289}00289\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00290}00290\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ IsWhiteSpace(\ \textcolor{keywordtype}{char}\ c\ )\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00291}00291\ \ \ \ \ \{\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00292}00292\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\ isspace(\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char})\ c\ )\ ||\ c\ ==\ \textcolor{charliteral}{'\(\backslash\)n'}\ ||\ c\ ==\ \textcolor{charliteral}{'\(\backslash\)r'}\ );\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00293}00293\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00294}00294\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ IsWhiteSpace(\ \textcolor{keywordtype}{int}\ c\ )}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00295}00295\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00296}00296\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ c\ <\ 256\ )}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ IsWhiteSpace(\ (\textcolor{keywordtype}{char})\ c\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00298}00298\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \ \ \textcolor{comment}{//\ Again,\ only\ truly\ correct\ for\ English/Latin...but\ usually\ works.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00299}00299\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00300}00300\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00301}00301\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00302}00302\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ StreamWhiteSpace(\ std::istream\ *\ in,\ TIXML\_STRING\ *\ tag\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00303}00303\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ StreamTo(\ std::istream\ *\ in,\ \textcolor{keywordtype}{int}\ character,\ TIXML\_STRING\ *\ tag\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00304}00304\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00306}00306\ \ \ \ \ \textcolor{comment}{/*\ \ Reads\ an\ XML\ name\ into\ the\ string\ provided.\ Returns}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00307}00307\ \textcolor{comment}{\ \ \ \ \ \ \ \ a\ pointer\ just\ past\ the\ last\ character\ of\ the\ name,}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00308}00308\ \textcolor{comment}{\ \ \ \ \ \ \ \ or\ 0\ if\ the\ function\ has\ an\ error.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00309}00309\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00310}00310\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ReadName(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ p,\ TIXML\_STRING*\ name,\ TiXmlEncoding\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00311}00311\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00312}00312\ \ \ \ \ \textcolor{comment}{/*\ \ Reads\ text.\ Returns\ a\ pointer\ past\ the\ given\ end\ tag.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00313}00313\ \textcolor{comment}{\ \ \ \ \ \ \ \ Wickedly\ complex\ options,\ but\ it\ keeps\ the\ (sensitive)\ code\ in\ one\ place.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00314}00314\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00315}00315\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ReadText(\ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ in,\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ where\ to\ start}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TIXML\_STRING*\ text,\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ string\ read}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ignoreWhiteSpace,\ \ \ \ \ \ \textcolor{comment}{//\ whether\ to\ keep\ the\ white\ space}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ endTag,\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ what\ ends\ this\ text}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ignoreCase,\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ whether\ to\ ignore\ case\ in\ the\ end\ tag}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TiXmlEncoding\ encoding\ );\ \ \ \textcolor{comment}{//\ the\ current\ encoding}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00322}00322\ \ \ \ \ \textcolor{comment}{//\ If\ an\ entity\ has\ been\ found,\ transform\ it\ into\ a\ character.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00323}00323\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ GetEntity(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ in,\ \textcolor{keywordtype}{char}*\ value,\ \textcolor{keywordtype}{int}*\ length,\ TiXmlEncoding\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00324}00324\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00325}00325\ \ \ \ \ \textcolor{comment}{//\ Get\ a\ character,\ while\ interpreting\ entities.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00326}00326\ \ \ \ \ \textcolor{comment}{//\ The\ length\ can\ be\ from\ 0\ to\ 4\ bytes.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00327}00327\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ GetChar(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ p,\ \textcolor{keywordtype}{char}*\ \_value,\ \textcolor{keywordtype}{int}*\ length,\ TiXmlEncoding\ encoding\ )}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00328}00328\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00329}00329\ \ \ \ \ \ \ \ \ assert(\ p\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00330}00330\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ encoding\ ==\ TIXML\_ENCODING\_UTF8\ )}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00331}00331\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ *length\ =\ utf8ByteTable[\ *((\textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}*)p)\ ];}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ assert(\ *length\ >=\ 0\ \&\&\ *length\ <\ 5\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00334}00334\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00335}00335\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00336}00336\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ *length\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00338}00338\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00339}00339\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00340}00340\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ *length\ ==\ 1\ )}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00341}00341\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ *p\ ==\ \textcolor{charliteral}{'\&'}\ )}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ GetEntity(\ p,\ \_value,\ length,\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ *\_value\ =\ *p;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p+1;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00346}00346\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00347}00347\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\ *length\ )}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00348}00348\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//strncpy(\ \_value,\ p,\ *length\ );\ \ \ \ //\ lots\ of\ compilers\ don't\ like\ this\ function\ (unsafe),}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ and\ the\ null\ terminator\ isn't\ needed}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\ \textcolor{keywordtype}{int}\ i=0;\ p[i]\ \&\&\ i<*length;\ ++i\ )\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_value[i]\ =\ p[i];}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p\ +\ (*length);}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00355}00355\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00356}00356\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00357}00357\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Not\ valid\ text.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00360}00360\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00361}00361\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00362}00362\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00363}00363\ \ \ \ \ \textcolor{comment}{//\ Return\ true\ if\ the\ next\ characters\ in\ the\ stream\ are\ any\ of\ the\ endTag\ sequences.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00364}00364\ \ \ \ \ \textcolor{comment}{//\ Ignore\ case\ only\ works\ for\ english,\ and\ should\ only\ be\ relied\ on\ when\ comparing}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00365}00365\ \ \ \ \ \textcolor{comment}{//\ to\ English\ words:\ StringEqual(\ p,\ "{}version"{},\ true\ )\ is\ fine.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00366}00366\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ StringEqual(\ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ p,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ endTag,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ignoreCase,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TiXmlEncoding\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00370}00370\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00371}00371\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ errorString[\ TIXML\_ERROR\_STRING\_COUNT\ ];}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00372}00372\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00373}00373\ \ \ \ \ TiXmlCursor\ location;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00374}00374\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00376}\mbox{\hyperlink{classTiXmlBase_ab242c01590191f644569fa89a080d97c}{00376}}\ \ \ \ \ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlBase_ab242c01590191f644569fa89a080d97c}{userData}};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00377}00377\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00378}00378\ \ \ \ \ \textcolor{comment}{//\ None\ of\ these\ methods\ are\ reliable\ for\ any\ language\ except\ English.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00379}00379\ \ \ \ \ \textcolor{comment}{//\ Good\ for\ approximation,\ not\ great\ for\ accuracy.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00380}00380\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ IsAlpha(\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ anyByte,\ TiXmlEncoding\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00381}00381\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ IsAlphaNum(\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ anyByte,\ TiXmlEncoding\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00382}00382\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ ToLower(\ \textcolor{keywordtype}{int}\ v,\ TiXmlEncoding\ encoding\ )}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00383}00383\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00384}00384\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ encoding\ ==\ TIXML\_ENCODING\_UTF8\ )}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00385}00385\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ v\ <\ 128\ )\ \textcolor{keywordflow}{return}\ tolower(\ v\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00388}00388\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00389}00389\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00390}00390\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tolower(\ v\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00392}00392\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00393}00393\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00394}00394\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ConvertUTF32ToUTF8(\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ input,\ \textcolor{keywordtype}{char}*\ output,\ \textcolor{keywordtype}{int}*\ length\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00395}00395\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00396}00396\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00397}00397\ \ \ \ \ TiXmlBase(\ \textcolor{keyword}{const}\ TiXmlBase\&\ );\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ not\ implemented.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00398}00398\ \ \ \ \ \textcolor{keywordtype}{void}\ operator=(\ \textcolor{keyword}{const}\ TiXmlBase\&\ base\ );\ \ \ \ \textcolor{comment}{//\ not\ allowed.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00399}00399\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00400}00400\ \ \ \ \ \textcolor{keyword}{struct\ }Entity}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00401}00401\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00402}00402\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \ \ \ \ str;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00403}00403\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ strLength;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00404}00404\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ chr;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00405}00405\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00406}00406\ \ \ \ \ \textcolor{keyword}{enum}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00407}00407\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00408}00408\ \ \ \ \ \ \ \ \ NUM\_ENTITY\ =\ 5,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00409}00409\ \ \ \ \ \ \ \ \ MAX\_ENTITY\_LENGTH\ =\ 6}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00410}00410\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00411}00411\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00412}00412\ \ \ \ \ \textcolor{keyword}{static}\ Entity\ entity[\ NUM\_ENTITY\ ];}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00413}00413\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ condenseWhiteSpace;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00414}00414\ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00415}00415\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00416}00416\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00423}\mbox{\hyperlink{classTiXmlNode}{00423}}\ \textcolor{keyword}{class\ }TiXmlNode\ :\ \textcolor{keyword}{public}\ TiXmlBase}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00424}00424\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00425}00425\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }TiXmlDocument;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00426}00426\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }TiXmlElement;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00427}00427\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00428}00428\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00429}00429\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00430}00430\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00434}00434\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ std::istream\&\ operator\ >>\ (std::istream\&\ in,\ TiXmlNode\&\ base);}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00435}00435\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00452}00452\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ operator<<\ (std::ostream\&\ out,\ \textcolor{keyword}{const}\ TiXmlNode\&\ base);}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00453}00453\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00455}00455\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ std::string\&\ operator<<\ (std::string\&\ out,\ \textcolor{keyword}{const}\ TiXmlNode\&\ base\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00456}00456\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00457}00457\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00458}00458\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00462}\mbox{\hyperlink{classTiXmlNode_a836eded4920ab9e9ef28496f48cd95a2}{00462}}\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classTiXmlNode_a836eded4920ab9e9ef28496f48cd95a2}{NodeType}}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00463}00463\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00464}00464\ \ \ \ \ \ \ \ \ TINYXML\_DOCUMENT,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00465}00465\ \ \ \ \ \ \ \ \ TINYXML\_ELEMENT,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00466}00466\ \ \ \ \ \ \ \ \ TINYXML\_COMMENT,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00467}00467\ \ \ \ \ \ \ \ \ TINYXML\_UNKNOWN,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00468}00468\ \ \ \ \ \ \ \ \ TINYXML\_TEXT,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00469}00469\ \ \ \ \ \ \ \ \ TINYXML\_DECLARATION,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00470}00470\ \ \ \ \ \ \ \ \ TINYXML\_TYPECOUNT}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00471}00471\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00472}00472\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00473}00473\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlNode}{\string~TiXmlNode}}();}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00474}00474\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00487}\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{00487}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classTiXmlNode_a3b260dd22313f310c0acb2e68ada6f5b}{Value}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ value.c\_str\ ();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00488}00488\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00489}00489\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00494}00494\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ ValueStr()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00495}00495\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00496}00496\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00497}00497\ \ \ \ \ \textcolor{keyword}{const}\ TIXML\_STRING\&\ ValueTStr()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ value;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00498}00498\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00508}\mbox{\hyperlink{classTiXmlNode_a2a38329ca5d3f28f98ce932b8299ae90}{00508}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlNode_a2a38329ca5d3f28f98ce932b8299ae90}{SetValue}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \_value)\ \{\ value\ =\ \_value;\}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00509}00509\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00510}00510\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00512}00512\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlNode_a2a38329ca5d3f28f98ce932b8299ae90}{SetValue}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value\ )\ \ \{\ value\ =\ \_value;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00513}00513\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00514}00514\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00516}00516\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlNode_a708e7f953df61d4d2d12f73171550a4b}{Clear}}();}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00517}00517\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00519}\mbox{\hyperlink{classTiXmlNode_a98ccf4dfc53c8eb12839f3680fdbf839}{00519}}\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a98ccf4dfc53c8eb12839f3680fdbf839}{Parent}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ parent;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00520}00520\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlNode}{TiXmlNode}}*\ \mbox{\hyperlink{classTiXmlNode_a98ccf4dfc53c8eb12839f3680fdbf839}{Parent}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ parent;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00521}00521\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00522}\mbox{\hyperlink{classTiXmlNode_ae4fc3b6726cc9593784e1b622af249d5}{00522}}\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_ae4fc3b6726cc9593784e1b622af249d5}{FirstChild}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ firstChild;\ \}\ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00523}00523\ \ \ \ \ \mbox{\hyperlink{classTiXmlNode}{TiXmlNode}}*\ \mbox{\hyperlink{classTiXmlNode_ae4fc3b6726cc9593784e1b622af249d5}{FirstChild}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ firstChild;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00524}00524\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_ae4fc3b6726cc9593784e1b622af249d5}{FirstChild}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ value\ )\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00526}\mbox{\hyperlink{classTiXmlNode_ab1dda042ebd0253f36519b76afa645fb}{00526}}\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_ab1dda042ebd0253f36519b76afa645fb}{FirstChild}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \_value\ )\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00527}00527\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Call\ through\ to\ the\ const\ version\ -\/\ safe\ since\ nothing\ is\ changed.\ Exiting\ syntax:\ cast\ this\ to\ a\ const\ (always\ safe)}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00528}00528\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ call\ the\ method,\ cast\ the\ return\ back\ to\ non-\/const.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00529}00529\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\ TiXmlNode*\ \textcolor{keyword}{>}\ ((\textcolor{keyword}{const\_cast<}\ \textcolor{keyword}{const\ }TiXmlNode*\ \textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>FirstChild(\ \_value\ ));}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00530}00530\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00531}00531\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlNode}{TiXmlNode}}*\ \mbox{\hyperlink{classTiXmlNode_a418603b3d7a2cf33d146521d96e6af20}{LastChild}}()\textcolor{keyword}{\ const\ \ \ \ }\{\ \textcolor{keywordflow}{return}\ lastChild;\ \}\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00532}\mbox{\hyperlink{classTiXmlNode_a418603b3d7a2cf33d146521d96e6af20}{00532}}\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a418603b3d7a2cf33d146521d96e6af20}{LastChild}}()\ \{\ \textcolor{keywordflow}{return}\ lastChild;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00533}00533\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00534}00534\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlNode}{TiXmlNode}}*\ \mbox{\hyperlink{classTiXmlNode_a418603b3d7a2cf33d146521d96e6af20}{LastChild}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ value\ )\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00535}\mbox{\hyperlink{classTiXmlNode_afe68e2adbf007c58d9348b25c44faa79}{00535}}\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_afe68e2adbf007c58d9348b25c44faa79}{LastChild}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \_value\ )\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00536}00536\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\ TiXmlNode*\ \textcolor{keyword}{>}\ ((\textcolor{keyword}{const\_cast<}\ \textcolor{keyword}{const\ }TiXmlNode*\ \textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>LastChild(\ \_value\ ));}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00537}00537\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00538}00538\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00539}00539\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00540}00540\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlNode}{TiXmlNode}}*\ \mbox{\hyperlink{classTiXmlNode_ae4fc3b6726cc9593784e1b622af249d5}{FirstChild}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value\ )\textcolor{keyword}{\ const\ \ \ }\{\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlNode_ae4fc3b6726cc9593784e1b622af249d5}{FirstChild}}\ (\_value.c\_str\ ());\ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00541}00541\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_ae4fc3b6726cc9593784e1b622af249d5}{FirstChild}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value\ )\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlNode_ae4fc3b6726cc9593784e1b622af249d5}{FirstChild}}\ (\_value.c\_str\ ());\ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00542}00542\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a418603b3d7a2cf33d146521d96e6af20}{LastChild}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value\ )\textcolor{keyword}{\ const\ \ }\{\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlNode_a418603b3d7a2cf33d146521d96e6af20}{LastChild}}\ (\_value.c\_str\ ());\ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00543}00543\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a418603b3d7a2cf33d146521d96e6af20}{LastChild}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value\ )\ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlNode_a418603b3d7a2cf33d146521d96e6af20}{LastChild}}\ (\_value.c\_str\ ());\ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00544}00544\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00545}00545\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00562}00562\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a67c3a02b797f08d9a31b2553661257e1}{IterateChildren}}(\ \textcolor{keyword}{const}\ TiXmlNode*\ previous\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00563}00563\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a67c3a02b797f08d9a31b2553661257e1}{IterateChildren}}(\ \textcolor{keyword}{const}\ TiXmlNode*\ previous\ )\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00564}00564\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\ TiXmlNode*\ \textcolor{keyword}{>}(\ (\textcolor{keyword}{const\_cast<}\ \textcolor{keyword}{const\ }TiXmlNode*\ \textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>IterateChildren(\ previous\ )\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00565}00565\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00566}00566\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00568}00568\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a67c3a02b797f08d9a31b2553661257e1}{IterateChildren}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ value,\ \textcolor{keyword}{const}\ TiXmlNode*\ previous\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00569}00569\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a67c3a02b797f08d9a31b2553661257e1}{IterateChildren}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \_value,\ \textcolor{keyword}{const}\ TiXmlNode*\ previous\ )\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00570}00570\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\ TiXmlNode*\ \textcolor{keyword}{>}(\ (\textcolor{keyword}{const\_cast<}\ \textcolor{keyword}{const\ }TiXmlNode*\ \textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>IterateChildren(\ \_value,\ previous\ )\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00571}00571\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00572}00572\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00573}00573\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00574}00574\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a67c3a02b797f08d9a31b2553661257e1}{IterateChildren}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value,\ \textcolor{keyword}{const}\ TiXmlNode*\ previous\ )\textcolor{keyword}{\ const\ \ \ }\{\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlNode_a67c3a02b797f08d9a31b2553661257e1}{IterateChildren}}\ (\_value.c\_str\ (),\ previous);\ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00575}00575\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a67c3a02b797f08d9a31b2553661257e1}{IterateChildren}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value,\ \textcolor{keyword}{const}\ TiXmlNode*\ previous\ )\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlNode_a67c3a02b797f08d9a31b2553661257e1}{IterateChildren}}\ (\_value.c\_str\ (),\ previous);\ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00576}00576\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00577}00577\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00581}00581\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_af287a913ce46d8dbf7ef24fec69bbaf0}{InsertEndChild}}(\ \textcolor{keyword}{const}\ TiXmlNode\&\ addThis\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00582}00582\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00583}00583\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00593}00593\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a1a881212554b759865f6cac79a851d38}{LinkEndChild}}(\ TiXmlNode*\ addThis\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00594}00594\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00598}00598\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a71e54e393336382bc9875f64aab5cb15}{InsertBeforeChild}}(\ TiXmlNode*\ beforeThis,\ \textcolor{keyword}{const}\ TiXmlNode\&\ addThis\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00599}00599\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00603}00603\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a274db3292218202805c093f66a964cb5}{InsertAfterChild}}(\ \ TiXmlNode*\ afterThis,\ \textcolor{keyword}{const}\ TiXmlNode\&\ addThis\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00604}00604\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00608}00608\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a543208c2c801c84a213529541e904b9f}{ReplaceChild}}(\ TiXmlNode*\ replaceThis,\ \textcolor{keyword}{const}\ TiXmlNode\&\ withThis\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00609}00609\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00611}00611\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlNode_ae19d8510efc90596552f4feeac9a8fbf}{RemoveChild}}(\ TiXmlNode*\ removeThis\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00612}00612\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00614}\mbox{\hyperlink{classTiXmlNode_a33375eafbc6cb1bdd75be47bcfb3ea1e}{00614}}\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a33375eafbc6cb1bdd75be47bcfb3ea1e}{PreviousSibling}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ prev;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00615}00615\ \ \ \ \ \mbox{\hyperlink{classTiXmlNode}{TiXmlNode}}*\ \mbox{\hyperlink{classTiXmlNode_a33375eafbc6cb1bdd75be47bcfb3ea1e}{PreviousSibling}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ prev;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00616}00616\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00618}00618\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a33375eafbc6cb1bdd75be47bcfb3ea1e}{PreviousSibling}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00619}00619\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a33375eafbc6cb1bdd75be47bcfb3ea1e}{PreviousSibling}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\_prev\ )\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00620}00620\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\ TiXmlNode*\ \textcolor{keyword}{>}(\ (\textcolor{keyword}{const\_cast<}\ \textcolor{keyword}{const\ }TiXmlNode*\ \textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>PreviousSibling(\ \_prev\ )\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00621}00621\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00622}00622\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00623}00623\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00624}00624\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a33375eafbc6cb1bdd75be47bcfb3ea1e}{PreviousSibling}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value\ )\textcolor{keyword}{\ const\ \ }\{\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlNode_a33375eafbc6cb1bdd75be47bcfb3ea1e}{PreviousSibling}}\ (\_value.c\_str\ ());\ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00625}00625\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a33375eafbc6cb1bdd75be47bcfb3ea1e}{PreviousSibling}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value\ )\ \ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlNode_a33375eafbc6cb1bdd75be47bcfb3ea1e}{PreviousSibling}}\ (\_value.c\_str\ ());\ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00626}00626\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a3db05b0249218e94fd41c766df87426c}{NextSibling}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value)\textcolor{keyword}{\ const\ \ \ \ \ \ \ }\{\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlNode_a3db05b0249218e94fd41c766df87426c}{NextSibling}}\ (\_value.c\_str\ ());\ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00627}00627\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a3db05b0249218e94fd41c766df87426c}{NextSibling}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlNode_a3db05b0249218e94fd41c766df87426c}{NextSibling}}\ (\_value.c\_str\ ());\ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00628}00628\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00629}00629\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00631}\mbox{\hyperlink{classTiXmlNode_a3db05b0249218e94fd41c766df87426c}{00631}}\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a3db05b0249218e94fd41c766df87426c}{NextSibling}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ next;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00632}00632\ \ \ \ \ \mbox{\hyperlink{classTiXmlNode}{TiXmlNode}}*\ \mbox{\hyperlink{classTiXmlNode_a3db05b0249218e94fd41c766df87426c}{NextSibling}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ next;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00633}00633\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00635}00635\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a3db05b0249218e94fd41c766df87426c}{NextSibling}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00636}00636\ \ \ \ \ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a3db05b0249218e94fd41c766df87426c}{NextSibling}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \_next\ )\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00637}00637\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\ TiXmlNode*\ \textcolor{keyword}{>}(\ (\textcolor{keyword}{const\_cast<}\ \textcolor{keyword}{const\ }TiXmlNode*\ \textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>NextSibling(\ \_next\ )\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00638}00638\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00639}00639\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00644}00644\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlElement*\ \mbox{\hyperlink{classTiXmlNode_ac6105781c913a42aa7f3f17bd1964f7c}{NextSiblingElement}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00645}00645\ \ \ \ \ TiXmlElement*\ \mbox{\hyperlink{classTiXmlNode_ac6105781c913a42aa7f3f17bd1964f7c}{NextSiblingElement}}()\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00646}00646\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\ TiXmlElement*\ \textcolor{keyword}{>}(\ (\textcolor{keyword}{const\_cast<}\ \textcolor{keyword}{const\ }TiXmlNode*\ \textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>NextSiblingElement()\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00647}00647\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00648}00648\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00653}00653\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlElement*\ \mbox{\hyperlink{classTiXmlNode_ac6105781c913a42aa7f3f17bd1964f7c}{NextSiblingElement}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00654}00654\ \ \ \ \ TiXmlElement*\ \mbox{\hyperlink{classTiXmlNode_ac6105781c913a42aa7f3f17bd1964f7c}{NextSiblingElement}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\_next\ )\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00655}00655\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\ TiXmlElement*\ \textcolor{keyword}{>}(\ (\textcolor{keyword}{const\_cast<}\ \textcolor{keyword}{const\ }TiXmlNode*\ \textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>NextSiblingElement(\ \_next\ )\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00656}00656\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00657}00657\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00658}00658\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00659}00659\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlElement*\ \mbox{\hyperlink{classTiXmlNode_ac6105781c913a42aa7f3f17bd1964f7c}{NextSiblingElement}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value)\textcolor{keyword}{\ const\ \ }\{\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlNode_ac6105781c913a42aa7f3f17bd1964f7c}{NextSiblingElement}}\ (\_value.c\_str\ ());\ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00660}00660\ \ \ \ \ TiXmlElement*\ \mbox{\hyperlink{classTiXmlNode_ac6105781c913a42aa7f3f17bd1964f7c}{NextSiblingElement}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlNode_ac6105781c913a42aa7f3f17bd1964f7c}{NextSiblingElement}}\ (\_value.c\_str\ ());\ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00661}00661\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00662}00662\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00664}00664\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlElement*\ \mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}()\ \ \ \ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00665}00665\ \ \ \ \ TiXmlElement*\ \mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}()\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00666}00666\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\ TiXmlElement*\ \textcolor{keyword}{>}(\ (\textcolor{keyword}{const\_cast<}\ \textcolor{keyword}{const\ }TiXmlNode*\ \textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>FirstChildElement()\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00667}00667\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00668}00668\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00670}00670\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlElement*\ \mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \_value\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00671}00671\ \ \ \ \ TiXmlElement*\ \mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \_value\ )\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00672}00672\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\ TiXmlElement*\ \textcolor{keyword}{>}(\ (\textcolor{keyword}{const\_cast<}\ \textcolor{keyword}{const\ }TiXmlNode*\ \textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>FirstChildElement(\ \_value\ )\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00673}00673\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00674}00674\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00675}00675\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00676}00676\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlElement*\ \mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value\ )\textcolor{keyword}{\ const\ \ \ }\{\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}\ (\_value.c\_str\ ());\ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00677}00677\ \ \ \ \ TiXmlElement*\ \mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value\ )\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}\ (\_value.c\_str\ ());\ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00678}00678\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00679}00679\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00684}\mbox{\hyperlink{classTiXmlNode_a0f4dd916b2afc2ab2f1a84f3e2b8fd5d}{00684}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTiXmlNode_a0f4dd916b2afc2ab2f1a84f3e2b8fd5d}{Type}}()\textcolor{keyword}{\ const\ \ \ \ }\{\ \textcolor{keywordflow}{return}\ type;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00685}00685\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00689}00689\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlDocument}{TiXmlDocument}}*\ \mbox{\hyperlink{classTiXmlNode_adcb070acefcbaedaa0673d82e530538b}{GetDocument}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00690}00690\ \ \ \ \ \mbox{\hyperlink{classTiXmlDocument}{TiXmlDocument}}*\ \mbox{\hyperlink{classTiXmlNode_adcb070acefcbaedaa0673d82e530538b}{GetDocument}}()\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00691}00691\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\ \mbox{\hyperlink{classTiXmlDocument}{TiXmlDocument}}*\ \textcolor{keyword}{>}(\ (\textcolor{keyword}{const\_cast<}\ \textcolor{keyword}{const\ }\mbox{\hyperlink{classTiXmlNode}{TiXmlNode}}*\ \textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>GetDocument()\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00692}00692\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00693}00693\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00695}\mbox{\hyperlink{classTiXmlNode_abe85e0ec04ea59c033f324c8504653e5}{00695}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlNode_abe85e0ec04ea59c033f324c8504653e5}{NoChildren}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ !firstChild;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00696}00696\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00697}\mbox{\hyperlink{classTiXmlNode_a82fb1921862d1619dd302d00e2bdc280}{00697}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ TiXmlDocument*\ \ \ \ \mbox{\hyperlink{classTiXmlNode_a82fb1921862d1619dd302d00e2bdc280}{ToDocument}}()\textcolor{keyword}{\ \ \ \ const\ }\{\ \textcolor{keywordflow}{return}\ 0;\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00698}\mbox{\hyperlink{classTiXmlNode_ad05bc141115b9e49f5ab2ee72cf6cfd1}{00698}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ TiXmlElement*\ \ \ \ \ \mbox{\hyperlink{classTiXmlNode_ad05bc141115b9e49f5ab2ee72cf6cfd1}{ToElement}}()\textcolor{keyword}{\ \ \ \ \ const\ }\{\ \textcolor{keywordflow}{return}\ 0;\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00699}\mbox{\hyperlink{classTiXmlNode_a124af8d4f18a027384c92871cfcd5ca2}{00699}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlComment}{TiXmlComment}}*\ \ \ \ \ \mbox{\hyperlink{classTiXmlNode_a124af8d4f18a027384c92871cfcd5ca2}{ToComment}}()\textcolor{keyword}{\ \ \ \ \ const\ }\{\ \textcolor{keywordflow}{return}\ 0;\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00700}\mbox{\hyperlink{classTiXmlNode_a9a513c44f34b597b4aaf89fd034eab7d}{00700}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlUnknown}{TiXmlUnknown}}*\ \ \ \ \ \mbox{\hyperlink{classTiXmlNode_a9a513c44f34b597b4aaf89fd034eab7d}{ToUnknown}}()\textcolor{keyword}{\ \ \ \ \ const\ }\{\ \textcolor{keywordflow}{return}\ 0;\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00701}\mbox{\hyperlink{classTiXmlNode_a249f8cfd73c1fd7259529fa7c606bbd3}{00701}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlText}{TiXmlText}}*\ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlNode_a249f8cfd73c1fd7259529fa7c606bbd3}{ToText}}()\textcolor{keyword}{\ \ \ \ \ \ \ \ const\ }\{\ \textcolor{keywordflow}{return}\ 0;\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00702}\mbox{\hyperlink{classTiXmlNode_a57b8c8ff1924891d0d683aa250c9a961}{00702}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlDeclaration}{TiXmlDeclaration}}*\ \mbox{\hyperlink{classTiXmlNode_a57b8c8ff1924891d0d683aa250c9a961}{ToDeclaration}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ 0;\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00703}00703\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00704}\mbox{\hyperlink{classTiXmlNode_a7946c320fb8ba3fa94ed0ef2da946f24}{00704}}\ \ \ \ \ \textcolor{keyword}{virtual}\ TiXmlDocument*\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlNode_a7946c320fb8ba3fa94ed0ef2da946f24}{ToDocument}}()\ \ \ \ \{\ \textcolor{keywordflow}{return}\ 0;\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00705}\mbox{\hyperlink{classTiXmlNode_acf4c98b9da8f60f9312bcc9ddd0a4d24}{00705}}\ \ \ \ \ \textcolor{keyword}{virtual}\ TiXmlElement*\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlNode_acf4c98b9da8f60f9312bcc9ddd0a4d24}{ToElement}}()\ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ 0;\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00706}\mbox{\hyperlink{classTiXmlNode_a690352c7851dddd448385d197b5ef83e}{00706}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlComment}{TiXmlComment}}*\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlNode_a690352c7851dddd448385d197b5ef83e}{ToComment}}()\ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ 0;\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00707}\mbox{\hyperlink{classTiXmlNode_a9e5c565c0e9e5ca1ba9e8be9d6557fda}{00707}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlUnknown}{TiXmlUnknown}}*\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlNode_a9e5c565c0e9e5ca1ba9e8be9d6557fda}{ToUnknown}}()\ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ 0;\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00708}\mbox{\hyperlink{classTiXmlNode_a8e2e910e97726d80309dbb485bcf774d}{00708}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlText}{TiXmlText}}*\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlNode_a8e2e910e97726d80309dbb485bcf774d}{ToText}}()\ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ 0;\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00709}\mbox{\hyperlink{classTiXmlNode_a847ab30e2655ffa1a66ea79a31d62af2}{00709}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlDeclaration}{TiXmlDeclaration}}*\ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlNode_a847ab30e2655ffa1a66ea79a31d62af2}{ToDeclaration}}()\ \{\ \textcolor{keywordflow}{return}\ 0;\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00710}00710\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00714}\mbox{\hyperlink{classTiXmlNode_a8393385d6431e5e046c78c91ea44843e}{00714}}\ \ \ \ \ \textcolor{keyword}{virtual}\ TiXmlNode*\ \mbox{\hyperlink{classTiXmlNode_a8393385d6431e5e046c78c91ea44843e}{Clone}}()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00715}00715\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00738}\mbox{\hyperlink{classTiXmlNode_acc0f88b7462c6cb73809d410a4f5bb86}{00738}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlNode_acc0f88b7462c6cb73809d410a4f5bb86}{Accept}}(\ \mbox{\hyperlink{classTiXmlVisitor}{TiXmlVisitor}}*\ visitor\ )\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00739}00739\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00740}00740\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00741}00741\ \ \ \ \ TiXmlNode(\ \mbox{\hyperlink{classTiXmlNode_a836eded4920ab9e9ef28496f48cd95a2}{NodeType}}\ \_type\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00742}00742\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00743}00743\ \ \ \ \ \textcolor{comment}{//\ Copy\ to\ the\ allocated\ object.\ Shared\ functionality\ between\ Clone,\ Copy\ constructor,}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00744}00744\ \ \ \ \ \textcolor{comment}{//\ and\ the\ assignment\ operator.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00745}00745\ \ \ \ \ \textcolor{keywordtype}{void}\ CopyTo(\ TiXmlNode*\ target\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00746}00746\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00747}00747\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00748}00748\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ real\ work\ of\ the\ input\ operator.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00749}00749\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ StreamIn(\ std::istream*\ in,\ TIXML\_STRING*\ tag\ )\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00750}00750\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00751}00751\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00752}00752\ \ \ \ \ \textcolor{comment}{//\ Figure\ out\ what\ is\ at\ *p,\ and\ parse\ it.\ Returns\ null\ if\ it\ is\ not\ an\ xml\ node.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00753}00753\ \ \ \ \ TiXmlNode*\ Identify(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ start,\ TiXmlEncoding\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00754}00754\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00755}00755\ \ \ \ \ TiXmlNode*\ \ \ \ \ \ parent;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00756}00756\ \ \ \ \ \mbox{\hyperlink{classTiXmlNode_a836eded4920ab9e9ef28496f48cd95a2}{NodeType}}\ \ \ \ \ \ \ \ type;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00757}00757\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00758}00758\ \ \ \ \ TiXmlNode*\ \ \ \ \ \ firstChild;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00759}00759\ \ \ \ \ TiXmlNode*\ \ \ \ \ \ lastChild;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00760}00760\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00761}00761\ \ \ \ \ TIXML\_STRING\ \ \ \ value;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00762}00762\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00763}00763\ \ \ \ \ TiXmlNode*\ \ \ \ \ \ prev;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00764}00764\ \ \ \ \ TiXmlNode*\ \ \ \ \ \ next;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00765}00765\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00766}00766\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00767}00767\ \ \ \ \ TiXmlNode(\ \textcolor{keyword}{const}\ TiXmlNode\&\ );\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ not\ implemented.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00768}00768\ \ \ \ \ \textcolor{keywordtype}{void}\ operator=(\ \textcolor{keyword}{const}\ TiXmlNode\&\ base\ );\ \ \ \ \textcolor{comment}{//\ not\ allowed.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00769}00769\ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00770}00770\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00771}00771\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00779}\mbox{\hyperlink{classTiXmlAttribute}{00779}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}\ :\ \textcolor{keyword}{public}\ TiXmlBase}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00780}00780\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00781}00781\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }TiXmlAttributeSet;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00782}00782\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00783}00783\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00785}\mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{00785}}\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}()\ :\ TiXmlBase()}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00786}00786\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00787}00787\ \ \ \ \ \ \ \ \ document\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00788}00788\ \ \ \ \ \ \ \ \ prev\ =\ next\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00789}00789\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00790}00790\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00791}00791\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00793}00793\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}(\ \textcolor{keyword}{const}\ std::string\&\ \_name,\ \textcolor{keyword}{const}\ std::string\&\ \_value\ )}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00794}00794\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00795}00795\ \ \ \ \ \ \ \ \ name\ =\ \_name;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00796}00796\ \ \ \ \ \ \ \ \ value\ =\ \_value;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00797}00797\ \ \ \ \ \ \ \ \ document\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00798}00798\ \ \ \ \ \ \ \ \ prev\ =\ next\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00799}00799\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00800}00800\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00801}00801\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00803}\mbox{\hyperlink{classTiXmlAttribute_a759d0b76fb8fcf765ecab243bc14f05e}{00803}}\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute_a759d0b76fb8fcf765ecab243bc14f05e}{TiXmlAttribute}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \_name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \_value\ )}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00804}00804\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00805}00805\ \ \ \ \ \ \ \ \ name\ =\ \_name;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00806}00806\ \ \ \ \ \ \ \ \ value\ =\ \_value;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00807}00807\ \ \ \ \ \ \ \ \ document\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00808}00808\ \ \ \ \ \ \ \ \ prev\ =\ next\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00809}00809\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00810}00810\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00811}\mbox{\hyperlink{classTiXmlAttribute_a83798ef3113c3522154c3fc37b4db85b}{00811}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute_a83798ef3113c3522154c3fc37b4db85b}{Name}}()\textcolor{keyword}{\ \ const\ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ name.c\_str();\ \}\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00812}\mbox{\hyperlink{classTiXmlAttribute_a0da84344b585308878ec68605f1cbb20}{00812}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute_a0da84344b585308878ec68605f1cbb20}{Value}}()\textcolor{keyword}{\ const\ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ value.c\_str();\ \}\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00813}00813\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00814}00814\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ ValueStr()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ value;\ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00815}00815\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00816}00816\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute_ac8501370b065df31a35003c81d87cef2}{IntValue}}()\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00817}00817\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute_a8cca240fb2a7130c87b0fc6156e8b34f}{DoubleValue}}()\ \textcolor{keyword}{const};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00818}00818\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00819}00819\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ tinyxml\ string\ representation}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00820}00820\ \ \ \ \ \textcolor{keyword}{const}\ TIXML\_STRING\&\ NameTStr()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ name;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00821}00821\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00831}00831\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTiXmlAttribute_a6caa8090d2fbb7966700a16e45ed33de}{QueryIntValue}}(\ \textcolor{keywordtype}{int}*\ \_value\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00833}00833\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTiXmlAttribute_a6fa41b710c1b79de37a97004aa600c06}{QueryDoubleValue}}(\ \textcolor{keywordtype}{double}*\ \_value\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00834}00834\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00835}\mbox{\hyperlink{classTiXmlAttribute_ab7fa3d21ff8d7c5764cf9af15b667a99}{00835}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlAttribute_ab7fa3d21ff8d7c5764cf9af15b667a99}{SetName}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \_name\ )\ \ \ \ \{\ name\ =\ \_name;\ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00836}\mbox{\hyperlink{classTiXmlAttribute_a2dae44178f668b3cb48101be4f2236a0}{00836}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlAttribute_a2dae44178f668b3cb48101be4f2236a0}{SetValue}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \_value\ )\ \{\ value\ =\ \_value;\ \}\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00837}00837\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00838}00838\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlAttribute_a7e065df640116a62ea4f4b7da5449cc8}{SetIntValue}}(\ \textcolor{keywordtype}{int}\ \_value\ );\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00839}00839\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlAttribute_a0316da31373496c4368ad549bf711394}{SetDoubleValue}}(\ \textcolor{keywordtype}{double}\ \_value\ );\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00840}00840\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00841}00841\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00843}00843\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlAttribute_ab7fa3d21ff8d7c5764cf9af15b667a99}{SetName}}(\ \textcolor{keyword}{const}\ std::string\&\ \_name\ )\ \{\ name\ =\ \_name;\ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00845}00845\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlAttribute_a2dae44178f668b3cb48101be4f2236a0}{SetValue}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value\ )\ \ \{\ value\ =\ \_value;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00846}00846\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00847}00847\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00849}00849\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}*\ \mbox{\hyperlink{classTiXmlAttribute_af2e78f1ba9ed56a26ddc80614ed1c393}{Next}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00850}00850\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}*\ \mbox{\hyperlink{classTiXmlAttribute_af2e78f1ba9ed56a26ddc80614ed1c393}{Next}}()\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00851}00851\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\ \mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}*\ \textcolor{keyword}{>}(\ (\textcolor{keyword}{const\_cast<}\ \textcolor{keyword}{const\ }\mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}*\ \textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>Next()\ );\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00852}00852\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00853}00853\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00855}00855\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}*\ \mbox{\hyperlink{classTiXmlAttribute_afc7bbfdf83d59fbc4ff5e283d27b5d7d}{Previous}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00856}00856\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}*\ \mbox{\hyperlink{classTiXmlAttribute_afc7bbfdf83d59fbc4ff5e283d27b5d7d}{Previous}}()\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00857}00857\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{const\_cast<}\ \mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}*\ \textcolor{keyword}{>}(\ (\textcolor{keyword}{const\_cast<}\ \textcolor{keyword}{const\ }\mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}*\ \textcolor{keyword}{>}(\textcolor{keyword}{this}))-\/>Previous()\ );\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00858}00858\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00859}00859\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00860}00860\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}\&\ rhs\ )\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ rhs.name\ ==\ name;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00861}00861\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator<(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}\&\ rhs\ )\textcolor{keyword}{\ \ \ \ const\ }\{\ \textcolor{keywordflow}{return}\ name\ <\ rhs.name;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00862}00862\ \ \ \ \ \textcolor{keywordtype}{bool}\ operator>(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}\&\ rhs\ )\textcolor{keyword}{\ \ const\ }\{\ \textcolor{keywordflow}{return}\ name\ >\ rhs.name;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00863}00863\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00864}00864\ \ \ \ \ \textcolor{comment}{/*\ \ Attribute\ parsing\ starts:\ first\ letter\ of\ the\ name}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00865}00865\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ returns:\ the\ next\ char\ after\ the\ value\ end\ quote}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00866}00866\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00867}00867\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ Parse(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ p,\ TiXmlParsingData*\ data,\ TiXmlEncoding\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00868}00868\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00869}00869\ \ \ \ \ \textcolor{comment}{//\ Prints\ this\ Attribute\ to\ a\ FILE\ stream.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00870}\mbox{\hyperlink{classTiXmlAttribute_a68ae373e03b9c35be4c9d0c3c233b894}{00870}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlAttribute_a68ae373e03b9c35be4c9d0c3c233b894}{Print}}(\ FILE*\ cfile,\ \textcolor{keywordtype}{int}\ depth\ )\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00871}00871\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute_a68ae373e03b9c35be4c9d0c3c233b894}{Print}}(\ cfile,\ depth,\ 0\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00872}00872\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00873}00873\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlAttribute_a68ae373e03b9c35be4c9d0c3c233b894}{Print}}(\ FILE*\ cfile,\ \textcolor{keywordtype}{int}\ depth,\ TIXML\_STRING*\ str\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00874}00874\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00875}00875\ \ \ \ \ \textcolor{comment}{//\ [internal\ use]}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00876}00876\ \ \ \ \ \textcolor{comment}{//\ Set\ the\ document\ pointer\ so\ the\ attribute\ can\ report\ errors.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00877}00877\ \ \ \ \ \textcolor{keywordtype}{void}\ SetDocument(\ \mbox{\hyperlink{classTiXmlDocument}{TiXmlDocument}}*\ doc\ )\ \{\ document\ =\ doc;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00878}00878\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00879}00879\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00880}00880\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}\&\ );\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ not\ implemented.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00881}00881\ \ \ \ \ \textcolor{keywordtype}{void}\ operator=(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}\&\ base\ );\ \textcolor{comment}{//\ not\ allowed.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00882}00882\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00883}00883\ \ \ \ \ TiXmlDocument*\ \ document;\ \ \ \textcolor{comment}{//\ A\ pointer\ back\ to\ a\ document,\ for\ error\ reporting.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00884}00884\ \ \ \ \ TIXML\_STRING\ name;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00885}00885\ \ \ \ \ TIXML\_STRING\ value;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00886}00886\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}*\ \ \ prev;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00887}00887\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute_a9cfa3c8179873fd485d83003b114f8e1}{TiXmlAttribute}}*\ \ \ next;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00888}00888\ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00889}00889\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00890}00890\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00891}00891\ \textcolor{comment}{/*\ \ A\ class\ used\ to\ manage\ a\ group\ of\ attributes.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00892}00892\ \textcolor{comment}{\ \ \ \ It\ is\ only\ used\ internally,\ both\ by\ the\ ELEMENT\ and\ the\ DECLARATION.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00893}00893\ \textcolor{comment}{\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00894}00894\ \textcolor{comment}{\ \ \ \ The\ set\ can\ be\ changed\ transparent\ to\ the\ Element\ and\ Declaration}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00895}00895\ \textcolor{comment}{\ \ \ \ classes\ that\ use\ it,\ but\ NOT\ transparent\ to\ the\ Attribute}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00896}00896\ \textcolor{comment}{\ \ \ \ which\ has\ to\ implement\ a\ next()\ and\ previous()\ method.\ Which\ makes}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00897}00897\ \textcolor{comment}{\ \ \ \ it\ a\ bit\ problematic\ and\ prevents\ the\ use\ of\ STL.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00898}00898\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00899}00899\ \textcolor{comment}{\ \ \ \ This\ version\ is\ implemented\ with\ circular\ lists\ because:}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00900}00900\ \textcolor{comment}{\ \ \ \ \ \ \ \ -\/\ I\ like\ circular\ lists}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00901}00901\ \textcolor{comment}{\ \ \ \ \ \ \ \ -\/\ it\ demonstrates\ some\ independence\ from\ the\ (typical)\ doubly\ linked\ list.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00902}00902\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00903}\mbox{\hyperlink{classTiXmlAttributeSet}{00903}}\ \textcolor{keyword}{class\ }TiXmlAttributeSet}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00904}00904\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00905}00905\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00906}00906\ \ \ \ \ TiXmlAttributeSet();}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00907}00907\ \ \ \ \ \string~TiXmlAttributeSet();}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00908}00908\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00909}00909\ \ \ \ \ \textcolor{keywordtype}{void}\ Add(\ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}*\ attribute\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00910}00910\ \ \ \ \ \textcolor{keywordtype}{void}\ Remove(\ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}*\ attribute\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00911}00911\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00912}00912\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}*\ First()\textcolor{keyword}{\ const\ \ \ }\{\ \textcolor{keywordflow}{return}\ (\ sentinel.next\ ==\ \&sentinel\ )\ ?\ 0\ :\ sentinel.next;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00913}00913\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}*\ First()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ (\ sentinel.next\ ==\ \&sentinel\ )\ ?\ 0\ :\ sentinel.next;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00914}00914\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}*\ Last()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ (\ sentinel.prev\ ==\ \&sentinel\ )\ ?\ 0\ :\ sentinel.prev;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00915}00915\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}*\ Last()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ (\ sentinel.prev\ ==\ \&sentinel\ )\ ?\ 0\ :\ sentinel.prev;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00916}00916\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00917}00917\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}*\ \ \ Find(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \_name\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00918}00918\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}*\ FindOrCreate(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \_name\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00919}00919\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00920}00920\ \textcolor{preprocessor}{\#\ \ \ ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00921}00921\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}*\ \ \ Find(\ \textcolor{keyword}{const}\ std::string\&\ \_name\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00922}00922\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}*\ FindOrCreate(\ \textcolor{keyword}{const}\ std::string\&\ \_name\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00923}00923\ \textcolor{preprocessor}{\#\ \ \ endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00924}00924\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00925}00925\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00926}00926\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00927}00927\ \ \ \ \ \textcolor{comment}{//*ME:\ \ Because\ of\ hidden/disabled\ copy-\/construktor\ in\ TiXmlAttribute\ (sentinel-\/element),}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00928}00928\ \ \ \ \ \textcolor{comment}{//*ME:\ \ this\ class\ must\ be\ also\ use\ a\ hidden/disabled\ copy-\/constructor\ !!!}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00929}00929\ \ \ \ \ TiXmlAttributeSet(\ \textcolor{keyword}{const}\ TiXmlAttributeSet\&\ );\ \ \textcolor{comment}{//\ not\ allowed}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00930}00930\ \ \ \ \ \textcolor{keywordtype}{void}\ operator=(\ \textcolor{keyword}{const}\ TiXmlAttributeSet\&\ );\ \textcolor{comment}{//\ not\ allowed\ (as\ TiXmlAttribute)}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00931}00931\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00932}00932\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}\ sentinel;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00933}00933\ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00934}00934\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00935}00935\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00940}\mbox{\hyperlink{classTiXmlElement}{00940}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTiXmlElement_a01bc3ab372d35da08efcbbe65ad90c60}{TiXmlElement}}\ :\ \textcolor{keyword}{public}\ TiXmlNode}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00941}00941\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00942}00942\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00944}00944\ \ \ \ \ \mbox{\hyperlink{classTiXmlElement_a01bc3ab372d35da08efcbbe65ad90c60}{TiXmlElement}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ in\_value);}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00945}00945\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00946}00946\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00948}00948\ \ \ \ \ \mbox{\hyperlink{classTiXmlElement_a01bc3ab372d35da08efcbbe65ad90c60}{TiXmlElement}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00949}00949\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00950}00950\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00951}00951\ \ \ \ \ \mbox{\hyperlink{classTiXmlElement_a01bc3ab372d35da08efcbbe65ad90c60}{TiXmlElement}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlElement_a01bc3ab372d35da08efcbbe65ad90c60}{TiXmlElement}}\&\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00952}00952\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00953}00953\ \ \ \ \ \mbox{\hyperlink{classTiXmlElement_a01bc3ab372d35da08efcbbe65ad90c60}{TiXmlElement}}\&\ operator=(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlElement_a01bc3ab372d35da08efcbbe65ad90c60}{TiXmlElement}}\&\ base\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00954}00954\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00955}00955\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlElement_a01bc3ab372d35da08efcbbe65ad90c60}{\string~TiXmlElement}}();}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00956}00956\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00960}00960\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classTiXmlElement_a6042f518748f475a7ac4b4e0b509eb05}{Attribute}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00961}00961\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00968}00968\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classTiXmlElement_a6042f518748f475a7ac4b4e0b509eb05}{Attribute}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{int}*\ i\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00969}00969\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00976}00976\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classTiXmlElement_a6042f518748f475a7ac4b4e0b509eb05}{Attribute}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{double}*\ d\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00977}00977\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00985}00985\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTiXmlElement_a5c0f739e0f6f5905a201364532e54a60}{QueryIntAttribute}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{int}*\ \_value\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00987}00987\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTiXmlElement_ab75c83543d4ace62f4c40d7e8e392fc3}{QueryUnsignedAttribute}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{unsigned}*\ \_value\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00992}00992\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTiXmlElement_a5789b1488af75b6ae37a749700495ceb}{QueryBoolAttribute}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{bool}*\ \_value\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00994}00994\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTiXmlElement_ae04bad29ddb281a7e6c662b3882e9928}{QueryDoubleAttribute}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{double}*\ \_value\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00996}\mbox{\hyperlink{classTiXmlElement_a5591929834178699b4561ab6ab460068}{00996}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTiXmlElement_a5591929834178699b4561ab6ab460068}{QueryFloatAttribute}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keywordtype}{float}*\ \_value\ )\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00997}00997\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ d;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00998}00998\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ result\ =\ \mbox{\hyperlink{classTiXmlElement_ae04bad29ddb281a7e6c662b3882e9928}{QueryDoubleAttribute}}(\ name,\ \&d\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l00999}00999\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ result\ ==\ TIXML\_SUCCESS\ )\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01000}01000\ \ \ \ \ \ \ \ \ \ \ \ \ *\_value\ =\ (float)d;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01001}01001\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01002}01002\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01003}01003\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01004}01004\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01005}01005\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01007}01007\ \ \ \ \ \textcolor{keywordtype}{int}\ QueryStringAttribute(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ std::string*\ \_value\ )\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01008}01008\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ cstr\ =\ \mbox{\hyperlink{classTiXmlElement_a6042f518748f475a7ac4b4e0b509eb05}{Attribute}}(\ name\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01009}01009\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ cstr\ )\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01010}01010\ \ \ \ \ \ \ \ \ \ \ \ \ *\_value\ =\ std::string(\ cstr\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01011}01011\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TIXML\_SUCCESS;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01012}01012\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01013}01013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TIXML\_NO\_ATTRIBUTE;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01014}01014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01015}01015\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01024}01024\ \ \ \ \ \textcolor{keyword}{template}<\ \textcolor{keyword}{typename}\ T\ >\ \textcolor{keywordtype}{int}\ QueryValueAttribute(\ \textcolor{keyword}{const}\ std::string\&\ name,\ T*\ outValue\ )\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01025}01025\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01026}01026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ TiXmlAttribute*\ node\ =\ attributeSet.Find(\ name\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01027}01027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ !node\ )}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01028}01028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TIXML\_NO\_ATTRIBUTE;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01029}01029\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01030}01030\ \ \ \ \ \ \ \ \ std::stringstream\ sstream(\ node-\/>ValueStr()\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01031}01031\ \ \ \ \ \ \ \ \ sstream\ >>\ *outValue;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01032}01032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ !sstream.fail()\ )}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01033}01033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TIXML\_SUCCESS;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01034}01034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TIXML\_WRONG\_TYPE;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01035}01035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01036}01036\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01037}01037\ \ \ \ \ \textcolor{keywordtype}{int}\ QueryValueAttribute(\ \textcolor{keyword}{const}\ std::string\&\ name,\ std::string*\ outValue\ )\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01038}01038\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01039}01039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ TiXmlAttribute*\ node\ =\ attributeSet.Find(\ name\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01040}01040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ !node\ )}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01041}01041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TIXML\_NO\_ATTRIBUTE;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01042}01042\ \ \ \ \ \ \ \ \ *outValue\ =\ node-\/>ValueStr();}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01043}01043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ TIXML\_SUCCESS;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01044}01044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01045}01045\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01046}01046\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01050}01050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlElement_abf0b3bd7f0e4c746a89ec6e7f101fc32}{SetAttribute}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \_value\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01051}01051\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01052}01052\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01053}01053\ \ \ \ \ \textcolor{keyword}{const}\ std::string*\ \mbox{\hyperlink{classTiXmlElement_a6042f518748f475a7ac4b4e0b509eb05}{Attribute}}(\ \textcolor{keyword}{const}\ std::string\&\ name\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01054}01054\ \ \ \ \ \textcolor{keyword}{const}\ std::string*\ \mbox{\hyperlink{classTiXmlElement_a6042f518748f475a7ac4b4e0b509eb05}{Attribute}}(\ \textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{int}*\ i\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01055}01055\ \ \ \ \ \textcolor{keyword}{const}\ std::string*\ \mbox{\hyperlink{classTiXmlElement_a6042f518748f475a7ac4b4e0b509eb05}{Attribute}}(\ \textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{double}*\ d\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01056}01056\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTiXmlElement_a5c0f739e0f6f5905a201364532e54a60}{QueryIntAttribute}}(\ \textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{int}*\ \_value\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01057}01057\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTiXmlElement_ae04bad29ddb281a7e6c662b3882e9928}{QueryDoubleAttribute}}(\ \textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{double}*\ \_value\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01058}01058\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01060}01060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlElement_abf0b3bd7f0e4c746a89ec6e7f101fc32}{SetAttribute}}(\ \textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ \_value\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01062}01062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlElement_abf0b3bd7f0e4c746a89ec6e7f101fc32}{SetAttribute}}(\ \textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{int}\ \_value\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01064}01064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlElement_a0d1dd975d75496778177e35abfe0ec0b}{SetDoubleAttribute}}(\ \textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keywordtype}{double}\ value\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01065}01065\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01066}01066\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01070}01070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlElement_abf0b3bd7f0e4c746a89ec6e7f101fc32}{SetAttribute}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ name,\ \textcolor{keywordtype}{int}\ value\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01071}01071\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01075}01075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlElement_a0d1dd975d75496778177e35abfe0ec0b}{SetDoubleAttribute}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ name,\ \textcolor{keywordtype}{double}\ value\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01076}01076\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01079}01079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlElement_a56979767deca794376b1dfa69a525b2a}{RemoveAttribute}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ name\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01080}01080\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01081}01081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlElement_a56979767deca794376b1dfa69a525b2a}{RemoveAttribute}}(\ \textcolor{keyword}{const}\ std::string\&\ name\ )\ \ \{\ \ \ \mbox{\hyperlink{classTiXmlElement_a56979767deca794376b1dfa69a525b2a}{RemoveAttribute}}\ (name.c\_str\ ());\ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01082}01082\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01083}01083\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01084}\mbox{\hyperlink{classTiXmlElement_ad9326f97287828cf533de34fb8e10834}{01084}}\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}*\ \mbox{\hyperlink{classTiXmlElement_ad9326f97287828cf533de34fb8e10834}{FirstAttribute}}()\textcolor{keyword}{\ const\ \ \ \ }\{\ \textcolor{keywordflow}{return}\ attributeSet.First();\ \}\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01085}01085\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}*\ \mbox{\hyperlink{classTiXmlElement_ad9326f97287828cf533de34fb8e10834}{FirstAttribute}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ attributeSet.First();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01086}\mbox{\hyperlink{classTiXmlElement_adb3212c0c62ab98dba77b68d41c3fa9e}{01086}}\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}*\ \mbox{\hyperlink{classTiXmlElement_adb3212c0c62ab98dba77b68d41c3fa9e}{LastAttribute}}()\textcolor{keyword}{\ \ \ \ const\ \ \ }\{\ \textcolor{keywordflow}{return}\ attributeSet.Last();\ \}\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01087}01087\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}*\ \mbox{\hyperlink{classTiXmlElement_adb3212c0c62ab98dba77b68d41c3fa9e}{LastAttribute}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ attributeSet.Last();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01088}01088\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01121}01121\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classTiXmlElement_af0f814ecbd43d50d4cdbdf4354d3da39}{GetText}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01122}01122\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01124}01124\ \ \ \ \ \textcolor{keyword}{virtual}\ TiXmlNode*\ \mbox{\hyperlink{classTiXmlElement_a810ea8fa40844c01334e5af2a26794cb}{Clone}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01125}01125\ \ \ \ \ \textcolor{comment}{//\ Print\ the\ Element\ to\ a\ FILE\ stream.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01126}01126\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlElement_aa31a15cddfb8601a31236fe7d2569fb4}{Print}}(\ FILE*\ cfile,\ \textcolor{keywordtype}{int}\ depth\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01127}01127\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01128}01128\ \ \ \ \ \textcolor{comment}{/*\ \ Attribtue\ parsing\ starts:\ next\ char\ past\ '<'}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01129}01129\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ returns:\ next\ char\ past\ '>'}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01130}01130\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01131}01131\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ Parse(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ p,\ TiXmlParsingData*\ data,\ TiXmlEncoding\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01132}01132\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01133}\mbox{\hyperlink{classTiXmlElement_ab1ae639a9c3fde5f799a099c7bf0c694}{01133}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlElement_a01bc3ab372d35da08efcbbe65ad90c60}{TiXmlElement}}*\ \ \ \ \ \mbox{\hyperlink{classTiXmlElement_ab1ae639a9c3fde5f799a099c7bf0c694}{ToElement}}()\textcolor{keyword}{\ \ \ \ \ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01134}\mbox{\hyperlink{classTiXmlElement_ae4e4f9dc2f5fe815a2b13be73a8f1fb8}{01134}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlElement_a01bc3ab372d35da08efcbbe65ad90c60}{TiXmlElement}}*\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlElement_ae4e4f9dc2f5fe815a2b13be73a8f1fb8}{ToElement}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01135}01135\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01138}01138\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlElement_a01d33358cce9d1817b557d314dda3779}{Accept}}(\ \mbox{\hyperlink{classTiXmlVisitor}{TiXmlVisitor}}*\ visitor\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01139}01139\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01140}01140\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01141}01141\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01142}01142\ \ \ \ \ \textcolor{keywordtype}{void}\ CopyTo(\ \mbox{\hyperlink{classTiXmlElement}{TiXmlElement}}*\ target\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01143}01143\ \ \ \ \ \textcolor{keywordtype}{void}\ ClearThis();\ \ \ \textcolor{comment}{//\ like\ clear,\ but\ initializes\ 'this'\ object\ as\ well}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01144}01144\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01145}01145\ \ \ \ \ \textcolor{comment}{//\ Used\ to\ be\ public\ [internal\ use]}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01146}01146\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01147}01147\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ StreamIn(\ std::istream\ *\ in,\ TIXML\_STRING\ *\ tag\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01148}01148\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01149}01149\ \ \ \ \ \textcolor{comment}{/*\ \ [internal\ use]}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01150}01150\ \textcolor{comment}{\ \ \ \ \ \ \ \ Reads\ the\ "{}value"{}\ of\ the\ element\ -\/-\/\ another\ element,\ or\ text.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01151}01151\ \textcolor{comment}{\ \ \ \ \ \ \ \ This\ should\ terminate\ with\ the\ current\ end\ tag.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01152}01152\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01153}01153\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ReadValue(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ in,\ \mbox{\hyperlink{classTiXmlParsingData}{TiXmlParsingData}}*\ prevData,\ TiXmlEncoding\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01154}01154\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01155}01155\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01156}01156\ \ \ \ \ \mbox{\hyperlink{classTiXmlAttributeSet}{TiXmlAttributeSet}}\ attributeSet;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01157}01157\ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01158}01158\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01159}01159\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01162}\mbox{\hyperlink{classTiXmlComment}{01162}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTiXmlComment_aaa3252031d3e8bd3a2bf51a1c61201b7}{TiXmlComment}}\ :\ \textcolor{keyword}{public}\ TiXmlNode}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01163}01163\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01164}01164\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01166}\mbox{\hyperlink{classTiXmlComment_aaa3252031d3e8bd3a2bf51a1c61201b7}{01166}}\ \ \ \ \ \mbox{\hyperlink{classTiXmlComment_aaa3252031d3e8bd3a2bf51a1c61201b7}{TiXmlComment}}()\ :\ TiXmlNode(\ TiXmlNode::TINYXML\_COMMENT\ )\ \{\}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01168}\mbox{\hyperlink{classTiXmlComment_a37e7802ef17bc03ebe5ae79bf0713d47}{01168}}\ \ \ \ \ \mbox{\hyperlink{classTiXmlComment_a37e7802ef17bc03ebe5ae79bf0713d47}{TiXmlComment}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \_value\ )\ :\ TiXmlNode(\ TiXmlNode::TINYXML\_COMMENT\ )\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01169}01169\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlNode_a2a38329ca5d3f28f98ce932b8299ae90}{SetValue}}(\ \_value\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01170}01170\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01171}01171\ \ \ \ \ \mbox{\hyperlink{classTiXmlComment_aaa3252031d3e8bd3a2bf51a1c61201b7}{TiXmlComment}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlComment}{TiXmlComment}}\&\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01172}01172\ \ \ \ \ \mbox{\hyperlink{classTiXmlComment}{TiXmlComment}}\&\ operator=(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlComment}{TiXmlComment}}\&\ base\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01173}01173\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01174}01174\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlComment}{\string~TiXmlComment}}()\ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01175}01175\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01177}01177\ \ \ \ \ \textcolor{keyword}{virtual}\ TiXmlNode*\ \mbox{\hyperlink{classTiXmlComment_a1f9f06e2ed3f77875093436193b16c16}{Clone}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01178}01178\ \ \ \ \ \textcolor{comment}{//\ Write\ this\ Comment\ to\ a\ FILE\ stream.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01179}01179\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlComment_a873171beac19d40f0eaae945711c98ed}{Print}}(\ FILE*\ cfile,\ \textcolor{keywordtype}{int}\ depth\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01180}01180\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01181}01181\ \ \ \ \ \textcolor{comment}{/*\ \ Attribtue\ parsing\ starts:\ at\ the\ !\ of\ the\ !-\/-\/}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01182}01182\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ returns:\ next\ char\ past\ '>'}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01183}01183\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01184}01184\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ Parse(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ p,\ TiXmlParsingData*\ data,\ TiXmlEncoding\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01185}01185\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01186}\mbox{\hyperlink{classTiXmlComment_a1ba35041f43548ff9e6d431beea5bd4d}{01186}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlComment_aaa3252031d3e8bd3a2bf51a1c61201b7}{TiXmlComment}}*\ \ \mbox{\hyperlink{classTiXmlComment_a1ba35041f43548ff9e6d431beea5bd4d}{ToComment}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01187}\mbox{\hyperlink{classTiXmlComment_ad1a522962d357ed568816f9294f74fe1}{01187}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlComment_aaa3252031d3e8bd3a2bf51a1c61201b7}{TiXmlComment}}*\ \ \mbox{\hyperlink{classTiXmlComment_ad1a522962d357ed568816f9294f74fe1}{ToComment}}()\ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01188}01188\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01191}01191\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlComment_ac894241530d1d266131a5026cb251a95}{Accept}}(\ \mbox{\hyperlink{classTiXmlVisitor}{TiXmlVisitor}}*\ visitor\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01192}01192\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01193}01193\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01194}01194\ \ \ \ \ \textcolor{keywordtype}{void}\ CopyTo(\ \mbox{\hyperlink{classTiXmlComment}{TiXmlComment}}*\ target\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01195}01195\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01196}01196\ \ \ \ \ \textcolor{comment}{//\ used\ to\ be\ public}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01197}01197\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01198}01198\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ StreamIn(\ std::istream\ *\ in,\ TIXML\_STRING\ *\ tag\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01199}01199\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01200}01200\ \textcolor{comment}{//\ \ virtual\ void\ StreamOut(\ TIXML\_OSTREAM\ *\ out\ )\ const;}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01201}01201\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01202}01202\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01203}01203\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01204}01204\ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01205}01205\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01206}01206\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01212}\mbox{\hyperlink{classTiXmlText}{01212}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTiXmlText_af659e77c6b87d684827f35a8f4895960}{TiXmlText}}\ :\ \textcolor{keyword}{public}\ TiXmlNode}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01213}01213\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01214}01214\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }TiXmlElement;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01215}01215\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01220}\mbox{\hyperlink{classTiXmlText_af659e77c6b87d684827f35a8f4895960}{01220}}\ \ \ \ \ \mbox{\hyperlink{classTiXmlText_af659e77c6b87d684827f35a8f4895960}{TiXmlText}}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ initValue\ )\ :\ TiXmlNode\ (TiXmlNode::TINYXML\_TEXT)}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01221}01221\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01222}01222\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlNode_a2a38329ca5d3f28f98ce932b8299ae90}{SetValue}}(\ initValue\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01223}01223\ \ \ \ \ \ \ \ \ cdata\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01224}01224\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01225}01225\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlText}{\string~TiXmlText}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01226}01226\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01227}01227\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01229}01229\ \ \ \ \ \mbox{\hyperlink{classTiXmlText_af659e77c6b87d684827f35a8f4895960}{TiXmlText}}(\ \textcolor{keyword}{const}\ std::string\&\ initValue\ )\ :\ TiXmlNode\ (TiXmlNode::TINYXML\_TEXT)}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01230}01230\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01231}01231\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlNode_a2a38329ca5d3f28f98ce932b8299ae90}{SetValue}}(\ initValue\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01232}01232\ \ \ \ \ \ \ \ \ cdata\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01233}01233\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01234}01234\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01235}01235\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01236}01236\ \ \ \ \ \mbox{\hyperlink{classTiXmlText_af659e77c6b87d684827f35a8f4895960}{TiXmlText}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlText_af659e77c6b87d684827f35a8f4895960}{TiXmlText}}\&\ copy\ )\ :\ TiXmlNode(\ TiXmlNode::TINYXML\_TEXT\ )\ \{\ copy.CopyTo(\ \textcolor{keyword}{this}\ );\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01237}01237\ \ \ \ \ \mbox{\hyperlink{classTiXmlText_af659e77c6b87d684827f35a8f4895960}{TiXmlText}}\&\ operator=(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlText_af659e77c6b87d684827f35a8f4895960}{TiXmlText}}\&\ base\ )\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ base.CopyTo(\ \textcolor{keyword}{this}\ );\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01238}01238\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01239}01239\ \ \ \ \ \textcolor{comment}{//\ Write\ this\ text\ object\ to\ a\ FILE\ stream.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01240}01240\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlText_a75f6895906333894e2574cc8cf77ea79}{Print}}(\ FILE*\ cfile,\ \textcolor{keywordtype}{int}\ depth\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01241}01241\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01243}\mbox{\hyperlink{classTiXmlText_aac1f4764d220ed6bf809b16dfcb6b45a}{01243}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlText_aac1f4764d220ed6bf809b16dfcb6b45a}{CDATA}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ cdata;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01245}\mbox{\hyperlink{classTiXmlText_acb17ff7c5d09b2c839393445a3de5ea9}{01245}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlText_acb17ff7c5d09b2c839393445a3de5ea9}{SetCDATA}}(\ \textcolor{keywordtype}{bool}\ \_cdata\ )\ \ \ \ \{\ cdata\ =\ \_cdata;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01246}01246\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01247}01247\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ Parse(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ p,\ \mbox{\hyperlink{classTiXmlParsingData}{TiXmlParsingData}}*\ data,\ TiXmlEncoding\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01248}01248\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01249}\mbox{\hyperlink{classTiXmlText_a7516e9c6f4995c7dba811b5fec95e1f9}{01249}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlText_af659e77c6b87d684827f35a8f4895960}{TiXmlText}}*\ \mbox{\hyperlink{classTiXmlText_a7516e9c6f4995c7dba811b5fec95e1f9}{ToText}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01250}\mbox{\hyperlink{classTiXmlText_a2dd0f59f15c53ae11909d9e23571bc11}{01250}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlText_af659e77c6b87d684827f35a8f4895960}{TiXmlText}}*\ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlText_a2dd0f59f15c53ae11909d9e23571bc11}{ToText}}()\ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01251}01251\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01254}01254\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlText_af65964326eac4640bfb97d4622fa0de2}{Accept}}(\ \mbox{\hyperlink{classTiXmlVisitor}{TiXmlVisitor}}*\ content\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01255}01255\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01256}01256\ protected\ :}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01258}01258\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlNode}{TiXmlNode}}*\ \mbox{\hyperlink{classTiXmlText_a98a20d7a4f1c1478e25e34921be24bfe}{Clone}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01259}01259\ \ \ \ \ \textcolor{keywordtype}{void}\ CopyTo(\ \mbox{\hyperlink{classTiXmlText}{TiXmlText}}*\ target\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01260}01260\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01261}01261\ \ \ \ \ \textcolor{keywordtype}{bool}\ Blank()\ \textcolor{keyword}{const};\ \textcolor{comment}{//\ returns\ true\ if\ all\ white\ space\ and\ new\ lines}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01262}01262\ \ \ \ \ \textcolor{comment}{//\ [internal\ use]}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01263}01263\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01264}01264\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ StreamIn(\ std::istream\ *\ in,\ TIXML\_STRING\ *\ tag\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01265}01265\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01266}01266\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01267}01267\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01268}01268\ \ \ \ \ \textcolor{keywordtype}{bool}\ cdata;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ true\ if\ this\ should\ be\ input\ and\ output\ as\ a\ CDATA\ style\ text\ element}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01269}01269\ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01270}01270\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01271}01271\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01285}\mbox{\hyperlink{classTiXmlDeclaration}{01285}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTiXmlDeclaration_aa0484d059bea0ea1acb47c9094382d79}{TiXmlDeclaration}}\ :\ \textcolor{keyword}{public}\ TiXmlNode}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01286}01286\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01287}01287\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01289}\mbox{\hyperlink{classTiXmlDeclaration_aa0484d059bea0ea1acb47c9094382d79}{01289}}\ \ \ \ \ \mbox{\hyperlink{classTiXmlDeclaration_aa0484d059bea0ea1acb47c9094382d79}{TiXmlDeclaration}}()\ \ \ :\ TiXmlNode(\ TiXmlNode::TINYXML\_DECLARATION\ )\ \{\}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01290}01290\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01291}01291\ \textcolor{preprocessor}{\#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01293}01293\ \ \ \ \ \mbox{\hyperlink{classTiXmlDeclaration_aa0484d059bea0ea1acb47c9094382d79}{TiXmlDeclaration}}(\ \ \ \textcolor{keyword}{const}\ std::string\&\ \_version,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01294}01294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \_encoding,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01295}01295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \_standalone\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01296}01296\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01297}01297\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01299}01299\ \ \ \ \ \mbox{\hyperlink{classTiXmlDeclaration_aa0484d059bea0ea1acb47c9094382d79}{TiXmlDeclaration}}(\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \_version,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01300}01300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \_encoding,}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01301}01301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \_standalone\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01302}01302\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01303}01303\ \ \ \ \ \mbox{\hyperlink{classTiXmlDeclaration_aa0484d059bea0ea1acb47c9094382d79}{TiXmlDeclaration}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlDeclaration}{TiXmlDeclaration}}\&\ copy\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01304}01304\ \ \ \ \ \mbox{\hyperlink{classTiXmlDeclaration}{TiXmlDeclaration}}\&\ operator=(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlDeclaration}{TiXmlDeclaration}}\&\ copy\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01305}01305\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01306}01306\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlDeclaration}{\string~TiXmlDeclaration}}()\ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01307}01307\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01309}\mbox{\hyperlink{classTiXmlDeclaration_aa4059b08504a70db291005015dcead02}{01309}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classTiXmlDeclaration_aa4059b08504a70db291005015dcead02}{Version}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ version.c\_str\ ();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01311}\mbox{\hyperlink{classTiXmlDeclaration_a52a6e73b714d3ea590e022178e54b9d3}{01311}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classTiXmlDeclaration_a52a6e73b714d3ea590e022178e54b9d3}{Encoding}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ encoding.c\_str\ ();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01313}\mbox{\hyperlink{classTiXmlDeclaration_a11fc7756966a9f993e0b962495298f24}{01313}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{classTiXmlDeclaration_a11fc7756966a9f993e0b962495298f24}{Standalone}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ standalone.c\_str\ ();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01314}01314\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01316}01316\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlNode}{TiXmlNode}}*\ \mbox{\hyperlink{classTiXmlDeclaration_a35dc1455f69b79e81cae28e186944610}{Clone}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01317}01317\ \ \ \ \ \textcolor{comment}{//\ Print\ this\ declaration\ to\ a\ FILE\ stream.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01318}01318\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ Print(\ FILE*\ cfile,\ \textcolor{keywordtype}{int}\ depth,\ TIXML\_STRING*\ str\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01319}\mbox{\hyperlink{classTiXmlDeclaration_ae46cff6565f299210ab945e78bf28514}{01319}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlDeclaration_ae46cff6565f299210ab945e78bf28514}{Print}}(\ FILE*\ cfile,\ \textcolor{keywordtype}{int}\ depth\ )\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01320}01320\ \ \ \ \ \ \ \ \ Print(\ cfile,\ depth,\ 0\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01321}01321\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01322}01322\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01323}01323\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ Parse(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ p,\ \mbox{\hyperlink{classTiXmlParsingData}{TiXmlParsingData}}*\ data,\ TiXmlEncoding\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01324}01324\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01325}\mbox{\hyperlink{classTiXmlDeclaration_af51e513cee73829fc372cb1163a7cbee}{01325}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlDeclaration_aa0484d059bea0ea1acb47c9094382d79}{TiXmlDeclaration}}*\ \mbox{\hyperlink{classTiXmlDeclaration_af51e513cee73829fc372cb1163a7cbee}{ToDeclaration}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01326}\mbox{\hyperlink{classTiXmlDeclaration_a0c6a1f0235d5fef120b0e3ef56cc900f}{01326}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlDeclaration_aa0484d059bea0ea1acb47c9094382d79}{TiXmlDeclaration}}*\ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlDeclaration_a0c6a1f0235d5fef120b0e3ef56cc900f}{ToDeclaration}}()\ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01327}01327\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01330}01330\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlDeclaration_aa1b6bade6c989407ce9881bdfc73c1e6}{Accept}}(\ \mbox{\hyperlink{classTiXmlVisitor}{TiXmlVisitor}}*\ visitor\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01331}01331\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01332}01332\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01333}01333\ \ \ \ \ \textcolor{keywordtype}{void}\ CopyTo(\ \mbox{\hyperlink{classTiXmlDeclaration}{TiXmlDeclaration}}*\ target\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01334}01334\ \ \ \ \ \textcolor{comment}{//\ used\ to\ be\ public}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01335}01335\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01336}01336\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ StreamIn(\ std::istream\ *\ in,\ TIXML\_STRING\ *\ tag\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01337}01337\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01338}01338\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01339}01339\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01340}01340\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01341}01341\ \ \ \ \ TIXML\_STRING\ version;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01342}01342\ \ \ \ \ TIXML\_STRING\ encoding;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01343}01343\ \ \ \ \ TIXML\_STRING\ standalone;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01344}01344\ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01345}01345\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01346}01346\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01354}\mbox{\hyperlink{classTiXmlUnknown}{01354}}\ \textcolor{keyword}{class\ }TiXmlUnknown\ :\ \textcolor{keyword}{public}\ TiXmlNode}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01355}01355\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01356}01356\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01357}01357\ \ \ \ \ TiXmlUnknown()\ :\ TiXmlNode(\ TiXmlNode::TINYXML\_UNKNOWN\ )\ \ \ \ \{\}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01358}01358\ \ \ \ \ \textcolor{keyword}{virtual}\ \string~TiXmlUnknown()\ \{\}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01359}01359\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01360}01360\ \ \ \ \ TiXmlUnknown(\ \textcolor{keyword}{const}\ TiXmlUnknown\&\ copy\ )\ :\ TiXmlNode(\ TiXmlNode::TINYXML\_UNKNOWN\ )\ \ \ \ \ \ \{\ copy.CopyTo(\ \textcolor{keyword}{this}\ );\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01361}01361\ \ \ \ \ TiXmlUnknown\&\ operator=(\ \textcolor{keyword}{const}\ TiXmlUnknown\&\ copy\ )\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ copy.CopyTo(\ \textcolor{keyword}{this}\ );\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01362}01362\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01364}01364\ \ \ \ \ \textcolor{keyword}{virtual}\ TiXmlNode*\ \mbox{\hyperlink{classTiXmlUnknown_a3dea7689de5b1931fd6657992948fde0}{Clone}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01365}01365\ \ \ \ \ \textcolor{comment}{//\ Print\ this\ Unknown\ to\ a\ FILE\ stream.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01366}01366\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlUnknown_a5793fbc48ab3419783c0e866ca2d334e}{Print}}(\ FILE*\ cfile,\ \textcolor{keywordtype}{int}\ depth\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01367}01367\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01368}01368\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ Parse(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ p,\ \mbox{\hyperlink{classTiXmlParsingData}{TiXmlParsingData}}*\ data,\ TiXmlEncoding\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01369}01369\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01370}\mbox{\hyperlink{classTiXmlUnknown_a80820b3dcb5fb333e9865d36aa380198}{01370}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ TiXmlUnknown*\ \ \ \ \ \mbox{\hyperlink{classTiXmlUnknown_a80820b3dcb5fb333e9865d36aa380198}{ToUnknown}}()\textcolor{keyword}{\ \ \ \ \ const\ \ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01371}\mbox{\hyperlink{classTiXmlUnknown_a4f0fc52c4d4e2570941c8d537142d71c}{01371}}\ \ \ \ \ \textcolor{keyword}{virtual}\ TiXmlUnknown*\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlUnknown_a4f0fc52c4d4e2570941c8d537142d71c}{ToUnknown}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01372}01372\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01375}01375\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlUnknown_aafdf1b2d4f561979c7907bad91004999}{Accept}}(\ \mbox{\hyperlink{classTiXmlVisitor}{TiXmlVisitor}}*\ content\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01376}01376\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01377}01377\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01378}01378\ \ \ \ \ \textcolor{keywordtype}{void}\ CopyTo(\ \mbox{\hyperlink{classTiXmlUnknown}{TiXmlUnknown}}*\ target\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01379}01379\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01380}01380\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01381}01381\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ StreamIn(\ std::istream\ *\ in,\ TIXML\_STRING\ *\ tag\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01382}01382\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01383}01383\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01384}01384\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01385}01385\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01386}01386\ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01387}01387\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01388}01388\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01393}\mbox{\hyperlink{classTiXmlDocument}{01393}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTiXmlDocument_a9f5e84335708fde98400230f9f12659c}{TiXmlDocument}}\ :\ \textcolor{keyword}{public}\ TiXmlNode}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01394}01394\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01395}01395\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01397}01397\ \ \ \ \ \mbox{\hyperlink{classTiXmlDocument_a9f5e84335708fde98400230f9f12659c}{TiXmlDocument}}();}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01399}01399\ \ \ \ \ \mbox{\hyperlink{classTiXmlDocument_a9f5e84335708fde98400230f9f12659c}{TiXmlDocument}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ documentName\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01400}01400\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01401}01401\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01403}01403\ \ \ \ \ \mbox{\hyperlink{classTiXmlDocument_a9f5e84335708fde98400230f9f12659c}{TiXmlDocument}}(\ \textcolor{keyword}{const}\ std::string\&\ documentName\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01404}01404\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01405}01405\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01406}01406\ \ \ \ \ \mbox{\hyperlink{classTiXmlDocument_a9f5e84335708fde98400230f9f12659c}{TiXmlDocument}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlDocument_a9f5e84335708fde98400230f9f12659c}{TiXmlDocument}}\&\ copy\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01407}01407\ \ \ \ \ \mbox{\hyperlink{classTiXmlDocument_a9f5e84335708fde98400230f9f12659c}{TiXmlDocument}}\&\ operator=(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlDocument_a9f5e84335708fde98400230f9f12659c}{TiXmlDocument}}\&\ copy\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01408}01408\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01409}01409\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlDocument_a9f5e84335708fde98400230f9f12659c}{\string~TiXmlDocument}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01410}01410\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01415}01415\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlDocument_a4c852a889c02cf251117fd1d9fe1845f}{LoadFile}}(\ TiXmlEncoding\ encoding\ =\ TIXML\_DEFAULT\_ENCODING\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01417}01417\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlDocument_ab63b96a6af5a467e289c7c75202edad9}{SaveFile}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01419}01419\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlDocument_a4c852a889c02cf251117fd1d9fe1845f}{LoadFile}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ filename,\ TiXmlEncoding\ encoding\ =\ TIXML\_DEFAULT\_ENCODING\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01421}01421\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlDocument_ab63b96a6af5a467e289c7c75202edad9}{SaveFile}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ filename\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01427}01427\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlDocument_a4c852a889c02cf251117fd1d9fe1845f}{LoadFile}}(\ FILE*,\ TiXmlEncoding\ encoding\ =\ TIXML\_DEFAULT\_ENCODING\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01429}01429\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlDocument_ab63b96a6af5a467e289c7c75202edad9}{SaveFile}}(\ FILE*\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01430}01430\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01431}01431\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01432}01432\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlDocument_a4c852a889c02cf251117fd1d9fe1845f}{LoadFile}}(\ \textcolor{keyword}{const}\ std::string\&\ filename,\ TiXmlEncoding\ encoding\ =\ TIXML\_DEFAULT\_ENCODING\ )\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01433}01433\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01434}01434\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlDocument_a4c852a889c02cf251117fd1d9fe1845f}{LoadFile}}(\ filename.c\_str(),\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01435}01435\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01436}01436\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlDocument_ab63b96a6af5a467e289c7c75202edad9}{SaveFile}}(\ \textcolor{keyword}{const}\ std::string\&\ filename\ )\ \textcolor{keyword}{const}\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01437}01437\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01438}01438\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlDocument_ab63b96a6af5a467e289c7c75202edad9}{SaveFile}}(\ filename.c\_str()\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01439}01439\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01440}01440\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01441}01441\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01446}01446\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classTiXmlDocument_a789ad2f06f93d52bdb5570b2f3670289}{Parse}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ p,\ \mbox{\hyperlink{classTiXmlParsingData}{TiXmlParsingData}}*\ data\ =\ 0,\ TiXmlEncoding\ encoding\ =\ TIXML\_DEFAULT\_ENCODING\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01447}01447\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01452}\mbox{\hyperlink{classTiXmlDocument_ab7d8c7025dd910259f1fea16fc72cda0}{01452}}\ \ \ \ \ \textcolor{keyword}{const}\ TiXmlElement*\ \mbox{\hyperlink{classTiXmlDocument_ab7d8c7025dd910259f1fea16fc72cda0}{RootElement}}()\textcolor{keyword}{\ const\ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01453}01453\ \ \ \ \ \mbox{\hyperlink{classTiXmlElement}{TiXmlElement}}*\ \mbox{\hyperlink{classTiXmlDocument_ab7d8c7025dd910259f1fea16fc72cda0}{RootElement}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlNode_a12c973e1da9e90a178924b8ea5a5f4d1}{FirstChildElement}}();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01454}01454\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01460}\mbox{\hyperlink{classTiXmlDocument_a348e68faad4a3498f413c51ee9bc321a}{01460}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlDocument_a348e68faad4a3498f413c51ee9bc321a}{Error}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ error;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01461}01461\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01463}\mbox{\hyperlink{classTiXmlDocument_a03d596f13b24ebae712b2c42b019a5ab}{01463}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ \mbox{\hyperlink{classTiXmlDocument_a03d596f13b24ebae712b2c42b019a5ab}{ErrorDesc}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ errorDesc.c\_str\ ();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01464}01464\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01468}\mbox{\hyperlink{classTiXmlDocument_abd928b49a646c8ed53e0453c555d96a2}{01468}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTiXmlDocument_abd928b49a646c8ed53e0453c555d96a2}{ErrorId}}()\textcolor{keyword}{\ \ \ \ const\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ errorId;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01469}01469\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01477}\mbox{\hyperlink{classTiXmlDocument_a062e5257128a7da31b0b2e38cd524600}{01477}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTiXmlDocument_a062e5257128a7da31b0b2e38cd524600}{ErrorRow}}()\textcolor{keyword}{\ const\ \ \ \ }\{\ \textcolor{keywordflow}{return}\ errorLocation.row+1;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01478}\mbox{\hyperlink{classTiXmlDocument_adea69de889449a2587afb8ee043f43f5}{01478}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTiXmlDocument_adea69de889449a2587afb8ee043f43f5}{ErrorCol}}()\textcolor{keyword}{\ const\ \ \ \ }\{\ \textcolor{keywordflow}{return}\ errorLocation.col+1;\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01479}01479\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01504}\mbox{\hyperlink{classTiXmlDocument_a51dac56316f89b35bdb7d0d433ba988e}{01504}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlDocument_a51dac56316f89b35bdb7d0d433ba988e}{SetTabSize}}(\ \textcolor{keywordtype}{int}\ \_tabsize\ )\ \ \ \ \ \ \ \{\ tabsize\ =\ \_tabsize;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01505}01505\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01506}01506\ \ \ \ \ \textcolor{keywordtype}{int}\ TabSize()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ tabsize;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01507}01507\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01511}\mbox{\hyperlink{classTiXmlDocument_ac66b8c28db86363315712a3574e87c35}{01511}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlDocument_ac66b8c28db86363315712a3574e87c35}{ClearError}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ error\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01512}01512\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ errorId\ =\ 0;\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01513}01513\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ errorDesc\ =\ \textcolor{stringliteral}{"{}"{}};\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01514}01514\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ errorLocation.row\ =\ errorLocation.col\ =\ 0;\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01515}01515\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//errorLocation.last\ =\ 0;\ }}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01516}01516\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01517}01517\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01519}\mbox{\hyperlink{classTiXmlDocument_aa4e8c1498a76dcde7191c683e1220882}{01519}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlDocument_aa4e8c1498a76dcde7191c683e1220882}{Print}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\{\ \mbox{\hyperlink{classTiXmlDocument_aa4e8c1498a76dcde7191c683e1220882}{Print}}(\ stdout,\ 0\ );\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01520}01520\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01521}01521\ \ \ \ \ \textcolor{comment}{/*\ Write\ the\ document\ to\ a\ string\ using\ formatted\ printing\ ("{}pretty\ print"{}).\ This}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01522}01522\ \textcolor{comment}{\ \ \ \ \ \ \ \ will\ allocate\ a\ character\ array\ (new\ char[])\ and\ return\ it\ as\ a\ pointer.\ The}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01523}01523\ \textcolor{comment}{\ \ \ \ \ \ \ \ calling\ code\ pust\ call\ delete[]\ on\ the\ return\ char*\ to\ avoid\ a\ memory\ leak.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01524}01524\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01525}01525\ \ \ \ \ \textcolor{comment}{//char*\ PrintToMemory()\ const;\ }}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01526}01526\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01528}01528\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlDocument_aa4e8c1498a76dcde7191c683e1220882}{Print}}(\ FILE*\ cfile,\ \textcolor{keywordtype}{int}\ depth\ =\ 0\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01529}01529\ \ \ \ \ \textcolor{comment}{//\ [internal\ use]}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01530}01530\ \ \ \ \ \textcolor{keywordtype}{void}\ SetError(\ \textcolor{keywordtype}{int}\ err,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ errorLocation,\ \mbox{\hyperlink{classTiXmlParsingData}{TiXmlParsingData}}*\ prevData,\ TiXmlEncoding\ encoding\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01531}01531\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01532}\mbox{\hyperlink{classTiXmlDocument_a76a8c412a77fe339918125d18708c898}{01532}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlDocument_a9f5e84335708fde98400230f9f12659c}{TiXmlDocument}}*\ \ \ \ \mbox{\hyperlink{classTiXmlDocument_a76a8c412a77fe339918125d18708c898}{ToDocument}}()\textcolor{keyword}{\ \ \ \ const\ }\{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01533}\mbox{\hyperlink{classTiXmlDocument_a6df051851cd77470e372b9b8f7bd98ce}{01533}}\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlDocument_a9f5e84335708fde98400230f9f12659c}{TiXmlDocument}}*\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTiXmlDocument_a6df051851cd77470e372b9b8f7bd98ce}{ToDocument}}()\ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01534}01534\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01537}01537\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlDocument_a8ddd6eec722cbd25900bbac664909bac}{Accept}}(\ \mbox{\hyperlink{classTiXmlVisitor}{TiXmlVisitor}}*\ content\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01538}01538\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01539}01539\ protected\ :}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01540}01540\ \ \ \ \ \textcolor{comment}{//\ [internal\ use]}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01541}01541\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classTiXmlNode}{TiXmlNode}}*\ \mbox{\hyperlink{classTiXmlDocument_a46a4dda6c56eb106d46d4046ae1e5353}{Clone}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01542}01542\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01543}01543\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ StreamIn(\ std::istream\ *\ in,\ TIXML\_STRING\ *\ tag\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01544}01544\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01545}01545\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01546}01546\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01547}01547\ \ \ \ \ \textcolor{keywordtype}{void}\ CopyTo(\ \mbox{\hyperlink{classTiXmlDocument}{TiXmlDocument}}*\ target\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01548}01548\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01549}01549\ \ \ \ \ \textcolor{keywordtype}{bool}\ error;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01550}01550\ \ \ \ \ \textcolor{keywordtype}{int}\ \ errorId;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01551}01551\ \ \ \ \ TIXML\_STRING\ errorDesc;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01552}01552\ \ \ \ \ \textcolor{keywordtype}{int}\ tabsize;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01553}01553\ \ \ \ \ \mbox{\hyperlink{structTiXmlCursor}{TiXmlCursor}}\ errorLocation;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01554}01554\ \ \ \ \ \textcolor{keywordtype}{bool}\ useMicrosoftBOM;\ \ \ \ \ \ \ \textcolor{comment}{//\ the\ UTF-\/8\ BOM\ were\ found\ when\ read.\ Note\ this,\ and\ try\ to\ write.}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01555}01555\ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01556}01556\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01557}01557\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01638}\mbox{\hyperlink{classTiXmlHandle}{01638}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{TiXmlHandle}}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01639}01639\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01640}01640\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01642}\mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{01642}}\ \ \ \ \ \mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{TiXmlHandle}}(\ \mbox{\hyperlink{classTiXmlNode}{TiXmlNode}}*\ \_node\ )\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ this-\/>node\ =\ \_node;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01644}\mbox{\hyperlink{classTiXmlHandle_a236d7855e1e56ccc7b980630c48c7fd7}{01644}}\ \ \ \ \ \mbox{\hyperlink{classTiXmlHandle_a236d7855e1e56ccc7b980630c48c7fd7}{TiXmlHandle}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{TiXmlHandle}}\&\ ref\ )\ \ \ \ \ \ \ \ \ \{\ this-\/>node\ =\ ref.node;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01645}01645\ \ \ \ \ \mbox{\hyperlink{classTiXmlHandle}{TiXmlHandle}}\ operator=(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlHandle}{TiXmlHandle}}\&\ ref\ )\ \{\ \textcolor{keywordflow}{if}\ (\ \&ref\ !=\ \textcolor{keyword}{this}\ )\ this-\/>node\ =\ ref.node;\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01646}01646\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01648}01648\ \ \ \ \ \mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{TiXmlHandle}}\ \mbox{\hyperlink{classTiXmlHandle_afb1b4c0eda970b320dfd262304cc1d04}{FirstChild}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01650}01650\ \ \ \ \ \mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{TiXmlHandle}}\ \mbox{\hyperlink{classTiXmlHandle_afb1b4c0eda970b320dfd262304cc1d04}{FirstChild}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ value\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01652}01652\ \ \ \ \ \mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{TiXmlHandle}}\ \mbox{\hyperlink{classTiXmlHandle_af0643f8683f3f2b779b8c9d78c67b2c0}{FirstChildElement}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01654}01654\ \ \ \ \ \mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{TiXmlHandle}}\ \mbox{\hyperlink{classTiXmlHandle_af0643f8683f3f2b779b8c9d78c67b2c0}{FirstChildElement}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\ value\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01655}01655\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01659}01659\ \ \ \ \ \mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{TiXmlHandle}}\ \mbox{\hyperlink{classTiXmlHandle_a9903b035444ee36450fe00ede403f920}{Child}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ value,\ \textcolor{keywordtype}{int}\ index\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01663}01663\ \ \ \ \ \mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{TiXmlHandle}}\ \mbox{\hyperlink{classTiXmlHandle_a9903b035444ee36450fe00ede403f920}{Child}}(\ \textcolor{keywordtype}{int}\ index\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01668}01668\ \ \ \ \ \mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{TiXmlHandle}}\ \mbox{\hyperlink{classTiXmlHandle_afccc59d8a0daa8c5d78474fbed430ddb}{ChildElement}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ value,\ \textcolor{keywordtype}{int}\ index\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01673}01673\ \ \ \ \ \mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{TiXmlHandle}}\ \mbox{\hyperlink{classTiXmlHandle_afccc59d8a0daa8c5d78474fbed430ddb}{ChildElement}}(\ \textcolor{keywordtype}{int}\ index\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01674}01674\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01675}01675\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01676}01676\ \ \ \ \ \mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{TiXmlHandle}}\ \mbox{\hyperlink{classTiXmlHandle_afb1b4c0eda970b320dfd262304cc1d04}{FirstChild}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value\ )\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlHandle_afb1b4c0eda970b320dfd262304cc1d04}{FirstChild}}(\ \_value.c\_str()\ );\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01677}01677\ \ \ \ \ \mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{TiXmlHandle}}\ \mbox{\hyperlink{classTiXmlHandle_af0643f8683f3f2b779b8c9d78c67b2c0}{FirstChildElement}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value\ )\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlHandle_af0643f8683f3f2b779b8c9d78c67b2c0}{FirstChildElement}}(\ \_value.c\_str()\ );\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01678}01678\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01679}01679\ \ \ \ \ \mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{TiXmlHandle}}\ \mbox{\hyperlink{classTiXmlHandle_a9903b035444ee36450fe00ede403f920}{Child}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value,\ \textcolor{keywordtype}{int}\ index\ )\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlHandle_a9903b035444ee36450fe00ede403f920}{Child}}(\ \_value.c\_str(),\ index\ );\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01680}01680\ \ \ \ \ \mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{TiXmlHandle}}\ \mbox{\hyperlink{classTiXmlHandle_afccc59d8a0daa8c5d78474fbed430ddb}{ChildElement}}(\ \textcolor{keyword}{const}\ std::string\&\ \_value,\ \textcolor{keywordtype}{int}\ index\ )\textcolor{keyword}{\ const\ \ \ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlHandle_afccc59d8a0daa8c5d78474fbed430ddb}{ChildElement}}(\ \_value.c\_str(),\ index\ );\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01681}01681\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01682}01682\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01685}\mbox{\hyperlink{classTiXmlHandle_a2d17b68a093486c1f780878ec4d7a10c}{01685}}\ \ \ \ \ \mbox{\hyperlink{classTiXmlNode}{TiXmlNode}}*\ \mbox{\hyperlink{classTiXmlHandle_a2d17b68a093486c1f780878ec4d7a10c}{ToNode}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ node;\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01688}\mbox{\hyperlink{classTiXmlHandle_ab3358be11c1b91e87d0007a6e2adde89}{01688}}\ \ \ \ \ \mbox{\hyperlink{classTiXmlElement}{TiXmlElement}}*\ \mbox{\hyperlink{classTiXmlHandle_ab3358be11c1b91e87d0007a6e2adde89}{ToElement}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ (\ (\ node\ \&\&\ node-\/>ToElement()\ )\ ?\ node-\/>ToElement()\ :\ 0\ );\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01691}\mbox{\hyperlink{classTiXmlHandle_a8ddc9f6fe3fbcd86294c6a83d2e281db}{01691}}\ \ \ \ \ \mbox{\hyperlink{classTiXmlText}{TiXmlText}}*\ \mbox{\hyperlink{classTiXmlHandle_a8ddc9f6fe3fbcd86294c6a83d2e281db}{ToText}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ (\ (\ node\ \&\&\ node-\/>ToText()\ )\ ?\ node-\/>ToText()\ :\ 0\ );\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01694}\mbox{\hyperlink{classTiXmlHandle_a112bd6325e4bcdf0717c0ea013eac105}{01694}}\ \ \ \ \ \mbox{\hyperlink{classTiXmlUnknown}{TiXmlUnknown}}*\ \mbox{\hyperlink{classTiXmlHandle_a112bd6325e4bcdf0717c0ea013eac105}{ToUnknown}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ (\ (\ node\ \&\&\ node-\/>ToUnknown()\ )\ ?\ node-\/>ToUnknown()\ :\ 0\ );\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01695}01695\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01699}\mbox{\hyperlink{classTiXmlHandle_afa2eb82bacfb6e4c3dd5351ce28e5d7a}{01699}}\ \ \ \ \ \mbox{\hyperlink{classTiXmlNode}{TiXmlNode}}*\ \mbox{\hyperlink{classTiXmlHandle_afa2eb82bacfb6e4c3dd5351ce28e5d7a}{Node}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlHandle_a2d17b68a093486c1f780878ec4d7a10c}{ToNode}}();\ \}\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01703}\mbox{\hyperlink{classTiXmlHandle_ac56814c76757eecc5bd951d3ed710dd2}{01703}}\ \ \ \ \ \mbox{\hyperlink{classTiXmlElement}{TiXmlElement}}*\ \mbox{\hyperlink{classTiXmlHandle_ac56814c76757eecc5bd951d3ed710dd2}{Element}}()\textcolor{keyword}{\ const\ \ \ \ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlHandle_ab3358be11c1b91e87d0007a6e2adde89}{ToElement}}();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01707}\mbox{\hyperlink{classTiXmlHandle_a58a9b3e3d710a603038e6e291eb6d580}{01707}}\ \ \ \ \ \mbox{\hyperlink{classTiXmlText}{TiXmlText}}*\ \mbox{\hyperlink{classTiXmlHandle_a58a9b3e3d710a603038e6e291eb6d580}{Text}}()\textcolor{keyword}{\ const\ \ \ \ \ \ \ \ \ \ \ \ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlHandle_a8ddc9f6fe3fbcd86294c6a83d2e281db}{ToText}}();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01711}\mbox{\hyperlink{classTiXmlHandle_aa7a8756af3ac24f0b2d469e500b85824}{01711}}\ \ \ \ \ \mbox{\hyperlink{classTiXmlUnknown}{TiXmlUnknown}}*\ \mbox{\hyperlink{classTiXmlHandle_aa7a8756af3ac24f0b2d469e500b85824}{Unknown}}()\textcolor{keyword}{\ const\ \ \ \ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTiXmlHandle_a112bd6325e4bcdf0717c0ea013eac105}{ToUnknown}}();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01712}01712\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01713}01713\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01714}01714\ \ \ \ \ \mbox{\hyperlink{classTiXmlNode}{TiXmlNode}}*\ node;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01715}01715\ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01716}01716\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01717}01717\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01737}\mbox{\hyperlink{classTiXmlPrinter}{01737}}\ \textcolor{keyword}{class\ }TiXmlPrinter\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTiXmlVisitor}{TiXmlVisitor}}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01738}01738\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01739}01739\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01740}01740\ \ \ \ \ TiXmlPrinter()\ :\ depth(\ 0\ ),\ simpleTextPrint(\ \textcolor{keyword}{false}\ ),}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01741}01741\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buffer(),\ indent(\ \textcolor{stringliteral}{"{}\ \ \ \ "{}}\ ),\ lineBreak(\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ )\ \{\}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01742}01742\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01743}01743\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlPrinter_a2ec73087db26ff4d2c4316c56f861db7}{VisitEnter}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlDocument}{TiXmlDocument}}\&\ doc\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01744}01744\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlPrinter_a0a636046fa589b6d7f3e5bd025b3f33e}{VisitExit}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlDocument}{TiXmlDocument}}\&\ doc\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01745}01745\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01746}01746\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlPrinter_a2ec73087db26ff4d2c4316c56f861db7}{VisitEnter}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlElement}{TiXmlElement}}\&\ element,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlAttribute}{TiXmlAttribute}}*\ firstAttribute\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01747}01747\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlPrinter_a0a636046fa589b6d7f3e5bd025b3f33e}{VisitExit}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlElement}{TiXmlElement}}\&\ element\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01748}01748\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01749}01749\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlPrinter_adaf7eec4dc43ad071ff52b60361574f5}{Visit}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlDeclaration}{TiXmlDeclaration}}\&\ declaration\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01750}01750\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlPrinter_adaf7eec4dc43ad071ff52b60361574f5}{Visit}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlText}{TiXmlText}}\&\ text\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01751}01751\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlPrinter_adaf7eec4dc43ad071ff52b60361574f5}{Visit}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlComment}{TiXmlComment}}\&\ comment\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01752}01752\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTiXmlPrinter_adaf7eec4dc43ad071ff52b60361574f5}{Visit}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTiXmlUnknown}{TiXmlUnknown}}\&\ unknown\ );}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01753}01753\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01757}\mbox{\hyperlink{classTiXmlPrinter_a213377a4070c7e625bae59716b089e5e}{01757}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlPrinter_a213377a4070c7e625bae59716b089e5e}{SetIndent}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \_indent\ )\ \ \ \ \ \ \ \ \ \ \{\ indent\ =\ \_indent\ ?\ \_indent\ :\ \textcolor{stringliteral}{"{}"{}}\ ;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01759}\mbox{\hyperlink{classTiXmlPrinter_a1fc2c60ce1a4bf2dfbdee9f4ca116cf4}{01759}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classTiXmlPrinter_a1fc2c60ce1a4bf2dfbdee9f4ca116cf4}{Indent}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ indent.c\_str();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01764}\mbox{\hyperlink{classTiXmlPrinter_a4be1e37e69e3858c59635aa947174fe6}{01764}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlPrinter_a4be1e37e69e3858c59635aa947174fe6}{SetLineBreak}}(\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \_lineBreak\ )\ \ \ \ \ \{\ lineBreak\ =\ \_lineBreak\ ?\ \_lineBreak\ :\ \textcolor{stringliteral}{"{}"{}};\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01766}\mbox{\hyperlink{classTiXmlPrinter_a94969892998ef6a200b7f987b756e823}{01766}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classTiXmlPrinter_a94969892998ef6a200b7f987b756e823}{LineBreak}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ lineBreak.c\_str();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01767}01767\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01771}\mbox{\hyperlink{classTiXmlPrinter_ab23a90629e374cb1cadca090468bbd19}{01771}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTiXmlPrinter_ab23a90629e374cb1cadca090468bbd19}{SetStreamPrinting}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ indent\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01772}01772\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lineBreak\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01773}01773\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01775}\mbox{\hyperlink{classTiXmlPrinter_af84fb6d0edc8977a40e531cdeb98696a}{01775}}\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classTiXmlPrinter_af84fb6d0edc8977a40e531cdeb98696a}{CStr}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ buffer.c\_str();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01777}\mbox{\hyperlink{classTiXmlPrinter_ad01375ae9199bd2f48252eaddce3039d}{01777}}\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classTiXmlPrinter_ad01375ae9199bd2f48252eaddce3039d}{Size}}()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ buffer.size();\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01778}01778\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01779}01779\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ TIXML\_USE\_STL}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01781}01781\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ Str()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keywordflow}{return}\ buffer;\ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01782}01782\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01783}01783\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01784}01784\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01785}01785\ \ \ \ \ \textcolor{keywordtype}{void}\ DoIndent()\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01786}01786\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\ \textcolor{keywordtype}{int}\ i=0;\ i<depth;\ ++i\ )}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01787}01787\ \ \ \ \ \ \ \ \ \ \ \ \ buffer\ +=\ indent;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01788}01788\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01789}01789\ \ \ \ \ \textcolor{keywordtype}{void}\ DoLineBreak()\ \{}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01790}01790\ \ \ \ \ \ \ \ \ buffer\ +=\ lineBreak;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01791}01791\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01792}01792\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01793}01793\ \ \ \ \ \textcolor{keywordtype}{int}\ depth;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01794}01794\ \ \ \ \ \textcolor{keywordtype}{bool}\ simpleTextPrint;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01795}01795\ \ \ \ \ TIXML\_STRING\ buffer;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01796}01796\ \ \ \ \ TIXML\_STRING\ indent;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01797}01797\ \ \ \ \ TIXML\_STRING\ lineBreak;}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01798}01798\ \};}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01799}01799\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01800}01800\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01801}01801\ \textcolor{preprocessor}{\#ifdef\ \_MSC\_VER}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01802}01802\ \textcolor{preprocessor}{\#pragma\ warning(\ pop\ )}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01803}01803\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01804}01804\ }
+\DoxyCodeLine{\Hypertarget{tinyxml_8h_source_l01805}01805\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
