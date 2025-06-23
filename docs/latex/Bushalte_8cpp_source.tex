@@ -1,0 +1,74 @@
+\doxysection{Bushalte.\+cpp}
+\hypertarget{Bushalte_8cpp_source}{}\label{Bushalte_8cpp_source}\index{src/Classes/Bushalte.cpp@{src/Classes/Bushalte.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ grama\ on\ 5/13/2025.}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}Bushalte.h"{}}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}Voertuig.h"{}}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00007}00007\ \mbox{\hyperlink{classBaan}{Baan}}*\ Bushalte::baan1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00008}00008\ \ \ \ \ ENSURE(baan\ !=\ \textcolor{keyword}{nullptr},\ \textcolor{stringliteral}{"{}De\ baan\ mag\ niet\ null\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordflow}{return}\ baan;}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00010}00010\ \}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00012}00012\ \textcolor{keywordtype}{void}\ Bushalte::set\_baan(\mbox{\hyperlink{classBaan}{Baan}}*\ baan)\ \{}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00013}00013\ \ \ \ \ REQUIRE(baan\ !=\ \textcolor{keyword}{nullptr},\ \textcolor{stringliteral}{"{}De\ baan\ mag\ niet\ null\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00014}00014\ \ \ \ \ this-\/>baan\ =\ baan;}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00015}00015\ \ \ \ \ ENSURE(this-\/>baan\ ==\ baan,\ \textcolor{stringliteral}{"{}De\ baan\ moet\ correct\ zijn\ toegewezen."{}});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00016}00016\ \}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00018}00018\ \textcolor{keywordtype}{int}\ Bushalte::positie1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00019}00019\ \ \ \ \ ENSURE(positie\ >=\ 0,\ \textcolor{stringliteral}{"{}De\ positie\ moet\ niet\ negatief\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{return}\ positie;}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00023}00023\ \textcolor{keywordtype}{void}\ Bushalte::set\_positie(\textcolor{keywordtype}{int}\ positie)\ \{}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00024}00024\ \ \ \ \ REQUIRE(positie\ >=\ 0,\ \textcolor{stringliteral}{"{}De\ positie\ moet\ positief\ of\ nul\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00025}00025\ \ \ \ \ this-\/>positie\ =\ positie;}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00026}00026\ \ \ \ \ ENSURE(this-\/>positie\ ==\ positie,\ \textcolor{stringliteral}{"{}De\ positie\ moet\ correct\ zijn\ toegewezen."{}});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00029}00029\ \textcolor{keywordtype}{int}\ Bushalte::wachttijd1()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00030}00030\ \ \ \ \ ENSURE(wachttijd\ >=\ 0,\ \textcolor{stringliteral}{"{}De\ wachttijd\ moet\ niet\ negatief\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{return}\ wachttijd;}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00033}00033\ \textcolor{keywordtype}{void}\ Bushalte::set\_wachttijd(\textcolor{keywordtype}{int}\ wachttijd)\ \{}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00034}00034\ \ \ \ \ REQUIRE(wachttijd\ >=\ 0,\ \textcolor{stringliteral}{"{}De\ wachttijd\ moet\ positief\ of\ nul\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00035}00035\ \ \ \ \ this-\/>wachttijd\ =\ wachttijd;}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00036}00036\ \ \ \ \ ENSURE(this-\/>wachttijd\ ==\ wachttijd,\ \textcolor{stringliteral}{"{}De\ wachttijd\ moet\ correct\ zijn\ toegewezen."{}});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00038}\mbox{\hyperlink{classBushalte_a3f0bcafb0d15f83534793f28cf4532b1}{00038}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBushalte_a3f0bcafb0d15f83534793f28cf4532b1}{Bushalte::simBushaltes}}(\mbox{\hyperlink{classVoertuig}{Voertuig}}\ \&bus)\ \{}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00039}00039\ \ \ \ \ REQUIRE(bus.type1()\ ==\ \textcolor{stringliteral}{"{}bus"{}},\ \textcolor{stringliteral}{"{}Het\ voertuig\ moet\ een\ bus\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00040}00040\ \ \ \ \ REQUIRE(this-\/>positie1()\ >=\ 0,\ \textcolor{stringliteral}{"{}De\ positie\ van\ de\ bushalte\ moet\ positief\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00041}00041\ \ \ \ \ REQUIRE(bus.positie1()\ >=\ 0,\ \textcolor{stringliteral}{"{}De\ positie\ van\ de\ bus\ moet\ positief\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00042}00042\ \ \ \ \ REQUIRE(bus.stopafstand1()\ >=\ 0\ \&\&\ bus.vertraagafstand1()\ >=\ 0,\ \textcolor{stringliteral}{"{}Stop-\/\ en\ vertraagafstand\ moeten\ positief\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//\ REQUIRE(!banen.empty(),\ "{}Er\ zijn\ geen\ banen\ aanwezig."{});}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{comment}{//\ REQUIRE(!bushaltes.empty(),\ "{}Er\ bevinden\ zich\ geen\ bushaltes\ op\ de\ baan."{});}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//\ REQUIRE(std::any\_of(voertuigen.begin(),\ voertuigen.end(),\ [](const\ Voertuig\&\ v)\ \{\ return\ v.type1()\ ==\ "{}bus"{};\ \}),}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{comment}{//"{}Er\ is\ geen\ bus\ aanwezig\ op\ de\ baan."{});}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{double}\ Vertraag\ =\ this-\/>positie1()\ -\/\ bus.vertraagafstand1();}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{double}\ Stop\ =\ this-\/>positie1()\ -\/\ bus.stopafstand1();}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (bus.gestopt1())\ \{}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ bus.set\_timestop(1);}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{if}\ (bus.positie1()\ >=\ Vertraag\ \&\&\ bus.positie1()\ <=\ Stop)\ \{}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ bus.\mbox{\hyperlink{classVoertuig_a3751554eb0040e9f025e6c3b414e51a2}{vertragen}}();}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00055}00055\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(!bus.recent\_gestopt()\ \&\&\ bus.positie1()\ >=\ Stop\ \&\&\ bus.positie1()\ <=\ this-\/>positie1())\ \{}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ bus.set\_gestopt(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00057}00057\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (bus.recent\_gestopt()\ \&\&\ bus.positie1()\ >\ this-\/>positie1())\{}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ bus.set\_recent\_gestopt(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (bus.timestop1()\ >\ this-\/>wachttijd1())\ \{}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ bus.\mbox{\hyperlink{classVoertuig_a9b0521e8be6eb2f28ab8bb63444984a1}{versnellen}}();}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ bus.set\_gestopt(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ bus.set\_timestop(0);}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00065}00065\ \ \ \ \ ENSURE(bus.timestop1()\ >=\ 0,\ \textcolor{stringliteral}{"{}De\ tijd\ dat\ de\ bus\ gestopt\ is\ moet\ niet\ negatief\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00066}00066\ \ \ \ \ ENSURE(!bus.recent\_gestopt()\ ||\ bus.positie1()\ >=\ this-\/>positie1(),\ \textcolor{stringliteral}{"{}Als\ de\ bus\ recent\ gestopt\ is,\ moet\ hij\ voorbij\ de\ bushalte\ zijn."{}});}
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{Bushalte_8cpp_source_l00068}00068\ \}}
+
+\end{DoxyCode}

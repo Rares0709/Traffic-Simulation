@@ -1,0 +1,648 @@
+\doxysection{Traffic\+Sim Class Reference}
+\hypertarget{classTrafficSim}{}\label{classTrafficSim}\index{TrafficSim@{TrafficSim}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTrafficSim_abbedf65e10570c1318701d93c184ceb5}{Simulate}} (double duration=-\/1)
+\item 
+\mbox{\hyperlink{classTrafficSim_a1d5a391eb93cff8e5168ab8aa0da5fa8}{Traffic\+Sim}} (const std\+::vector$<$ \mbox{\hyperlink{classBaan}{Baan}} $>$ \&banen, const std\+::vector$<$ \mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}} $>$ \&verkeerslichten, const std\+::vector$<$ \mbox{\hyperlink{classVoertuig}{Voertuig}} $>$ \&voertuigen, const std\+::vector$<$ \mbox{\hyperlink{classVoertuigGen}{Voertuig\+Gen}} $>$ \&voertuigengen, const std\+::vector$<$ \mbox{\hyperlink{classBushalte}{Bushalte}} $>$ \&bushaltes, const std\+::vector$<$ \mbox{\hyperlink{classKruispunt}{Kruispunt}} $>$ \&kruispunten)
+\item 
+void \mbox{\hyperlink{classTrafficSim_a8d361f2acb6008d313fc4b7c6b3c3a51}{bereken\+Versnelling}} (\mbox{\hyperlink{classVoertuig}{Voertuig}} \&voertuig)
+\item 
+void \mbox{\hyperlink{classTrafficSim_ab924e1adb43440dd052129e6ac574fc9}{bereken\+Snelheid}} (\mbox{\hyperlink{classVoertuig}{Voertuig}} \&voertuig)
+\item 
+void \mbox{\hyperlink{classTrafficSim_afefd256032f071935095cee2bc94290e}{versnellen}} (\mbox{\hyperlink{classVoertuig}{Voertuig}} \&voertuig)
+\item 
+\mbox{\hyperlink{classVoertuig}{Voertuig}} \mbox{\hyperlink{classTrafficSim_a397b2923ff9db050ba652624a2e19136}{vertragen}} (\mbox{\hyperlink{classVoertuig}{Voertuig}} \&voertuig)
+\item 
+void \mbox{\hyperlink{classTrafficSim_a3d33dd494721563c9b8a3aad07864f6f}{geldig}} (\mbox{\hyperlink{classVoertuig}{Voertuig}} \&voertuig)
+\item 
+void \mbox{\hyperlink{classTrafficSim_a41ad1906bd250c3bbfb70e1135a89371}{verkeerslicht\+Sim}} (\mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}} \&verkeerslicht)
+\item 
+void \mbox{\hyperlink{classTrafficSim_aaac07fb16c44c21d7da506decd0cd65d}{checkverkeerslicht}} ()
+\item 
+void \mbox{\hyperlink{classTrafficSim_ac04245f6b92d7a2726d5dba3506a34aa}{sim\+Voertuiggenerator}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classBaan}{Baan}} $>$ \mbox{\hyperlink{classTrafficSim_a97045519cd959f851aaa29b11f42604d}{get\+\_\+banen}} () const
+\item 
+void \mbox{\hyperlink{classTrafficSim_a8cf7bbba32e36205132f0cb6654417e9}{set\+Banen}} (std\+::vector$<$ \mbox{\hyperlink{classBaan}{Baan}} $>$ \&banen)
+\item 
+void \mbox{\hyperlink{classTrafficSim_a0c049eaf5063050c0564de89ccd8dad9}{wagen\+To\+Delete}} (\mbox{\hyperlink{classVoertuig}{Voertuig}} \&voertuig)
+\item 
+void \mbox{\hyperlink{classTrafficSim_a68eb0975ecd6a9875c9be49f692eb563}{voegbaantoe}} (\mbox{\hyperlink{classBaan}{Baan}} \&baan)
+\item 
+int \mbox{\hyperlink{classTrafficSim_af6cad8e4b3b8e391212ad2fa4a7ade44}{get\+Positie}} (\mbox{\hyperlink{classVoertuig}{Voertuig}} voertuig)
+\item 
+int \mbox{\hyperlink{classTrafficSim_a252d166ad013e7d055ace855828dad2c}{get\+Snelheid}} (\mbox{\hyperlink{classVoertuig}{Voertuig}} voertuig)
+\item 
+void \mbox{\hyperlink{classTrafficSim_a0e3f55243200b34566aa44100372f7db}{set\+Delta\+Time}} (double dt)
+\item 
+int \mbox{\hyperlink{classTrafficSim_ab5e08ce05c2dff7b08892a8851dbb48b}{get\+Baan\+Lengte}} (std\+::string \&baannaam, std\+::vector$<$ \mbox{\hyperlink{classBaan}{Baan}} $>$ \&banen)
+\item 
+void \mbox{\hyperlink{classTrafficSim_a78ecd408914e251e6f4b3a401c27abaa}{verhoog\+Tijd}} ()
+\item 
+void \mbox{\hyperlink{classTrafficSim_aceea42e213af7d5bea3c678f65bf5480}{Testing\+Mode\+On}} ()
+\item 
+void \mbox{\hyperlink{classTrafficSim_a91e6f3ffa6e3bbaf0cd138913e4b0a08}{set\+Time}} (double time)
+\item 
+double \& \mbox{\hyperlink{classTrafficSim_a17253fac5be9167d94ad3f8046e1b7b1}{get\+Time}} ()
+\item 
+double \& \mbox{\hyperlink{classTrafficSim_a8c300f18bc176aff02f82cdf6282cd0c}{get\+Delta\+Time}} ()
+\item 
+void \mbox{\hyperlink{classTrafficSim_a78f3508f4bd1cad7804d4ebb73120742}{sim\+Bushaltes}} (\mbox{\hyperlink{classVoertuig}{Voertuig}} \&bus)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}} $>$ \mbox{\hyperlink{classTrafficSim_acbff83cd56a48e3cf25141ca63ffe834}{get\+Verkeerslichten}} () const
+\item 
+void \mbox{\hyperlink{classTrafficSim_a179151c65a56fa52ff461b48437ce3a6}{set\+Verkeerslichten}} (const std\+::vector$<$ \mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}} $>$ \&verkeerslichten)
+\item 
+void \mbox{\hyperlink{classTrafficSim_a9e81e96ce693e046f8d7169287a91ab1}{voegverkeerslichttoe}} (\mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}} licht)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classVoertuig}{Voertuig}} $>$ \& \mbox{\hyperlink{classTrafficSim_a1e2d690b15510e9c0450027c4a7d7f73}{get\+Voertuigen}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classVoertuigGen}{Voertuig\+Gen}} $>$ \mbox{\hyperlink{classTrafficSim_a1a3d2d050ffd00c37ade56619605195e}{get\+\_\+\+Voertuig\+Gen}} () const
+\item 
+void \mbox{\hyperlink{classTrafficSim_a763f16bea0c2c0171e7df6cb549e25d5}{set\+\_\+voertuigengen}} (const std\+::vector$<$ \mbox{\hyperlink{classVoertuigGen}{Voertuig\+Gen}} $>$ \&voertuigengen)
+\item 
+void \mbox{\hyperlink{classTrafficSim_abb8f5adad488d7bf675fc3f078fe0c6d}{set\+Voertuigen}} (const std\+::vector$<$ \mbox{\hyperlink{classVoertuig}{Voertuig}} $>$ \&voertuigen)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classBushalte}{Bushalte}} $>$ \mbox{\hyperlink{classTrafficSim_a9c50015c908db733fd21ce20fe719a6e}{get\+\_\+bushaltes}} () const
+\item 
+void \mbox{\hyperlink{classTrafficSim_a0cdfe5bf52034029612fcd504f1d4470}{set\+\_\+bushaltes}} (const std\+::vector$<$ \mbox{\hyperlink{classBushalte}{Bushalte}} $>$ \&bushaltes)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classKruispunt}{Kruispunt}} $>$ \mbox{\hyperlink{classTrafficSim_a6e3688868964223702dd0a235d233f2b}{get\+\_\+kruispunten}} () const
+\item 
+void \mbox{\hyperlink{classTrafficSim_aa24fc8dc4a18f00686b3e9057ed30b73}{set\+\_\+kruispunten}} (const std\+::vector$<$ \mbox{\hyperlink{classKruispunt}{Kruispunt}} $>$ \&kruispunten)
+\item 
+void \mbox{\hyperlink{classTrafficSim_ade45272c133d4f8df9c1de969977cbf5}{voegvoertuigtoe}} (\mbox{\hyperlink{classVoertuig}{Voertuig}} voertuig)
+\item 
+void \mbox{\hyperlink{classTrafficSim_a471ab273e45ab7f50d8b98b5f256302b}{print}} () const
+\item 
+void \mbox{\hyperlink{classTrafficSim_a7f6814a516ef04a54d5225c54c824829}{kruispunt\+Sim}} (\mbox{\hyperlink{classVoertuig}{Voertuig}} \&voertuig)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00022}{22}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classTrafficSim_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTrafficSim_a1d5a391eb93cff8e5168ab8aa0da5fa8}\index{TrafficSim@{TrafficSim}!TrafficSim@{TrafficSim}}
+\index{TrafficSim@{TrafficSim}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{TrafficSim()}{TrafficSim()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a1d5a391eb93cff8e5168ab8aa0da5fa8} 
+Traffic\+Sim\+::\+Traffic\+Sim (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classBaan}{Baan}} $>$ \&}]{banen}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}} $>$ \&}]{verkeerslichten}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classVoertuig}{Voertuig}} $>$ \&}]{voertuigen}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classVoertuigGen}{Voertuig\+Gen}} $>$ \&}]{voertuigengen}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classBushalte}{Bushalte}} $>$ \&}]{bushaltes}{, }\item[{const std\+::vector$<$ \mbox{\hyperlink{classKruispunt}{Kruispunt}} $>$ \&}]{kruispunten}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00044}{44}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classTrafficSim_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTrafficSim_ab924e1adb43440dd052129e6ac574fc9}\index{TrafficSim@{TrafficSim}!berekenSnelheid@{berekenSnelheid}}
+\index{berekenSnelheid@{berekenSnelheid}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{berekenSnelheid()}{berekenSnelheid()}}
+{\footnotesize\ttfamily \label{classTrafficSim_ab924e1adb43440dd052129e6ac574fc9} 
+void Traffic\+Sim\+::bereken\+Snelheid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVoertuig}{Voertuig}} \&}]{voertuig}{}\end{DoxyParamCaption})}
+
+Deze functie berekent de snelheid van het voertuig. 
+\begin{DoxyParams}{Parameters}
+{\em voertuig} & is het voertuig. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ilyas Sefiani 
+
+Rares Grama 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\Hypertarget{classTrafficSim_a8d361f2acb6008d313fc4b7c6b3c3a51}\index{TrafficSim@{TrafficSim}!berekenVersnelling@{berekenVersnelling}}
+\index{berekenVersnelling@{berekenVersnelling}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{berekenVersnelling()}{berekenVersnelling()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a8d361f2acb6008d313fc4b7c6b3c3a51} 
+void Traffic\+Sim\+::bereken\+Versnelling (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVoertuig}{Voertuig}} \&}]{voertuig}{}\end{DoxyParamCaption})}
+
+Deze functie berekent de versnelling van het voertuig. 
+\begin{DoxyParams}{Parameters}
+{\em voertuig} & is het voertuig. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ilyas Sefiani 
+
+Rares Grama 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\Hypertarget{classTrafficSim_aaac07fb16c44c21d7da506decd0cd65d}\index{TrafficSim@{TrafficSim}!checkverkeerslicht@{checkverkeerslicht}}
+\index{checkverkeerslicht@{checkverkeerslicht}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{checkverkeerslicht()}{checkverkeerslicht()}}
+{\footnotesize\ttfamily \label{classTrafficSim_aaac07fb16c44c21d7da506decd0cd65d} 
+void Traffic\+Sim\+::checkverkeerslicht (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Deze functie zorgt ervoor wat de auto\textquotesingle{}s doen op basis van de cyclus van het verkeerslicht en deze functie checkt of het voertuig een prioriteitsvoertuig is. \begin{DoxyAuthor}{Author}
+Jonas Saelens 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\Hypertarget{classTrafficSim_a3d33dd494721563c9b8a3aad07864f6f}\index{TrafficSim@{TrafficSim}!geldig@{geldig}}
+\index{geldig@{geldig}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{geldig()}{geldig()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a3d33dd494721563c9b8a3aad07864f6f} 
+void Traffic\+Sim\+::geldig (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVoertuig}{Voertuig}} \&}]{voertuig}{}\end{DoxyParamCaption})}
+
+Deze functie bekijkt of het voertuig in zijn baan mag blijven. 
+\begin{DoxyParams}{Parameters}
+{\em voertuig} & is het voertuig. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ilyas Sefiani 
+
+Jonas Saelens 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\Hypertarget{classTrafficSim_a97045519cd959f851aaa29b11f42604d}\index{TrafficSim@{TrafficSim}!get\_banen@{get\_banen}}
+\index{get\_banen@{get\_banen}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{get\_banen()}{get\_banen()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a97045519cd959f851aaa29b11f42604d} 
+std\+::vector$<$ \mbox{\hyperlink{classBaan}{Baan}} $>$ Traffic\+Sim\+::get\+\_\+banen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00138}{138}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_a9c50015c908db733fd21ce20fe719a6e}\index{TrafficSim@{TrafficSim}!get\_bushaltes@{get\_bushaltes}}
+\index{get\_bushaltes@{get\_bushaltes}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{get\_bushaltes()}{get\_bushaltes()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a9c50015c908db733fd21ce20fe719a6e} 
+std\+::vector$<$ \mbox{\hyperlink{classBushalte}{Bushalte}} $>$ Traffic\+Sim\+::get\+\_\+bushaltes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00250}{250}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_a6e3688868964223702dd0a235d233f2b}\index{TrafficSim@{TrafficSim}!get\_kruispunten@{get\_kruispunten}}
+\index{get\_kruispunten@{get\_kruispunten}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{get\_kruispunten()}{get\_kruispunten()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a6e3688868964223702dd0a235d233f2b} 
+std\+::vector$<$ \mbox{\hyperlink{classKruispunt}{Kruispunt}} $>$ Traffic\+Sim\+::get\+\_\+kruispunten (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00258}{258}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_a1a3d2d050ffd00c37ade56619605195e}\index{TrafficSim@{TrafficSim}!get\_VoertuigGen@{get\_VoertuigGen}}
+\index{get\_VoertuigGen@{get\_VoertuigGen}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{get\_VoertuigGen()}{get\_VoertuigGen()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a1a3d2d050ffd00c37ade56619605195e} 
+std\+::vector$<$ \mbox{\hyperlink{classVoertuigGen}{Voertuig\+Gen}} $>$ Traffic\+Sim\+::get\+\_\+\+Voertuig\+Gen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00238}{238}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_ab5e08ce05c2dff7b08892a8851dbb48b}\index{TrafficSim@{TrafficSim}!getBaanLengte@{getBaanLengte}}
+\index{getBaanLengte@{getBaanLengte}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{getBaanLengte()}{getBaanLengte()}}
+{\footnotesize\ttfamily \label{classTrafficSim_ab5e08ce05c2dff7b08892a8851dbb48b} 
+int Traffic\+Sim\+::get\+Baan\+Lengte (\begin{DoxyParamCaption}\item[{std\+::string \&}]{baannaam}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{classBaan}{Baan}} $>$ \&}]{banen}{}\end{DoxyParamCaption})}
+
+Deze functie geeft de lengte van de baan weer waarop het voertuig rijdt. 
+\begin{DoxyParams}{Parameters}
+{\em baannaam} & is de naam van de baan. \\
+\hline
+{\em banen} & is de verzameling van alle banen. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ilyas Sefiani 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\Hypertarget{classTrafficSim_a8c300f18bc176aff02f82cdf6282cd0c}\index{TrafficSim@{TrafficSim}!getDeltaTime@{getDeltaTime}}
+\index{getDeltaTime@{getDeltaTime}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{getDeltaTime()}{getDeltaTime()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a8c300f18bc176aff02f82cdf6282cd0c} 
+double \& Traffic\+Sim\+::get\+Delta\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00208}{208}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_af6cad8e4b3b8e391212ad2fa4a7ade44}\index{TrafficSim@{TrafficSim}!getPositie@{getPositie}}
+\index{getPositie@{getPositie}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{getPositie()}{getPositie()}}
+{\footnotesize\ttfamily \label{classTrafficSim_af6cad8e4b3b8e391212ad2fa4a7ade44} 
+int Traffic\+Sim\+::get\+Positie (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVoertuig}{Voertuig}}}]{voertuig}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00160}{160}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_a252d166ad013e7d055ace855828dad2c}\index{TrafficSim@{TrafficSim}!getSnelheid@{getSnelheid}}
+\index{getSnelheid@{getSnelheid}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{getSnelheid()}{getSnelheid()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a252d166ad013e7d055ace855828dad2c} 
+int Traffic\+Sim\+::get\+Snelheid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVoertuig}{Voertuig}}}]{voertuig}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00163}{163}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_a17253fac5be9167d94ad3f8046e1b7b1}\index{TrafficSim@{TrafficSim}!getTime@{getTime}}
+\index{getTime@{getTime}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a17253fac5be9167d94ad3f8046e1b7b1} 
+double \& Traffic\+Sim\+::get\+Time (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00204}{204}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_acbff83cd56a48e3cf25141ca63ffe834}\index{TrafficSim@{TrafficSim}!getVerkeerslichten@{getVerkeerslichten}}
+\index{getVerkeerslichten@{getVerkeerslichten}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{getVerkeerslichten()}{getVerkeerslichten()}}
+{\footnotesize\ttfamily \label{classTrafficSim_acbff83cd56a48e3cf25141ca63ffe834} 
+std\+::vector$<$ \mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}} $>$ Traffic\+Sim\+::get\+Verkeerslichten (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00222}{222}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_a1e2d690b15510e9c0450027c4a7d7f73}\index{TrafficSim@{TrafficSim}!getVoertuigen@{getVoertuigen}}
+\index{getVoertuigen@{getVoertuigen}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{getVoertuigen()}{getVoertuigen()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a1e2d690b15510e9c0450027c4a7d7f73} 
+std\+::vector$<$ \mbox{\hyperlink{classVoertuig}{Voertuig}} $>$ \& Traffic\+Sim\+::get\+Voertuigen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00234}{234}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_a7f6814a516ef04a54d5225c54c824829}\index{TrafficSim@{TrafficSim}!kruispuntSim@{kruispuntSim}}
+\index{kruispuntSim@{kruispuntSim}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{kruispuntSim()}{kruispuntSim()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a7f6814a516ef04a54d5225c54c824829} 
+void Traffic\+Sim\+::kruispunt\+Sim (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVoertuig}{Voertuig}} \&}]{voertuig}{}\end{DoxyParamCaption})}
+
+Deze functie simuleert kruispunten. 
+\begin{DoxyParams}{Parameters}
+{\em voertuig} & is het voertuig. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Jonas Saelens 
+
+Ilyas Sefiani 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\Hypertarget{classTrafficSim_a471ab273e45ab7f50d8b98b5f256302b}\index{TrafficSim@{TrafficSim}!print@{print}}
+\index{print@{print}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a471ab273e45ab7f50d8b98b5f256302b} 
+void Traffic\+Sim\+::print (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Deze functie print uit wat er moet gedaan worden in 2.\+1 \begin{DoxyAuthor}{Author}
+Jonas Saelens 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+/ 
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8cpp_source_l00156}{156}} of file \mbox{\hyperlink{TrafficSimulation_8cpp_source}{Traffic\+Simulation.\+cpp}}.
+
+\Hypertarget{classTrafficSim_a0cdfe5bf52034029612fcd504f1d4470}\index{TrafficSim@{TrafficSim}!set\_bushaltes@{set\_bushaltes}}
+\index{set\_bushaltes@{set\_bushaltes}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{set\_bushaltes()}{set\_bushaltes()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a0cdfe5bf52034029612fcd504f1d4470} 
+void Traffic\+Sim\+::set\+\_\+bushaltes (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classBushalte}{Bushalte}} $>$ \&}]{bushaltes}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00254}{254}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_aa24fc8dc4a18f00686b3e9057ed30b73}\index{TrafficSim@{TrafficSim}!set\_kruispunten@{set\_kruispunten}}
+\index{set\_kruispunten@{set\_kruispunten}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{set\_kruispunten()}{set\_kruispunten()}}
+{\footnotesize\ttfamily \label{classTrafficSim_aa24fc8dc4a18f00686b3e9057ed30b73} 
+void Traffic\+Sim\+::set\+\_\+kruispunten (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classKruispunt}{Kruispunt}} $>$ \&}]{kruispunten}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00262}{262}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_a763f16bea0c2c0171e7df6cb549e25d5}\index{TrafficSim@{TrafficSim}!set\_voertuigengen@{set\_voertuigengen}}
+\index{set\_voertuigengen@{set\_voertuigengen}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{set\_voertuigengen()}{set\_voertuigengen()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a763f16bea0c2c0171e7df6cb549e25d5} 
+void Traffic\+Sim\+::set\+\_\+voertuigengen (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classVoertuigGen}{Voertuig\+Gen}} $>$ \&}]{voertuigengen}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00242}{242}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_a8cf7bbba32e36205132f0cb6654417e9}\index{TrafficSim@{TrafficSim}!setBanen@{setBanen}}
+\index{setBanen@{setBanen}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{setBanen()}{setBanen()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a8cf7bbba32e36205132f0cb6654417e9} 
+void Traffic\+Sim\+::set\+Banen (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classBaan}{Baan}} $>$ \&}]{banen}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00142}{142}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_a0e3f55243200b34566aa44100372f7db}\index{TrafficSim@{TrafficSim}!setDeltaTime@{setDeltaTime}}
+\index{setDeltaTime@{setDeltaTime}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{setDeltaTime()}{setDeltaTime()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a0e3f55243200b34566aa44100372f7db} 
+void Traffic\+Sim\+::set\+Delta\+Time (\begin{DoxyParamCaption}\item[{double}]{dt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00166}{166}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_a91e6f3ffa6e3bbaf0cd138913e4b0a08}\index{TrafficSim@{TrafficSim}!setTime@{setTime}}
+\index{setTime@{setTime}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{setTime()}{setTime()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a91e6f3ffa6e3bbaf0cd138913e4b0a08} 
+void Traffic\+Sim\+::set\+Time (\begin{DoxyParamCaption}\item[{double}]{time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00201}{201}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_a179151c65a56fa52ff461b48437ce3a6}\index{TrafficSim@{TrafficSim}!setVerkeerslichten@{setVerkeerslichten}}
+\index{setVerkeerslichten@{setVerkeerslichten}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{setVerkeerslichten()}{setVerkeerslichten()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a179151c65a56fa52ff461b48437ce3a6} 
+void Traffic\+Sim\+::set\+Verkeerslichten (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}} $>$ \&}]{verkeerslichten}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00226}{226}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_abb8f5adad488d7bf675fc3f078fe0c6d}\index{TrafficSim@{TrafficSim}!setVoertuigen@{setVoertuigen}}
+\index{setVoertuigen@{setVoertuigen}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{setVoertuigen()}{setVoertuigen()}}
+{\footnotesize\ttfamily \label{classTrafficSim_abb8f5adad488d7bf675fc3f078fe0c6d} 
+void Traffic\+Sim\+::set\+Voertuigen (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classVoertuig}{Voertuig}} $>$ \&}]{voertuigen}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00246}{246}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_a78f3508f4bd1cad7804d4ebb73120742}\index{TrafficSim@{TrafficSim}!simBushaltes@{simBushaltes}}
+\index{simBushaltes@{simBushaltes}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{simBushaltes()}{simBushaltes()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a78f3508f4bd1cad7804d4ebb73120742} 
+void Traffic\+Sim\+::sim\+Bushaltes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVoertuig}{Voertuig}} \&}]{bus}{}\end{DoxyParamCaption})}
+
+Deze functie checkt of een bus moet stoppen aan een bushalte. 
+\begin{DoxyParams}{Parameters}
+{\em bus} & is het voertuig. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Rares Grama 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\Hypertarget{classTrafficSim_abbedf65e10570c1318701d93c184ceb5}\index{TrafficSim@{TrafficSim}!Simulate@{Simulate}}
+\index{Simulate@{Simulate}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{Simulate()}{Simulate()}}
+{\footnotesize\ttfamily \label{classTrafficSim_abbedf65e10570c1318701d93c184ceb5} 
+void Traffic\+Sim\+::\+Simulate (\begin{DoxyParamCaption}\item[{double}]{duration}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})}
+
+Deze functie simuleert de verkeerssituatie door alle voertuigen te verwerken en de tijd te verhogen. \begin{DoxyAuthor}{Author}
+Jonas Saelens 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{TrafficSimulation_8cpp_source}{Traffic\+Simulation.\+cpp}}.
+
+\Hypertarget{classTrafficSim_ac04245f6b92d7a2726d5dba3506a34aa}\index{TrafficSim@{TrafficSim}!simVoertuiggenerator@{simVoertuiggenerator}}
+\index{simVoertuiggenerator@{simVoertuiggenerator}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{simVoertuiggenerator()}{simVoertuiggenerator()}}
+{\footnotesize\ttfamily \label{classTrafficSim_ac04245f6b92d7a2726d5dba3506a34aa} 
+void Traffic\+Sim\+::sim\+Voertuiggenerator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Deze functie genereert voertuigen. \begin{DoxyAuthor}{Author}
+Rares Grama 
+
+Ilyas Sefiani 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\Hypertarget{classTrafficSim_aceea42e213af7d5bea3c678f65bf5480}\index{TrafficSim@{TrafficSim}!TestingModeOn@{TestingModeOn}}
+\index{TestingModeOn@{TestingModeOn}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{TestingModeOn()}{TestingModeOn()}}
+{\footnotesize\ttfamily \label{classTrafficSim_aceea42e213af7d5bea3c678f65bf5480} 
+void Traffic\+Sim\+::\+Testing\+Mode\+On (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Deze functie kijkt of er getest wordt met Gtest. \begin{DoxyAuthor}{Author}
+Jonas Saelens 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00197}{197}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_a78ecd408914e251e6f4b3a401c27abaa}\index{TrafficSim@{TrafficSim}!verhoogTijd@{verhoogTijd}}
+\index{verhoogTijd@{verhoogTijd}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{verhoogTijd()}{verhoogTijd()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a78ecd408914e251e6f4b3a401c27abaa} 
+void Traffic\+Sim\+::verhoog\+Tijd (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Deze functie verhoogt de tijd. \begin{DoxyAuthor}{Author}
+Ilyas Sefiani 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8cpp_source_l00148}{148}} of file \mbox{\hyperlink{TrafficSimulation_8cpp_source}{Traffic\+Simulation.\+cpp}}.
+
+\Hypertarget{classTrafficSim_a41ad1906bd250c3bbfb70e1135a89371}\index{TrafficSim@{TrafficSim}!verkeerslichtSim@{verkeerslichtSim}}
+\index{verkeerslichtSim@{verkeerslichtSim}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{verkeerslichtSim()}{verkeerslichtSim()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a41ad1906bd250c3bbfb70e1135a89371} 
+void Traffic\+Sim\+::verkeerslicht\+Sim (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}} \&}]{verkeerslicht}{}\end{DoxyParamCaption})}
+
+Deze functie zorgt ervoor wat de auto\textquotesingle{}s doen op basis van de cyclus van het verkeerslicht en deze functie checkt of het voertuig een prioriteitsvoertuig is. 
+\begin{DoxyParams}{Parameters}
+{\em verkeerslicht} & is het verkeerslicht. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Rares Grama 
+
+Ilyas Sefiani 
+
+Jonas Saelens 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\Hypertarget{classTrafficSim_afefd256032f071935095cee2bc94290e}\index{TrafficSim@{TrafficSim}!versnellen@{versnellen}}
+\index{versnellen@{versnellen}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{versnellen()}{versnellen()}}
+{\footnotesize\ttfamily \label{classTrafficSim_afefd256032f071935095cee2bc94290e} 
+void Traffic\+Sim\+::versnellen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVoertuig}{Voertuig}} \&}]{voertuig}{}\end{DoxyParamCaption})}
+
+Deze functie berekent hoe het voertuig kan versnellen. 
+\begin{DoxyParams}{Parameters}
+{\em voertuig} & is het voertuig. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Ilyas Sefiani 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\Hypertarget{classTrafficSim_a397b2923ff9db050ba652624a2e19136}\index{TrafficSim@{TrafficSim}!vertragen@{vertragen}}
+\index{vertragen@{vertragen}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{vertragen()}{vertragen()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a397b2923ff9db050ba652624a2e19136} 
+\mbox{\hyperlink{classVoertuig}{Voertuig}} Traffic\+Sim\+::vertragen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVoertuig}{Voertuig}} \&}]{voertuig}{}\end{DoxyParamCaption})}
+
+Deze functie berekent hoe het voertuig kan vertragen. 
+\begin{DoxyParams}{Parameters}
+{\em voertuig} & is het voertuig. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Rares Grama 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\Hypertarget{classTrafficSim_a68eb0975ecd6a9875c9be49f692eb563}\index{TrafficSim@{TrafficSim}!voegbaantoe@{voegbaantoe}}
+\index{voegbaantoe@{voegbaantoe}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{voegbaantoe()}{voegbaantoe()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a68eb0975ecd6a9875c9be49f692eb563} 
+void Traffic\+Sim\+::voegbaantoe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBaan}{Baan}} \&}]{baan}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00157}{157}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_a9e81e96ce693e046f8d7169287a91ab1}\index{TrafficSim@{TrafficSim}!voegverkeerslichttoe@{voegverkeerslichttoe}}
+\index{voegverkeerslichttoe@{voegverkeerslichttoe}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{voegverkeerslichttoe()}{voegverkeerslichttoe()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a9e81e96ce693e046f8d7169287a91ab1} 
+void Traffic\+Sim\+::voegverkeerslichttoe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}}}]{licht}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00230}{230}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_ade45272c133d4f8df9c1de969977cbf5}\index{TrafficSim@{TrafficSim}!voegvoertuigtoe@{voegvoertuigtoe}}
+\index{voegvoertuigtoe@{voegvoertuigtoe}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{voegvoertuigtoe()}{voegvoertuigtoe()}}
+{\footnotesize\ttfamily \label{classTrafficSim_ade45272c133d4f8df9c1de969977cbf5} 
+void Traffic\+Sim\+::voegvoertuigtoe (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVoertuig}{Voertuig}}}]{voertuig}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TrafficSimulation_8h_source_l00266}{266}} of file \mbox{\hyperlink{TrafficSimulation_8h_source}{Traffic\+Simulation.\+h}}.
+
+\Hypertarget{classTrafficSim_a0c049eaf5063050c0564de89ccd8dad9}\index{TrafficSim@{TrafficSim}!wagenToDelete@{wagenToDelete}}
+\index{wagenToDelete@{wagenToDelete}!TrafficSim@{TrafficSim}}
+\doxysubsubsection{\texorpdfstring{wagenToDelete()}{wagenToDelete()}}
+{\footnotesize\ttfamily \label{classTrafficSim_a0c049eaf5063050c0564de89ccd8dad9} 
+void Traffic\+Sim\+::wagen\+To\+Delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVoertuig}{Voertuig}} \&}]{voertuig}{}\end{DoxyParamCaption})}
+
+Deze functie verwijdert voertuigen. 
+\begin{DoxyParams}{Parameters}
+{\em voertuig} & is het voertuig. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Jonas Saelens 
+
+Ilyas Sefiani 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Traffic\+Simulation.\+h\item 
+src/Traffic\+Simulation.\+cpp\end{DoxyCompactItemize}

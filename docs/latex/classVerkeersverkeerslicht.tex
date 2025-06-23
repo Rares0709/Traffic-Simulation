@@ -1,0 +1,260 @@
+\doxysection{Verkeersverkeerslicht Class Reference}
+\hypertarget{classVerkeersverkeerslicht}{}\label{classVerkeersverkeerslicht}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classVerkeersverkeerslicht_a475cf9994452906daf74f85d81157b20}{set\+\_\+positie}} (int positie)
+\item 
+void \mbox{\hyperlink{classVerkeersverkeerslicht_a89c0ff2e9a30f4fff3f01a5faace1749}{set\+\_\+cyclus}} (int cyclus)
+\item 
+void \mbox{\hyperlink{classVerkeersverkeerslicht_a226d2040b25d7b4a458cd90760b6c8ec}{set\+\_\+baan}} (\mbox{\hyperlink{classBaan}{Baan}} \texorpdfstring{$\ast$}{*}baan)
+\item 
+\mbox{\hyperlink{classBaan}{Baan}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classVerkeersverkeerslicht_ae7b6130d7b07bbf6b9fd79e87ba39b95}{baan1}} () const
+\item 
+int \mbox{\hyperlink{classVerkeersverkeerslicht_a6bb04103c476f68610363957a3e358cd}{positie1}} () const
+\item 
+int \mbox{\hyperlink{classVerkeersverkeerslicht_a4e4c873e186d18fc585c3f42bbd09e1e}{cyclus1}} () const
+\item 
+std\+::string \mbox{\hyperlink{classVerkeersverkeerslicht_ae445aec1465898e02ce0930de10f3c7e}{rood1}} () const
+\item 
+std\+::string \mbox{\hyperlink{classVerkeersverkeerslicht_ad6439291f8573aa990fb6d0de9c79e5d}{groen1}} () const
+\item 
+std\+::string \mbox{\hyperlink{classVerkeersverkeerslicht_ac55461f8ed16620d2150ffe55f1469d5}{kleur1}} () const
+\item 
+void \mbox{\hyperlink{classVerkeersverkeerslicht_afa6f23a76f2d7ff6772e3738f52e65f7}{set\+\_\+kleur}} (std\+::string kleurstring)
+\item 
+double \mbox{\hyperlink{classVerkeersverkeerslicht_a2633f14393eee699ac953a3bc6941152}{laatste\+\_\+tijd}} () const
+\item 
+void \mbox{\hyperlink{classVerkeersverkeerslicht_a3522296773b792aa02627257aff7f8f2}{set\+\_\+laatste\+Tijd}} (double laatstetijd)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classVoertuig}{Voertuig}} $>$ \mbox{\hyperlink{classVerkeersverkeerslicht_ad1e5fd396adcb93fb4c53acd791512ed}{voertuigen\+\_\+voor\+\_\+licht}} () const
+\item 
+void \mbox{\hyperlink{classVerkeersverkeerslicht_a681fc89889937af16249e7f3f943cf35}{set\+\_\+voertuigen\+\_\+voor\+\_\+licht}} (const std\+::vector$<$ \mbox{\hyperlink{classVoertuig}{Voertuig}} $>$ \&voertuigen\+\_\+voor\+\_\+licht)
+\item 
+void \mbox{\hyperlink{classVerkeersverkeerslicht_aa7eb3b6a76b83172062fde3cc88188d9}{voeg\+\_\+voertuigvoorlicht}} (\mbox{\hyperlink{classVoertuig}{Voertuig}} \&voertuig)
+\item 
+void \mbox{\hyperlink{classVerkeersverkeerslicht_ac711eef18ba9baf34a7c9a30431dadfb}{clear\+\_\+voertuigvoorlicht}} ()
+\item 
+void \mbox{\hyperlink{classVerkeersverkeerslicht_aaca3734be3f0a9709ece03feff0db7ab}{verkeerslicht\+Sim}} (\mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}} \&verkeerslicht, std\+::vector$<$ \mbox{\hyperlink{classVoertuig}{Voertuig}} $>$ voertuigen, double curr\+Time, bool testing\+Mode=false)
+\item 
+void \mbox{\hyperlink{classVerkeersverkeerslicht_a23a151ce1d7d5c41c53c3b7fcd3079ad}{checkverkeerslicht}} (std\+::vector$<$ \mbox{\hyperlink{classVoertuig}{Voertuig}} $>$ \texorpdfstring{$\ast$}{*}voertuigen)
+\item 
+void \mbox{\hyperlink{classVerkeersverkeerslicht_a2b666514d30b6c0aa1012b2c979e4305}{Testing\+Mode\+On}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8h_source_l00015}{15}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8h_source}{Verkeersverkeerslicht.\+h}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classVerkeersverkeerslicht_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classVerkeersverkeerslicht_ae7b6130d7b07bbf6b9fd79e87ba39b95}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!baan1@{baan1}}
+\index{baan1@{baan1}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{baan1()}{baan1()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_ae7b6130d7b07bbf6b9fd79e87ba39b95} 
+\mbox{\hyperlink{classBaan}{Baan}} \texorpdfstring{$\ast$}{*} Verkeersverkeerslicht\+::baan1 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_a23a151ce1d7d5c41c53c3b7fcd3079ad}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!checkverkeerslicht@{checkverkeerslicht}}
+\index{checkverkeerslicht@{checkverkeerslicht}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{checkverkeerslicht()}{checkverkeerslicht()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_a23a151ce1d7d5c41c53c3b7fcd3079ad} 
+void Verkeersverkeerslicht\+::checkverkeerslicht (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classVoertuig}{Voertuig}} $>$ \texorpdfstring{$\ast$}{*}}]{voertuigen}{}\end{DoxyParamCaption})}
+
+Deze functie zorgt ervoor wat de auto\textquotesingle{}s doen op basis van de cyclus van het verkeerslicht en deze functie checkt of het voertuig een prioriteitsvoertuig is. \begin{DoxyAuthor}{Author}
+Jonas Saelens 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+/ 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_ac711eef18ba9baf34a7c9a30431dadfb}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!clear\_voertuigvoorlicht@{clear\_voertuigvoorlicht}}
+\index{clear\_voertuigvoorlicht@{clear\_voertuigvoorlicht}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{clear\_voertuigvoorlicht()}{clear\_voertuigvoorlicht()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_ac711eef18ba9baf34a7c9a30431dadfb} 
+void Verkeersverkeerslicht\+::clear\+\_\+voertuigvoorlicht (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_a4e4c873e186d18fc585c3f42bbd09e1e}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!cyclus1@{cyclus1}}
+\index{cyclus1@{cyclus1}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{cyclus1()}{cyclus1()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_a4e4c873e186d18fc585c3f42bbd09e1e} 
+int Verkeersverkeerslicht\+::cyclus1 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_ad6439291f8573aa990fb6d0de9c79e5d}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!groen1@{groen1}}
+\index{groen1@{groen1}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{groen1()}{groen1()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_ad6439291f8573aa990fb6d0de9c79e5d} 
+std\+::string Verkeersverkeerslicht\+::groen1 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_ac55461f8ed16620d2150ffe55f1469d5}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!kleur1@{kleur1}}
+\index{kleur1@{kleur1}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{kleur1()}{kleur1()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_ac55461f8ed16620d2150ffe55f1469d5} 
+std\+::string Verkeersverkeerslicht\+::kleur1 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00044}{44}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_a2633f14393eee699ac953a3bc6941152}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!laatste\_tijd@{laatste\_tijd}}
+\index{laatste\_tijd@{laatste\_tijd}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{laatste\_tijd()}{laatste\_tijd()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_a2633f14393eee699ac953a3bc6941152} 
+double Verkeersverkeerslicht\+::laatste\+\_\+tijd (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00054}{54}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_a6bb04103c476f68610363957a3e358cd}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!positie1@{positie1}}
+\index{positie1@{positie1}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{positie1()}{positie1()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_a6bb04103c476f68610363957a3e358cd} 
+int Verkeersverkeerslicht\+::positie1 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_ae445aec1465898e02ce0930de10f3c7e}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!rood1@{rood1}}
+\index{rood1@{rood1}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{rood1()}{rood1()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_ae445aec1465898e02ce0930de10f3c7e} 
+std\+::string Verkeersverkeerslicht\+::rood1 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_a226d2040b25d7b4a458cd90760b6c8ec}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!set\_baan@{set\_baan}}
+\index{set\_baan@{set\_baan}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{set\_baan()}{set\_baan()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_a226d2040b25d7b4a458cd90760b6c8ec} 
+void Verkeersverkeerslicht\+::set\+\_\+baan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBaan}{Baan}} \texorpdfstring{$\ast$}{*}}]{baan}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_a89c0ff2e9a30f4fff3f01a5faace1749}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!set\_cyclus@{set\_cyclus}}
+\index{set\_cyclus@{set\_cyclus}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{set\_cyclus()}{set\_cyclus()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_a89c0ff2e9a30f4fff3f01a5faace1749} 
+void Verkeersverkeerslicht\+::set\+\_\+cyclus (\begin{DoxyParamCaption}\item[{int}]{cyclus}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_afa6f23a76f2d7ff6772e3738f52e65f7}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!set\_kleur@{set\_kleur}}
+\index{set\_kleur@{set\_kleur}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{set\_kleur()}{set\_kleur()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_afa6f23a76f2d7ff6772e3738f52e65f7} 
+void Verkeersverkeerslicht\+::set\+\_\+kleur (\begin{DoxyParamCaption}\item[{std\+::string}]{kleurstring}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_a3522296773b792aa02627257aff7f8f2}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!set\_laatsteTijd@{set\_laatsteTijd}}
+\index{set\_laatsteTijd@{set\_laatsteTijd}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{set\_laatsteTijd()}{set\_laatsteTijd()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_a3522296773b792aa02627257aff7f8f2} 
+void Verkeersverkeerslicht\+::set\+\_\+laatste\+Tijd (\begin{DoxyParamCaption}\item[{double}]{laatstetijd}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_a475cf9994452906daf74f85d81157b20}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!set\_positie@{set\_positie}}
+\index{set\_positie@{set\_positie}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{set\_positie()}{set\_positie()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_a475cf9994452906daf74f85d81157b20} 
+void Verkeersverkeerslicht\+::set\+\_\+positie (\begin{DoxyParamCaption}\item[{int}]{positie}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_a681fc89889937af16249e7f3f943cf35}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!set\_voertuigen\_voor\_licht@{set\_voertuigen\_voor\_licht}}
+\index{set\_voertuigen\_voor\_licht@{set\_voertuigen\_voor\_licht}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{set\_voertuigen\_voor\_licht()}{set\_voertuigen\_voor\_licht()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_a681fc89889937af16249e7f3f943cf35} 
+void Verkeersverkeerslicht\+::set\+\_\+voertuigen\+\_\+voor\+\_\+licht (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classVoertuig}{Voertuig}} $>$ \&}]{voertuigen\+\_\+voor\+\_\+licht}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_a2b666514d30b6c0aa1012b2c979e4305}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!TestingModeOn@{TestingModeOn}}
+\index{TestingModeOn@{TestingModeOn}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{TestingModeOn()}{TestingModeOn()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_a2b666514d30b6c0aa1012b2c979e4305} 
+void Verkeersverkeerslicht\+::\+Testing\+Mode\+On (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8h_source_l00069}{69}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8h_source}{Verkeersverkeerslicht.\+h}}.
+
+\Hypertarget{classVerkeersverkeerslicht_aaca3734be3f0a9709ece03feff0db7ab}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!verkeerslichtSim@{verkeerslichtSim}}
+\index{verkeerslichtSim@{verkeerslichtSim}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{verkeerslichtSim()}{verkeerslichtSim()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_aaca3734be3f0a9709ece03feff0db7ab} 
+void Verkeersverkeerslicht\+::verkeerslicht\+Sim (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}} \&}]{verkeerslicht}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{classVoertuig}{Voertuig}} $>$}]{voertuigen}{, }\item[{double}]{curr\+Time}{, }\item[{bool}]{testing\+Mode}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00132}{132}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_aa7eb3b6a76b83172062fde3cc88188d9}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!voeg\_voertuigvoorlicht@{voeg\_voertuigvoorlicht}}
+\index{voeg\_voertuigvoorlicht@{voeg\_voertuigvoorlicht}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{voeg\_voertuigvoorlicht()}{voeg\_voertuigvoorlicht()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_aa7eb3b6a76b83172062fde3cc88188d9} 
+void Verkeersverkeerslicht\+::voeg\+\_\+voertuigvoorlicht (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVoertuig}{Voertuig}} \&}]{voertuig}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+\Hypertarget{classVerkeersverkeerslicht_ad1e5fd396adcb93fb4c53acd791512ed}\index{Verkeersverkeerslicht@{Verkeersverkeerslicht}!voertuigen\_voor\_licht@{voertuigen\_voor\_licht}}
+\index{voertuigen\_voor\_licht@{voertuigen\_voor\_licht}!Verkeersverkeerslicht@{Verkeersverkeerslicht}}
+\doxysubsubsection{\texorpdfstring{voertuigen\_voor\_licht()}{voertuigen\_voor\_licht()}}
+{\footnotesize\ttfamily \label{classVerkeersverkeerslicht_ad1e5fd396adcb93fb4c53acd791512ed} 
+std\+::vector$<$ \mbox{\hyperlink{classVoertuig}{Voertuig}} $>$ Verkeersverkeerslicht\+::voertuigen\+\_\+voor\+\_\+licht (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{Verkeersverkeerslicht_8cpp_source}{Verkeersverkeerslicht.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\+Classes/Verkeersverkeerslicht.\+h\item 
+src/\+Classes/Verkeersverkeerslicht.\+cpp\end{DoxyCompactItemize}

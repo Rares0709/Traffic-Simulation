@@ -1,0 +1,181 @@
+\doxysection{Traffic\+Simulation.\+cpp}
+\hypertarget{TrafficSimulation_8cpp_source}{}\label{TrafficSimulation_8cpp_source}\index{src/TrafficSimulation.cpp@{src/TrafficSimulation.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ jonas\ on\ 3/20/2025.}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}TrafficSimulation.h"{}}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}DesignByContract.h"{}}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00007}\mbox{\hyperlink{classTrafficSim_abbedf65e10570c1318701d93c184ceb5}{00007}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTrafficSim_abbedf65e10570c1318701d93c184ceb5}{TrafficSim::Simulate}}(\textcolor{keywordtype}{double}\ duration)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00008}00008\ \ \ \ \ REQUIRE(!banen.empty(),\ \textcolor{stringliteral}{"{}Er\ zijn\ geen\ banen\ aanwezig."{}});}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00009}00009\ \ \ \ \ REQUIRE(!this-\/>get\_banen().empty(),\ \textcolor{stringliteral}{"{}Banen\ empty\ is\ niet\ goed\ geïnitialiseerd."{}});}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00010}00010\ \ \ \ \ std::vector<std::vector<Verkeersverkeerslicht>>\ baanVerkeerslicht;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}}\ vorigeVerkeerslicht;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classBaan}{Baan}}\ baan\ :\ banen)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ std::vector<Verkeersverkeerslicht>\ volgordeVerkeerslicht;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}}\&\ verkeerslicht\ :\ verkeerslichten)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (baan.naam1()\ ==\ verkeerslicht.baan1()-\/>naam1())\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (volgordeVerkeerslicht.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ volgordeVerkeerslicht.push\_back(verkeerslicht);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vorigeVerkeerslicht\ =\ verkeerslicht;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (vorigeVerkeerslicht.positie1()\ >\ verkeerslicht.positie1())\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ volgordeVerkeerslicht.insert(volgordeVerkeerslicht.begin()\ ,\ verkeerslicht);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (vorigeVerkeerslicht.positie1()\ <\ verkeerslicht.positie1())\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ volgordeVerkeerslicht.push\_back(verkeerslicht);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!volgordeVerkeerslicht.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ baanVerkeerslicht.push\_back(volgordeVerkeerslicht);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00032}00032\ \ \ \ \ std::vector<Verkeersverkeerslicht>\ fixedVerkeerslicht;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ temp\ :\ baanVerkeerslicht)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}}\&\ verkeerslicht\ :\ temp)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ fixedVerkeerslicht.push\_back(verkeerslicht);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00038}00038\ \ \ \ \ verkeerslichten\ =\ fixedVerkeerslicht;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{double}\&\ currentTime\ =\ this-\/>getTime();}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{while}\ (duration\ ==\ -\/1\ ||\ currentTime\ <=\ duration)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!testingMode)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTrafficSim_a471ab273e45ab7f50d8b98b5f256302b}{print}}();}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ std::vector<Voertuig>\ usedVoertuigen;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}}\&\ verkeerslicht\ :\ verkeerslichten)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classVoertuig}{Voertuig}}\&\ voertuig\ :\ voertuigen)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (voertuig.positie1()\ <\ verkeerslicht.positie1())\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Only\ add\ if\ not\ already\ in\ usedVoertuigen}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find\_if(usedVoertuigen.begin(),\ usedVoertuigen.end(),\ [\&](\textcolor{keyword}{const}\ \mbox{\hyperlink{classVoertuig}{Voertuig}}\&\ v)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return\ v.voertuig\_nummer()\ ==\ voertuig.voertuig\_nummer();}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ ==\ usedVoertuigen.end())\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (voertuig.baan1()\ ==\ verkeerslicht.baan1())\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ verkeerslicht.voeg\_voertuigvoorlicht(voertuig);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ usedVoertuigen.push\_back(voertuig);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!verkeerslichten.empty())}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}}\ verkeerslicht\ :\ verkeerslichten)}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ verkeerslicht.checkverkeerslicht(\&voertuigen);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*checkverkeerslicht();*/}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ voertuig\ :\ voertuigen)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ voertuig.berekenSnelheid(DeltaTime);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//berekenSnelheid(voertuig);}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (voertuig.voertuig\_nummer()-\/1\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classVoertuig}{Voertuig}}\ voertuig2\ =\ voertuigen[voertuig.voertuig\_nummer()-\/2];}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voertuig.\mbox{\hyperlink{classVoertuig_ae79946f6cac26889c9621bc49b21039e}{berekenVersnelling}}(\&voertuig2);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voertuig.berekenVersnelling();}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//berekenVersnelling(voertuig);}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ voertuig.geldig(banen,\ voertuig,\ \&toDelete);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//geldig(voertuig);}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!kruispunten.empty())}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classKruispunt}{Kruispunt}}\&\ kruispunt\ :\ kruispunten)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ kruispunt.kruispuntSim(voertuig,banen);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//kruispuntSim(voertuig);}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (voertuig.type1()\ ==\ \textcolor{stringliteral}{"{}bus"{}}\ \&\&\ !bushaltes.empty())}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classBushalte}{Bushalte}}\&\ bushalte\ :\ bushaltes)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bushalte.simBushaltes(voertuig);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//simBushaltes(voertuig);}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ int\ size\ =\ toDelete.size();}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ (Voertuig\&\ voertuig:\ toDelete)\ \{}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ int\ voertuignummer\ =\ voertuig.voertuigNummer;}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ voertuigen.erase(voertuigen.begin()+voertuig.voertuigNummer-\/1);}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ for\ (auto\&\ voertuig1\ :\ voertuigen)\ \{}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ if\ (voertuig1.voertuigNummer\ >\ voertuignummer)\ \{}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ voertuig1.voertuigNummer\ -\/=\ 1;}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ voertuig1.lowerVolgendeNummer();}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ for\ (auto\&\ voertuig1\ :\ toDelete)\ \{}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ if\ (voertuig1.voertuigNummer\ >\ voertuignummer)\ \{}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ voertuig1.voertuigNummer\ -\/=\ 1;}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ std::vector<int>\ indexen;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classVoertuig}{Voertuig}}\&\ voertuig\ :\ toDelete)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ idx\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{size\_t}\textcolor{keyword}{>}(voertuig.voertuig\_nummer()\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (idx\ <\ voertuigen.size())\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indexen.push\_back(\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(idx));\ \ \textcolor{comment}{//\ of\ sla\ ze\ als\ size\_t\ op,\ dan\ moet\ je\ alles\ aanpassen}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ std::sort(indexen.rbegin(),\ indexen.rend());\ \ \textcolor{comment}{//\ sorteer\ van\ hoog\ naar\ laag}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ idx\ :\ indexen)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ voertuigen.erase(voertuigen.begin()\ +\ idx);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ (Optioneel)\ hernummer\ voertuigen\ opnieuw\ na\ verwijderen}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ voertuigen.size();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ voertuigen[i].set\_voertuig\_nummer(i\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ voertuigen[i].lowerVolgendeNummer();}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ toDelete.clear();}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!verkeerslichten.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!testingMode)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ verkeerslichten.size()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ verkeerslicht\ :\ verkeerslichten)}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ verkeerslicht.verkeerslichtSim(verkeerslicht,\ voertuigen,\ time,\ testingMode);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//verkeerslichtSim(verkeerslicht);}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!testingMode)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Geen\ verkeerslichten\ beschikbaar!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ std::vector<Voertuig>\ empty;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTrafficSim_a78ecd408914e251e6f4b3a401c27abaa}{verhoogTijd}}();}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!voertuigengen.empty())}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classVoertuigGen}{VoertuigGen}}\&\ gen\ :\ voertuigengen)}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ gen.simVoertuiggenerator(\&voertuigen,\ time);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//simVoertuiggenerator();}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classVerkeersverkeerslicht}{Verkeersverkeerslicht}}\ \&verkeerslicht:\ verkeerslichten)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ verkeerslicht.clear\_voertuigvoorlicht();}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00144}00144\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{comment}{//ENSURE(!verkeerslichten.empty(),\ "{}Na\ simulatie\ mogen\ de\ verkeerslichten\ niet\ leeg\ zijn."{});}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00146}00146\ \ \ \ \ ENSURE(time\ >=\ 0,\ \textcolor{stringliteral}{"{}De\ tijd\ moet\ positief\ zijn\ na\ simulatie."{}});}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00147}00147\ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00148}\mbox{\hyperlink{classTrafficSim_a78ecd408914e251e6f4b3a401c27abaa}{00148}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTrafficSim_a78ecd408914e251e6f4b3a401c27abaa}{TrafficSim::verhoogTijd}}()\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00149}00149\ \ \ \ \ \textcolor{keywordtype}{double}\ oldTime\ =\ this-\/>time;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{keywordtype}{double}\ add\ =\ this-\/>DeltaTime;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00151}00151\ \ \ \ \ setTime(this-\/>time+add);}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{keywordflow}{if}\ (!testingMode)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}tijd\ verhoogd:\ "{}}\ <<\ oldTime\ <<\ \textcolor{stringliteral}{"{}-\/>"{}}\ <<\ this-\/>time\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00154}00154\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00155}00155\ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00156}\mbox{\hyperlink{classTrafficSim_a471ab273e45ab7f50d8b98b5f256302b}{00156}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTrafficSim_a471ab273e45ab7f50d8b98b5f256302b}{TrafficSim::print}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00157}00157\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Tijd:\ "{}}\ <<\ time\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00158}00158\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ voertuig\ :\ voertuigen)\ \{}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Voertuig\ "{}}\ <<\ voertuig.voertuig\_nummer()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/>\ baan:\ "{}}\ <<\ voertuig.baan1()-\/>naam1()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/>\ positie:\ "{}}\ <<\ voertuig.positie1()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/>\ snelheid:\ "{}}\ <<\ voertuig.snelheid1()\ <<\ std::endl;\ \ \textcolor{comment}{//\ Snelheid\ is\ placeholder}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00163}00163\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00164}00164\ \}}
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{TrafficSimulation_8cpp_source_l00175}00175\ }
+
+\end{DoxyCode}

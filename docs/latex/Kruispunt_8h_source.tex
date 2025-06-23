@@ -1,0 +1,46 @@
+\doxysection{Kruispunt.\+h}
+\hypertarget{Kruispunt_8h_source}{}\label{Kruispunt_8h_source}\index{src/Classes/Kruispunt.h@{src/Classes/Kruispunt.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ grama\ on\ 5/13/2025.}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ KRUISPUNT\_H}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00006}00006\ \textcolor{preprocessor}{\#define\ KRUISPUNT\_H}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}Voertuig.h"{}}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}Baan.h"{}}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}DesignByContract.h"{}}}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00013}\mbox{\hyperlink{classKruispunt}{00013}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classKruispunt}{Kruispunt}}\ \{}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{classBaan}{Baan}}*\ fromBaan=\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00015}00015\ \ \ \ \ \textcolor{keywordtype}{int}\ fromPositie;}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{classBaan}{Baan}}*\ toBaan=\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00017}00017\ \ \ \ \ \textcolor{keywordtype}{int}\ toPositie;}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00018}00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{classBaan}{Baan}}*\ from\_baan()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_from\_baan(\mbox{\hyperlink{classBaan}{Baan}}\ *\ from\_baan);}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{int}\ from\_positie()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_from\_positie(\textcolor{keywordtype}{int}\ from\_positie);}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{classBaan}{Baan}}*\ to\_baan()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_to\_baan(\mbox{\hyperlink{classBaan}{Baan}}*to\_baan);}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{int}\ to\_positie()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_to\_positie(\textcolor{keywordtype}{int}\ to\_positie);}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{void}\ kruispuntSim(\mbox{\hyperlink{classVoertuig}{Voertuig}}\&\ voertuig,\ std::vector<Baan>\&\ banen);}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00036}00036\ \};}
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{Kruispunt_8h_source_l00040}00040\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//KRUISPUNT\_H}}
+
+\end{DoxyCode}

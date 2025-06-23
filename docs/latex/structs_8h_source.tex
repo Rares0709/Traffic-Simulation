@@ -1,0 +1,147 @@
+\doxysection{structs.\+h}
+\hypertarget{structs_8h_source}{}\label{structs_8h_source}\index{src/structs.h@{src/structs.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00001}00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00002}00002\ \textcolor{comment}{//\ Created\ by\ jonas\ on\ 3/20/2025.}}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00003}00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00005}00005\ \textcolor{preprocessor}{\#ifndef\ STRUCTS\_H}}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00006}00006\ \textcolor{preprocessor}{\#define\ STRUCTS\_H}}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00011}00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{classBaan}{Baan}}\ \{}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00012}00012\ \ \ \ \ std::string\ naam;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00013}00013\ \ \ \ \ \textcolor{keywordtype}{int}\ lengte;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00014}00014\ \ \ \ \ \textcolor{keywordtype}{int}\ breedte\ =\ 180;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00015}00015\ \};}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00017}00017\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{classVoertuig}{Voertuig}}\ \{}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00018}00018\ \ \ \ \ Voertuig(\textcolor{keyword}{const}\ std::string\ \&baan,\ \textcolor{keywordtype}{int}\ fmin,\ \textcolor{keywordtype}{int}\ lengte,\ \textcolor{keywordtype}{double}\ positie,\ \textcolor{keywordtype}{double}\ mMaxsnelheid,\ \textcolor{keywordtype}{double}\ maxversnelling,}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ snelheid,\ \textcolor{keywordtype}{double}\ versnelling,\ \textcolor{keywordtype}{double}\ vertraagfactor,\ \textcolor{keywordtype}{int}\ vertraagafstand,\ \textcolor{keywordtype}{int}\ stopafstand,}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ voertuigNummer,\ \textcolor{keywordtype}{double}\ maxremfactor,\ \textcolor{keywordtype}{double}\ maxsnelheid1,\ \textcolor{keyword}{const}\ std::string\&\ type)}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ :\ baan(baan),}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ fmin(fmin),}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ lengte(lengte),}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ positie(positie),}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ mMaxsnelheid(mMaxsnelheid),}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ maxversnelling(maxversnelling),}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ snelheid(snelheid),}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ versnelling(versnelling),}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ vertraagfactor(vertraagfactor),}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ vertraagafstand(vertraagafstand),}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ stopafstand(stopafstand),}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ voertuigNummer(voertuigNummer),}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ maxremfactor(maxremfactor),}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ maxsnelheid(maxsnelheid1),}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ type(type)\ \{}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ type\ wordt\ ingesteld\ bij\ constructie}}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00039}00039\ \ \ \ \ Voertuig()\ :\ voertuigNummer(volgendeNummer++)\ \{\}}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{void}\ lowerVolgendeNummer()\{}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ volgendeNummer-\/-\/;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{void}\ setType(\textcolor{keyword}{const}\ std::string\&\ nieuwType)\ \{}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ type\ =\ nieuwType;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}auto"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ lengte\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ mMaxsnelheid\ =\ maxsnelheid\ =\ 16.6;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ maxversnelling\ =\ 1.44;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ maxremfactor\ =\ 4.61;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ fmin\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}bus"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ lengte\ =\ 12;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ mMaxsnelheid\ =\ maxsnelheid\ =\ 11.4;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ maxversnelling\ =\ 1.22;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ maxremfactor\ =\ 4.29;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ fmin\ =\ 12;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}brandweerwagen"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ lengte\ =\ 10;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ mMaxsnelheid\ =\ maxsnelheid\ =\ 14.6;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ maxversnelling\ =\ 1.33;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ maxremfactor\ =\ 4.56;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ fmin\ =\ 10;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ prioriteit\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}ziekenwagen"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ lengte\ =\ 8;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ mMaxsnelheid\ =\ maxsnelheid\ =\ 15.5;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ maxversnelling\ =\ 1.44;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ maxremfactor\ =\ 4.47;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ fmin\ =\ 8;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ prioriteit\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (type\ ==\ \textcolor{stringliteral}{"{}politiecombi"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ lengte\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ mMaxsnelheid\ =\ maxsnelheid\ =\ 17.2;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ maxversnelling\ =\ 1.55;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ maxremfactor\ =\ 4.92;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ fmin\ =\ 6;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ prioriteit\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ exit(1);}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00085}00085\ \ \ \ \ std::string\ baan;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00086}00086\ \ \ \ \ \textcolor{keywordtype}{int}\ fmin\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00087}00087\ \ \ \ \ \textcolor{keywordtype}{int}\ lengte\ =\ 4;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{double}\ positie\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00089}00089\ \ \ \ \ \textcolor{keywordtype}{double}\ mMaxsnelheid\ =\ 16.6;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00090}00090\ \ \ \ \ \textcolor{keywordtype}{double}\ maxversnelling\ =\ 1.44;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00091}00091\ \ \ \ \ \textcolor{keywordtype}{double}\ snelheid\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00092}00092\ \ \ \ \ \textcolor{keywordtype}{double}\ versnelling\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00093}00093\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ volgendeNummer;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00094}00094\ \ \ \ \ \textcolor{keywordtype}{double}\ vertraagfactor\ =\ 0.4;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00095}00095\ \ \ \ \ \textcolor{keywordtype}{int}\ vertraagafstand\ =\ 50;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00096}00096\ \ \ \ \ \textcolor{keywordtype}{int}\ stopafstand\ =\ 15;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00097}00097\ \ \ \ \ \textcolor{keywordtype}{int}\ voertuigNummer\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00098}00098\ \ \ \ \ \textcolor{keywordtype}{double}\ maxremfactor\ =\ 4.61;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00099}00099\ \ \ \ \ \textcolor{keywordtype}{double}\ maxsnelheid\ =\ 16.6;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00100}00100\ \ \ \ \ \textcolor{keywordtype}{bool}\ prioriteit\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00101}00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ gestopt\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00102}00102\ \ \ \ \ \textcolor{keywordtype}{bool}\ gedraait\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00103}00103\ \ \ \ \ \textcolor{keywordtype}{int}\ timestop\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00104}00104\ \ \ \ \ \textcolor{keywordtype}{bool}\ recentGestopt=\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00105}00105\ \ \ \ \ std::string\ type\ =\ \textcolor{stringliteral}{"{}auto"{}};\ \textcolor{comment}{//\ default\ is\ auto}}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00106}00106\ \};}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00108}\mbox{\hyperlink{structVerkeerslicht}{00108}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structVerkeerslicht}{Verkeerslicht}}\ \{}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00109}00109\ \ \ \ \ std::string\ baan;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00110}00110\ \ \ \ \ \textcolor{keywordtype}{int}\ positie\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00111}00111\ \ \ \ \ \textcolor{keywordtype}{int}\ cyclus\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00112}00112\ \ \ \ \ std::string\ rood=\textcolor{stringliteral}{"{}rood"{}};}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00113}00113\ \ \ \ \ std::string\ groen=\textcolor{stringliteral}{"{}groen"{}};}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00114}00114\ \ \ \ \ std::string\ kleur=\textcolor{stringliteral}{"{}rood"{}};}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00115}00115\ \ \ \ \ \textcolor{keywordtype}{int}\ laatsteTijd\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00116}00116\ \ \ \ \ std::vector<Voertuig>\ voertuigenVoorLicht;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00117}00117\ \};}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00119}00119\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{classVoertuigGen}{VoertuigGen}}\ \{}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00120}00120\ \ \ \ \ \textcolor{comment}{//vermoedelijk\ voor\ later}}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00121}00121\ \ \ \ \ std::string\ baan;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00122}00122\ \ \ \ \ \textcolor{keywordtype}{int}\ freq\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00123}00123\ \ \ \ \ \textcolor{keywordtype}{int}\ laatsteTijd=0;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00124}00124\ \};}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00126}00126\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{classBushalte}{Bushalte}}\ \{}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00127}00127\ \ \ \ \ std::string\ baan;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00128}00128\ \ \ \ \ \textcolor{keywordtype}{int}\ positie\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00129}00129\ \ \ \ \ \textcolor{keywordtype}{int}\ wachttijd\ =0;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00130}00130\ \};}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00132}00132\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{classKruispunt}{Kruispunt}}\ \{}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00133}00133\ \ \ \ \ std::string\ fromBaan;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00134}00134\ \ \ \ \ \textcolor{keywordtype}{int}\ fromPositie;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00135}00135\ \ \ \ \ std::string\ toBaan;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00136}00136\ \ \ \ \ \textcolor{keywordtype}{int}\ toPositie;}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00137}00137\ \};}
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{structs_8h_source_l00141}00141\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//STRUCTS\_H}}
+
+\end{DoxyCode}
