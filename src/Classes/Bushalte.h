@@ -16,29 +16,17 @@ class Bushalte {
     int positie = 0;
     int wachttijd =0;
 public:
-    Baan* baan1() const {
-        return baan;
-    }
+    Baan *baan1() const;
 
-    void set_baan(Baan*baan) {
-        this->baan = baan;
-    }
+    void set_baan(Baan *baan);
 
-    int positie1() const {
-        return positie;
-    }
+    int positie1() const;
 
-    void set_positie(int positie) {
-        this->positie = positie;
-    }
+    void set_positie(int positie);
 
-    int wachttijd1() const {
-        return wachttijd;
-    }
+    int wachttijd1() const;
 
-    void set_wachttijd(int wachttijd) {
-        this->wachttijd = wachttijd;
-    }
+    void set_wachttijd(int wachttijd);
     /**
     * Deze functie checkt of een bus moet stoppen aan een bushalte.
     * @param bus is het voertuig.

@@ -24,65 +24,38 @@ class Verkeersverkeerslicht {
     bool testingMode = false;
 
 public:
-    void set_positie(int positie) {
-        this->positie = positie;
-    }
+    void set_positie(int positie);
 
-    void set_cyclus(int cyclus) {
-        this->cyclus = cyclus;
-    }
-    void set_baan(Baan* baan) {
-        this->baan = baan;
-    }
-    Baan* baan1() const {
-        return baan;
-    }
+    void set_cyclus(int cyclus);
 
-    int positie1() const {
-        return positie;
-    }
+    void set_baan(Baan* baan);
 
-    int cyclus1() const {
-        return cyclus;
-    }
+    Baan* baan1() const;
 
-    std::string rood1() const {
-        return rood;
-    }
+    int positie1() const;
 
-    std::string groen1() const {
-        return groen;
-    }
+    int cyclus1() const;
 
-    std::string kleur1() const {
-        return kleur;
-    }
-    void set_kleur(std::string kleurstring) {
-        kleur=kleurstring;
-    }
+    std::string rood1() const;
 
-    double laatste_tijd() const {
-        return laatsteTijd;
-    }
-    void set_laatsteTijd(double laatstetijd) {
-        laatsteTijd=laatstetijd;
+    std::string groen1() const;
 
-    }
+    std::string kleur1() const;
 
-    std::vector<Voertuig> voertuigen_voor_licht() const {
-        return voertuigenVoorLicht;
-    }
+    void set_kleur(std::string kleurstring);
 
-    void set_voertuigen_voor_licht(const std::vector<Voertuig> &voertuigen_voor_licht) {
-        voertuigenVoorLicht = voertuigen_voor_licht;
-    }
+    double laatste_tijd() const;
 
-    void voeg_voertuigvoorlicht(Voertuig &voertuig) {
-        voertuigenVoorLicht.push_back(voertuig);
-    }
-    void clear_voertuigvoorlicht() {
-        voertuigen_voor_licht().clear();
-    }
+    void set_laatsteTijd(double laatstetijd);
+
+    std::vector<Voertuig> voertuigen_voor_licht() const;
+
+    void set_voertuigen_voor_licht(const std::vector<Voertuig> &voertuigen_voor_licht);
+
+    void voeg_voertuigvoorlicht(Voertuig &voertuig);
+
+    void clear_voertuigvoorlicht();
+
     void verkeerslichtSim(Verkeersverkeerslicht& verkeerslicht, std::vector<Voertuig> voertuigen, double currTime, bool testingMode = false);
     /**
      *Deze functie zorgt ervoor wat de auto's doen op basis van de cyclus van het verkeerslicht en deze functie checkt of het voertuig een prioriteitsvoertuig is.
